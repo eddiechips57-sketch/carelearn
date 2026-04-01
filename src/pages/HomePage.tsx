@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, BookOpen, PoundSterling, Map, TrendingUp,
-  Users, GraduationCap, Sparkles, CheckCircle, ChevronRight,
+  Users, GraduationCap, CheckCircle, ChevronRight,
   Clock, Star, Quote, Award,
 } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
@@ -141,9 +141,11 @@ function HeroSection() {
 
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-4 py-1.5 mb-6">
-            <Sparkles size={14} className="text-accent-300" />
-            <span className="text-xs font-medium text-cyan-100">Your GPS for Health & Social Care Careers</span>
+          <div className="inline-block mb-8">
+            <span className="block text-base sm:text-lg font-semibold tracking-widest uppercase text-accent-300 letter-spacing-wide">
+              Your GPS for Health &amp; Social Care Careers
+            </span>
+            <div className="mt-2 h-0.5 w-full bg-gradient-to-r from-transparent via-accent-300/60 to-transparent" />
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white mb-6 leading-tight">
