@@ -1,57 +1,91 @@
-import { useState } from 'react';
-import { X, CheckCircle, Mail, Heart, Zap, TrendingUp } from 'lucide-react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import { X } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
+import type { CourseClickData } from '../contexts/ClickTrackingContext';
+import { inferCareerTrack } from './leadCapture/inference';
+import StepAnalyzing from './leadCapture/StepAnalyzing';
+import StepInsight from './leadCapture/StepInsight';
+import StepCareerPaths from './leadCapture/StepCareerPaths';
+import StepEmail from './leadCapture/StepEmail';
+import StepSuccess from './leadCapture/StepSuccess';
+
+type Step = 'analyzing' | 'insight' | 'paths' | 'email' | 'success';
 
 interface LeadCaptureProps {
   isOpen: boolean;
   onClose: () => void;
   recordedCourses: string[];
+  recordedCourseData?: CourseClickData[];
 }
 
-const careerPaths = [
-  { id: 'nursing', label: 'Nursing & Clinical Roles', icon: Heart },
-  { id: 'management', label: 'Management & Leadership', icon: TrendingUp },
-  { id: 'social_care', label: 'Social Care Support', icon: Heart },
-  { id: 'skills_development', label: 'Skills Development', icon: Zap },
-];
+const stepLabels: Partial<Record<Step, string>> = {
+  insight: 'Your Profile',
+  paths: 'Career Paths',
+  email: 'Get Your Guide',
+};
 
-export default function LeadCapture({ isOpen, onClose, recordedCourses }: LeadCaptureProps) {
-  const [email, setEmail] = useState('');
+export default function LeadCapture({ isOpen, onClose, recordedCourses, recordedCourseData = [] }: LeadCaptureProps) {
+  const [step, setStep] = useState<Step>('analyzing');
   const [selectedPaths, setSelectedPaths] = useState<string[]>([]);
+  const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const drawerRef = useRef<HTMLDivElement>(null);
 
-  if (!isOpen) return null;
+  const inference = inferCareerTrack(recordedCourseData);
+
+  useEffect(() => {
+    if (isOpen) {
+      setStep('analyzing');
+      setSelectedPaths(
+        inference.primaryTrack && inference.confidence !== 'low'
+          ? [inference.primaryTrack.id]
+          : []
+      );
+      setEmail('');
+      setError('');
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [isOpen, onClose]);
+
+  const handleAnalyzingComplete = useCallback(() => {
+    setStep('insight');
+  }, []);
+
+  const handleInsightConfirm = () => setStep('email');
+  const handleChooseOwn = () => setStep('paths');
+  const handlePathsContinue = () => setStep('email');
+
+  const handleTogglePath = (id: string) => {
+    setSelectedPaths((prev) =>
+      prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]
+    );
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
     if (!email.trim()) {
       setError('Please enter your email address');
       return;
     }
-
     setLoading(true);
     try {
       const { error: insertError } = await supabase.from('leads').insert({
-        email: email.toLowerCase(),
+        email: email.toLowerCase().trim(),
         interested_courses: recordedCourses,
         career_interests: selectedPaths,
       });
-
-      if (insertError) {
-        throw insertError;
-      }
-
-      setSubmitted(true);
-      setTimeout(() => {
-        onClose();
-        setEmail('');
-        setSelectedPaths([]);
-        setSubmitted(false);
-      }, 2500);
+      if (insertError) throw insertError;
+      setStep('success');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to save your information');
     } finally {
@@ -59,129 +93,108 @@ export default function LeadCapture({ isOpen, onClose, recordedCourses }: LeadCa
     }
   };
 
-  const toggleCareerPath = (id: string) => {
-    setSelectedPaths(
-      selectedPaths.includes(id)
-        ? selectedPaths.filter((p) => p !== id)
-        : [...selectedPaths, id]
-    );
-  };
+  const visibleSteps: Step[] = ['insight', 'paths', 'email'];
+  const currentVisibleIndex = visibleSteps.indexOf(step);
+  const progressPercent =
+    currentVisibleIndex >= 0
+      ? ((currentVisibleIndex + 1) / visibleSteps.length) * 100
+      : step === 'analyzing'
+      ? 0
+      : 100;
+
+  if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 animate-fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full animate-slide-up">
-        <div className="relative p-6 border-b border-slate-200">
-          <h2 className="text-xl font-display font-bold text-slate-900 pr-8">
-            {submitted ? 'Thank You!' : 'Continue Your Learning Journey'}
-          </h2>
+    <div className="fixed inset-0 z-50 flex" role="dialog" aria-modal="true">
+      <div
+        className="absolute inset-0 bg-black/40 backdrop-blur-[2px] animate-fade-in"
+        onClick={onClose}
+      />
+
+      <div
+        ref={drawerRef}
+        className="relative ml-auto w-full max-w-lg bg-white h-full flex flex-col shadow-2xl animate-drawer-in overflow-hidden"
+      >
+        <div className="flex items-center justify-between px-6 pt-5 pb-0 flex-shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-[10px] font-bold tracking-tight">CL</span>
+            </div>
+            {stepLabels[step] && (
+              <span className="text-sm font-semibold text-slate-700">{stepLabels[step]}</span>
+            )}
+          </div>
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 text-slate-400 hover:text-slate-600 transition-colors"
+            className="w-8 h-8 rounded-xl flex items-center justify-center text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all"
+            aria-label="Close"
           >
-            <X size={20} />
+            <X size={16} />
           </button>
         </div>
 
-        <div className="p-6">
-          {submitted ? (
-            <div className="space-y-4 text-center">
-              <CheckCircle size={48} className="mx-auto text-emerald-500 animate-bounce" />
-              <div>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  We've received your information and will be in touch shortly with more course recommendations and career guidance.
-                </p>
-              </div>
+        {step !== 'analyzing' && step !== 'success' && (
+          <div className="px-6 mt-4 flex-shrink-0">
+            <div className="w-full bg-slate-100 rounded-full h-1 overflow-hidden">
+              <div
+                className="h-1 bg-brand-500 rounded-full transition-all duration-500 ease-out"
+                style={{ width: `${progressPercent}%` }}
+              />
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
-                  Email Address
-                </label>
-                <div className="relative">
-                  <Mail size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-                  <input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your.email@example.com"
-                    className="input-base pl-10 w-full"
-                  />
-                </div>
-              </div>
+          </div>
+        )}
 
-              <div>
-                <label className="block text-sm font-medium text-slate-700 mb-3">
-                  What are you interested in? (Optional)
-                </label>
-                <div className="space-y-2">
-                  {careerPaths.map((path) => {
-                    const Icon = path.icon;
-                    return (
-                      <label
-                        key={path.id}
-                        className={`flex items-start gap-3 p-3 rounded-lg border-2 cursor-pointer transition-all ${
-                          selectedPaths.includes(path.id)
-                            ? 'border-brand-400 bg-brand-50'
-                            : 'border-slate-200 bg-white hover:border-slate-300'
-                        }`}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedPaths.includes(path.id)}
-                          onChange={() => toggleCareerPath(path.id)}
-                          className="mt-1"
-                        />
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <Icon size={14} className={selectedPaths.includes(path.id) ? 'text-brand-600' : 'text-slate-400'} />
-                            <span className={`text-sm font-medium ${selectedPaths.includes(path.id) ? 'text-brand-700' : 'text-slate-700'}`}>
-                              {path.label}
-                            </span>
-                          </div>
-                        </div>
-                      </label>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {recordedCourses.length > 0 && (
-                <div className="p-3 bg-slate-50 rounded-lg">
-                  <p className="text-xs font-medium text-slate-600 mb-1.5">Courses you're interested in:</p>
-                  <div className="space-y-1">
-                    {recordedCourses.map((course, idx) => (
-                      <p key={idx} className="text-xs text-slate-600 line-clamp-1">
-                        • {course}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {error && (
-                <div className="p-3 bg-red-50 rounded-lg border border-red-200">
-                  <p className="text-xs text-red-700">{error}</p>
-                </div>
-              )}
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="btn-primary w-full justify-center"
-                >
-                  {loading ? 'Saving...' : 'Continue Learning'}
-                </button>
-              </div>
-
-              <p className="text-xs text-slate-500 text-center">
-                We'll use this info to recommend more courses and career paths tailored to you.
-              </p>
-            </form>
+        <div className="flex-1 overflow-y-auto">
+          {step === 'analyzing' && (
+            <StepAnalyzing
+              courseCount={Math.max(recordedCourses.length, 1)}
+              onComplete={handleAnalyzingComplete}
+            />
+          )}
+          {step === 'insight' && (
+            <StepInsight
+              inference={inference}
+              onConfirm={handleInsightConfirm}
+              onChooseOwn={handleChooseOwn}
+            />
+          )}
+          {step === 'paths' && (
+            <StepCareerPaths
+              selectedPaths={selectedPaths}
+              onToggle={handleTogglePath}
+              onContinue={handlePathsContinue}
+              preSelected={inference.primaryTrack?.id ?? null}
+            />
+          )}
+          {step === 'email' && (
+            <StepEmail
+              email={email}
+              onEmailChange={setEmail}
+              onSubmit={handleSubmit}
+              loading={loading}
+              error={error}
+              selectedPaths={selectedPaths}
+              recordedCourses={recordedCourses}
+            />
+          )}
+          {step === 'success' && (
+            <StepSuccess
+              primaryTrack={inference.primaryTrack}
+              onClose={onClose}
+            />
           )}
         </div>
+
+        {step !== 'analyzing' && step !== 'success' && (
+          <div className="flex-shrink-0 px-6 pb-5 pt-3 border-t border-slate-50">
+            <button
+              onClick={onClose}
+              className="w-full text-center text-xs text-slate-400 hover:text-slate-600 transition-colors py-1"
+            >
+              Maybe later
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

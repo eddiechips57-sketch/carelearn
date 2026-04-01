@@ -92,7 +92,7 @@ export default function FindCourses() {
   const [showMobileFilters, setShowMobileFilters] = useState(false);
   const [showLeadCapture, setShowLeadCapture] = useState(false);
 
-  const { recordCourseClick, recordedCourses, shouldShowLeadCapture } = useClickTracking();
+  const { recordCourseClick, recordedCourses, recordedCourseData, shouldShowLeadCapture, dismissLeadCapture } = useClickTracking();
 
   const [roleSearch, setRoleSearch] = useState('');
   const [roleSuggestions, setRoleSuggestions] = useState<OccupationLevel[]>([]);
@@ -521,7 +521,7 @@ export default function FindCourses() {
                             href={course.course_url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={() => recordCourseClick(course.course_title)}
+                            onClick={() => recordCourseClick(course.course_title, { fundingTags: course.funding_tags, qualLevel: course.qualification_level })}
                             className="flex items-center justify-center gap-1.5 text-sm font-semibold text-brand-600 hover:text-brand-700 transition-colors"
                           >
                             View Course
@@ -544,8 +544,9 @@ export default function FindCourses() {
 
       <LeadCapture
         isOpen={showLeadCapture}
-        onClose={() => setShowLeadCapture(false)}
+        onClose={() => { setShowLeadCapture(false); dismissLeadCapture(); }}
         recordedCourses={recordedCourses}
+        recordedCourseData={recordedCourseData}
       />
     </div>
   );
