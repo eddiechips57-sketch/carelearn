@@ -70,7 +70,7 @@ export default function HomePage() {
           .eq('is_published', true)
           .limit(4),
       ]);
-      if (coursesRes.data) setFreeCourses(coursesRes.data as FreeCourse[]);
+      if (coursesRes.data) setFreeCourses(coursesRes.data as unknown as FreeCourse[]);
       setCoursesLoading(false);
       if (guidesRes.data) setGuides(guidesRes.data);
     })();

@@ -276,7 +276,7 @@ function NewsletterForm() {
     setStatus('loading');
     const { error } = await supabase.from('leads').insert({
       email: email.trim(),
-      source: 'funding_hub_newsletter',
+      career_interests: ['funding_hub_newsletter'],
     });
     setStatus(error ? 'error' : 'success');
     if (!error) setEmail('');
