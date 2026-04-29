@@ -191,7 +191,7 @@ function GuideDetailView({ slug }: { slug: string }) {
               <img
                 alt={guide.title}
                 className="w-full h-full object-cover"
-                src={guide.hero_image_url || 'https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&w=1200'}
+                src={guide.hero_image_url || 'https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1200'}
               />
             </div>
           </div>
