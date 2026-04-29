@@ -49,6 +49,8 @@ interface GuideDetail {
   to_occupation: Occupation | null;
 }
 
+const stepColors = ['bg-primary text-white', 'bg-secondary text-white', 'bg-secondary-container text-on-secondary-container', 'bg-tertiary text-white', 'bg-tertiary-container text-white'];
+
 function GuideListView() {
   const [guides, setGuides] = useState<GuideListItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -65,21 +67,19 @@ function GuideListView() {
   return (
     <div className="min-h-screen bg-surface">
       <div className="bg-white border-b border-slate-200">
-        <div className="section-container py-8">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-surface-container text-primary">
-              <span className="material-symbols-outlined" style={{ fontSize: '22px' }}>menu_book</span>
-            </div>
-            <h1 className="text-headline-lg font-headline font-bold text-on-surface">Career Guides</h1>
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm mb-4">
+            CAREER GUIDES
           </div>
-          <p className="text-body-md text-on-surface-variant max-w-lg">
+          <h1 className="text-headline-xl font-headline text-primary mb-4">Chart your career journey.</h1>
+          <p className="text-body-lg text-on-surface-variant max-w-2xl">
             Step-by-step guides to the UK's most rewarding health and social care careers.
             Discover the qualifications, funding, and pathways you need.
           </p>
         </div>
       </div>
 
-      <div className="section-container py-8 pb-16">
+      <div className="max-w-7xl mx-auto px-6 py-12 pb-20">
         {loading ? (
           <div className="flex items-center justify-center py-20">
             <span className="material-symbols-outlined text-primary animate-spin" style={{ fontSize: '32px' }}>progress_activity</span>
@@ -93,27 +93,27 @@ function GuideListView() {
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {guides.map((guide) => (
-              <Link key={guide.id} to={`/guides/${guide.slug}`} className="group card-base p-0 overflow-hidden text-left block">
+              <Link
+                key={guide.id}
+                to={`/guides/${guide.slug}`}
+                className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 block"
+              >
                 <div className="aspect-[16/9] bg-surface-container overflow-hidden">
-                  {guide.hero_image_url ? (
+                  {guide.hero_image_url && (
                     <img src={guide.hero_image_url} alt={guide.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="material-symbols-outlined text-on-surface-variant" style={{ fontSize: '36px', opacity: 0.3 }}>menu_book</span>
-                    </div>
                   )}
                 </div>
-                <div className="p-5">
+                <div className="p-6">
                   {guide.at_a_glance?.duration && (
                     <div className="flex items-center gap-1 text-label-sm text-on-surface-variant mb-2">
                       <span className="material-symbols-outlined" style={{ fontSize: '12px' }}>schedule</span>
                       <span className="uppercase tracking-wider">{guide.at_a_glance.duration}</span>
                     </div>
                   )}
-                  <h3 className="text-label-md font-semibold text-on-surface mb-1.5 group-hover:text-primary transition-colors line-clamp-2">
+                  <h3 className="text-headline-md font-headline text-on-surface mb-2 group-hover:text-primary transition-colors line-clamp-2">
                     {guide.title}
                   </h3>
-                  <p className="text-label-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                  <p className="text-body-md text-on-surface-variant line-clamp-2 leading-relaxed">
                     {guide.opening_paragraph}
                   </p>
                 </div>
@@ -129,7 +129,6 @@ function GuideListView() {
 function GuideDetailView({ slug }: { slug: string }) {
   const [guide, setGuide] = useState<GuideDetail | null>(null);
   const [loading, setLoading] = useState(true);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -157,10 +156,7 @@ function GuideDetailView({ slug }: { slug: string }) {
         <span className="material-symbols-outlined text-on-surface-variant mb-4" style={{ fontSize: '48px', opacity: 0.3 }}>menu_book</span>
         <h2 className="text-headline-md font-headline font-bold text-on-surface mb-2">Guide not found</h2>
         <p className="text-body-md text-on-surface-variant mb-6">This guide may have been removed or the URL is incorrect.</p>
-        <Link to="/guides" className="btn-primary">
-          <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_back</span>
-          Back to Guides
-        </Link>
+        <Link to="/guides" className="btn-primary">Back to Guides</Link>
       </div>
     );
   }
@@ -169,159 +165,190 @@ function GuideDetailView({ slug }: { slug: string }) {
 
   return (
     <div className="min-h-screen bg-surface">
-      <div className="bg-white border-b border-slate-200">
-        <div className="section-container py-4">
-          <div className="flex items-center gap-1.5 text-label-md text-on-surface-variant">
-            <Link to="/guides" className="hover:text-primary transition-colors">Career Guides</Link>
-            <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>chevron_right</span>
-            <span className="text-on-surface font-medium truncate">{guide.title}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="section-container py-8 pb-16">
-        <div className="grid lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 space-y-6">
-            {/* Hero card */}
-            <div className="card-base overflow-hidden">
-              {guide.hero_image_url && (
-                <div className="aspect-[21/9] overflow-hidden">
-                  <img src={guide.hero_image_url} alt={guide.title} className="w-full h-full object-cover" />
+      <main className="max-w-7xl mx-auto px-6 py-12">
+        {/* Hero */}
+        <header className="mb-12">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <div className="flex-1 space-y-4">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm">
+                PATHWAY GUIDE
+              </div>
+              <h1 className="text-headline-xl font-headline text-primary">{guide.title}</h1>
+              <p className="text-body-lg text-on-surface-variant max-w-2xl">{guide.opening_paragraph}</p>
+              {guide.from_occupation && guide.to_occupation && (
+                <div className="flex items-center gap-2 flex-wrap">
+                  <Link to={`/roles/${guide.from_occupation.slug}`} className="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-label-sm hover:bg-slate-200 transition-colors">
+                    {guide.from_occupation.occupation_title}
+                  </Link>
+                  <span className="material-symbols-outlined text-on-surface-variant" style={{ fontSize: '14px' }}>arrow_forward</span>
+                  <Link to={`/roles/${guide.to_occupation.slug}`} className="inline-flex items-center px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-label-sm hover:brightness-105 transition-all">
+                    {guide.to_occupation.occupation_title}
+                  </Link>
                 </div>
               )}
-              <div className="p-6 sm:p-8">
-                {guide.from_occupation && guide.to_occupation && (
-                  <div className="flex items-center gap-2 flex-wrap mb-4">
-                    <Link to={`/roles/${guide.from_occupation.slug}`} className="badge-slate hover:opacity-80 transition-opacity">
-                      {guide.from_occupation.occupation_title}
-                    </Link>
-                    <span className="material-symbols-outlined text-on-surface-variant" style={{ fontSize: '14px' }}>arrow_forward</span>
-                    <Link to={`/roles/${guide.to_occupation.slug}`} className="badge-brand hover:opacity-80 transition-opacity">
-                      {guide.to_occupation.occupation_title}
-                    </Link>
-                  </div>
-                )}
-                <div className="inline-flex items-center gap-1.5 bg-surface-container text-primary px-3 py-1 rounded-full text-label-sm mb-4">
-                  <span className="material-symbols-outlined" style={{ fontSize: '12px' }}>bookmark</span>
-                  PATHWAY GUIDE
-                </div>
-                <h1 className="text-headline-lg font-headline font-bold text-on-surface mb-4">{guide.title}</h1>
-                <p className="text-body-md text-on-surface-variant leading-relaxed">{guide.opening_paragraph}</p>
-              </div>
             </div>
-
-            {/* Steps */}
-            {guide.steps && guide.steps.length > 0 && (
-              <div className="card-base p-6 sm:p-8">
-                <h2 className="text-headline-md font-headline font-semibold text-on-surface mb-6 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary" style={{ fontSize: '20px' }}>route</span>
-                  Your Pathway Journey
-                </h2>
-                <div className="relative">
-                  <div className="absolute left-[19px] top-0 bottom-0 w-px bg-surface-container-high" />
-                  <div className="space-y-8">
-                    {guide.steps.map((step) => (
-                      <div key={step.step} className="flex items-start gap-4 relative">
-                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white text-label-sm font-bold flex-shrink-0 relative z-10">
-                          {step.step}
-                        </span>
-                        <div className="flex-1 min-w-0 bg-surface-container-low rounded-xl p-4 border border-outline-variant">
-                          <h3 className="text-label-md font-semibold text-on-surface mb-1">{step.title}</h3>
-                          <p className="text-label-sm text-on-surface-variant leading-relaxed">{step.content}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Funding */}
-            {guide.funding_section && (
-              <div className="card-base p-6 sm:p-8">
-                <h2 className="text-headline-md font-headline font-semibold text-on-surface mb-4 flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary" style={{ fontSize: '20px' }}>payments</span>
-                  Funding
-                </h2>
-                <p className="text-body-md text-on-surface-variant leading-relaxed whitespace-pre-line">{guide.funding_section}</p>
-              </div>
-            )}
-
-            {/* FAQ */}
-            {guide.faq && guide.faq.length > 0 && (
-              <div className="card-base p-6 sm:p-8">
-                <h2 className="text-headline-md font-headline font-semibold text-on-surface mb-5">Frequently Asked Questions</h2>
-                <div className="space-y-2">
-                  {guide.faq.map((item, i) => (
-                    <div key={i} className="rounded-xl border border-outline-variant overflow-hidden">
-                      <button
-                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                        className="flex items-center justify-between w-full px-5 py-4 text-left bg-white hover:bg-surface-container-low transition-colors"
-                      >
-                        <span className="text-label-md font-semibold text-on-surface pr-4">{item.question}</span>
-                        <span className={`material-symbols-outlined text-on-surface-variant flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} style={{ fontSize: '16px' }}>expand_more</span>
-                      </button>
-                      {openFaq === i && (
-                        <div className="px-5 pb-4 bg-surface-container-low">
-                          <p className="text-body-md text-on-surface-variant leading-relaxed">{item.answer}</p>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Sidebar */}
-          <div className="space-y-5">
-            {Object.keys(glance).length > 0 && (
-              <div className="card-base p-6">
-                <h3 className="text-label-md font-semibold text-on-surface mb-4">At a Glance</h3>
-                <div className="space-y-4">
-                  {[
-                    { key: 'duration', icon: 'schedule', label: 'Duration' },
-                    { key: 'cost', icon: 'payments', label: 'Cost' },
-                    { key: 'funding_available', icon: 'school', label: 'Funding Available' },
-                    { key: 'regulatory_body', icon: 'verified', label: 'Regulatory Body' },
-                    { key: 'typical_salary', icon: 'work', label: 'Typical Salary' },
-                  ].map(({ key, icon, label }) => (glance as Record<string, string | undefined>)[key] ? (
-                    <div key={key} className="flex items-start gap-3">
-                      <span className="material-symbols-outlined text-on-surface-variant flex-shrink-0 mt-0.5" style={{ fontSize: '16px' }}>{icon}</span>
-                      <div>
-                        <p className="text-label-sm text-on-surface-variant uppercase tracking-wider mb-0.5">{label}</p>
-                        <p className="text-label-md font-medium text-on-surface">{(glance as Record<string, string | undefined>)[key]}</p>
-                      </div>
-                    </div>
-                  ) : null)}
-                </div>
-              </div>
-            )}
-
-            <div className="rounded-2xl bg-primary p-6 text-white">
-              <span className="material-symbols-outlined mb-3 block" style={{ fontSize: '24px' }}>school</span>
-              <h3 className="text-label-md font-semibold mb-2">Find Matching Courses</h3>
-              <p className="text-label-sm leading-relaxed mb-4 opacity-80">
-                Browse courses and training programmes that align with this career pathway.
-              </p>
-              <Link to="/courses" className="inline-flex items-center gap-2 rounded-xl bg-white text-primary px-5 py-2.5 text-label-md font-semibold w-full justify-center hover:opacity-90 transition-opacity">
-                Browse Courses
-              </Link>
-            </div>
-
-            <div className="card-base p-6">
-              <span className="material-symbols-outlined text-on-surface-variant mb-3 block" style={{ fontSize: '20px' }}>payments</span>
-              <h3 className="text-label-md font-semibold text-on-surface mb-2">Check Your Funding</h3>
-              <p className="text-label-sm text-on-surface-variant leading-relaxed mb-3">
-                Use our eligibility checker to see which funding schemes can support your career change.
-              </p>
-              <Link to="/funding" className="text-label-md font-medium text-primary hover:opacity-80 transition-opacity flex items-center gap-1">
-                Funding Hub <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>arrow_forward</span>
-              </Link>
+            <div className="flex-shrink-0 w-full md:w-96 h-64 rounded-xl overflow-hidden shadow-xl">
+              <img
+                alt={guide.title}
+                className="w-full h-full object-cover"
+                src={guide.hero_image_url || 'https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1200'}
+              />
             </div>
           </div>
+        </header>
+
+        {/* Stats */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {[
+            { icon: 'payments', label: 'Typical Salary', value: glance.typical_salary || 'Varies' },
+            { icon: 'schedule', label: 'Time to Complete', value: glance.duration || 'Varies' },
+            { icon: 'school', label: 'Education Level', value: glance.regulatory_body || 'Degree or Apprenticeship' },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-white p-8 rounded-xl border border-outline-variant shadow-sm flex flex-col justify-center items-center text-center">
+              <span className="material-symbols-outlined text-4xl text-secondary mb-2">{stat.icon}</span>
+              <p className="text-label-sm text-on-surface-variant uppercase tracking-widest">{stat.label}</p>
+              <p className="text-headline-md font-headline text-primary mt-1">{stat.value}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* Qualifications */}
+        <section className="mb-12">
+          <h2 className="text-headline-lg font-headline text-primary mb-6">Qualifications Needed</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-surface-container-low p-8 rounded-xl flex gap-6 border border-slate-100">
+              <div className="bg-primary text-on-primary w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="material-symbols-outlined">verified</span>
+              </div>
+              <div>
+                <h3 className="text-headline-md font-headline text-xl mb-2">Essential Basics</h3>
+                <p className="text-body-md text-on-surface-variant">
+                  GCSEs in English, Maths, and Science (Grade C/4 or above) or Functional Skills Level 2 equivalent.
+                </p>
+              </div>
+            </div>
+            <div className="bg-surface-container-low p-8 rounded-xl flex gap-6 border border-slate-100">
+              <div className="bg-secondary text-on-secondary w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span className="material-symbols-outlined">clinical_notes</span>
+              </div>
+              <div>
+                <h3 className="text-headline-md font-headline text-xl mb-2">Experience</h3>
+                <p className="text-body-md text-on-surface-variant">
+                  Minimum 6-12 months practical experience or equivalent placement hours to demonstrate aptitude.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Timeline */}
+        {guide.steps && guide.steps.length > 0 && (
+          <section className="mb-12 bg-white p-10 rounded-2xl shadow-sm border border-outline-variant">
+            <h2 className="text-headline-lg font-headline text-primary mb-12 text-center">Your Pathway Journey</h2>
+            <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary before:via-secondary before:to-surface-variant">
+              {guide.steps.map((step, idx) => (
+                <div key={step.step} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                  <div className={`flex items-center justify-center w-10 h-10 rounded-full border border-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ${stepColors[idx % stepColors.length]}`}>
+                    <span className="font-bold">{step.step}</span>
+                  </div>
+                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm">
+                    <div className="flex items-center justify-between mb-2 gap-4">
+                      <h4 className="text-headline-md font-headline text-lg text-primary">{step.title}</h4>
+                    </div>
+                    <p className="text-body-md text-on-surface-variant">{step.content}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Funding */}
+        {guide.funding_section && (
+          <section className="mb-12 bg-white p-10 rounded-2xl shadow-sm border border-outline-variant">
+            <h2 className="text-headline-lg font-headline text-primary mb-6 flex items-center gap-2">
+              <span className="material-symbols-outlined">payments</span>
+              Funding Your Journey
+            </h2>
+            <p className="text-body-md text-on-surface-variant leading-relaxed whitespace-pre-line">{guide.funding_section}</p>
+          </section>
+        )}
+
+        {/* Success Stories */}
+        <section className="mb-12">
+          <h2 className="text-headline-lg font-headline text-primary mb-6">Success Stories</h2>
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-1 bg-tertiary-fixed text-on-tertiary-fixed-variant p-10 rounded-2xl flex flex-col justify-between">
+              <div>
+                <span className="material-symbols-outlined text-4xl mb-6">format_quote</span>
+                <p className="text-headline-md font-headline italic mb-8">
+                  "I started as a care assistant, and CareLearn helped me find the funding for my next qualification. Today, I'm working in the specialist role I always wanted."
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+                  <img
+                    alt=""
+                    className="w-full h-full object-cover"
+                    src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=200"
+                  />
+                </div>
+                <div>
+                  <p className="font-bold">Sarah Jenkins</p>
+                  <p className="text-sm opacity-80">Registered Nurse, NHS Trust</p>
+                </div>
+              </div>
+            </div>
+            <div className="md:w-1/3 space-y-6">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant">
+                <p className="text-body-md mb-4">
+                  "The step-by-step guidance made the daunting transition feel manageable. I knew exactly what I needed at each stage."
+                </p>
+                <p className="font-bold text-primary">— David K., Nursing Student</p>
+              </div>
+              <div className="bg-primary-container text-on-primary-container p-6 rounded-2xl shadow-sm">
+                <h4 className="font-bold mb-2 text-white">Start your journey today</h4>
+                <p className="text-sm mb-4 text-white/80">Join 5,000+ people using CareLearn to level up.</p>
+                <Link to="/courses" className="block w-full text-center bg-white text-primary font-bold py-3 rounded-lg hover:bg-opacity-90 transition-all">
+                  Browse Courses
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        {guide.faq && guide.faq.length > 0 && (
+          <section className="mb-12 bg-white p-10 rounded-2xl shadow-sm border border-outline-variant">
+            <h2 className="text-headline-lg font-headline text-primary mb-6">Frequently Asked Questions</h2>
+            <FaqList items={guide.faq} />
+          </section>
+        )}
+      </main>
+    </div>
+  );
+}
+
+function FaqList({ items }: { items: FaqItem[] }) {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  return (
+    <div className="space-y-2">
+      {items.map((item, i) => (
+        <div key={i} className="rounded-xl border border-outline-variant overflow-hidden">
+          <button
+            onClick={() => setOpenFaq(openFaq === i ? null : i)}
+            className="flex items-center justify-between w-full px-5 py-4 text-left bg-white hover:bg-surface-container-low transition-colors"
+          >
+            <span className="text-label-md font-semibold text-on-surface pr-4">{item.question}</span>
+            <span className={`material-symbols-outlined text-on-surface-variant flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} style={{ fontSize: '16px' }}>expand_more</span>
+          </button>
+          {openFaq === i && (
+            <div className="px-5 pb-4 bg-surface-container-low">
+              <p className="text-body-md text-on-surface-variant leading-relaxed">{item.answer}</p>
+            </div>
+          )}
         </div>
-      </div>
+      ))}
     </div>
   );
 }
