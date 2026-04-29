@@ -76,7 +76,7 @@ export default function FundingHub() {
               <img
                 alt=""
                 className="w-full h-full object-cover"
-                src="https://images.pexels.com/photos/5452201/pexels-photo-5452201.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/5214935/pexels-photo-5214935.jpeg?auto=compress&cs=tinysrgb&w=1600"
               />
             </div>
             <div className="relative z-10 max-w-2xl">
