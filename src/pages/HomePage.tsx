@@ -104,7 +104,7 @@ export default function HomePage() {
             <img
               alt="Healthcare professional"
               className="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1200"
             />
             <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20">
               <div className="flex items-center gap-4">
