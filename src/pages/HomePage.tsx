@@ -92,6 +92,7 @@ const levelLabels: Record<string, string> = {
 
 export default function HomePage() {
   const [freeCourses, setFreeCourses] = useState<FreeCourse[]>([]);
+  const [coursesLoading, setCoursesLoading] = useState(true);
   const [guides, setGuides] = useState<CareerGuide[]>([]);
 
   useEffect(() => {
@@ -101,7 +102,7 @@ export default function HomePage() {
           .from('courses')
           .select('id, course_title, description, duration_weeks, qualification_level, delivery_mode, cost_gbp, funding_tags, provider:course_providers(provider_name)')
           .eq('is_active', true)
-          .contains('funding_tags', ['free_courses'])
+          .filter('funding_tags', 'cs', '["free_courses"]')
           .order('created_at', { ascending: false })
           .limit(6),
         supabase
@@ -110,7 +111,9 @@ export default function HomePage() {
           .eq('is_published', true)
           .limit(4),
       ]);
-      if (coursesRes.data) setFreeCourses(coursesRes.data as FreeCourse[]);
+      if (coursesRes.error) console.error('Free courses query error:', coursesRes.error);
+      if (coursesRes.data && !coursesRes.error) setFreeCourses(coursesRes.data as FreeCourse[]);
+      setCoursesLoading(false);
       if (guidesRes.data) setGuides(guidesRes.data);
     })();
   }, []);
@@ -119,7 +122,7 @@ export default function HomePage() {
     <div className="bg-white">
       <HeroSection />
       <StatsBar />
-      <FreeCoursesSection courses={freeCourses} />
+      <FreeCoursesSection courses={freeCourses} loading={coursesLoading} />
       <TestimonialsSection />
       <PathFinderSection />
       <HowItWorksSection />
@@ -206,14 +209,14 @@ function StatsBar() {
   );
 }
 
-function FreeCoursesSection({ courses }: { courses: FreeCourse[] }) {
+function FreeCoursesSection({ courses, loading }: { courses: FreeCourse[]; loading: boolean }) {
   return (
     <section className="section-padding bg-gradient-to-b from-white to-brand-50/30">
       <div className="section-container">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-cyan-50 border border-cyan-100 px-3 py-1 mb-3">
-              <span className="text-sm">🔥</span>
+              <GraduationCap size={12} className="text-cyan-600" />
               <span className="text-xs font-semibold text-cyan-700">Most Popular</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-900 mb-2">
@@ -228,7 +231,22 @@ function FreeCoursesSection({ courses }: { courses: FreeCourse[] }) {
           </Link>
         </div>
 
-        {courses.length > 0 ? (
+        {loading ? (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div key={n} className="rounded-2xl border border-slate-100 bg-white p-6 animate-pulse">
+                <div className="h-4 bg-slate-100 rounded w-16 mb-4" />
+                <div className="h-5 bg-slate-100 rounded w-3/4 mb-2" />
+                <div className="h-3 bg-slate-50 rounded w-full mb-1" />
+                <div className="h-3 bg-slate-50 rounded w-2/3 mb-4" />
+                <div className="flex justify-between pt-3 border-t border-slate-100">
+                  <div className="h-3 bg-slate-100 rounded w-24" />
+                  <div className="h-3 bg-slate-100 rounded w-10" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : courses.length > 0 ? (
           <div className="perspective-container">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {courses.map((course, i) => (
@@ -267,15 +285,15 @@ function FreeCoursesSection({ courses }: { courses: FreeCourse[] }) {
             </div>
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="rounded-2xl border border-slate-100 bg-white p-6 animate-pulse">
-                <div className="h-4 bg-slate-100 rounded w-16 mb-4" />
-                <div className="h-5 bg-slate-100 rounded w-3/4 mb-2" />
-                <div className="h-3 bg-slate-50 rounded w-full mb-1" />
-                <div className="h-3 bg-slate-50 rounded w-2/3" />
-              </div>
-            ))}
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            <div className="w-14 h-14 rounded-full bg-slate-50 flex items-center justify-center mb-4">
+              <BookOpen size={24} className="text-slate-300" />
+            </div>
+            <p className="text-sm font-medium text-slate-500 mb-1">No courses available right now</p>
+            <p className="text-xs text-slate-400 mb-4">Check back soon for funded healthcare courses</p>
+            <Link to="/courses" className="btn-primary !py-2 !px-5 !text-xs">
+              Browse All Courses
+            </Link>
           </div>
         )}
       </div>
