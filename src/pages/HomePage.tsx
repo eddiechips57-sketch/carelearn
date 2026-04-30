@@ -84,7 +84,7 @@ export default function HomePage() {
           <div className="z-10">
             <span className="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-label-sm inline-block mb-6 uppercase tracking-wider">Empowering Caregivers</span>
             <h1 className="text-headline-xl font-headline text-on-surface mb-6">
-              Shape the future of <span className="text-primary">healthcare</span> through learning.
+              All healthcare learning information <span className="text-primary">in one place</span>.
             </h1>
             <p className="text-body-lg text-on-surface-variant mb-10 max-w-xl">
               Expert-led education designed for the modern healthcare professional. Advance your career with accredited courses, from bedside care to clinical leadership.
