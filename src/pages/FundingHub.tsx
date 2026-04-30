@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { X, LogIn, UserPlus, ExternalLink } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
+import { useAuth } from '../contexts/AuthContext';
 
 interface FundingScheme {
   id: string;
@@ -57,9 +59,76 @@ function parseCriteria(full: string): string[] {
   return lines.slice(0, 3);
 }
 
+function AuthPromptModal({ scheme, onClose }: { scheme: FundingScheme; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-fade-in-down">
+        {/* Header */}
+        <div className="relative bg-primary px-6 pt-8 pb-10">
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+          >
+            <X size={18} />
+          </button>
+          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/15 mb-4">
+            <ExternalLink size={22} className="text-white" />
+          </div>
+          <h2 className="text-xl font-bold text-white leading-tight mb-1">
+            {scheme.scheme_name}
+          </h2>
+          <p className="text-sm text-blue-100">Save your funding research and track applications</p>
+        </div>
+
+        {/* Body */}
+        <div className="-mt-4 bg-white rounded-t-2xl px-6 pt-6 pb-6">
+          <p className="text-sm text-slate-600 mb-5 leading-relaxed">
+            Create a free account to save this funding scheme, track eligibility, and get personalised funding alerts for your role.
+          </p>
+
+          <div className="space-y-3 mb-5">
+            <Link
+              to="/login?mode=signup"
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-white text-sm font-semibold rounded-xl hover:opacity-90 transition-all"
+            >
+              <UserPlus size={16} />
+              Create Free Account
+            </Link>
+            <Link
+              to="/login"
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 w-full py-3 border border-slate-200 text-slate-700 text-sm font-medium rounded-xl hover:bg-slate-50 transition-all"
+            >
+              <LogIn size={16} />
+              Sign In
+            </Link>
+          </div>
+
+          <div className="border-t border-slate-100 pt-4">
+            <p className="text-xs text-slate-400 text-center mb-3">Or continue without an account</p>
+            <a
+              href={scheme.application_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="flex items-center justify-center gap-2 w-full py-2.5 text-sm text-slate-500 hover:text-slate-700 transition-colors"
+            >
+              <ExternalLink size={14} />
+              Go directly to {scheme.scheme_name}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FundingHub() {
   const [schemes, setSchemes] = useState<FundingScheme[]>([]);
   const [loading, setLoading] = useState(true);
+  const [promptScheme, setPromptScheme] = useState<FundingScheme | null>(null);
+  const { user } = useAuth();
 
   useEffect(() => {
     supabase.from('funding_schemes').select('*').eq('is_active', true).order('scheme_name')
@@ -68,6 +137,9 @@ export default function FundingHub() {
 
   return (
     <div className="min-h-screen bg-surface">
+      {promptScheme && (
+        <AuthPromptModal scheme={promptScheme} onClose={() => setPromptScheme(null)} />
+      )}
       <main className="max-w-7xl mx-auto px-6 pt-12 pb-20">
         {/* Hero */}
         <section className="mb-12">
@@ -181,20 +253,18 @@ export default function FundingHub() {
                             <span className={`text-headline-md font-headline text-lg ${style.amountValue}`}>{scheme.max_amount_gbp}</span>
                           </div>
                         )}
-                        {scheme.application_url ? (
-                          <a
-                            href={scheme.application_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`block w-full text-center py-3 rounded-lg text-label-md transition-all ${style.buttonClass}`}
-                          >
-                            Check Eligibility
-                          </a>
-                        ) : (
-                          <button className={`w-full py-3 rounded-lg text-label-md transition-all ${style.buttonClass}`}>
-                            Check Eligibility
-                          </button>
-                        )}
+                        <button
+                          onClick={() => {
+                            if (user) {
+                              window.open(scheme.application_url, '_blank', 'noopener,noreferrer');
+                            } else {
+                              setPromptScheme(scheme);
+                            }
+                          }}
+                          className={`w-full py-3 rounded-lg text-label-md transition-all ${style.buttonClass}`}
+                        >
+                          Check Eligibility
+                        </button>
                       </div>
                     </div>
                   </div>
