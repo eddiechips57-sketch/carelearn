@@ -308,6 +308,31 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Community callout */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 overflow-hidden relative">
+            <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full" />
+            <div className="absolute -bottom-8 right-32 w-32 h-32 bg-white/5 rounded-full" />
+            <div className="flex-1 text-white relative z-10">
+              <span className="inline-block px-3 py-1 bg-white/15 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">Community Hub</span>
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3 leading-tight">Have a question about your care career?</h2>
+              <p className="text-teal-100 text-sm sm:text-base leading-relaxed max-w-lg">
+                Get expert answers from the CareLearn team. Browse real Q&amp;As from care professionals, read in-depth articles, and ask anything — no account required.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0">
+              <Link to="/community?tab=qa" className="px-6 py-3 bg-white text-teal-700 text-sm font-semibold rounded-xl hover:bg-teal-50 transition-colors text-center">
+                Ask a Question
+              </Link>
+              <Link to="/community?tab=blog" className="px-6 py-3 bg-white/15 border border-white/30 text-white text-sm font-semibold rounded-xl hover:bg-white/25 transition-colors text-center">
+                Read Articles
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-6 bg-primary rounded-[2rem] p-12 text-center text-on-primary relative overflow-hidden">

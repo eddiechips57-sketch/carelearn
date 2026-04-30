@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Career Guides', path: '/guides' },
   { label: 'Funding Hub', path: '/funding' },
   { label: 'Role Library', path: '/roles' },
-  { label: 'News', path: '/news' },
+  { label: 'Community', path: '/community' },
 ];
 
 export default function NavBar() {

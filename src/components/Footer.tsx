@@ -20,7 +20,7 @@ const footerLinks = {
   resources: [
     { label: 'Funding Hub', path: '/funding' },
     { label: 'Role Library', path: '/roles' },
-    { label: 'Sector News', path: '/news' },
+    { label: 'Community', path: '/community' },
     { label: 'Support', path: '/support' },
   ],
 };

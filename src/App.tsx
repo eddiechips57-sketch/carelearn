@@ -10,7 +10,8 @@ import CareerGuides from './pages/CareerGuides';
 import FundingHub from './pages/FundingHub';
 import RoleLibrary from './pages/RoleLibrary';
 import RoleDetail from './pages/RoleDetail';
-import News from './pages/News';
+import Community from './pages/Community';
+import BlogPost from './pages/BlogPost';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Support from './pages/Support';
@@ -31,7 +32,8 @@ export default function App() {
                 <Route path="/funding" element={<FundingHub />} />
                 <Route path="/roles" element={<RoleLibrary />} />
                 <Route path="/roles/:slug" element={<RoleDetail />} />
-                <Route path="/news" element={<News />} />
+                <Route path="/community" element={<Community />} />
+                <Route path="/community/blog/:slug" element={<BlogPost />} />
                 <Route path="/support" element={<Support />} />
                 <Route path="/login" element={<Login />} />
                 <Route
