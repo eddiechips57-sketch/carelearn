@@ -429,7 +429,7 @@ function QATab({ isAdmin }: { isAdmin: boolean }) {
     setVotedSet(newSet);
     saveVotedSet(newSet);
     setQuestions(prev => prev.map(q => q.id === id ? { ...q, helpful_count: q.helpful_count + 1 } : q));
-    await supabase.from('community_questions').update({ helpful_count: questions.find(q => q.id === id)!.helpful_count + 1 }).eq('id', id);
+    await supabase.rpc('increment_question_helpful', { question_id: id });
   };
 
   const handleAnswerPosted = (questionId: string, answer: Answer) => {
