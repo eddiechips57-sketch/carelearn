@@ -2,6 +2,7 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { supabase } from '../services/supabaseClient';
 import { useClickTracking } from '../contexts/ClickTrackingContext';
 import LeadCapture from '../components/LeadCapture';
+import SEOHead from '../components/SEOHead';
 
 type SearchMode = 'role' | 'skill' | 'funding';
 
@@ -128,6 +129,12 @@ export default function FindCourses() {
   };
 
   return (
+    <>
+      <SEOHead
+        title="Find NHS & Care Courses UK — Accredited Training for Health Professionals"
+        description="Browse hundreds of accredited healthcare courses in the UK. Filter by role, skill, funding type, or qualification level. Free and funded options available for NHS and social care workers."
+        canonical="/courses"
+      />
     <div className="min-h-screen bg-surface">
       <main className="max-w-7xl mx-auto px-6 pt-12">
         {/* Search mode tabs */}
@@ -427,6 +434,7 @@ export default function FindCourses() {
         recordedCourseData={recordedCourseData}
       />
     </div>
+    </>
   );
 }
 

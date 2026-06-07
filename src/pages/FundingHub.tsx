@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { X, LogIn, UserPlus, ExternalLink } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
 import { useAuth } from '../contexts/AuthContext';
+import SEOHead from '../components/SEOHead';
 
 interface FundingScheme {
   id: string;
@@ -136,6 +137,12 @@ export default function FundingHub() {
   }, []);
 
   return (
+    <>
+      <SEOHead
+        title="Healthcare Funding Schemes UK — Grants, Bursaries & Free Courses for Care Workers"
+        description="Discover grants, bursaries, apprenticeships, and free courses for UK healthcare and social care workers. NHS Learning Support Fund, LDSS, and more — all in one place."
+        canonical="/funding"
+      />
     <div className="min-h-screen bg-surface">
       {promptScheme && (
         <AuthPromptModal scheme={promptScheme} onClose={() => setPromptScheme(null)} />
@@ -333,6 +340,7 @@ export default function FundingHub() {
         </section>
       </main>
     </div>
+    </>
   );
 }
 

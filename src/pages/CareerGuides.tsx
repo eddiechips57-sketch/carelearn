@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
+import SEOHead from '../components/SEOHead';
 
 interface AtAGlance {
   duration?: string;
@@ -65,6 +66,12 @@ function GuideListView() {
   }, []);
 
   return (
+    <>
+      <SEOHead
+        title="UK Health & Social Care Career Guides — Step-by-Step Pathways to Your Dream Role"
+        description="Step-by-step career guides for UK health and social care professionals. Learn how to become a registered nurse, care manager, social worker, nursing associate, and more."
+        canonical="/guides"
+      />
     <div className="min-h-screen bg-surface">
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 py-12">
@@ -123,6 +130,7 @@ function GuideListView() {
         )}
       </div>
     </div>
+    </>
   );
 }
 
@@ -164,6 +172,12 @@ function GuideDetailView({ slug }: { slug: string }) {
   const glance = guide.at_a_glance || {};
 
   return (
+    <>
+      <SEOHead
+        title={`${guide.title} — Career Guide UK`}
+        description={guide.opening_paragraph ? guide.opening_paragraph.slice(0, 155) + '...' : `A step-by-step UK career guide: ${guide.title}. Qualifications, funding, and pathway information for health and social care professionals.`}
+        canonical={`/guides/${guide.slug}`}
+      />
     <div className="min-h-screen bg-surface">
       <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Hero */}
@@ -326,6 +340,7 @@ function GuideDetailView({ slug }: { slug: string }) {
         )}
       </main>
     </div>
+    </>
   );
 }
 

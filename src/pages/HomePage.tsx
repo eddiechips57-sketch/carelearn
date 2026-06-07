@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import PathFinder from '../components/PathFinder';
+import SEOHead from '../components/SEOHead';
 
 interface FreeCourse {
   id: string;
@@ -76,7 +77,27 @@ export default function HomePage() {
     })();
   }, []);
 
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'CareLearn — All Healthcare Learning Information in One Place',
+    description: 'The UK\'s free healthcare learning directory for care and health professionals. Find accredited courses, career guides, funding schemes, and NHS role profiles.',
+    url: 'https://carelearn.site/',
+    isPartOf: { '@id': 'https://carelearn.site/#website' },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://carelearn.site/' }],
+    },
+  };
+
   return (
+    <>
+      <SEOHead
+        title="CareLearn — All Healthcare Learning Information in One Place"
+        description="The UK's free healthcare learning directory. Find accredited care courses, career guides, funding schemes, and NHS role profiles for health and social care professionals."
+        canonical="/"
+        jsonLd={homeJsonLd}
+      />
     <div className="bg-surface">
       {/* Hero */}
       <section className="relative bg-white pt-16 pb-24 overflow-hidden">
@@ -349,6 +370,7 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 

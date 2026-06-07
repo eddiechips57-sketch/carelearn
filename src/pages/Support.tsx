@@ -1,3 +1,5 @@
+import SEOHead from '../components/SEOHead';
+
 const emergencyContacts = [
   { name: 'CQC Enquiries', description: 'Report a concern about a health or social care service', phone: '03000 616 161', hours: 'Mon-Fri 8:30am - 5:30pm', icon: 'shield', bg: 'bg-surface-container text-primary' },
   { name: 'Safeguarding Adults', description: 'Report suspected abuse or neglect of a vulnerable adult', phone: '0808 800 5000', hours: '24 hours, 7 days a week', icon: 'warning', bg: 'bg-error-container text-error' },
@@ -20,6 +22,12 @@ const faqs = [
 
 export default function Support() {
   return (
+    <>
+      <SEOHead
+        title="Support — CareLearn Help Centre for UK Care Professionals"
+        description="Get help with CareLearn. Find emergency contacts, CQC reporting, safeguarding resources, and support for care providers, individuals, and healthcare professionals."
+        canonical="/support"
+      />
     <div className="min-h-screen bg-surface">
       <div className="bg-white border-b border-slate-200">
         <div className="section-container py-8">
@@ -175,5 +183,6 @@ export default function Support() {
         </div>
       </div>
     </div>
+    </>
   );
 }

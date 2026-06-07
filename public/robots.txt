@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow private pages
+Disallow: /profile
+Disallow: /login
+
+Sitemap: https://carelearn.site/sitemap.xml

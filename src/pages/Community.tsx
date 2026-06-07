@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { formatDistanceToNow, format } from 'date-fns';
 import { MessageSquare, BookOpen, ThumbsUp, ChevronDown, ChevronUp, Send, X, Clock, CheckCircle, Tag, Filter, TrendingUp, Calendar, ArrowRight, Shield } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
+import SEOHead from '../components/SEOHead';
 import { useAuth } from '../contexts/AuthContext';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -634,6 +635,12 @@ export default function Community() {
   };
 
   return (
+    <>
+      <SEOHead
+        title="CareLearn Community — Q&A, Blog & Advice for UK Care Professionals"
+        description="Join the CareLearn community. Get answers to care career questions, read expert blog posts on UK immigration rules, CQC updates, employment rights, and career progression for care workers."
+        canonical="/community"
+      />
     <div className="min-h-screen bg-slate-50">
       {/* Hero */}
       <div className="bg-white border-b border-slate-200">
@@ -694,5 +701,6 @@ export default function Community() {
         {activeTab === 'qa' ? <QATab isAdmin={isAdmin} /> : <BlogTab />}
       </div>
     </div>
+    </>
   );
 }

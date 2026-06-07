@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { ArrowLeft, Clock, BookOpen, MessageSquare, ChevronRight } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
+import SEOHead from '../components/SEOHead';
 
 interface BlogPost {
   id: string;
@@ -146,7 +147,31 @@ export default function BlogPost() {
     );
   }
 
+  const articleJsonLd = post ? {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.cover_image_url || undefined,
+    author: { '@type': 'Person', name: post.author_name },
+    publisher: { '@type': 'Organization', name: 'CareLearn', url: 'https://carelearn.site/' },
+    datePublished: post.created_at,
+    dateModified: post.created_at,
+    url: `https://carelearn.site/community/blog/${post.slug}`,
+    mainEntityOfPage: `https://carelearn.site/community/blog/${post.slug}`,
+  } : undefined;
+
   return (
+    <>
+      {post && (
+        <SEOHead
+          title={post.title}
+          description={post.excerpt}
+          canonical={`/community/blog/${post.slug}`}
+          ogImage={post.cover_image_url || undefined}
+          jsonLd={articleJsonLd}
+        />
+      )}
     <div className="min-h-screen bg-slate-50">
       {/* Hero image */}
       {post.cover_image_url && (
@@ -250,5 +275,6 @@ export default function BlogPost() {
         </div>
       </div>
     </div>
+    </>
   );
 }

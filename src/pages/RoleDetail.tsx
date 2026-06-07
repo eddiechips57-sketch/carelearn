@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
+import SEOHead from '../components/SEOHead';
 
 const pillarLabels: Record<string, string> = {
   adult_social_care: 'Adult Social Care',
@@ -117,6 +118,14 @@ export default function RoleDetail() {
   }
 
   return (
+    <>
+      {occupation && (
+        <SEOHead
+          title={`${occupation.occupation_title} — Role Profile, Salary & Qualifications UK`}
+          description={`${occupation.description ? occupation.description.slice(0, 140) + '...' : `Explore the ${occupation.occupation_title} role in UK health and social care. View NHS band, salary, qualifications, responsibilities, and career progression routes.`}`}
+          canonical={`/roles/${occupation.slug}`}
+        />
+      )}
     <div className="min-h-screen bg-surface">
       <div className="bg-white border-b border-slate-200">
         <div className="section-container py-8">
@@ -249,5 +258,6 @@ export default function RoleDetail() {
         )}
       </div>
     </div>
+    </>
   );
 }

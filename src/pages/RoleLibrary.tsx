@@ -5,6 +5,7 @@ import {
   GraduationCap, HeartHandshake, Stethoscope, Activity, Bone,
 } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
+import SEOHead from '../components/SEOHead';
 
 type Pillar = 'all' | 'adult_social_care' | 'nursing_midwifery' | 'clinical_support' | 'allied_health';
 
@@ -73,6 +74,12 @@ export default function RoleLibrary() {
   });
 
   return (
+    <>
+      <SEOHead
+        title="UK Health & Social Care Role Library — NHS Job Profiles, Salaries & Qualifications"
+        description="Explore every role in UK health and social care. View NHS band, salary range, minimum qualifications, regulatory body, and career progression routes for nursing, allied health, and social care jobs."
+        canonical="/roles"
+      />
     <div className="min-h-screen bg-slate-50 pt-20">
       <div className="bg-white border-b border-slate-100">
         <div className="section-container py-8">
@@ -188,5 +195,6 @@ export default function RoleLibrary() {
         )}
       </div>
     </div>
+    </>
   );
 }
