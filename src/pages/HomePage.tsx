@@ -121,29 +121,53 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative h-[600px] lg:h-[700px] rounded-[2rem] overflow-hidden shadow-2xl">
-            <img
-              alt="Healthcare professional"
-              className="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            />
-            <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-              <div className="flex items-center gap-4">
-                <div className="flex -space-x-3">
-                  <img alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=80" />
-                  <img alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=80" />
-                  <div className="w-10 h-10 rounded-full bg-secondary-fixed border-2 border-white flex items-center justify-center text-xs font-bold">+2k</div>
-                </div>
-                <div>
-                  <p className="text-label-md text-on-surface">Trusted by 15,000+ professionals</p>
-                  <div className="flex text-amber-400">
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <span key={i} className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center justify-between mb-1">
+              <h2 className="text-headline-md font-headline font-semibold text-on-surface">Free Healthcare Courses</h2>
+              <Link to="/courses" className="text-primary text-label-sm flex items-center gap-1 hover:underline whitespace-nowrap">
+                View all <span className="material-symbols-outlined text-sm">chevron_right</span>
+              </Link>
             </div>
+            {coursesLoading ? (
+              <div className="flex items-center justify-center py-20">
+                <span className="material-symbols-outlined text-primary animate-spin" style={{ fontSize: '32px' }}>progress_activity</span>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-4">
+                {(freeCourses.length > 0 ? freeCourses : placeholderCourses).map((course, i) => (
+                  <div key={course.id || i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all group flex">
+                    <div className="w-28 h-full overflow-hidden relative shrink-0">
+                      <img
+                        alt=""
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        src={coursePlaceholderImages[i % coursePlaceholderImages.length]}
+                      />
+                      <div className="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase">Free</div>
+                    </div>
+                    <div className="p-4 flex-1 flex flex-col justify-center">
+                      <div className="flex gap-2 mb-2">
+                        <span className="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tighter">
+                          {levelLabels[course.qualification_level] || 'Healthcare'}
+                        </span>
+                      </div>
+                      <h4 className="text-label-md font-headline text-on-surface mb-2 line-clamp-2">{course.course_title}</h4>
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="flex items-center text-on-surface-variant text-label-sm">
+                          <span className="material-symbols-outlined text-sm mr-1">schedule</span> {course.duration_weeks}w
+                        </div>
+                        <div className="flex items-center text-on-surface-variant text-label-sm">
+                          <span className="material-symbols-outlined text-sm mr-1">signal_cellular_alt</span>
+                          {levelLabels[course.qualification_level] || 'Beginner'}
+                        </div>
+                      </div>
+                      <Link to="/courses" className="inline-block text-center w-full py-2 rounded-lg border-2 border-secondary text-secondary text-label-sm hover:bg-secondary-container transition-all">
+                        Start Free Course
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -204,62 +228,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Free Courses */}
+      {/* Healthcare professional photo */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-              <h2 className="text-headline-lg font-headline text-on-surface mb-2">Free Healthcare Courses</h2>
-              <p className="text-body-md text-on-surface-variant">Start your journey today with no-cost foundational education.</p>
-            </div>
-            <Link to="/courses" className="text-primary text-label-md flex items-center gap-2 hover:underline">
-              View all free courses <span className="material-symbols-outlined">chevron_right</span>
-            </Link>
-          </div>
-
-          {coursesLoading ? (
-            <div className="flex items-center justify-center py-20">
-              <span className="material-symbols-outlined text-primary animate-spin" style={{ fontSize: '32px' }}>progress_activity</span>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {(freeCourses.length > 0 ? freeCourses : placeholderCourses).map((course, i) => (
-                <div key={course.id || i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all group">
-                  <div className="h-48 overflow-hidden relative">
-                    <img
-                      alt=""
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      src={coursePlaceholderImages[i % coursePlaceholderImages.length]}
-                    />
-                    <div className="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase">Accredited</div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex gap-2 mb-3">
-                      <span className="bg-slate-100 text-slate-600 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-tighter">
-                        {levelLabels[course.qualification_level] || 'Healthcare'}
-                      </span>
-                    </div>
-                    <h4 className="text-headline-md font-headline text-on-surface mb-3 line-clamp-2">{course.course_title}</h4>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="flex items-center text-on-surface-variant text-label-sm">
-                        <span className="material-symbols-outlined text-sm mr-1">schedule</span> {course.duration_weeks}w
-                      </div>
-                      <div className="flex items-center text-on-surface-variant text-label-sm">
-                        <span className="material-symbols-outlined text-sm mr-1">signal_cellular_alt</span>
-                        {levelLabels[course.qualification_level] || 'Beginner'}
-                      </div>
-                    </div>
-                    <div className="w-full bg-slate-100 h-2 rounded-full mb-6">
-                      <div className="bg-secondary h-full rounded-full w-0 group-hover:w-full transition-all duration-1000 ease-out" />
-                    </div>
-                    <Link to="/courses" className="block text-center w-full py-3 rounded-lg border-2 border-secondary text-secondary text-label-md hover:bg-secondary-container transition-all">
-                      Start Free Course
-                    </Link>
+          <div className="relative h-[500px] lg:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl">
+            <img
+              alt="Healthcare professional"
+              className="w-full h-full object-cover"
+              src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            />
+            <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+              <div className="flex items-center gap-4">
+                <div className="flex -space-x-3">
+                  <img alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=80" />
+                  <img alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=80" />
+                  <div className="w-10 h-10 rounded-full bg-secondary-fixed border-2 border-white flex items-center justify-center text-xs font-bold">+2k</div>
+                </div>
+                <div>
+                  <p className="text-label-md text-on-surface">Trusted by 15,000+ professionals</p>
+                  <div className="flex text-amber-400">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <span key={i} className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                    ))}
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
