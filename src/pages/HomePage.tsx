@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import PathFinder from '../components/PathFinder';
 import SEOHead from '../components/SEOHead';
+import NewsTicker from '../components/NewsTicker';
 
 interface FreeCourse {
   id: string;
@@ -101,6 +102,16 @@ export default function HomePage() {
     <div className="bg-surface">
       {/* Hero */}
       <section className="relative bg-white pt-16 pb-24 overflow-hidden">
+        {/* News Ticker — top right */}
+        <div className="max-w-7xl mx-auto px-6 flex justify-end pt-4 pb-2">
+          <div className="hidden md:block">
+            <NewsTicker />
+          </div>
+        </div>
+        {/* Mobile news ticker */}
+        <div className="md:hidden px-4 pb-4">
+          <NewsTicker />
+        </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="z-10">
             <span className="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-label-sm inline-block mb-6 uppercase tracking-wider">Empowering Caregivers</span>
