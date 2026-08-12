@@ -113,13 +113,13 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-6 space-y-2">
-              <a href="mailto:carelearnuk@gmail.com" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+              <a href="mailto:admin@carelearn.site" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
                 <Mail size={14} />
-                carelearnuk@gmail.com
+                admin@carelearn.site
               </a>
-              <a href="tel:07787447160" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
+              <a href="tel:07463151822" className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
                 <Phone size={14} />
-                07787 447160
+                07463 151822
               </a>
               <div className="flex items-center gap-2 text-sm text-slate-400">
                 <MapPin size={14} className="flex-shrink-0" />

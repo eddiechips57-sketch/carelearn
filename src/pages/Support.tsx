@@ -115,22 +115,22 @@ export default function Support() {
             <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-card">
               <h3 className="text-label-md font-semibold text-on-surface mb-4">Contact Us</h3>
               <div className="space-y-4">
-                <a href="mailto:carelearnuk@gmail.com" className="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors">
+                <a href="mailto:admin@carelearn.site" className="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary flex-shrink-0">
                     <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>mail</span>
                   </div>
                   <div>
                     <p className="text-label-md font-medium text-on-surface">Email</p>
-                    <p className="text-label-sm text-on-surface-variant">carelearnuk@gmail.com</p>
+                    <p className="text-label-sm text-on-surface-variant">admin@carelearn.site</p>
                   </div>
                 </a>
-                <a href="tel:07787447160" className="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors">
+                <a href="tel:07463151822" className="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary flex-shrink-0">
                     <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>call</span>
                   </div>
                   <div>
                     <p className="text-label-md font-medium text-on-surface">Phone</p>
-                    <p className="text-label-sm text-on-surface-variant">07787 447160</p>
+                    <p className="text-label-sm text-on-surface-variant">07463 151822</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3">
@@ -160,7 +160,7 @@ export default function Support() {
               <p className="text-label-sm text-on-surface-variant leading-relaxed mb-4">
                 Have a specific question? Drop us an email and our team will get back to you within 24 hours.
               </p>
-              <a href="mailto:carelearnuk@gmail.com" className="btn-primary w-full text-center">Email Us</a>
+              <a href="mailto:admin@carelearn.site" className="btn-primary w-full text-center">Email Us</a>
             </div>
 
             <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-card">
