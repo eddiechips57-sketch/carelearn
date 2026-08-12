@@ -310,6 +310,11 @@
   100% { background-position: 0% 50%; }
 }
 
+@keyframes marqueeRTL {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-pop-in { animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
 .animate-drawer-in { animation: drawerSlideIn 0.38s cubic-bezier(0.32, 0.72, 0, 1) forwards; }
 .animate-gradient { background-size: 200% 200%; animation: gradientShift 4s ease infinite; }

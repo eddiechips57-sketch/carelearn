@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { Newspaper, ExternalLink } from 'lucide-react';
 
 interface Headline {
@@ -11,8 +11,6 @@ interface Headline {
 
 export default function NewsTicker() {
   const [headlines, setHeadlines] = useState<Headline[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -40,57 +38,51 @@ export default function NewsTicker() {
     fetchHeadlines();
   }, []);
 
-  const advance = useCallback(() => {
-    if (headlines.length <= 1) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prev) => (prev + 1) % headlines.length);
-      setIsTransitioning(false);
-    }, 400);
-  }, [headlines.length]);
-
-  useEffect(() => {
-    if (headlines.length <= 1) return;
-    const interval = setInterval(advance, 5000);
-    return () => clearInterval(interval);
-  }, [headlines.length, advance]);
-
   if (loading || headlines.length === 0) return null;
 
-  const current = headlines[currentIndex];
+  // Duplicate the list so the marquee loops seamlessly
+  const looped = [...headlines, ...headlines];
 
   return (
-    <div className="flex items-center gap-2.5 bg-slate-900/90 backdrop-blur-sm rounded-xl px-4 py-2.5 max-w-md shadow-lg border border-slate-700/50">
-      <div className="flex items-center gap-1.5 flex-shrink-0">
+    <div className="flex items-center bg-slate-900/90 backdrop-blur-sm rounded-xl pl-3 pr-4 py-2.5 max-w-md shadow-lg border border-slate-700/50 overflow-hidden">
+      <div className="flex items-center gap-1.5 flex-shrink-0 mr-3">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75 animate-ping" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
+        </span>
         <Newspaper size={14} className="text-amber-400" />
         <span className="text-[10px] font-semibold uppercase tracking-wider text-amber-400">
           Live
         </span>
       </div>
-      <div className="h-4 w-px bg-slate-600 flex-shrink-0" />
+      <div className="h-4 w-px bg-slate-600 flex-shrink-0 mr-3" />
       <div className="overflow-hidden flex-1 min-w-0">
-        <a
-          href={current.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`flex items-center gap-1.5 group transition-all duration-400 ${
-            isTransitioning
-              ? 'opacity-0 -translate-y-2'
-              : 'opacity-100 translate-y-0'
-          }`}
+        <div
+          className="flex items-center gap-8 whitespace-nowrap"
+          style={{ animation: 'marqueeRTL 40s linear infinite' }}
         >
-          <span className="text-xs text-slate-200 truncate group-hover:text-white transition-colors leading-tight">
-            {current.title}
-          </span>
-          <ExternalLink
-            size={10}
-            className="text-slate-400 group-hover:text-amber-400 transition-colors flex-shrink-0"
-          />
-        </a>
+          {looped.map((h, i) => (
+            <a
+              key={`${h.id}-${i}`}
+              href={h.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 group flex-shrink-0"
+            >
+              <span className="text-xs text-slate-200 group-hover:text-white transition-colors leading-tight">
+                {h.title}
+              </span>
+              <span className="text-[9px] text-amber-400/70 font-medium">
+                {h.source_name}
+              </span>
+              <ExternalLink
+                size={10}
+                className="text-slate-500 group-hover:text-amber-400 transition-colors flex-shrink-0"
+              />
+            </a>
+          ))}
+        </div>
       </div>
-      <span className="text-[9px] text-slate-500 flex-shrink-0 tabular-nums">
-        {current.source_name}
-      </span>
     </div>
   );
 }
