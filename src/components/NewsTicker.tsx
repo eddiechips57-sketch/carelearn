@@ -59,7 +59,7 @@ export default function NewsTicker() {
       <div className="overflow-hidden flex-1 min-w-0">
         <div
           className="flex items-center gap-8 whitespace-nowrap"
-          style={{ animation: 'marqueeRTL 40s linear infinite' }}
+          style={{ animation: 'marqueeRTL 28s linear infinite' }}
         >
           {looped.map((h, i) => (
             <a
