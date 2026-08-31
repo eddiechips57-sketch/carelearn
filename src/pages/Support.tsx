@@ -124,15 +124,6 @@ export default function Support() {
                     <p className="text-label-sm text-on-surface-variant">admin@carelearn.site</p>
                   </div>
                 </a>
-                <a href="tel:07463151822" className="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary flex-shrink-0">
-                    <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>call</span>
-                  </div>
-                  <div>
-                    <p className="text-label-md font-medium text-on-surface">Phone</p>
-                    <p className="text-label-sm text-on-surface-variant">07463 151822</p>
-                  </div>
-                </a>
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary flex-shrink-0">
                     <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>location_on</span>
