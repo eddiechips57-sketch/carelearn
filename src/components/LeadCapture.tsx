@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
-import type { CourseClickData } from '../contexts/ClickTrackingContext';
+import type { EbookViewData } from '../contexts/ClickTrackingContext';
 import { inferCareerTrack } from './leadCapture/inference';
 import StepAnalyzing from './leadCapture/StepAnalyzing';
 import StepInsight from './leadCapture/StepInsight';
@@ -15,7 +15,7 @@ interface LeadCaptureProps {
   isOpen: boolean;
   onClose: () => void;
   recordedCourses: string[];
-  recordedCourseData?: CourseClickData[];
+  recordedCourseData?: EbookViewData[];
 }
 
 const stepLabels: Partial<Record<Step, string>> = {

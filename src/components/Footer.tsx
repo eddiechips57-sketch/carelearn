@@ -3,12 +3,13 @@ import { Mail, MapPin, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 const footerLinks = {
-  courses: [
-    { label: 'Browse All Courses', path: '/courses' },
-    { label: 'Care Qualifications', path: '/courses?level=L2' },
-    { label: 'Nursing Degrees', path: '/courses?level=HE_UG' },
-    { label: 'Apprenticeships', path: '/courses?mode=apprenticeship' },
-    { label: 'Free Courses', path: '/courses?funding=free_courses' },
+  ebooks: [
+    { label: 'Browse All Guides', path: '/ebooks' },
+    { label: 'Free Downloads', path: '/ebooks?price=free' },
+    { label: 'Family & Behaviour Support', path: '/ebooks?category=family_behaviour_support' },
+    { label: 'Home Care & Recovery', path: '/ebooks?category=home_care_recovery' },
+    { label: 'Carer Wellbeing', path: '/ebooks?category=carer_wellbeing' },
+    { label: 'Printable Packs', path: '/ebooks?category=printable_packs' },
   ],
   guides: [
     { label: 'HCA to Nurse', path: '/guides/hca-to-registered-nurse' },
@@ -51,19 +52,18 @@ export default function Footer() {
               />
               <div className="flex flex-col">
                 <span className="text-lg font-display font-bold text-white leading-tight">CareLearn</span>
-                <span className="text-[10px] font-medium text-brand-400 tracking-wider uppercase leading-none">Learning Directory</span>
+                <span className="text-[10px] font-medium text-brand-400 tracking-wider uppercase leading-none">Practical Care Guides</span>
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
-              The UK's healthcare learning course directory. Advance your care career,
-              find accredited courses and funding, and empower workers to deliver safer care and reduce incidents.
+              Practical, plain-English care guides and printable toolkits for families, unpaid carers, and frontline support workers. Read the guide, print the toolkit, use it today.
             </p>
             <form onSubmit={handleSubscribe} className="flex gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email for career updates"
+                placeholder="Your email for new guides and free resources"
                 className="flex-1 rounded-lg bg-slate-800 border border-slate-700 px-4 py-2.5 text-sm text-white placeholder:text-slate-500 outline-none focus:border-brand-500 transition-colors"
               />
               <button
@@ -76,9 +76,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Find Courses</h4>
+            <h4 className="text-sm font-semibold text-white mb-4">Care Guides</h4>
             <ul className="space-y-2.5">
-              {footerLinks.courses.map((link) => (
+              {footerLinks.ebooks.map((link) => (
                 <li key={link.label}>
                   <Link to={link.path} className="text-sm text-slate-400 hover:text-white transition-colors">
                     {link.label}

@@ -1,393 +1,420 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
-import PathFinder from '../components/PathFinder';
 import SEOHead from '../components/SEOHead';
 import NewsTicker from '../components/NewsTicker';
+import { BookOpen, Download, ShoppingBag, FileText, Heart, Home, Brain, Users, ArrowRight, Check, Star } from 'lucide-react';
 
-interface FreeCourse {
-  id: string;
-  course_title: string;
-  description: string;
-  duration_weeks: number;
-  qualification_level: string;
-  delivery_mode: string;
-  cost_gbp: number | null;
-  funding_tags: string[];
-  provider: { provider_name: string } | null;
-}
-
-interface CareerGuide {
+interface Ebook {
   id: string;
   title: string;
   slug: string;
-  opening_paragraph: string;
-  at_a_glance: { duration?: string; typical_salary?: string };
-  hero_image_url: string;
+  short_description: string;
+  cover_image_url: string | null;
+  price_gbp: number;
+  page_count: number | null;
+  category: string;
+  included_toolkit_items: string[];
+  is_featured: boolean;
+  format: string;
 }
 
-const levelLabels: Record<string, string> = {
-  L2: 'Level 2',
-  L3: 'Level 3',
-  L4: 'Level 4',
-  L5: 'Level 5',
-  HE_UG: 'Undergraduate',
-  HE_PG: 'Postgraduate',
-  CPD: 'CPD',
+const categoryLabels: Record<string, string> = {
+  family_behaviour_support: 'Family & Behaviour Support',
+  home_care_recovery: 'Home Care & Recovery',
+  navigating_care_system: 'Navigating the Care System',
+  carer_wellbeing: 'Carer Wellbeing',
 };
+
+const categoryCards = [
+  {
+    key: 'family_behaviour_support',
+    label: 'Family & Behaviour Support',
+    description: 'De-escalation, communication, and sensory support for parents and support workers.',
+    icon: Brain,
+    image: 'https://images.pexels.com/photos/5960133/pexels-photo-5960133.jpeg?auto=compress&cs=tinysrgb&w=800',
+    span: 'md:col-span-2',
+  },
+  {
+    key: 'home_care_recovery',
+    label: 'Home Care & Recovery',
+    description: 'Dementia, hospital discharge, mobility, and mealtimes.',
+    icon: Home,
+    image: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800',
+    span: '',
+  },
+  {
+    key: 'navigating_care_system',
+    label: 'Navigating the Care System',
+    description: 'Funding, assessments, and care coordination.',
+    icon: FileText,
+    image: 'https://images.pexels.com/photos/7593372/pexels-photo-7593372.jpeg?auto=compress&cs=tinysrgb&w=800',
+    span: '',
+  },
+  {
+    key: 'carer_wellbeing',
+    label: 'Carer Wellbeing',
+    description: 'Activities, burnout, and self-care for the long run.',
+    icon: Heart,
+    image: 'https://images.pexels.com/photos/7593448/pexels-photo-7593448.jpeg?auto=compress&cs=tinysrgb&w=800',
+    span: '',
+  },
+];
+
+const situationFinder = [
+  { label: 'Caring for someone with dementia', category: 'home_care_recovery' },
+  { label: 'Managing challenging behaviour', category: 'family_behaviour_support' },
+  { label: 'Recovering after hospital or stroke', category: 'home_care_recovery' },
+  { label: 'Feeling burned out and exhausted', category: 'carer_wellbeing' },
+  { label: 'Navigating care funding and assessments', category: 'navigating_care_system' },
+  { label: 'Looking for activities and engagement ideas', category: 'carer_wellbeing' },
+];
 
 const testimonials = [
   {
-    name: 'Dr. Sarah Jenkins',
-    role: 'Senior Resident Physician',
-    text: "CareLearn made it incredibly easy to balance my professional development with my 12-hour shifts. The courses are concise, practical, and highly relevant to my daily clinical practice.",
-    img: 'https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=200',
+    name: 'Rachel M.',
+    role: 'Daughter caring for Mum with dementia',
+    text: "The dementia guide was the first thing I read that actually made me feel capable instead of terrified. The conversation scripts for sundowning alone were worth every penny.",
+    img: 'https://images.pexels.com/photos/5960133/pexels-photo-5960133.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
   {
-    name: 'Marcus Thompson',
-    role: 'Nursing Assistant',
-    text: "The Pathfinder tool helped me map out exactly what certifications I needed to move from a care assistant role into pediatric nursing. I feel supported in every step of my journey.",
+    name: 'James O.',
+    role: 'Support Worker, Supported Living',
+    text: "I work 12-hour shifts and do not have time for theory. The de-escalation guide gave me practical steps I used on my very next shift. The ABC tracker is now in every handover folder.",
     img: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=200',
+  },
+  {
+    name: 'Priya K.',
+    role: 'Parent of a neurodivergent teenager',
+    text: "Beyond Words completely changed how I communicate with my son. The visual schedule cards transformed our mornings from chaos to calm. I cried reading it — in a good way.",
+    img: 'https://images.pexels.com/photos/5960345/pexels-photo-5960345.jpeg?auto=compress&cs=tinysrgb&w=200',
+  },
+  {
+    name: 'Tom B.',
+    role: "Son managing Dad's care after stroke",
+    text: "Bringing Dad home from hospital was terrifying. The First 30 Days guide told me exactly what to do, what to watch for, and when to call the GP. I cannot recommend it enough.",
+    img: 'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
 ];
 
 export default function HomePage() {
-  const [freeCourses, setFreeCourses] = useState<FreeCourse[]>([]);
-  const [coursesLoading, setCoursesLoading] = useState(true);
-  const [guides, setGuides] = useState<CareerGuide[]>([]);
+  const [ebooks, setEbooks] = useState<Ebook[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
-      const [coursesRes, guidesRes] = await Promise.all([
-        supabase
-          .from('courses')
-          .select('id, course_title, description, duration_weeks, qualification_level, delivery_mode, cost_gbp, funding_tags, provider:course_providers(provider_name)')
-          .eq('is_active', true)
-          .filter('funding_tags', 'cs', '["free_courses"]')
-          .order('created_at', { ascending: false })
-          .limit(3),
-        supabase
-          .from('career_guides')
-          .select('id, title, slug, opening_paragraph, at_a_glance, hero_image_url')
-          .eq('is_published', true)
-          .limit(4),
-      ]);
-      if (coursesRes.data) setFreeCourses(coursesRes.data as unknown as FreeCourse[]);
-      setCoursesLoading(false);
-      if (guidesRes.data) setGuides(guidesRes.data);
+      const { data } = await supabase
+        .from('ebooks')
+        .select('id, title, slug, short_description, cover_image_url, price_gbp, page_count, category, included_toolkit_items, is_featured, format')
+        .eq('is_published', true)
+        .order('sort_order', { ascending: true });
+      setEbooks((data || []) as unknown as Ebook[]);
+      setLoading(false);
     })();
   }, []);
+
+  const freeGuide = ebooks.find((e) => Number(e.price_gbp) === 0);
+  const popularGuides = ebooks.filter((e) => Number(e.price_gbp) > 0).slice(0, 4);
 
   const homeJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'CareLearn — All Healthcare Learning Information in One Place',
-    description: 'The UK\'s free healthcare learning directory for care and health professionals. Find accredited courses, career guides, funding schemes, and NHS role profiles.',
+    name: 'CareLearn — Practical Care Guides for Families and Carers',
+    description: 'Plain-English care ebooks and printable toolkits for families, unpaid carers, and frontline support workers.',
     url: 'https://carelearn.site/',
-    isPartOf: { '@id': 'https://carelearn.site/#website' },
-    breadcrumb: {
-      '@type': 'BreadcrumbList',
-      itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Home', item: 'https://carelearn.site/' }],
-    },
   };
 
   return (
     <>
       <SEOHead
-        title="CareLearn — All Healthcare Learning Information in One Place"
-        description="The UK's free healthcare learning directory. Find accredited care courses, career guides, funding schemes, and NHS role profiles for health and social care professionals."
+        title="CareLearn — Practical Care Guides for Families and Carers"
+        description="Plain-English care ebooks with printable toolkits. De-escalation, dementia care, hospital recovery, burnout, and more. Read the guide, print the toolkit, use it today."
         canonical="/"
         jsonLd={homeJsonLd}
       />
-    <div className="bg-surface">
-      {/* Hero */}
-      <section className="relative bg-white pt-16 pb-24 overflow-hidden">
-        {/* News Ticker — top right */}
-        <div className="max-w-7xl mx-auto px-6 flex justify-end pt-4 pb-2">
-          <div className="hidden md:block">
+      <div className="bg-surface">
+        {/* Hero */}
+        <section className="relative bg-white pt-16 pb-24 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 flex justify-end pt-4 pb-2">
+            <div className="hidden md:block">
+              <NewsTicker />
+            </div>
+          </div>
+          <div className="md:hidden px-4 pb-4">
             <NewsTicker />
           </div>
-        </div>
-        {/* Mobile news ticker */}
-        <div className="md:hidden px-4 pb-4">
-          <NewsTicker />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="z-10">
-            <span className="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-label-sm inline-block mb-6 uppercase tracking-wider">Empowering Caregivers</span>
-            <h1 className="text-headline-xl font-headline text-on-surface mb-6">
-              All healthcare learning information <span className="text-primary">in one place</span>.
-            </h1>
-            <p className="text-body-lg text-on-surface-variant mb-10 max-w-xl">
-              Expert-led education designed for the modern healthcare professional. Advance your career with accredited courses, from bedside care to clinical leadership.
-            </p>
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="z-10">
+              <span className="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-label-sm inline-block mb-6 uppercase tracking-wider">
+                Practical Care Guides
+              </span>
+              <h1 className="text-headline-xl font-headline text-on-surface mb-6">
+                Practical care guides <span className="text-primary">you can use today</span>.
+              </h1>
+              <p className="text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                Plain-English, jargon-free ebooks with printable toolkits for families, unpaid carers, and frontline support workers. Read the guide, print the sheets, use them today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Link to="/ebooks" className="btn-primary inline-flex items-center justify-center gap-2 text-label-md">
+                  <BookOpen size={18} /> Browse All Guides
+                </Link>
+                {freeGuide && (
+                  <Link to="/ebooks" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-secondary text-secondary text-label-md font-semibold px-6 py-3 hover:bg-secondary-container transition-all">
+                    <Download size={18} /> Get a Free Guide
+                  </Link>
+                )}
+              </div>
 
-            <div id="pathfinder" className="bg-surface-container p-6 rounded-xl shadow-sm border border-outline-variant max-w-lg">
-              <div className="flex items-center mb-4 gap-2">
-                <span className="material-symbols-outlined text-primary">explore</span>
-                <span className="text-headline-md font-headline font-semibold">Pathfinder Tool</span>
-              </div>
-              <p className="text-label-md text-on-surface-variant mb-6">Find the perfect learning path based on your role.</p>
-              <PathFinder />
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center justify-between mb-1">
-              <h2 className="text-headline-md font-headline font-semibold text-on-surface">Free Healthcare Courses</h2>
-              <Link to="/courses" className="text-primary text-label-sm flex items-center gap-1 hover:underline whitespace-nowrap">
-                View all <span className="material-symbols-outlined text-sm">chevron_right</span>
-              </Link>
-            </div>
-            {coursesLoading ? (
-              <div className="flex items-center justify-center py-20">
-                <span className="material-symbols-outlined text-primary animate-spin" style={{ fontSize: '32px' }}>progress_activity</span>
-              </div>
-            ) : (
-              <div className="flex flex-col gap-4">
-                {(freeCourses.length > 0 ? freeCourses : placeholderCourses).map((course, i) => (
-                  <div key={course.id || i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all group flex">
-                    <div className="w-28 h-full overflow-hidden relative shrink-0">
-                      <img
-                        alt=""
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        src={coursePlaceholderImages[i % coursePlaceholderImages.length]}
-                      />
-                      <div className="absolute top-2 left-2 bg-primary text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase">Free</div>
-                    </div>
-                    <div className="p-4 flex-1 flex flex-col justify-center">
-                      <div className="flex gap-2 mb-2">
-                        <span className="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-tighter">
-                          {levelLabels[course.qualification_level] || 'Healthcare'}
-                        </span>
-                      </div>
-                      <h4 className="text-label-md font-headline text-on-surface mb-2 line-clamp-2">{course.course_title}</h4>
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="flex items-center text-on-surface-variant text-label-sm">
-                          <span className="material-symbols-outlined text-sm mr-1">schedule</span> {course.duration_weeks}w
-                        </div>
-                        <div className="flex items-center text-on-surface-variant text-label-sm">
-                          <span className="material-symbols-outlined text-sm mr-1">signal_cellular_alt</span>
-                          {levelLabels[course.qualification_level] || 'Beginner'}
-                        </div>
-                      </div>
-                      <Link to="/courses" className="inline-block text-center w-full py-2 rounded-lg border-2 border-secondary text-secondary text-label-sm hover:bg-secondary-container transition-all">
-                        Start Free Course
-                      </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Career Pathways Bento */}
-      <section className="py-24 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-headline-lg font-headline text-on-surface mb-4">Popular Career Pathways</h2>
-            <p className="text-body-md text-on-surface-variant max-w-2xl mx-auto">
-              Explore structured learning paths designed to take you from entry-level to advanced clinical expertise.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[600px]">
-            <Link to="/guides" className="md:col-span-2 md:row-span-2 bg-primary rounded-[1rem] p-10 text-on-primary relative overflow-hidden flex flex-col justify-end group cursor-pointer shadow-lg hover:shadow-xl transition-all">
-              <img
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-500"
-                src="https://images.pexels.com/photos/7088530/pexels-photo-7088530.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              />
-              <div className="relative z-10">
-                <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-label-sm mb-4 inline-block">Specialized Track</span>
-                <h3 className="text-headline-lg font-headline mb-2">Emergency & Critical Care</h3>
-                <p className="text-body-md text-blue-100 mb-6">Master life-saving skills and triage protocols in high-pressure environments.</p>
-                <span className="flex items-center gap-2 text-label-md text-white group-hover:gap-4 transition-all">
-                  Explore Track <span className="material-symbols-outlined">arrow_right_alt</span>
-                </span>
-              </div>
-            </Link>
-
-            <Link to="/guides" className="md:col-span-2 bg-white rounded-[1rem] p-8 border border-slate-200 flex flex-col justify-between group cursor-pointer hover:border-secondary transition-all">
-              <div className="flex justify-between items-start">
-                <span className="material-symbols-outlined text-secondary text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>child_care</span>
-                <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm">Hot Trend</span>
-              </div>
-              <div>
-                <h3 className="text-headline-md font-headline text-on-surface mb-2">Pediatric Specialization</h3>
-                <p className="text-body-md text-on-surface-variant">Focus on the unique needs of infants, children, and adolescents.</p>
-              </div>
-            </Link>
-
-            <Link to="/guides" className="bg-tertiary-fixed rounded-[1rem] p-8 flex flex-col justify-between group cursor-pointer hover:brightness-105 transition-all">
-              <span className="material-symbols-outlined text-tertiary text-4xl">psychology</span>
-              <div>
-                <h3 className="text-headline-md font-headline text-on-tertiary-fixed-variant mb-1">Mental Health</h3>
-                <p className="text-label-md text-on-tertiary-fixed opacity-80">12 Courses</p>
-              </div>
-            </Link>
-
-            <Link to="/guides" className="bg-secondary-fixed rounded-[1rem] p-8 flex flex-col justify-between group cursor-pointer hover:brightness-105 transition-all">
-              <span className="material-symbols-outlined text-on-secondary-container text-4xl">elderly</span>
-              <div>
-                <h3 className="text-headline-md font-headline text-on-secondary-container mb-1">Elderly Care</h3>
-                <p className="text-label-md text-on-secondary-container opacity-80">8 Courses</p>
-              </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Healthcare professional photo */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="relative h-[500px] lg:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl">
-            <img
-              alt="Healthcare professional"
-              className="w-full h-full object-cover"
-              src="https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            />
-            <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20">
-              <div className="flex items-center gap-4">
-                <div className="flex -space-x-3">
-                  <img alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=80" />
-                  <img alt="" className="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=80" />
-                  <div className="w-10 h-10 rounded-full bg-secondary-fixed border-2 border-white flex items-center justify-center text-xs font-bold">+2k</div>
-                </div>
-                <div>
-                  <p className="text-label-md text-on-surface">Trusted by 15,000+ professionals</p>
+              {/* Trust badges */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                <div className="flex items-center gap-2">
                   <div className="flex text-amber-400">
                     {[0, 1, 2, 3, 4].map((i) => (
-                      <span key={i} className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                      <Star key={i} size={14} fill="currentColor" />
+                    ))}
+                  </div>
+                  <span className="text-label-sm text-on-surface-variant">Loved by families and carers</span>
+                </div>
+                <div className="flex items-center gap-2 text-label-sm text-on-surface-variant">
+                  <Check size={14} className="text-secondary" /> Read + Use formula
+                </div>
+                <div className="flex items-center gap-2 text-label-sm text-on-surface-variant">
+                  <Check size={14} className="text-secondary" /> Printable toolkits included
+                </div>
+              </div>
+            </div>
+
+            {/* Free guide highlight */}
+            <div className="flex flex-col gap-4">
+              {freeGuide && (
+                <div className="bg-gradient-to-br from-secondary-container to-surface-container rounded-2xl p-6 border border-secondary/20 shadow-sm">
+                  <span className="inline-block bg-secondary text-on-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-4">
+                    Free Download
+                  </span>
+                  <h3 className="text-headline-md font-headline font-semibold text-on-surface mb-2">{freeGuide.title}</h3>
+                  <p className="text-label-md text-on-surface-variant mb-4">{freeGuide.short_description}</p>
+                  {freeGuide.included_toolkit_items && freeGuide.included_toolkit_items.length > 0 && (
+                    <div className="mb-4 space-y-1.5">
+                      {freeGuide.included_toolkit_items.slice(0, 3).map((item, i) => (
+                        <div key={i} className="flex items-center gap-2 text-label-sm text-on-surface-variant">
+                          <Check size={14} className="text-secondary shrink-0" /> {item}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <Link to="/ebooks" className="inline-flex items-center gap-2 rounded-lg bg-secondary text-on-secondary text-label-md font-semibold px-5 py-2.5 hover:opacity-90 transition-all">
+                    <Download size={16} /> Download Free Guide
+                  </Link>
+                </div>
+              )}
+              {!loading && popularGuides.length > 0 && (
+                <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="text-label-md font-headline font-semibold text-on-surface">Popular This Week</h4>
+                    <Link to="/ebooks" className="text-secondary text-label-sm flex items-center gap-1 hover:underline">
+                      View all <ArrowRight size={12} />
+                    </Link>
+                  </div>
+                  <div className="space-y-3">
+                    {popularGuides.slice(0, 3).map((ebook) => (
+                      <Link key={ebook.id} to="/ebooks" className="flex items-center gap-3 group">
+                        <div className="w-12 h-12 rounded-lg overflow-hidden shrink-0">
+                          {ebook.cover_image_url && (
+                            <img alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform" src={ebook.cover_image_url} />
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-label-sm font-medium text-on-surface line-clamp-1 group-hover:text-primary transition-colors">{ebook.title}</p>
+                          <p className="text-[11px] text-on-surface-variant">£{Number(ebook.price_gbp).toFixed(2)}</p>
+                        </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-surface-container-highest">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-headline-lg font-headline text-on-surface mb-4">Trusted by Healthcare Professionals</h2>
-            <p className="text-body-md text-on-surface-variant">Hear from our community of learners who are transforming their careers.</p>
+        {/* Situation Finder */}
+        <section className="py-20 bg-surface-container-low">
+          <div className="max-w-5xl mx-auto px-6 text-center">
+            <h2 className="text-headline-lg font-headline text-on-surface mb-3">Find the Right Guide for Your Situation</h2>
+            <p className="text-body-md text-on-surface-variant mb-10 max-w-2xl mx-auto">
+              Pick the situation that sounds most like yours and we will show you the guides that can help.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {situationFinder.map((sit) => {
+                const Icon = categoryCards.find((c) => c.key === sit.category)?.icon || BookOpen;
+                return (
+                  <Link
+                    key={sit.label}
+                    to={`/ebooks?category=${sit.category}`}
+                    className="group bg-white rounded-xl border border-slate-200 p-5 text-left hover:border-secondary hover:shadow-md transition-all flex items-start gap-3"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+                      <Icon size={18} />
+                    </div>
+                    <div>
+                      <p className="text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">{sit.label}</p>
+                      <p className="text-[11px] text-on-surface-variant mt-0.5">{categoryLabels[sit.category]}</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t) => (
-              <div key={t.name} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                <div className="flex text-amber-400 mb-6">
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  ))}
-                </div>
-                <p className="text-body-lg text-on-surface mb-8 italic">"{t.text}"</p>
-                <div className="flex items-center gap-4">
-                  <img alt={t.name} className="w-12 h-12 rounded-full object-cover" src={t.img} />
-                  <div>
-                    <h5 className="text-headline-md font-headline text-sm text-on-surface">{t.name}</h5>
-                    <p className="text-label-sm text-on-surface-variant">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Guides preview */}
-      {guides.length > 0 && (
+        {/* Category Bento */}
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-              <div>
-                <h2 className="text-headline-lg font-headline text-on-surface mb-2">Career Guides</h2>
-                <p className="text-body-md text-on-surface-variant">Step-by-step roadmaps to the UK's most in-demand healthcare careers.</p>
-              </div>
-              <Link to="/guides" className="text-primary text-label-md flex items-center gap-2 hover:underline">
-                View all guides <span className="material-symbols-outlined">chevron_right</span>
-              </Link>
+            <div className="text-center mb-16">
+              <h2 className="text-headline-lg font-headline text-on-surface mb-4">Browse by Life Situation</h2>
+              <p className="text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                Our guides are organized around real-life care situations — not clinical jargon. Find exactly what you need.
+              </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {guides.map((guide) => (
-                <Link key={guide.id} to={`/guides/${guide.slug}`} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all group">
-                  <div className="aspect-[16/9] bg-surface-container overflow-hidden">
-                    <img src={guide.hero_image_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[520px]">
+              {categoryCards.map((cat, i) => {
+                const Icon = cat.icon;
+                const count = ebooks.filter((e) => e.category === cat.key).length;
+                return (
+                  <Link
+                    key={cat.key}
+                    to={`/ebooks?category=${cat.key}`}
+                    className={`${cat.span} ${i === 0 ? 'md:row-span-2' : ''} bg-white rounded-[1rem] border border-slate-200 p-8 flex flex-col justify-between group cursor-pointer hover:border-secondary hover:shadow-md transition-all relative overflow-hidden`}
+                  >
+                    <div className="absolute -bottom-8 -right-8 w-32 h-32 rounded-full bg-secondary-container/30 group-hover:scale-150 transition-transform duration-700" />
+                    <div className="relative z-10 flex justify-between items-start">
+                      <div className="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center">
+                        <Icon size={24} />
+                      </div>
+                      {cat.span && (
+                        <span className="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-sm">Most Popular</span>
+                      )}
+                    </div>
+                    <div className="relative z-10">
+                      <h3 className={`text-headline-md font-headline text-on-surface mb-2 ${i === 0 ? 'text-headline-lg' : ''}`}>{cat.label}</h3>
+                      <p className="text-body-md text-on-surface-variant mb-3">{cat.description}</p>
+                      <span className="text-label-sm text-secondary flex items-center gap-1 group-hover:gap-2 transition-all">
+                        {count > 0 ? `${count} guide${count !== 1 ? 's' : ''}` : 'Browse guides'} <ArrowRight size={14} />
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="py-20 bg-surface-container-low">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-headline-lg font-headline text-on-surface mb-3">The Read + Use Formula</h2>
+              <p className="text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                Every guide follows the same simple approach: practical advice you can read in an evening, paired with printable sheets you can use the very next day.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { icon: BookOpen, title: 'Read the Guide', desc: '30-50 pages of plain-English, jargon-free advice written for real families and carers — not textbooks.' },
+                { icon: FileText, title: 'Print the Toolkit', desc: 'Every guide includes printable checklists, trackers, and templates. Stick them on the fridge or keep them in a handover folder.' },
+                { icon: Check, title: 'Use It Today', desc: 'No theory, no exams. Just practical steps you can apply on your next shift or the next time things get tough at home.' },
+              ].map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <div key={i} className="bg-white rounded-2xl p-8 border border-slate-200 text-center relative">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-label-sm font-bold">
+                      {i + 1}
+                    </div>
+                    <div className="w-14 h-14 rounded-2xl bg-secondary-container text-on-secondary-container flex items-center justify-center mx-auto mb-4 mt-2">
+                      <Icon size={28} />
+                    </div>
+                    <h3 className="text-headline-md font-headline font-semibold text-on-surface mb-2">{step.title}</h3>
+                    <p className="text-body-md text-on-surface-variant">{step.desc}</p>
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-label-md font-semibold text-on-surface mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                      {guide.title.replace(': Complete UK Guide 2026', '')}
-                    </h3>
-                    {guide.at_a_glance?.duration && (
-                      <p className="text-label-sm text-on-surface-variant flex items-center gap-1">
-                        <span className="material-symbols-outlined" style={{ fontSize: '12px' }}>schedule</span>
-                        {guide.at_a_glance.duration}
-                      </p>
-                    )}
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-headline-lg font-headline text-on-surface mb-4">Trusted by Families and Carers</h2>
+              <p className="text-body-md text-on-surface-variant">Real people, real care situations, real results.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {testimonials.map((t) => (
+                <div key={t.name} className="bg-surface-container-low rounded-2xl p-8 border border-slate-100">
+                  <div className="flex text-amber-400 mb-6">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <Star key={i} size={18} fill="currentColor" />
+                    ))}
                   </div>
-                </Link>
+                  <p className="text-body-lg text-on-surface mb-8 italic">"{t.text}"</p>
+                  <div className="flex items-center gap-4">
+                    <img alt={t.name} className="w-12 h-12 rounded-full object-cover" src={t.img} />
+                    <div>
+                      <h5 className="text-headline-md font-headline text-sm text-on-surface">{t.name}</h5>
+                      <p className="text-label-sm text-on-surface-variant">{t.role}</p>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
-      )}
 
-      {/* Community callout */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 overflow-hidden relative">
-            <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full" />
-            <div className="absolute -bottom-8 right-32 w-32 h-32 bg-white/5 rounded-full" />
-            <div className="flex-1 text-white relative z-10">
-              <span className="inline-block px-3 py-1 bg-white/15 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">Community Hub</span>
-              <h2 className="text-2xl sm:text-3xl font-bold mb-3 leading-tight">Have a question about your care career?</h2>
-              <p className="text-teal-100 text-sm sm:text-base leading-relaxed max-w-lg">
-                Get expert answers from the CareLearn team. Browse real Q&amp;As from care professionals, read in-depth articles, and ask anything — no account required.
-              </p>
+        {/* Community callout */}
+        <section className="py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 overflow-hidden relative">
+              <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/5 rounded-full" />
+              <div className="absolute -bottom-8 right-32 w-32 h-32 bg-white/5 rounded-full" />
+              <div className="flex-1 text-white relative z-10">
+                <span className="inline-block px-3 py-1 bg-white/15 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">Community Hub</span>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-3 leading-tight">Have a question about caring for someone?</h2>
+                <p className="text-teal-100 text-sm sm:text-base leading-relaxed max-w-lg">
+                  Get answers from the CareLearn community. Browse real Q&amp;As from families and carers, read in-depth articles, and ask anything — no account required.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0">
+                <Link to="/community?tab=qa" className="px-6 py-3 bg-white text-teal-700 text-sm font-semibold rounded-xl hover:bg-teal-50 transition-colors text-center">
+                  Ask a Question
+                </Link>
+                <Link to="/community?tab=blog" className="px-6 py-3 bg-white/15 border border-white/30 text-white text-sm font-semibold rounded-xl hover:bg-white/25 transition-colors text-center">
+                  Read Articles
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0">
-              <Link to="/community?tab=qa" className="px-6 py-3 bg-white text-teal-700 text-sm font-semibold rounded-xl hover:bg-teal-50 transition-colors text-center">
-                Ask a Question
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-20">
+          <div className="max-w-5xl mx-auto px-6 bg-primary rounded-[2rem] p-12 text-center text-on-primary relative overflow-hidden">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary opacity-30 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary-container opacity-20 rounded-full blur-3xl" />
+            <h2 className="text-headline-lg font-headline mb-6 relative z-10">Get your first free guide today</h2>
+            <p className="text-body-lg mb-10 text-blue-100 max-w-xl mx-auto relative z-10">
+              Join thousands of families and carers using CareLearn. Start with a free download — no sign-up required.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+              <Link to="/ebooks" className="bg-white text-primary px-8 py-4 rounded-xl text-label-md font-semibold hover:bg-blue-50 transition-all inline-flex items-center justify-center gap-2">
+                <Download size={18} /> Get Free Guide
               </Link>
-              <Link to="/community?tab=blog" className="px-6 py-3 bg-white/15 border border-white/30 text-white text-sm font-semibold rounded-xl hover:bg-white/25 transition-colors text-center">
-                Read Articles
+              <Link to="/ebooks" className="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl text-label-md font-semibold hover:bg-white/10 transition-all inline-flex items-center justify-center gap-2">
+                <BookOpen size={18} /> Browse All Guides
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="max-w-5xl mx-auto px-6 bg-primary rounded-[2rem] p-12 text-center text-on-primary relative overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary opacity-30 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary-container opacity-20 rounded-full blur-3xl" />
-          <h2 className="text-headline-lg font-headline mb-6 relative z-10">Ready to advance your healthcare career?</h2>
-          <p className="text-body-lg mb-10 text-blue-100 max-w-xl mx-auto relative z-10">
-            Join thousands of professionals already learning on CareLearn. Get started with your first course today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-            <Link to="/courses" className="bg-white text-primary px-8 py-4 rounded-xl text-label-md hover:bg-blue-50 transition-all">Get Started for Free</Link>
-            <Link to="/courses" className="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-xl text-label-md hover:bg-white/10 transition-all">Browse All Courses</Link>
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
     </>
   );
 }
-
-const coursePlaceholderImages = [
-  'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/7088530/pexels-photo-7088530.jpeg?auto=compress&cs=tinysrgb&w=800',
-  'https://images.pexels.com/photos/4421494/pexels-photo-4421494.jpeg?auto=compress&cs=tinysrgb&w=800',
-];
-
-const placeholderCourses: FreeCourse[] = [
-  { id: 'p1', course_title: 'Standard Precautions & PPE', description: '', duration_weeks: 2, qualification_level: 'L2', delivery_mode: 'online', cost_gbp: 0, funding_tags: ['free_courses'], provider: null },
-  { id: 'p2', course_title: 'Effective Communication in Care', description: '', duration_weeks: 4, qualification_level: 'L2', delivery_mode: 'online', cost_gbp: 0, funding_tags: ['free_courses'], provider: null },
-  { id: 'p3', course_title: 'Data Privacy & Compliance', description: '', duration_weeks: 1, qualification_level: 'L3', delivery_mode: 'online', cost_gbp: 0, funding_tags: ['free_courses'], provider: null },
-];

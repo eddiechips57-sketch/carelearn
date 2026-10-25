@@ -1,16 +1,16 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-export interface CourseClickData {
+export interface EbookViewData {
   title: string;
-  fundingTags: string[];
-  qualLevel: string;
+  slug: string;
+  category: string;
 }
 
 interface ClickTrackingContextType {
   clickCount: number;
-  recordedCourses: string[];
-  recordedCourseData: CourseClickData[];
-  recordCourseClick: (courseTitle: string, meta?: { fundingTags?: string[]; qualLevel?: string }) => void;
+  recordedEbooks: string[];
+  recordedEbookData: EbookViewData[];
+  recordEbookView: (title: string, meta?: { slug?: string; category?: string }) => void;
   resetClicks: () => void;
   shouldShowLeadCapture: boolean;
   dismissLeadCapture: () => void;
@@ -20,23 +20,23 @@ const ClickTrackingContext = createContext<ClickTrackingContextType | undefined>
 
 export function ClickTrackingProvider({ children }: { children: ReactNode }) {
   const [clickCount, setClickCount] = useState(0);
-  const [recordedCourses, setRecordedCourses] = useState<string[]>([]);
-  const [recordedCourseData, setRecordedCourseData] = useState<CourseClickData[]>([]);
+  const [recordedEbooks, setRecordedEbooks] = useState<string[]>([]);
+  const [recordedEbookData, setRecordedEbookData] = useState<EbookViewData[]>([]);
   const [shouldShowLeadCapture, setShouldShowLeadCapture] = useState(false);
   const [dismissedAt, setDismissedAt] = useState<number | null>(null);
 
-  const recordCourseClick = (courseTitle: string, meta?: { fundingTags?: string[]; qualLevel?: string }) => {
+  const recordEbookView = (title: string, meta?: { slug?: string; category?: string }) => {
     const newCount = clickCount + 1;
     setClickCount(newCount);
 
-    if (!recordedCourses.includes(courseTitle)) {
-      setRecordedCourses((prev) => [...prev, courseTitle]);
-      setRecordedCourseData((prev) => [
+    if (!recordedEbooks.includes(title)) {
+      setRecordedEbooks((prev) => [...prev, title]);
+      setRecordedEbookData((prev) => [
         ...prev,
         {
-          title: courseTitle,
-          fundingTags: meta?.fundingTags ?? [],
-          qualLevel: meta?.qualLevel ?? '',
+          title,
+          slug: meta?.slug ?? '',
+          category: meta?.category ?? '',
         },
       ]);
     }
@@ -56,8 +56,8 @@ export function ClickTrackingProvider({ children }: { children: ReactNode }) {
 
   const resetClicks = () => {
     setClickCount(0);
-    setRecordedCourses([]);
-    setRecordedCourseData([]);
+    setRecordedEbooks([]);
+    setRecordedEbookData([]);
     setShouldShowLeadCapture(false);
     setDismissedAt(null);
   };
@@ -66,9 +66,9 @@ export function ClickTrackingProvider({ children }: { children: ReactNode }) {
     <ClickTrackingContext.Provider
       value={{
         clickCount,
-        recordedCourses,
-        recordedCourseData,
-        recordCourseClick,
+        recordedEbooks,
+        recordedEbookData,
+        recordEbookView,
         resetClicks,
         shouldShowLeadCapture,
         dismissLeadCapture,

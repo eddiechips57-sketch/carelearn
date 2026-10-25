@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import HomePage from './pages/HomePage';
-import FindCourses from './pages/FindCourses';
+import EbookStore from './pages/EbookStore';
 import CareerGuides from './pages/CareerGuides';
 import FundingHub from './pages/FundingHub';
 import RoleLibrary from './pages/RoleLibrary';
@@ -26,7 +26,8 @@ export default function App() {
             <main className="flex-1">
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/courses" element={<FindCourses />} />
+                <Route path="/ebooks" element={<EbookStore />} />
+                <Route path="/courses" element={<EbookStore />} />
                 <Route path="/guides" element={<CareerGuides />} />
                 <Route path="/guides/:slug" element={<CareerGuides />} />
                 <Route path="/funding" element={<FundingHub />} />

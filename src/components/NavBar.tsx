@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 const navLinks = [
-  { label: 'Find Courses', path: '/courses' },
+  { label: 'Ebooks', path: '/ebooks' },
   { label: 'Career Guides', path: '/guides' },
   { label: 'Funding Hub', path: '/funding' },
   { label: 'Role Library', path: '/roles' },
@@ -52,7 +52,7 @@ export default function NavBar() {
                 CareLearn
               </span>
               <span className="text-[10px] font-medium text-brand-600 tracking-wider uppercase leading-none">
-                Learning Directory
+                Practical Care Guides
               </span>
             </div>
           </Link>
