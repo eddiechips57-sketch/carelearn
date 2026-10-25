@@ -1,0 +1,17 @@
+{
+  "projectId": "42260821",
+  "functions": {
+    "fetch-news": {
+      "hasChanged": false,
+      "hash": "806e6699383816d860291461e373822f7358bcc65f5db05a0b316b9254b9c61a"
+    },
+    "stripe-checkout": {
+      "hasChanged": false,
+      "hash": "2883f7d28de0f11579ddfcf021cf24ebfe5033f6252ef60f5462f2390a0448d2"
+    },
+    "stripe-webhook": {
+      "hasChanged": false,
+      "hash": "8f69a9e2be4e50be98dfce858a319f38bd1601a9932a1ad602e814eb4c404be5"
+    }
+  }
+}

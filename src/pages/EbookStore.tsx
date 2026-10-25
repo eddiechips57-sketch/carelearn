@@ -1,10 +1,12 @@
 import { useEffect, useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
+import { useAuth } from '../contexts/AuthContext';
 import { useClickTracking } from '../contexts/ClickTrackingContext';
+import { createCheckoutSession } from '../services/stripeCheckout';
 import LeadCapture from '../components/LeadCapture';
 import SEOHead from '../components/SEOHead';
-import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check } from 'lucide-react';
+import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check, Loader2, Lock, CheckCircle2, X } from 'lucide-react';
 
 interface Ebook {
   id: string;
@@ -16,6 +18,8 @@ interface Ebook {
   category: string;
   cover_image_url: string | null;
   price_gbp: number;
+  stripe_price_id: string | null;
+  pdf_url: string | null;
   page_count: number | null;
   format: string;
   target_audience: string[];
@@ -75,8 +79,24 @@ export default function EbookStore() {
   const [page, setPage] = useState(1);
   const [showLeadCapture, setShowLeadCapture] = useState(false);
   const [pendingReadSlug, setPendingReadSlug] = useState<string | null>(null);
+  const [checkoutSlug, setCheckoutSlug] = useState<string | null>(null);
+  const [checkoutError, setCheckoutError] = useState('');
+  const [toast, setToast] = useState<{ type: 'success' | 'cancel' | null; slug: string }>({ type: null, slug: '' });
+  const [searchParams, setSearchParams] = useSearchParams();
 
+  const { user } = useAuth();
   const { recordEbookView, recordedEbooks, recordedEbookData, shouldShowLeadCapture, dismissLeadCapture } = useClickTracking();
+
+  useEffect(() => {
+    const status = searchParams.get('checkout');
+    const slug = searchParams.get('slug');
+    if (status && slug) {
+      setToast({ type: status as 'success' | 'cancel', slug });
+      setSearchParams({}, { replace: true });
+      const timer = setTimeout(() => setToast({ type: null, slug: '' }), 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchParams, setSearchParams]);
 
   useEffect(() => {
     (async () => {
@@ -97,6 +117,15 @@ export default function EbookStore() {
   useEffect(() => {
     if (shouldShowLeadCapture) setShowLeadCapture(true);
   }, [shouldShowLeadCapture]);
+
+  useEffect(() => {
+    const buySlug = searchParams.get('buy');
+    if (!buySlug || !user || loading || ebooks.length === 0) return;
+    const target = ebooks.find((e) => e.slug === buySlug);
+    if (!target) return;
+    setSearchParams({}, { replace: true });
+    handleBuy(target);
+  }, [searchParams, user, loading, ebooks]);
 
   const toggle = (value: string, selected: string[], setter: (v: string[]) => void) => {
     setter(selected.includes(value) ? selected.filter((v) => v !== value) : [...selected, value]);
@@ -152,10 +181,30 @@ export default function EbookStore() {
     window.open(`/read/${ebook.slug}`, '_blank', 'noopener,noreferrer');
   };
 
-  const handleBuy = (ebook: Ebook) => {
+  const handleBuy = async (ebook: Ebook) => {
     recordEbookView(ebook.title, { slug: ebook.slug, category: ebook.category });
-    setPendingReadSlug(ebook.slug);
-    setShowLeadCapture(true);
+
+    if (!user) {
+      setPendingReadSlug(ebook.slug);
+      setShowLeadCapture(true);
+      return;
+    }
+
+    if (!ebook.stripe_price_id) {
+      setCheckoutError('This guide is not available for purchase yet.');
+      return;
+    }
+
+    setCheckoutSlug(ebook.slug);
+    setCheckoutError('');
+    try {
+      const { url } = await createCheckoutSession(ebook.stripe_price_id, ebook.slug);
+      window.location.href = url;
+    } catch (err) {
+      setCheckoutError(err instanceof Error ? err.message : 'Could not start checkout. Please try again.');
+    } finally {
+      setCheckoutSlug(null);
+    }
   };
 
   const handleCardView = (ebook: Ebook) => {
@@ -240,9 +289,16 @@ export default function EbookStore() {
                         ) : (
                           <button
                             onClick={() => handleBuy(ebook)}
-                            className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-on-primary bg-primary rounded-lg px-3 py-1.5 hover:bg-primary-container transition-all w-fit"
+                            disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
+                            className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-on-primary bg-primary rounded-lg px-3 py-1.5 hover:bg-primary-container transition-all w-fit disabled:opacity-60 disabled:cursor-not-allowed"
                           >
-                            <ShoppingBag size={14} /> Buy Now
+                            {checkoutSlug === ebook.slug ? (
+                              <><Loader2 size={14} className="animate-spin" /> Redirecting...</>
+                            ) : !ebook.stripe_price_id ? (
+                              <><Lock size={14} /> Coming Soon</>
+                            ) : (
+                              <><ShoppingBag size={14} /> Buy Now</>
+                            )}
                           </button>
                         )}
                       </div>
@@ -458,9 +514,16 @@ export default function EbookStore() {
                                 <button
                                   onClick={() => handleBuy(ebook)}
                                   onMouseEnter={() => handleCardView(ebook)}
-                                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary text-label-md font-semibold py-2.5 hover:bg-primary-container transition-all"
+                                  disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
+                                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary text-label-md font-semibold py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                  <ShoppingBag size={16} /> Buy Now — £{price.toFixed(2)}
+                                  {checkoutSlug === ebook.slug ? (
+                                    <><Loader2 size={16} className="animate-spin" /> Redirecting to checkout...</>
+                                  ) : !ebook.stripe_price_id ? (
+                                    <><Lock size={16} /> Coming Soon — £{price.toFixed(2)}</>
+                                  ) : (
+                                    <><ShoppingBag size={16} /> Buy Now — £{price.toFixed(2)}</>
+                                  )}
                                 </button>
                               )}
                             </div>
@@ -527,13 +590,66 @@ export default function EbookStore() {
             setShowLeadCapture(false);
             dismissLeadCapture();
             if (pendingReadSlug) {
-              window.open(`/read/${pendingReadSlug}`, '_blank', 'noopener,noreferrer');
+              window.location.href = `/login?redirect=/ebooks&buy=${pendingReadSlug}`;
               setPendingReadSlug(null);
             }
           }}
           recordedCourses={recordedEbooks}
           recordedCourseData={recordedEbookData.map((e) => ({ title: e.title, fundingTags: [], qualLevel: e.category }))}
         />
+
+        {checkoutError && (
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-md w-full px-4">
+            <div className="flex items-start gap-3 bg-white border border-rose-200 rounded-xl shadow-lg p-4">
+              <X size={20} className="text-rose-500 shrink-0 mt-0.5" />
+              <p className="text-sm text-slate-700 flex-1">{checkoutError}</p>
+              <button
+                onClick={() => setCheckoutError('')}
+                className="text-slate-400 hover:text-slate-600"
+                aria-label="Dismiss"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {toast.type && (
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-md w-full px-4">
+            <div className={`flex items-start gap-3 bg-white border rounded-xl shadow-lg p-4 ${toast.type === 'success' ? 'border-emerald-200' : 'border-amber-200'}`}>
+              {toast.type === 'success' ? (
+                <CheckCircle2 size={20} className="text-emerald-500 shrink-0 mt-0.5" />
+              ) : (
+                <X size={20} className="text-amber-500 shrink-0 mt-0.5" />
+              )}
+              <div className="flex-1">
+                <p className="text-sm font-semibold text-slate-800">
+                  {toast.type === 'success' ? 'Payment successful!' : 'Checkout cancelled'}
+                </p>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  {toast.type === 'success'
+                    ? 'Your guide is ready to read.'
+                    : 'Your card was not charged.'}
+                </p>
+                {toast.type === 'success' && (
+                  <button
+                    onClick={() => window.open(`/read/${toast.slug}`, '_blank', 'noopener,noreferrer')}
+                    className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline"
+                  >
+                    <BookOpen size={14} /> Open your guide
+                  </button>
+                )}
+              </div>
+              <button
+                onClick={() => setToast({ type: null, slug: '' })}
+                className="text-slate-400 hover:text-slate-600"
+                aria-label="Dismiss"
+              >
+                <X size={16} />
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

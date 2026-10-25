@@ -29,7 +29,15 @@ export default function Login() {
       if (mode === 'signin') {
         const { error } = await signIn(email, password);
         if (error) throw error;
-        navigate('/');
+        const buySlug = searchParams.get('buy');
+        const redirect = searchParams.get('redirect');
+        if (buySlug && redirect) {
+          navigate(`${redirect}?buy=${buySlug}`);
+        } else if (redirect) {
+          navigate(redirect);
+        } else {
+          navigate('/');
+        }
       } else if (mode === 'signup') {
         const { error } = await signUp(email, password, fullName);
         if (error) throw error;
