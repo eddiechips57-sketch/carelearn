@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import HomePage from './pages/HomePage';
 import EbookStore from './pages/EbookStore';
+import EbookReader from './pages/EbookReader';
 import CareerGuides from './pages/CareerGuides';
 import FundingHub from './pages/FundingHub';
 import RoleLibrary from './pages/RoleLibrary';
@@ -27,6 +28,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/ebooks" element={<EbookStore />} />
+                <Route path="/read/:slug" element={<EbookReader />} />
                 <Route path="/courses" element={<EbookStore />} />
                 <Route path="/guides" element={<CareerGuides />} />
                 <Route path="/guides/:slug" element={<CareerGuides />} />

@@ -74,6 +74,7 @@ export default function EbookStore() {
   const [sortBy, setSortBy] = useState<'popular' | 'newest' | 'shortest'>('popular');
   const [page, setPage] = useState(1);
   const [showLeadCapture, setShowLeadCapture] = useState(false);
+  const [pendingReadSlug, setPendingReadSlug] = useState<string | null>(null);
 
   const { recordEbookView, recordedEbooks, recordedEbookData, shouldShowLeadCapture, dismissLeadCapture } = useClickTracking();
 
@@ -148,11 +149,13 @@ export default function EbookStore() {
 
   const handleDownload = (ebook: Ebook) => {
     recordEbookView(ebook.title, { slug: ebook.slug, category: ebook.category });
-    setShowLeadCapture(true);
+    window.open(`/read/${ebook.slug}`, '_blank', 'noopener,noreferrer');
   };
 
   const handleBuy = (ebook: Ebook) => {
     recordEbookView(ebook.title, { slug: ebook.slug, category: ebook.category });
+    setPendingReadSlug(ebook.slug);
+    setShowLeadCapture(true);
   };
 
   const handleCardView = (ebook: Ebook) => {
@@ -520,7 +523,14 @@ export default function EbookStore() {
 
         <LeadCapture
           isOpen={showLeadCapture}
-          onClose={() => { setShowLeadCapture(false); dismissLeadCapture(); }}
+          onClose={() => {
+            setShowLeadCapture(false);
+            dismissLeadCapture();
+            if (pendingReadSlug) {
+              window.open(`/read/${pendingReadSlug}`, '_blank', 'noopener,noreferrer');
+              setPendingReadSlug(null);
+            }
+          }}
           recordedCourses={recordedEbooks}
           recordedCourseData={recordedEbookData.map((e) => ({ title: e.title, fundingTags: [], qualLevel: e.category }))}
         />
