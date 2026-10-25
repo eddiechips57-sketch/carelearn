@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Hands (£16.99) | carelearn.site eBook & Printable Mobility Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    /* Print-specific A4 eBook formatting */
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #059669;
+      background-color: #ecfdf5;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-emerald-500 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #5 of 13 • £16.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">Safe Hands — Back Safety, Transfers &amp; Personal Care (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Carer FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Videos
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Mobility Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £16.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £16.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-emerald-100 text-emerald-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #5 Storefront Kit • £16.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Unpaid family carers who never received professional manual handling training, and new care assistants needing clear, ergonomic biomechanics for daily transfers and bathing.</p>
+          <p class="mt-1"><strong>Catalog Price:</strong> £16.99 digital download on www.carelearn.site.</p>
+        </div>
+
+        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+          <p class="font-extrabold text-emerald-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-emerald-900">"Protect Your Back While Preserving Their Dignity: Exact Biomechanics and Step-by-Step Illustrated Guides for Bed Transfers, Sit-to-Stand Pivots, and Bathroom Care Without Injury."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The Spinal Lever Rule:</strong> Why bending from the waist with straight knees destroys disc health—and how the "nose over toes" principle makes lifting feel effortless.</li>
+            <li><strong>The Bed-to-Chair Pivot Masterclass:</strong> Exact foot placement, hip angling, and momentum control for safe transfers without pulling on weak arms or shoulders.</li>
+            <li><strong>Zero-Strain Bathroom &amp; Shower Protocols:</strong> How to wash, dress, and assist with toilet transfers safely in tight spaces without slipping or straining.</li>
+            <li><strong>Car &amp; Stair Navigation:</strong> Step-by-step mechanics for getting into saloon cars and managing single steps or stairs with a walking frame.</li>
+            <li><strong>4 Ready-to-Print Mobility Toolkits:</strong> Includes the Home Mobility &amp; Fall Audit, Daily Safe Practice Sign-Off Log, Personal Care Dignity Passport, and Carer Spinal Stretch Guide.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-emerald-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-emerald-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-emerald-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-emerald-400">.site</span></p>
+          <p class="text-xs text-emerald-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #5 • £16.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Spouses &amp; Frontline Care Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        Safe Hands
+      </h1>
+      <p class="text-lg sm:text-2xl text-emerald-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        How to Help with Bathing, Dressing, and Mobility Without Hurting Your Back
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-emerald-950/80 border border-emerald-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-emerald-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop risking chronic lower-back injury by guessing how to lift—learn professional ergonomic mechanics, weight-shifting, and transfer pivots that protect your spine while preserving your loved one's dignity.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-emerald-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="safeHandsGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#064e3b"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#safeHandsGrad)"/>
+
+          <!-- Warm Ergonomic Glow -->
+          <circle cx="300" cy="130" r="85" fill="#34d399" opacity="0.12"/>
+
+          <!-- Center: Ergonomic Pivot Stance Illustration -->
+          <circle cx="245" cy="95" r="18" fill="#fde68a"/>
+          <path d="M220 170 Q225 125 245 125 Q265 125 270 170 Z" fill="#059669"/>
+
+          <circle cx="365" cy="115" r="20" fill="#fde68a"/>
+          <path d="M335 200 Q340 140 365 140 Q390 140 395 200 Z" fill="#0d9488"/>
+
+          <!-- Stability Pivot Arrow -->
+          <path d="M275 150 Q310 120 330 160" stroke="#fde047" stroke-width="3.5" stroke-dasharray="6,4" fill="none" marker-end="url(#arrow)"/>
+          <text x="305" y="112" text-anchor="middle" fill="#fde047" font-size="10" font-weight="800">NOSE OVER TOES PIVOT</text>
+
+          <!-- Left: Spine Shield Badge -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">🛡️</text>
+          <text x="97" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">SPINE SAFE</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">BIOMECHANICS</text>
+
+          <!-- Right: Dignity Shield Badge -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">🤝</text>
+          <text x="502" y="142" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="900">ZERO STRAIN</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">DIGNIFIED CARE</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#ecfdf5" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Never lift with your back. Use your legs, your base of support, and body momentum."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-emerald-300 font-bold text-xs uppercase">HSE &amp; Manual Handling</p>
+          <p class="text-xs text-slate-300 mt-1">Aligned with UK Manual Handling Operations Regulations and NICE guidelines.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Spine lever rules, pivot angles, bed mobility, and car transfer arcs.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-sky-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">Fall audit, safe practice sign-off log, dignity passport &amp; carer stretches.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-emerald-800/60 pt-4 flex items-center justify-between text-xs text-emerald-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Safe Hands • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-emerald-100 text-emerald-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Introduction: The Hidden Carer Back Injury Crisis</span>
+            <span class="text-emerald-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Ch 1: The Biomechanics of Spine Safety (Lever Rules)</span>
+            <span class="text-emerald-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Ch 2: Bed Mobility: Turning &amp; Sitting Up Safely</span>
+            <span class="text-emerald-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Ch 3: The Sit-to-Stand Pivot Transfer Masterclass</span>
+            <span class="text-emerald-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Ch 4: Bathroom &amp; Shower Transfers Without Slips</span>
+            <span class="text-emerald-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Ch 5: Dressing, Stairs &amp; Car Transfer Navigation</span>
+            <span class="text-emerald-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-emerald-800 underline decoration-emerald-300">Ch 6: 4 Real-World Mobility Flashpoint Playbooks</span>
+            <span class="text-emerald-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Hoists &amp; Falling)</span>
+            <span class="text-emerald-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-emerald-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-emerald-900 group-hover:text-emerald-950 underline decoration-emerald-300">Toolkit 1: Home Mobility &amp; Fall Audit Sheet</span>
+            <span class="text-emerald-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-emerald-900 group-hover:text-emerald-950 underline decoration-emerald-300">Toolkit 2: Daily Manual Handling Sign-Off Log</span>
+            <span class="text-emerald-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-emerald-900 group-hover:text-emerald-950 underline decoration-emerald-300">Toolkit 3 &amp; 4: Dignity Passport &amp; Carer Stretches</span>
+            <span class="text-emerald-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Protecting Your Back &amp; Their Dignity</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Hidden Carer Back Injury Crisis (And How to Prevent It)</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        Every single day across the UK and worldwide, thousands of family carers and frontline support workers wake up with sharp lower-back pain. Because most unpaid family carers never receive professional training, they instinctively try to help a frail spouse or parent up from a deep sofa by bending at the waist and pulling under their arms.
+      </p>
+      <p>
+        Within months, that "deadlift" style hauling causes chronic lumbar disc bulges, muscle spasms, and carer burnout. In professional care, lifting with your back violates core health and safety regulations.
+      </p>
+
+      <div class="bg-emerald-50 border-l-4 border-emerald-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-emerald-950 text-sm">
+          The Golden Rule of Biomechanics: Never lift someone's dead weight. Use their remaining movement, body momentum, and leverage to help them help themselves.
+        </p>
+        <p class="text-xs text-emerald-900 mt-1">
+          When you use proper positioning—such as the <strong>"nose over toes"</strong> stance and rocking momentum—a 12-stone adult can pivot from a bed to a chair with remarkably little physical strain on your spine.
+        </p>
+      </div>
+
+      <p>
+        This playbook translates professional manual handling standards—including <a href="https://www.hse.gov.uk/toolbox/manual.htm" target="_blank" rel="noopener noreferrer" class="text-emerald-700 font-bold underline hover:text-emerald-900">HSE Manual Handling Regulations ↗</a>, <a href="https://www.nice.org.uk/guidance/ng222" target="_blank" rel="noopener noreferrer" class="text-emerald-700 font-bold underline hover:text-emerald-900">NICE Guideline NG222 (Falls Assessment &amp; Prevention) ↗</a>, and <a href="https://www.rcot.co.uk/" target="_blank" rel="noopener noreferrer" class="text-emerald-700 font-bold underline hover:text-emerald-900">Royal College of Occupational Therapists (RCOT) transfer guides ↗</a>—into clear, illustrated steps you can use today.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — BIOMECHANICS & SPINE SAFETY
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • Biomechanics &amp; Spine Safety</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Biomechanics of Spine Safety: Why Leaning Destroys Discs</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Your spine acts as a crane. When you hold an object (or lean over to help someone) close to your body, the load on your lower back discs is manageable. But the moment you reach out with straight knees and bend from your waist, your spine becomes a first-class lever—multiplying the pressure on your lower lumbar discs (L4-L5) by **up to 10 times** the weight you are lifting.
+    </p>
+
+    <!-- Custom SVG Illustration: Spine Lever Arm & The "Nose Over Toes" Rule -->
+    <div class="bg-emerald-50/60 border border-emerald-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-emerald-950 text-xs uppercase tracking-wider text-center mb-2">Visual Diagram: The Dangerous Spinal Lever vs. The Safe "Nose Over Toes" Stance</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left Box: Wrong Way (Deadlifting with Straight Knees) -->
+        <rect x="10" y="8" width="310" height="140" rx="10" fill="#fff1f2" stroke="#f43f5e" stroke-width="2"/>
+        <text x="165" y="28" text-anchor="middle" fill="#9f1239" font-size="11" font-weight="800">❌ DANGEROUS: BENDING AT THE WAIST</text>
+        <circle cx="120" cy="65" r="14" fill="#fca5a5"/>
+        <!-- Curved back line -->
+        <path d="M110 80 Q150 90 135 125" stroke="#e11d48" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <text x="165" y="65" fill="#881337" font-size="9.5">• Massive disc compression (10x load)</text>
+        <text x="165" y="82" fill="#881337" font-size="9.5">• Straight locked knees</text>
+        <text x="165" y="99" fill="#881337" font-size="9.5">• Pulling under weak armpits</text>
+        <rect x="25" y="118" width="280" height="22" rx="5" fill="#e11d48"/>
+        <text x="165" y="133" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">Result: Lumbar disc herniation &amp; spasm</text>
+
+        <!-- Right Box: Safe Way (Nose Over Toes & Wide Base) -->
+        <rect x="340" y="8" width="310" height="140" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+        <text x="495" y="28" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">✅ SAFE: WIDE BASE &amp; NOSE OVER TOES</text>
+        <circle cx="480" cy="55" r="14" fill="#a7f3d0"/>
+        <!-- Straight vertical spine bending at knees -->
+        <path d="M480 70 L475 110" stroke="#059669" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <text x="525" y="55" fill="#065f46" font-size="9.5">• Wide base of support (feet apart)</text>
+        <text x="525" y="72" fill="#065f46" font-size="9.5">• Knees bent, back straight</text>
+        <text x="525" y="89" fill="#065f46" font-size="9.5">• Nose forward over toes to stand</text>
+        <rect x="355" y="118" width="280" height="22" rx="5" fill="#059669"/>
+        <text x="495" y="133" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">Result: Effortless leg drive &amp; zero spine strain</text>
+      </svg>
+    </div>
+
+    <!-- 3 Biomechanics Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📐 Get Close</strong>
+        Never twist your spine while holding weight. If you need to turn, move your feet in small steps rather than swiveling your waist.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🦵 Drive with Legs</strong>
+        Use the strongest muscles in your body (your thighs and glutes) to push upward, not your lower back muscles.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1>⏱️ Communicate First</strong>
+        Always count <em>"1, 2, 3, up"</em> so both you and the person move in synchronized harmony using body momentum.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — BED MOBILITY (TURNING & SITTING UP)
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Bed Mobility &amp; Turning</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Bed Mobility: How to Turn Someone and Sit Them Up Without Hauling</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Trying to pull a heavy person straight up from a flat lying position in bed requires immense brute force. Instead, use the **"Log Roll &amp; Leg Drop" technique** (endorsed by occupational therapists). By rolling them onto their side first and using their legs as a counterweight, gravity does 80% of the work.
+    </p>
+
+    <!-- Custom SVG Illustration: Bed Log Roll & Leg Drop Blueprint -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-emerald-300 text-xs uppercase tracking-wider text-center mb-2.5">Visual Protocol: The 3-Step Bed-to-Sitting Momentum Sequence</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Step 1 -->
+        <rect x="8" y="10" width="204" height="125" rx="10" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+        <text x="110" y="32" text-anchor="middle" fill="#34d399" font-size="11" font-weight="800">1. SLIDE TO EDGE</text>
+        <text x="110" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Bend their knees up.</text>
+        <text x="110" y="68" text-anchor="middle" fill="#cbd5e1" font-size="9">Support shoulders and hips</text>
+        <text x="110" y="82" text-anchor="middle" fill="#cbd5e1" font-size="9">to slide them gently toward</text>
+        <text x="110" y="96" text-anchor="middle" fill="#cbd5e1" font-size="9">the side of the bed nearest you.</text>
+
+        <!-- Step 2 -->
+        <rect x="228" y="10" width="204" height="125" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+        <text x="330" y="32" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="800">2. THE LOG ROLL</text>
+        <text x="330" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Roll them onto their side</text>
+        <text x="330" y="68" text-anchor="middle" fill="#d1fae5" font-size="9">facing toward you. Keep</text>
+        <text x="330" y="82" text-anchor="middle" fill="#d1fae5" font-size="9">spine aligned like a log;</text>
+        <text x="330" y="96" text-anchor="middle" fill="#d1fae5" font-size="9">never twist hips/shoulders apart.</text>
+
+        <!-- Step 3 -->
+        <rect x="448" y="10" width="204" height="125" rx="10" fill="#134e4a" stroke="#5eead4" stroke-width="2"/>
+        <text x="550" y="32" text-anchor="middle" fill="#5eead4" font-size="11" font-weight="800">3. LEG DROP &amp; SIT</text>
+        <text x="550" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Swing their legs over the edge</text>
+        <text x="550" y="68" text-anchor="middle" fill="#ccfbf1" font-size="9">first (gravity pulls torso up),</text>
+        <text x="550" y="82" text-anchor="middle" fill="#ccfbf1" font-size="9">then push gently up on their</text>
+        <text x="550" y="96" text-anchor="middle" fill="#ccfbf1" font-size="9">shoulder as they sit upright.</text>
+      </svg>
+    </div>
+
+    <!-- 2 Bed Mobility Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛌 Use a Satin Slide Sheet</strong>
+        If someone has limited mobility, placing a slippery satin slide sheet underneath their hips reduces friction by 90%—allowing you to turn them with one hand without pulling their skin.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛑 Never Pull Under Armpits</strong>
+        Pulling someone up in bed by hooking your hands under their armpits damages the shoulder joint and rotator cuff. Always support from hips and shoulders.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — SIT-TO-STAND PIVOT MASTERCLASS
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • The Sit-to-Stand Pivot Transfer</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Sit-to-Stand Pivot Transfer Masterclass</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      The sit-to-stand transfer from a bed to a commode or armchair is the most frequent movement you will perform. Master this 4-step choreography to make it smooth, safe, and dignified every single time.
+    </p>
+
+    <!-- Custom SVG Illustration: Sit-to-Stand Pivot Steps -->
+    <div class="bg-teal-50/70 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Step-by-Step Visual Blueprint: The 4-Step Sit-to-Stand Pivot</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Step 1 -->
+        <rect x="8" y="10" width="150" height="125" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="83" y="32" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">1. FEET BACK</text>
+        <text x="83" y="52" text-anchor="middle" fill="#334155" font-size="9">Get their feet flat on the</text>
+        <text x="83" y="66" text-anchor="middle" fill="#334155" font-size="9">floor slightly behind their</text>
+        <text x="83" y="80" text-anchor="middle" fill="#334155" font-size="9">knees so they can lean</text>
+        <text x="83" y="94" text-anchor="middle" fill="#334155" font-size="9">their weight forward.</text>
+
+        <!-- Step 2 -->
+        <rect x="172" y="10" width="150" height="125" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="247" y="32" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">2. NOSE OVER TOES</text>
+        <text x="247" y="52" text-anchor="middle" fill="#334155" font-size="9">Count 1, 2, 3 and rock</text>
+        <text x="247" y="66" text-anchor="middle" fill="#334155" font-size="9">their nose forward over</text>
+        <text x="247" y="80" text-anchor="middle" fill="#334155" font-size="9">their toes to shift center</text>
+        <text x="247" y="94" text-anchor="middle" fill="#334155" font-size="9">of gravity over their feet.</text>
+
+        <!-- Step 3 -->
+        <rect x="336" y="10" width="150" height="125" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="411" y="32" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">3. DRIVE UP</text>
+        <text x="411" y="52" text-anchor="middle" fill="#334155" font-size="9">Block their knees gently</text>
+        <text x="411" y="66" text-anchor="middle" fill="#334155" font-size="9">with your knees if needed,</text>
+        <text x="411" y="80" text-anchor="middle" fill="#334155" font-size="9">and drive upward using</text>
+        <text x="411" y="94" text-anchor="middle" fill="#334155" font-size="9">their leg strength.</text>
+
+        <!-- Step 4 -->
+        <rect x="500" y="10" width="152" height="125" rx="10" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <text x="576" y="32" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">4. PIVOT &amp; SIT</text>
+        <text x="576" y="52" text-anchor="middle" fill="#047857" font-size="9">Once standing tall, pivot</text>
+        <text x="576" y="66" text-anchor="middle" fill="#047857" font-size="9">together in small steps</text>
+        <text x="576" y="80" text-anchor="middle" fill="#047857" font-size="9">until their legs touch the</text>
+        <text x="576" y="94" text-anchor="middle" fill="#047857" font-size="9">chair, then guide down.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Pivot Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🪑 Check the Target Chair</strong>
+        Ensure the destination chair or wheelchair is locked (brakes on!) and positioned at a 45-degree angle before you start moving.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👖 Use a Handling Belt</strong>
+        If someone has weak balance, use a padded handling (gait) belt around their waist—never grab their clothing loops or belt loops.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛑 Stop If Dizzy</strong>
+        If they feel lightheaded when standing, pause for 30 seconds before pivoting to prevent a drop in blood pressure.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — BATHROOM & SHOWER TRANSFERS
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Bathroom &amp; Shower Safety</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Bathroom and Shower Transfers Without Slips or Strains</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Bathrooms are the #1 location for domestic slips and falls because of hard ceramic tiles, water, and tight twisting spaces. Follow these occupational therapy bathroom standards to keep transfers safe and slip-free.
+    </p>
+
+    <!-- Custom SVG Illustration: Bathroom Safety Layout -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Environmental Blueprint: Essential Bathroom Equipment Layout</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grab Rails -->
+        <rect x="15" y="15" width="195" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="112" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">1. GRAB RAILS</text>
+        <text x="112" y="58" text-anchor="middle" fill="#334155" font-size="9">Fit vertical grab rails beside</text>
+        <text x="112" y="72" text-anchor="middle" fill="#334155" font-size="9">toilet and shower entry; hori-</text>
+        <text x="112" y="86" text-anchor="middle" fill="#334155" font-size="9">zontal rails are harder to grip</text>
+        <text x="112" y="100" text-anchor="middle" fill="#334155" font-size="9">when pushing up from sitting.</text>
+
+        <!-- Shower Stool -->
+        <rect x="232" y="15" width="195" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">2. SHOWER STOOL / BENCH</text>
+        <text x="330" y="58" text-anchor="middle" fill="#334155" font-size="9">Never let a frail person stand</text>
+        <text x="330" y="72" text-anchor="middle" fill="#334155" font-size="9">in a slippery shower cubicle.</text>
+        <text x="330" y="86" text-anchor="middle" fill="#334155" font-size="9">Use a non-slip shower stool with</text>
+        <text x="330" y="100" text-anchor="middle" fill="#334155" font-size="9">suction rubber feet.</text>
+
+        <!-- Raised Toilet Seat -->
+        <rect x="450" y="15" width="195" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="547" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">3. RAISED TOILET FRAME</text>
+        <text x="547" y="58" text-anchor="middle" fill="#334155" font-size="9">Standard toilets are too low.</text>
+        <text x="547" y="72" text-anchor="middle" fill="#334155" font-size="9">A raised seat + frame gives</text>
+        <text x="547" y="86" text-anchor="middle" fill="#334155" font-size="9">arm support and cuts squat</text>
+        <text x="547" y="100" text-anchor="middle" fill="#334155" font-size="9">effort in half.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Bathroom Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚿 Handheld Shower Hose</strong>
+        Install a long shower hose so you can wash them comfortably while they are seated safely on the shower stool.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🧼 Non-Slip Mats Inside &amp; Out</strong>
+        Place rubber non-slip suction mats both inside the shower tray and directly on the floor where they step out.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚪 Leave Door Ajar</strong>
+        For privacy combined with safety, use a lightweight privacy screen or keep the door slightly ajar so you can hear if they call out.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — DRESSING, STAIRS & CAR TRANSFERS
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Dressing, Stairs &amp; Car Transfers</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Dressing, Single Steps, Stairs and Car Transfer Navigation</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Beyond the bedroom and bathroom, daily outings (doctor visits, family trips) and navigating front-door steps require specific techniques to avoid twisting ankles or straining your back.
+    </p>
+
+    <!-- Custom SVG Illustration: Car Transfer & Stair Rules -->
+    <div class="bg-indigo-50/70 border border-indigo-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-indigo-950 text-xs uppercase tracking-wider text-center mb-2">Visual Guide: The Car Transfer "Seat-First" Arc &amp; Stair Climbing Rule</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Car Transfer -->
+        <rect x="15" y="15" width="310" height="115" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="170" y="38" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">🚗 CAR TRANSFER: SEAT FIRST</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">1. Park close to curb; recline car seat back.</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">2. Back up to car seat; sit down FIRST.</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">3. Pivot legs together into footwell last.</text>
+        <text x="30" y="106" fill="#e11d48" font-size="9" font-weight="700">❌ Never step into car head-first (fall risk)!</text>
+
+        <!-- Stairs -->
+        <rect x="340" y="15" width="305" height="115" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="492" y="38" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">📈 STAIRS: "UP WITH GOOD, DOWN WITH BAD"</text>
+        <text x="355" y="58" fill="#334155" font-size="9.5"><strong>Going UP:</strong> Step up with stronger/good leg first,</text>
+        <text x="355" y="72" fill="#334155" font-size="9.5">then bring weaker leg up to the same step.</text>
+        <text x="355" y="92" fill="#334155" font-size="9.5"><strong>Going DOWN:</strong> Step down with weaker/bad leg</text>
+        <text x="355" y="106" fill="#334155" font-size="9.5">first, holding handrail firmly.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Quick Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🪞 Swivel Cushion in Car</strong>
+        A fabric car swivel cushion placed on the car seat allows you to pivot someone's legs effortlessly into the car without friction.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🩳 Sit-Down Dressing</strong>
+        Always dress someone from a seated position on the bed or chair—never try to put trousers or shoes on while they are standing.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚶 One Step Behind</strong>
+        When walking with someone using a frame, walk just behind and to their side holding their handling belt, never in front pulling them.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD MOBILITY PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Mobility Playbooks</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Slips, Stalls &amp; Tight Spaces</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-emerald-900 block text-sm mb-1">Playbook 1: They Start Sliding Down in the Armchair</strong>
+        Never hook your hands under their armpits to haul them back up (that crushes their shoulders). Instead, ask them to lean forward slightly, place your hands behind their hips, and rock them backward while pressing your knee gently against the front of their cushion to slide them securely back in place.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-emerald-900 block text-sm mb-1">Playbook 2: Freezing Mid-Stride in a Narrow Hallway</strong>
+        If someone with Parkinson's or mobility anxiety "freezes" and their feet won't move, never push or yell <em>"Walk!"</em> Instead, place your foot gently in front of theirs as a visual target, count <em>"1, 2, step over,"</em> or gently tap a rhythmic beat with your foot.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-emerald-900 block text-sm mb-1">Playbook 3: Safely Recovering After a Slow, Uninjured Slide to the Floor</strong>
+        If someone slips down gently onto a carpeted floor and is unhurt, do not panic or attempt a deadlift. Bring a firm chair nearby, have them roll onto their hands and knees (or sit), and use the chair seat for leverage while you support their hips.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-emerald-900 block text-sm mb-1">Playbook 4: Overcoming Fear and Refusal to Move</strong>
+        If fear of falling makes them refuse to stand, never force them. Sit down knee-to-knee at eye level, validate their fear (<em>"It feels scary after a fall, I know"</em>), and break the movement into tiny micro-steps: <em>"Just slide your feet forward first... that's it."</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Mobility Carer FAQs</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Lifting, Hoists &amp; Mobility: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions family carers and care staff ask about safe transfers and protecting their backs:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "When is a person too heavy or unstable for me to transfer without a hoist?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          If you feel your lower back rounding, your knees shaking, or you have to haul their dead weight rather than guiding their pivot, **stop immediately**. Under HSE manual handling rules, you should never attempt to lift more than you can comfortably manage. Contact your GP, District Nurse, or Social Services Occupational Therapist urgently for an assessment and free provision of a mobile hoist, sling, or Sara Stedy.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "My family member keeps trying to get out of bed unaided at night despite high fall risk—what can we do?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Instead of physical restraints (which are illegal and dangerous), fit a wireless **bed exit sensor mat** on the floor beside the bed or under the mattress sheet that triggers an alert chime in your room. Also ensure their pathway to the commode is free of obstacles with motion-activated nightlights.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "How do I get an Occupational Therapist (OT) to assess our house for free ramps and rails?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Contact your local council's **Adult Social Care / Occupational Therapy Department** and request a free Care Act Needs Assessment. They will send an OT to your home to evaluate mobility needs and install grab rails, stair rails, or ramps free of charge or via a Disabled Facilities Grant (DFG).
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "What shoes should an elderly or frail person wear indoors to prevent slips?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Never let them walk in smooth socks, tights, or backless slippers (which cause over 40% of indoor falls). Provide **enclosed, well-fitting velcro shoes with deep tread rubber soles** or specialist non-slip grip socks.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "How can I protect my wrists and thumbs when helping someone push up from a chair?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Avoid letting someone pull directly on your fingers or wrists (which strains your carpal tendons). Instead, have them place their hands on the sturdy arms of the chair or use a padded handling belt around their waist for your grip.
+        </p>
+      </div>
+
+      <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+        <h4 class="font-bold text-emerald-950">6. "What should I do if I experience a sudden sharp back spasm while helping someone?"</h4>
+        <p class="text-emerald-900 mt-1 leading-relaxed">
+          Stop moving immediately, lower the person safely to the nearest chair or bed, and do not try to "push through it." Lie flat on your back on the floor with your knees bent over cushions for 15 minutes, take gentle anti-inflammatories if prescribed, and call NHS 111 or your GP if pain persists.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-emerald-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-emerald-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, Equipment Loan &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to watch professional manual handling demonstrations, borrow mobility aids, or read official health and safety regulations.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Video Demonstrations &amp; Practical Support Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.hse.gov.uk/toolbox/manual.htm" target="_blank" rel="noopener noreferrer" class="block border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded">HSE UK Safety Executive</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Manual Handling at Work: Employer &amp; Carer Guidelines ↗</h4>
+        <p class="text-slate-600 mt-1">Official UK Health and Safety Executive standards on lifting posture, risk assessment, and avoiding musculoskeletal injury.</p>
+      </a>
+
+      <a href="https://www.rcot.co.uk/getting-the-right-equipment-home" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">Royal College of Occupational Therapists</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Getting the Right Equipment at Home &amp; OT Assessment Hub ↗</h4>
+        <p class="text-slate-600 mt-1">Expert guides on home adaptations, grab rails, stairlifts, and safe transfer techniques from professional OTs.</p>
+      </a>
+
+      <a href="https://www.redcross.org.uk/get-help/hire-a-wheelchair" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">British Red Cross</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Short-Term Mobility Equipment Hire (Commodes, Frames &amp; Hoists) ↗</h4>
+        <p class="text-slate-600 mt-1">Find local hire centres for wheelchairs, walking frames, commodes, and bed rails for home recovery.</p>
+      </a>
+
+      <a href="https://www.ageuk.org.uk/information-advice/care/housing/home-adaptations/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">Age UK Care Advice</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Home Adaptations, Grants &amp; Fall Prevention Guide ↗</h4>
+        <p class="text-slate-600 mt-1">How to apply for council grants, free home safety assessments, and minor adaptation funding.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Clinical &amp; Safety Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. Manual Handling Operations Regulations 1992 (MHOR):</strong> <em>UK Statutory Regulations on avoiding hazardous manual handling and ergonomic risk assessments.</em> <a href="https://www.legislation.gov.uk/uksi/1992/2793/contents/made" target="_blank" class="text-emerald-700 font-semibold underline">View Legislation ↗</a>
+        </li>
+        <li>
+          <strong>2. NICE Guideline NG222:</strong> <em>Falls in older people: assessing risk and prevention (Home hazard assessment and multi-factorial intervention).</em> <a href="https://www.nice.org.uk/guidance/ng222" target="_blank" class="text-emerald-700 font-semibold underline">View NICE NG222 ↗</a>
+        </li>
+        <li>
+          <strong>3. Society of Tissue Viability &amp; RCOT:</strong> <em>The use of slide sheets and friction-reducing devices in patient handling and bed mobility.</em>
+        </li>
+        <li>
+          <strong>4. Chartered Society of Physiotherapy (CSP):</strong> <em>Carer Back Care and Spine Biomechanics Ergonomic Standards.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-emerald-300 text-xs uppercase tracking-wider mb-2">📞 Free Mobility &amp; Carer Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Age UK Advice Line (7 days):</strong> 0800 678 1602</div>
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>Disabled Living Foundation (DLF):</strong> 0300 999 0004</div>
+        <div>• <strong>NHS Non-Emergency Medical Advice:</strong> Call 111</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — HOME MOBILITY & FALL AUDIT
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-emerald-600">
+    <div class="flex items-center justify-between border-b-2 border-emerald-600 pb-3 mb-4">
+      <div>
+        <span class="bg-emerald-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Room-by-Room Fall Hazard Audit</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Home Mobility &amp; Fall Prevention Safety Checklist</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-emerald-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-emerald-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Audit Conducted For (Name):</label>
+        <input type="text" placeholder="e.g., Margaret Miller" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Property Address / Room:</label>
+        <input type="text" placeholder="e.g., Ground Floor Flat" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Date Checked:</label>
+        <input type="text" placeholder="DD/MM/YYYY" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+      <!-- Part A: Hallways & Living Room -->
+      <div class="border-2 border-emerald-500 rounded-xl p-4 bg-emerald-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-emerald-950 text-sm uppercase border-b border-emerald-200 pb-1.5">Part A: Hallways &amp; Living Room</h3>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>All Scatter Rugs Removed:</strong> No loose mats or frayed carpet edges in walking paths.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Trailing Cables Taped:</strong> Lamp and phone wires secured flat against skirting boards.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Lighting Check:</strong> 100-watt equivalent bulbs in hallways and stairs with easy-reach bedside lamps.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Armchair Height:</strong> Chair is high enough with firm arms so knees are at 90 degrees when sitting.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Clear Walkways:</strong> At least 1.2 metres of clear floor width for walking frames or sticks.</span></label>
+      </div>
+
+      <!-- Part B: Bathroom & Bedroom -->
+      <div class="border-2 border-teal-500 rounded-xl p-4 bg-teal-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase border-b border-teal-200 pb-1.5">Part B: Bathroom &amp; Bedroom</h3>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Grab Rails Fitted:</strong> Vertical grab rail by toilet and shower entry securely anchored.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Non-Slip Mats:</strong> Suction rubber mats inside shower tray and outside bath/shower.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Raised Toilet Seat:</strong> Fitted if standard toilet is too low for easy sit-to-stand.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Bed Height &amp; Exit:</strong> Bed is correct knee height with clear path to commode/bathroom.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Footwear Audit:</strong> Enclosed velcro shoes or grip socks worn (no backless slippers).</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — DAILY MANUAL HANDLING SIGN-OFF LOG
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Safe Transfer Sign-Off</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Daily Manual Handling &amp; Transfer Sign-Off Log</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      Use this 7-day log to record daily transfers (bed to chair, toilet, or wheelchair) and confirm that equipment brakes and handling belts were used correctly.
+    </p>
+
+    <!-- Fillable Handling Log Table -->
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Day &amp; Date</th>
+            <th class="p-2 w-2/6 border-r border-slate-700">Transfer Type (Bed / Chair / Toilet / Car)</th>
+            <th class="p-2 w-1/6 border-r border-slate-700">Equipment Used (Belt / Slide Sheet / Hoist)</th>
+            <th class="p-2 text-center bg-teal-900">Carer Initials &amp; Safety Check<br/><span class="text-[10px] font-normal">Brakes locked? Posture checked?</span></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr class="bg-slate-50 text-slate-500 italic">
+            <td class="p-2 border-r border-slate-300 font-semibold">Example: Mon AM</td>
+            <td class="p-2 border-r border-slate-300">Bed to Armchair Pivot</td>
+            <td class="p-2 border-r border-slate-300">Gait Belt + Slide Sheet</td>
+            <td class="p-2 text-center font-bold text-emerald-800">JS (Checked ✓)</td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Monday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Transfer details..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Equipment used..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials & ✓"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Tuesday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Transfer details..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Equipment used..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials & ✓"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Wednesday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Transfer details..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Equipment used..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials & ✓"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Thursday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Transfer details..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Equipment used..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials & ✓"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Friday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Transfer details..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Equipment used..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials & ✓"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — DIGNITY PASSPORT & CARER STRETCHES
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Dignity Passport &amp; Spinal Care</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Personal Care Dignity Passport + Carer Spinal Stretches</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-emerald-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-emerald-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: Dignity & Mobility Passport -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Toolkit #3: Personal Care &amp; Mobility Dignity Passport</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-emerald-900 font-bold block mb-1">1. How They Prefer to Be Moved &amp; Counted In:</span>
+          <textarea rows="2" placeholder="e.g., Always count '1, 2, 3, stand' clearly; prefers right arm supported..." class="w-full bg-transparent border-b border-slate-300 text-slate-900 mt-1 focus:outline-none"></textarea>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-emerald-900 font-bold block mb-1">2. Bathroom &amp; Dressing Preferences:</span>
+          <textarea rows="2" placeholder="e.g., Prefers seated strip wash; keep towel draped over shoulders..." class="w-full bg-transparent border-b border-slate-300 text-slate-900 mt-1 focus:outline-none"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Carer Spinal Relief Stretches -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-emerald-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Carer Ergonomic Spine Relief Stretches</span>
+        <span class="text-xs text-slate-300">Do After Every Heavy Shift</span>
+      </div>
+      <p class="text-[11px] text-slate-300 mb-3">
+        Protect your lower back by performing these 3 gentle stretches at the end of each day or shift:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-emerald-300 font-bold block">1. Knee-to-Chest Hug:</span>
+          <p class="text-slate-300 mt-1">Lie on your back, pull both knees gently into your chest for 20 seconds to decompress lower lumbar discs.</p>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">2. Cat-Cow Spine Stretch:</span>
+          <p class="text-slate-300 mt-1">On hands and knees, gently arch your back upward like a cat, then dip downward slowly 5 times.</p>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-sky-300 font-bold block">3. Standing Hip Flexor Stretch:</span>
+          <p class="text-slate-300 mt-1">Step one foot forward and lunge slightly while keeping your torso upright to stretch tight hip muscles.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #5 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

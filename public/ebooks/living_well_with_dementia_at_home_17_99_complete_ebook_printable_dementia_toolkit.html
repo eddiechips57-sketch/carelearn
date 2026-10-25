@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Living Well with Dementia at Home (£17.99) | carelearn.site eBook & Printable Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    /* Print-specific A4 eBook formatting */
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #d97706;
+      background-color: #fffbeb;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-amber-500 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #4 of 13 • £17.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">Living Well with Dementia at Home — Sundowning, Wandering &amp; Care (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Dementia FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Videos
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Signs &amp; Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £17.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £17.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-amber-100 text-amber-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #4 Storefront Kit • £17.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Spouses, adult children, and domiciliary/care home workers supporting a loved one with Alzheimer's, vascular dementia, or Lewy body dementia experiencing evening agitation ("sundowning"), exit-seeking, or personal care refusal.</p>
+          <p class="mt-1"><strong>Catalog Price:</strong> £17.99 digital download on www.carelearn.site.</p>
+        </div>
+
+        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+          <p class="font-extrabold text-amber-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-amber-900">"End the Heartbreaking 4 PM Arguments: Exact Word-for-Word Scripts and Home Adaptations for When a Loved One Wants to 'Go Home,' Refuses a Wash, or Paces at Night."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The VERA Validation Scripts:</strong> Exactly what to say when they ask for a deceased relative, accuse someone of stealing their purse, or beg to "go home" when they are already in their living room.</li>
+            <li><strong>The 2:00 PM Sundowning Reset Clock:</strong> How lighting, shadow removal, and afternoon blood-sugar snacks stop 4:30 PM agitation before it starts.</li>
+            <li><strong>The "Towel-Under-Towel" Bathing Technique:</strong> How to help someone wash and change clothes with zero tug-of-war or embarrassment.</li>
+            <li><strong>Dementia-Friendly Visual Tweaks:</strong> Why shiny floors and black doormats look like terrifying holes—and how high-contrast red/yellow plates boost food intake by 25%.</li>
+            <li><strong>4 Ready-to-Print Dementia Toolkits:</strong> Includes 4 Cut-Out High-Contrast Room Signs, the "This Is Me" Life Story Passport, Sundowning Trigger Log, and the Police Herbert Protocol Missing Person Sheet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-amber-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-amber-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-amber-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-amber-400">.site</span></p>
+          <p class="text-xs text-amber-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #4 • £17.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Spouses &amp; Dementia Support Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        Living Well with Dementia at Home
+      </h1>
+      <p class="text-lg sm:text-2xl text-amber-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        Practical Solutions for Sundowning, Wandering, and Refusing Care
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-amber-950/80 border border-amber-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-amber-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop exhausting yourself trying to pull your loved one back into today's reality—learn how to step gently into their world to melt away evening agitation, exit-seeking, and personal care battles.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-amber-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="dementiaGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#451a03"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#dementiaGrad)"/>
+
+          <!-- Warm Lamp Glow in Living Room -->
+          <circle cx="300" cy="125" r="85" fill="#fbbf24" opacity="0.15"/>
+          <circle cx="300" cy="125" r="55" fill="#fde68a" opacity="0.22"/>
+
+          <!-- Left: High-Contrast Yellow Sign Preview -->
+          <rect x="45" y="65" width="130" height="125" rx="12" fill="#facc15" stroke="#0f172a" stroke-width="3"/>
+          <text x="110" y="112" text-anchor="middle" font-size="28">🚽</text>
+          <text x="110" y="145" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="900">TOILET</text>
+          <text x="110" y="168" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="800">HIGH-CONTRAST</text>
+
+          <!-- Center: Warm Armchair & Tea Reassurance -->
+          <rect x="225" y="85" width="150" height="105" rx="14" fill="#0f766e" stroke="#5eead4" stroke-width="2.5"/>
+          <circle cx="300" cy="122" r="22" fill="#fde68a"/>
+          <text x="300" y="168" text-anchor="middle" fill="#ccfbf1" font-size="11" font-weight="800">SAFE &amp; VALIDATED</text>
+
+          <!-- Right: Sundowning Clock Shield -->
+          <rect x="425" y="65" width="130" height="125" rx="12" fill="#1e293b" stroke="#fbbf24" stroke-width="2.5"/>
+          <circle cx="490" cy="115" r="28" fill="#0f172a" stroke="#fbbf24" stroke-width="2.5"/>
+          <line x1="490" y1="115" x2="490" y2="96" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="490" y1="115" x2="506" y2="115" stroke="#fbbf24" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="490" y="168" text-anchor="middle" fill="#fde68a" font-size="10" font-weight="800">CALM EVENINGS</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#fef3c7" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "They may forget what you said, but they never forget how safe you made them feel."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">NICE NG97 &amp; VERA Cited</p>
+          <p class="text-xs text-slate-300 mt-1">Built on Alzheimer's Society, Dementia UK &amp; Stirling Design standards.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Care Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Sundowning clocks, floor optics, VERA scripts &amp; warm towel bathing.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-emerald-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">High-Contrast Door Signs, "This Is Me" Sheet &amp; Herbert Protocol.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-amber-800/60 pt-4 flex items-center justify-between text-xs text-amber-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Living Well with Dementia at Home • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Introduction: Why Correcting Facts Causes Distress</span>
+            <span class="text-amber-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 1: The "Time-Travel" Brain &amp; VERA Validation</span>
+            <span class="text-amber-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 2: Beating "Sundowning" (4 PM – 8 PM Agitation)</span>
+            <span class="text-amber-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 3: "I Want to Go Home" &amp; Safe Wandering</span>
+            <span class="text-amber-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 4: Overcoming Refusal of Washing &amp; Dressing</span>
+            <span class="text-amber-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 5: Dementia-Friendly Home Tweaks &amp; Mealtimes</span>
+            <span class="text-amber-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 6: 4 Real-World Dementia Scripts (Accusations)</span>
+            <span class="text-amber-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Night Waking &amp; UTIs)</span>
+            <span class="text-amber-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-emerald-800 group-hover:text-emerald-950 underline decoration-emerald-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-amber-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-900 group-hover:text-amber-950 underline decoration-amber-300">Toolkit 1: 4 Cut-Out High-Contrast Door Signs</span>
+            <span class="text-amber-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-900 group-hover:text-amber-950 underline decoration-amber-300">Toolkit 2: 1-Page "This Is Me" Life Story Passport</span>
+            <span class="text-amber-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-900 group-hover:text-amber-950 underline decoration-amber-300">Toolkit 3 &amp; 4: Sundowning Log &amp; Herbert Protocol</span>
+            <span class="text-amber-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Stepping Into Their Reality</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Why Arguing with Dementia Never Works (And What Does)</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        One of the most heartbreaking moments in family care happens around 4:30 PM. Your parent or spouse is standing in the hallway holding their coat, looking straight at the living room they have lived in for 40 years, and saying with tears in their eyes: <em>"Please take me home. My mother is waiting for me."</em>
+      </p>
+      <p>
+        Out of love, our natural instinct is to correct them with facts: <em>"Dad, you ARE at home! You've lived here since 1984, and Grandma passed away 30 years ago."</em> Within seconds, your loved one looks horrified, angry, or heartbroken—feeling either lied to by the person they trust most, or forced to relive bereavement all over again.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-amber-950 text-sm">
+          The #1 Rule of Dementia Care: Never force someone whose brain is broken to join your reality. Join theirs instead.
+        </p>
+        <p class="text-xs text-amber-900 mt-1">
+          When they say <em>"I want to go home,"</em> "home" is not a bricks-and-mortar address—it is a **feeling of safety, familiarity, and purpose** from an earlier decade of their life.
+        </p>
+      </div>
+
+      <p>
+        This playbook translates gold-standard clinical frameworks—including <a href="https://www.nice.org.uk/guidance/ng97" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline hover:text-amber-900">NICE Guideline NG97 (Dementia Assessment &amp; Non-Cognitive Symptoms) ↗</a>, <a href="https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/symptoms/sundowning" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline hover:text-amber-900">Alzheimer's Society Sundowning Protocols ↗</a>, and <a href="https://www.dementiauk.org/information-and-support/avelina-communication/" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline hover:text-amber-900">Dementia UK Admiral Nurse Communication Guidance ↗</a>—into practical scripts and visual tools you can use tonight.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — TIME-TRAVEL BRAIN & VERA VALIDATION
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • The Time-Travel Brain &amp; VERA Framework</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The "Bookcase of Memory" &amp; The 4-Step VERA Method</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Think of your loved one's memories like a tall bookcase (a model developed by <a href="https://www.scie.org.uk/dementia/" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline">Social Care Institute for Excellence / SCIE ↗</a>). Recent memories from today and this decade sit on the flimsy top shelves, while memories from their 20s and 30s (going to work, picking children up from school, living with their parents) are bolted onto the heavy bottom shelves. When dementia shakes the bookcase, the top shelves fall off—so to their brain, **it really is 1978, and they really do need to pick the children up.**
+    </p>
+
+    <!-- Custom SVG Illustration: The VERA Validation Loop -->
+    <div class="bg-amber-50/60 border border-amber-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-950 text-xs uppercase tracking-wider text-center mb-2">Clinical Diagram: The 4-Step VERA Communication Framework (Blackhall et al.)</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- V - Validate -->
+        <rect x="10" y="12" width="148" height="130" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <circle cx="84" cy="36" r="15" fill="#d97706"/>
+        <text x="84" y="41" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="900">V</text>
+        <text x="84" y="66" text-anchor="middle" fill="#78350f" font-size="11" font-weight="800">1. VALIDATE</text>
+        <text x="84" y="84" text-anchor="middle" fill="#92400e" font-size="9">Accept their statement as</text>
+        <text x="84" y="98" text-anchor="middle" fill="#92400e" font-size="9">meaningful—never argue</text>
+        <text x="84" y="112" text-anchor="middle" fill="#92400e" font-size="9">or correct the year/fact.</text>
+
+        <!-- E - Emotion -->
+        <rect x="174" y="12" width="148" height="130" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+        <circle cx="248" cy="36" r="15" fill="#0284c7"/>
+        <text x="248" y="41" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="900">E</text>
+        <text x="248" y="66" text-anchor="middle" fill="#0c4a6e" font-size="11" font-weight="800">2. EMOTION</text>
+        <text x="248" y="84" text-anchor="middle" fill="#0369a1" font-size="9">Listen to the feeling</text>
+        <text x="248" y="98" text-anchor="middle" fill="#0369a1" font-size="9">under the words (worry,</text>
+        <text x="248" y="112" text-anchor="middle" fill="#0369a1" font-size="9">duty, loneliness, fear).</text>
+
+        <!-- R - Reassure -->
+        <rect x="338" y="12" width="148" height="130" rx="10" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <circle cx="412" cy="36" r="15" fill="#059669"/>
+        <text x="412" y="41" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="900">R</text>
+        <text x="412" y="66" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">3. REASSURE</text>
+        <text x="412" y="84" text-anchor="middle" fill="#047857" font-size="9">Solve the worry inside</text>
+        <text x="412" y="98" text-anchor="middle" fill="#047857" font-size="9">their timeline: "Everything</text>
+        <text x="412" y="112" text-anchor="middle" fill="#047857" font-size="9">is safely taken care of."</text>
+
+        <!-- A - Activity -->
+        <rect x="502" y="12" width="148" height="130" rx="10" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+        <circle cx="576" cy="36" r="15" fill="#4f46e5"/>
+        <text x="576" y="41" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="900">A</text>
+        <text x="576" y="66" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">4. ACTIVITY</text>
+        <text x="576" y="84" text-anchor="middle" fill="#4338ca" font-size="9">Gently bridge to a</text>
+        <text x="576" y="98" text-anchor="middle" fill="#4338ca" font-size="9">soothing action (cup of</text>
+        <text x="576" y="112" text-anchor="middle" fill="#4338ca" font-size="9">tea, folding, music).</text>
+      </svg>
+    </div>
+
+    <!-- Side-by-Side Script Comparison -->
+    <h3 class="font-bold text-slate-900 text-sm mb-2">Exact Script Swap: When They Ask for Work, School, or a Deceased Relative</h3>
+    <div class="overflow-hidden border border-slate-200 rounded-xl text-xs">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2.5 w-1/2 border-r border-slate-700">❌ Reality Correction (Triggers Grief &amp; Panic)</th>
+            <th class="p-2.5 w-1/2 bg-teal-800">✅ VERA Validation Script (Restores Peace)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900"><em>"Where is my mum?"</em> → "Mum, Grandma died 25 years ago! You're 84!"</td>
+            <td class="p-2.5 bg-teal-50/40 font-semibold text-teal-950">"She's safe and everything is looked after today. You always loved her apple pie—tell me how she used to make it while I pop the kettle on."</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900"><em>"I have to pick the kids up from school!"</em> → "Your kids are 50 years old!"</td>
+            <td class="p-2.5 bg-teal-50/40 font-semibold text-teal-950">"You are such a wonderful mum. Sarah has already picked the children up today so you can put your feet up in the warm."</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900"><em>"I'm late for my shift at the factory!"</em> → "You retired 20 years ago!"</td>
+            <td class="p-2.5 bg-teal-50/40 font-semibold text-teal-950">"The manager phoned earlier to say you've got the afternoon off with full pay because you worked so hard this week."</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — BEATING SUNDOWNING (4 PM - 8 PM)
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Preventing Late-Afternoon Sundowning</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Beating "Sundowning": How to Calm the 4:00 PM to 8:00 PM Storm</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Up to 66% of people living with dementia at home experience **Sundowning**—a surge of pacing, anxiety, suspicion, or shouting between late afternoon and early evening. According to <a href="https://www.alzheimers.org.uk/about-dementia/symptoms-and-diagnosis/symptoms/sundowning" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline">Alzheimer's Society Clinical Guidance ↗</a>, sundowning happens because the brain's internal body clock is damaged, cognitive fatigue peaks after a full day, and fading daylight casts scary shadows across the room.
+    </p>
+
+    <!-- Custom SVG Illustration: The Afternoon Sundowning Prevention Timeline -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-300 text-xs uppercase tracking-wider text-center mb-2.5">Visual Protocol: The 4-Step Afternoon Sundowning Prevention Clock</h3>
+      <svg viewBox="0 0 660 150" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- 1:30 PM -->
+        <rect x="8" y="10" width="150" height="130" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+        <text x="83" y="32" text-anchor="middle" fill="#38bdf8" font-size="12" font-weight="800">🕐 1:30 PM</text>
+        <text x="83" y="50" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">Switch to Decaf</text>
+        <text x="83" y="68" text-anchor="middle" fill="#cbd5e1" font-size="9">Stop all caffeinated tea,</text>
+        <text x="83" y="82" text-anchor="middle" fill="#cbd5e1" font-size="9">coffee &amp; cola after lunch;</text>
+        <text x="83" y="96" text-anchor="middle" fill="#cbd5e1" font-size="9">do a 20-min daylight walk</text>
+        <text x="83" y="110" text-anchor="middle" fill="#cbd5e1" font-size="9">to set melatonin clock.</text>
+
+        <!-- 3:15 PM -->
+        <rect x="172" y="10" width="150" height="130" rx="10" fill="#451a03" stroke="#fbbf24" stroke-width="2.5"/>
+        <text x="247" y="32" text-anchor="middle" fill="#fde047" font-size="12" font-weight="800">🕞 3:15 PM</text>
+        <text x="247" y="50" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">Beat the Shadows</text>
+        <text x="247" y="68" text-anchor="middle" fill="#fef3c7" font-size="9">Close curtains &amp; turn ON</text>
+        <text x="247" y="82" text-anchor="middle" fill="#fef3c7" font-size="9">warm room lamps BEFORE</text>
+        <text x="247" y="96" text-anchor="middle" fill="#fef3c7" font-size="9">dusk so scary twilight</text>
+        <text x="247" y="110" text-anchor="middle" fill="#fef3c7" font-size="9">shadows never appear.</text>
+
+        <!-- 3:45 PM -->
+        <rect x="336" y="10" width="150" height="130" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+        <text x="411" y="32" text-anchor="middle" fill="#6ee7b7" font-size="12" font-weight="800">🕓 3:45 PM</text>
+        <text x="411" y="50" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">Glucose + Toilet Check</text>
+        <text x="411" y="68" text-anchor="middle" fill="#d1fae5" font-size="9">Offer a warm decaf drink</text>
+        <text x="411" y="82" text-anchor="middle" fill="#d1fae5" font-size="9">+ banana/biscuit and guide</text>
+        <text x="411" y="96" text-anchor="middle" fill="#d1fae5" font-size="9">to the toilet before 4 PM</text>
+        <text x="411" y="110" text-anchor="middle" fill="#d1fae5" font-size="9">restlessness begins.</text>
+
+        <!-- 4:30 PM -->
+        <rect x="500" y="10" width="152" height="130" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+        <text x="576" y="32" text-anchor="middle" fill="#a5b4fc" font-size="12" font-weight="800">🕟 4:30 PM</text>
+        <text x="576" y="50" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">"Purposeful Hands" Job</text>
+        <text x="576" y="68" text-anchor="middle" fill="#e0e7ff" font-size="9">Turn off noisy TV news;</text>
+        <text x="576" y="82" text-anchor="middle" fill="#e0e7ff" font-size="9">give a rhythmic task like</text>
+        <text x="576" y="96" text-anchor="middle" fill="#e0e7ff" font-size="9">folding warm towels or</text>
+        <text x="576" y="110" text-anchor="middle" fill="#e0e7ff" font-size="9">sorting socks/coins.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Key Sundowning Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📺 Ban the 5 PM TV News</strong>
+        A person with moderate dementia cannot separate dramatic TV news or crime dramas from real events happening in their house. Switch to familiar music or nature shows after 3 PM.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🪞 Cover Reflections at Dusk</strong>
+        Once indoor lights go on, uncovered dark windows look like mirrors. A person with dementia may not recognize their own older reflection and think a stranger is staring in at them.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🧺 Give a "5 PM Shift Job"</strong>
+        4:30 PM used to be rush hour—cooking tea or finishing work. Ask for their "help" folding a basket of tea towels or laying napkins on the table to satisfy that lifelong habit.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — EXIT-SEEKING & SAFE WANDERING
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Exit-Seeking &amp; Visual Door Camouflage</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Exit-Seeking &amp; Wandering: Keeping Them Safe Without Feeling Locked In</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When a person with dementia rattles the front door handle, seeing coats hanging on hooks and keys in a bowl acts as a visual trigger shouting <em>"Time to leave!"</em> Conversely, dementia changes 3D depth perception (<a href="https://www.dementia.stir.ac.uk/" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline">University of Stirling DSDC Design Standards ↗</a>)—meaning a dark doormat looks like a deep black hole in the floor, while a curtain pulled across a front door makes the exit disappear from view.
+    </p>
+
+    <!-- Custom SVG Illustration: Visual Door Camouflage & Floor Optics -->
+    <div class="bg-teal-50/60 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Environmental Blueprint: How Dementia Depth Perception Sees Doors &amp; Floors</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left Box: Triggering Hallway -->
+        <rect x="10" y="8" width="310" height="140" rx="10" fill="#fff1f2" stroke="#f43f5e" stroke-width="2"/>
+        <text x="165" y="28" text-anchor="middle" fill="#9f1239" font-size="11" font-weight="800">❌ VISUAL EXIT TRIGGERS (CAUSES RATTLING)</text>
+        <text x="25" y="52" fill="#881337" font-size="9.5">• Coats, shoes &amp; handbags visible by front door</text>
+        <text x="25" y="70" fill="#881337" font-size="9.5">• Glass door panel showing street/cars outside</text>
+        <text x="25" y="88" fill="#881337" font-size="9.5">• Shiny wet-look floor tiles (looks like deep water)</text>
+        <text x="25" y="106" fill="#881337" font-size="9.5">• Dark threshold strip between rooms (causes freezing)</text>
+        <rect x="25" y="116" width="280" height="22" rx="5" fill="#e11d48"/>
+        <text x="165" y="131" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">Result: Constant pacing &amp; door-handle pulling</text>
+
+        <!-- Right Box: Camouflaged Hallway -->
+        <rect x="340" y="8" width="310" height="140" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+        <text x="495" y="28" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">✅ DEMENTIA-SAFE HALLWAY CAMOUFLAGE</text>
+        <text x="355" y="52" fill="#065f46" font-size="9.5">• Hide coats, shoes &amp; keys inside a closed cupboard</text>
+        <text x="355" y="70" fill="#065f46" font-size="9.5">• Hang a wall-colour curtain over the front door at 3 PM</text>
+        <text x="355" y="88" fill="#065f46" font-size="9.5">• Fit a chime sensor so you hear door movement early</text>
+        <text x="355" y="106" fill="#065f46" font-size="9.5">• Keep toilet door OPEN with a bright yellow sign</text>
+        <rect x="355" y="116" width="280" height="22" rx="5" fill="#059669"/>
+        <text x="495" y="131" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="800">Result: Out of sight = Out of mind</text>
+      </svg>
+    </div>
+
+    <!-- 3 Practical Wandering Safety Layers -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚽 Check the Toilet First</strong>
+        50% of sudden "pacing toward the door" is actually someone looking for the bathroom who can't remember which white door it is. Stick **Toolkit #1 (Yellow Toilet Sign)** on the door today.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📍 GPS Sole / Keyring Tag</strong>
+        Sew a discreet GPS tracker (Apple AirTag, Tile, or dementia GPS watch) into their favourite coat lining or shoe tongue, and complete **Toolkit #4 (Herbert Protocol)** on Page 13.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🌧️ The "Bad Weather" Bridge</strong>
+        If they insist on leaving at night, walk to the window together: <em>"It's pouring cold rain and the buses have stopped for tonight—stay in the warm guest room until morning."</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — OVERCOMING PERSONAL CARE REFUSAL
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Dignified Bathing, Washing &amp; Dressing</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">When They Refuse to Wash or Change Clothes: The "Towel-Under-Towel" Method</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      To someone with dementia, a cold tiled echoing bathroom, rushing overhead shower water, and someone pulling at their trousers feels terrifying and undignified. Never argue or say <em>"You haven't washed in 4 days!"</em> Instead, use the clinical **"Towel-Under-Towel" Warm Strip-Wash Technique** (endorsed by <a href="https://www.dementiauk.org/information-and-support/living-with-dementia/washing-and-bathing/" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline">Dementia UK Admiral Nurses ↗</a>):
+    </p>
+
+    <!-- Custom SVG Illustration: The 4-Step Towel-Under-Towel Bathing Method -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Step-by-Step Visual Guide: The Zero-Exposure "Towel-Under-Towel" Wash</h3>
+      <svg viewBox="0 0 660 150" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Step 1 -->
+        <rect x="10" y="10" width="150" height="130" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="85" y="32" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">1. PRE-WARM ROOM</text>
+        <text x="85" y="52" text-anchor="middle" fill="#334155" font-size="9">Turn radiator/heater on</text>
+        <text x="85" y="66" text-anchor="middle" fill="#334155" font-size="9">20 mins early. Warm 2</text>
+        <text x="85" y="80" text-anchor="middle" fill="#334155" font-size="9">large bath towels on the</text>
+        <text x="85" y="94" text-anchor="middle" fill="#334155" font-size="9">radiator. Play soft music.</text>
+
+        <!-- Step 2 -->
+        <rect x="174" y="10" width="150" height="130" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="249" y="32" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">2. KEEP COVERED</text>
+        <text x="249" y="52" text-anchor="middle" fill="#334155" font-size="9">Drape a warm dry towel</text>
+        <text x="249" y="66" text-anchor="middle" fill="#334155" font-size="9">over their chest/lap FIRST,</text>
+        <text x="249" y="80" text-anchor="middle" fill="#334155" font-size="9">then slip top off underneath</text>
+        <text x="249" y="94" text-anchor="middle" fill="#334155" font-size="9">so they never feel naked.</text>
+
+        <!-- Step 3 -->
+        <rect x="338" y="10" width="150" height="130" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="413" y="32" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">3. HAND-OVER-HAND</text>
+        <text x="413" y="52" text-anchor="middle" fill="#334155" font-size="9">Put a warm flannel in</text>
+        <text x="413" y="66" text-anchor="middle" fill="#334155" font-size="9">THEIR hand first to wipe</text>
+        <text x="413" y="80" text-anchor="middle" fill="#334155" font-size="9">their face; wash one limb</text>
+        <text x="413" y="94" text-anchor="middle" fill="#334155" font-size="9">at a time under the towel.</text>
+
+        <!-- Step 4 -->
+        <rect x="502" y="10" width="148" height="130" rx="10" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <text x="576" y="32" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">4. NIGHT-TIME SWAP</text>
+        <text x="576" y="52" text-anchor="middle" fill="#047857" font-size="9">Buy 3 identical pairs of</text>
+        <text x="576" y="66" text-anchor="middle" fill="#047857" font-size="9">their favourite jumper/</text>
+        <text x="576" y="80" text-anchor="middle" fill="#047857" font-size="9">trousers and swap the</text>
+        <text x="576" y="94" text-anchor="middle" fill="#047857" font-size="9">dirty set while they sleep.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Personal Care Hacks -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚿 Ditch Overhead Spray</strong>
+        Water spraying onto the face/head feels like drowning to someone with dementia. Use a handheld shower hose aimed only from the shoulders down, or no-rinse warm shampoo caps.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👔 The "Doctor's Visit" Invite</strong>
+        A lifelong gentleman or lady who refuses to wash "for a carer" will often gladly freshen up if you say: <em>"Let's have a quick freshen-up before the vicar/doctor pops round at 11."</em>
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🩲 Pull-Up Pants = Normal</strong>
+        If they refuse incontinence pads, remove all normal underwear from their drawer and fill it only with soft pull-up continence pants—they look and feel just like normal underwear.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — HIGH-CONTRAST HOME & MEALTIME TWEAKS
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • High-Contrast Home &amp; Mealtime Design</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Why Contrast Changes Everything: Plates, Toilet Seats &amp; Cupboards</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      A famous study at Boston University discovered that simply switching from a **white dinner plate** to a **high-contrast bright red or yellow plate** increased food intake in people with Alzheimer's by **24%** and liquid intake by **84%**. Why? Because dementia damages contrast sensitivity—mashed potato, chicken, or milk on a white plate on a white tablecloth is virtually invisible to their eyes!
+    </p>
+
+    <!-- Custom SVG Illustration: Invisible White-on-White vs High-Contrast Red/Blue -->
+    <div class="bg-amber-50/60 border border-amber-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-950 text-xs uppercase tracking-wider text-center mb-2">Visual Comparison: Low-Contrast (Invisible to Dementia) vs. High-Contrast (24% More Food Intake)</h3>
+      <svg viewBox="0 0 660 150" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left: White Plate on White Tablecloth -->
+        <rect x="10" y="10" width="310" height="130" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+        <circle cx="95" cy="75" r="46" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+        <circle cx="85" cy="68" r="16" fill="#f1f5f9"/>
+        <circle cx="110" cy="82" r="14" fill="#f8fafc"/>
+        <text x="225" y="50" text-anchor="middle" fill="#64748b" font-size="11" font-weight="800">❌ WHITE ON WHITE</text>
+        <text x="225" y="70" text-anchor="middle" fill="#64748b" font-size="9.5">• White plate on pale table</text>
+        <text x="225" y="86" text-anchor="middle" fill="#64748b" font-size="9.5">• Clear glass of water</text>
+        <text x="225" y="102" text-anchor="middle" fill="#e11d48" font-size="9.5" font-weight="700">• White toilet seat on white pan</text>
+
+        <!-- Right: Red/Yellow High-Contrast Plate -->
+        <rect x="340" y="10" width="310" height="130" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+        <circle cx="425" cy="75" r="46" fill="#dc2626" stroke="#fca5a5" stroke-width="2.5"/>
+        <circle cx="415" cy="68" r="16" fill="#fef08a"/>
+        <circle cx="440" cy="82" r="14" fill="#ffffff"/>
+        <text x="555" y="50" text-anchor="middle" fill="#fde047" font-size="11" font-weight="800">✅ HIGH CONTRAST</text>
+        <text x="555" y="70" text-anchor="middle" fill="#ffffff" font-size="9.5">• Red/Blue/Yellow plate</text>
+        <text x="555" y="86" text-anchor="middle" fill="#ffffff" font-size="9.5">• Coloured mug / cordial</text>
+        <text x="555" y="102" text-anchor="middle" fill="#6ee7b7" font-size="9.5" font-weight="700">• Black/Blue toilet seat ring</text>
+      </svg>
+    </div>
+
+    <!-- 3 Quick Home Contrast Wins -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚽 Fit a Coloured Toilet Seat</strong>
+        A white toilet seat on a white bowl in a white bathroom causes missed aim and falls. A £15 navy blue or red toilet seat lets them spot the seat instantly.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🏷️ Label Key Kitchen Drawers</strong>
+        Opening 6 cupboards to find a spoon is exhausting. Stick picture + word labels (from **Toolkit #1** or our Sign Pack) on the Tea/Mugs cupboard and Cutlery drawer.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛋️ Contrast the Armchair</strong>
+        If a beige armchair sits on a beige carpet, throw a bright contrasting blanket over the seat cushion so they know exactly where the seat edge is when sitting down.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD DEMENTIA PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Dementia Playbooks</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Accusations, Hallucinations &amp; Repetition</h2>
+
+    <!-- Custom SVG Illustration: The "Don't Defend, Join the Search" Loop -->
+    <div class="bg-indigo-50/70 border border-indigo-200 rounded-2xl p-3.5 mb-4">
+      <p class="text-[11px] font-extrabold uppercase text-indigo-950 text-center mb-2">Visual Protocol: How to Respond When Accused of "Stealing Their Purse, Money, or Keys"</p>
+      <svg viewBox="0 0 660 72" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="8" width="150" height="56" rx="8" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+        <text x="81" y="28" text-anchor="middle" fill="#9f1239" font-size="9.5" font-weight="800">1. NEVER GET DEFENSIVE</text>
+        <text x="81" y="44" text-anchor="middle" fill="#881337" font-size="8.5">Their brain hid it &amp; forgot;</text>
+        <text x="81" y="56" text-anchor="middle" fill="#881337" font-size="8.5">it's brain gap-filling</text>
+
+        <text x="166" y="40" text-anchor="middle" fill="#64748b" font-size="14" font-weight="800">→</text>
+
+        <rect x="176" y="8" width="150" height="56" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <text x="251" y="28" text-anchor="middle" fill="#78350f" font-size="9.5" font-weight="800">2. VALIDATE THE PANIC</text>
+        <text x="251" y="44" text-anchor="middle" fill="#92400e" font-size="8.5">"How awful! I'd be upset</text>
+        <text x="251" y="56" text-anchor="middle" fill="#92400e" font-size="8.5">too if my purse vanished."</text>
+
+        <text x="336" y="40" text-anchor="middle" fill="#64748b" font-size="14" font-weight="800">→</text>
+
+        <rect x="346" y="8" width="150" height="56" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+        <text x="421" y="28" text-anchor="middle" fill="#075985" font-size="9.5" font-weight="800">3. BECOME THEIR ALLY</text>
+        <text x="421" y="44" text-anchor="middle" fill="#0369a1" font-size="8.5">"Let's hunt together—I'll</text>
+        <text x="421" y="56" text-anchor="middle" fill="#0369a1" font-size="8.5">check under the cushions."</text>
+
+        <text x="506" y="40" text-anchor="middle" fill="#64748b" font-size="14" font-weight="800">→</text>
+
+        <rect x="516" y="8" width="138" height="56" rx="8" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <text x="585" y="28" text-anchor="middle" fill="#065f46" font-size="9.5" font-weight="800">4. KEEP A DECOY PURSE</text>
+        <text x="585" y="44" text-anchor="middle" fill="#047857" font-size="8.5">Produce a spare purse with</text>
+        <text x="585" y="56" text-anchor="middle" fill="#047857" font-size="8.5">old cards &amp; £5 notes!</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 1: Repeating the Exact Same Question 20 Times</strong>
+        Never say <em>"I've already told you 10 times!"</em>—that only makes them feel foolish and anxious, which makes them ask *more* often. Write the answer clearly on a small whiteboard placed beside their chair: **"Today is Tuesday. Sarah is visiting at 2:00 PM."** When they ask, smile and point gently to the board.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 2: Seeing People or Animals That Aren't There</strong>
+        Common in Lewy body and Parkinson's dementia. If the vision isn't scaring them (e.g., seeing children or a cat), don't argue. If it *is* frightening them, turn on bright room lights to eliminate shadows and "shoo" the visitor out the door warmly: <em>"Okay folks, visiting hours are over—off you go!"</em>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 3: Hiding or Hoarding Tissue, Food, or Remotes</strong>
+        Check their 3 "Safe Hiding Spots" every evening without scolding (usually inside pillowcases, tissue boxes, shoes, or behind sofa cushions). Leave a dedicated "rummage drawer" full of safe items they are allowed to sort and move around freely.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 4: Waking Up Dressed at 3:00 AM Ready for Breakfast</strong>
+        Buy a large **Dementia Day/Night Digital Clock** that clearly displays **"3:00 AM — NOW IT IS NIGHT"** in bold letters. Keep bedroom curtains blackout-lined, leave a warm motion nightlight to the toilet, and guide them back with a warm decaf milky drink.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Dementia Carer FAQs</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Dementia Care at Home: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions family carers and domiciliary support workers ask when supporting someone with dementia:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "Isn't using 'therapeutic fibs' (like saying their late mother is fine) dishonest or wrong?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Clinical ethicists and Admiral Nurses call this **Emotional Truthfulness**. Telling an 85-year-old with Alzheimer's that their mother is dead forces them to experience raw, day-one bereavement grief repeatedly because their brain cannot retain the fact. Meeting them in their timeline is an act of deep compassion, not deception.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "My parent's dementia has worsened dramatically over just 48 hours—is this a sudden progression?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          **Almost never.** Dementia progresses over months and years, not overnight. A sudden 24–48 hour drop into severe confusion, aggression, or unsteadiness is almost always **Delirium** triggered by a **Urinary Tract Infection (UTI), chest infection, dehydration, or constipation**. Contact the GP or NHS 111 the same day for a urine dipstick test.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "Are we legally allowed to lock the front door if my spouse keeps trying to wander into traffic?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Under the UK **Mental Capacity Act 2005**, you have a duty of care to act in the **Best Interests** of someone who lacks capacity to judge road safety. However, to prevent fire hazards, never hide keys where carers or family cannot reach them in 5 seconds—use a high/low thumb-turn lock, door chime alert, and camouflaged door curtain instead.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "How do we stop them from leaving the gas hob switched on or flooding the kitchen sink?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Contact your energy supplier (via the free **Priority Services Register**) or a Gas Safe engineer to fit a **Lockable Gas Cooker Isolation Valve** (which looks like a simple tap you turn off when not cooking), and install a £8 ** Flood-Stopper Plug** in bathroom and kitchen sinks that automatically drains water before it overflows.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "Did you know families living with dementia qualify for a 25% to 100% Council Tax Discount?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Many families miss out on thousands of pounds because councils rarely advertise the **Severe Mental Impairment (SMI) Council Tax Disregard**. Anyone with a medical diagnosis of dementia who receives Attendance Allowance or PIP is disregarded for Council Tax—saving 25% if they live with one adult carer, or 100% if they live alone.
+        </p>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <h4 class="font-bold text-amber-950">6. "What happens if I fall ill or get taken to hospital—how will paramedics know I have someone with dementia at home?"</h4>
+        <p class="text-amber-900 mt-1 leading-relaxed">
+          Register with your local Carer Support Service for a free **Carer's Emergency Card** to keep in your wallet/purse. If you are ever in an accident, emergency services call the 24-hour hub number on the card to activate your pre-agreed backup care plan immediately.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, Admiral Nurses &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any link below to watch practical dementia care demonstrations, register for council tax disregards, or read official clinical protocols.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Video Guides &amp; Practical Support Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.dementiauk.org/information-and-support/resources/videos/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">Dementia UK (Admiral Nurses)</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Admiral Nurse Video Library: Sundowning, Washing &amp; Distress ↗</h4>
+        <p class="text-slate-600 mt-1">Watch specialist dementia nurses demonstrate exact communication techniques, personal care, and home adaptations.</p>
+      </a>
+
+      <a href="https://www.alzheimers.org.uk/get-support/publications-and-factsheets/dementia-together-magazine/this-is-me" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">Alzheimer's Society</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Official Dementia Support Hub &amp; Council Tax SMI Guide ↗</h4>
+        <p class="text-slate-600 mt-1">Practical guides on wandering, assistive technology, and claiming the Severe Mental Impairment Council Tax discount.</p>
+      </a>
+
+      <a href="https://www.scie.org.uk/dementia/living-with-dementia/dementia-friendly-environments/" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">SCIE Dementia Hub</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Dementia-Friendly Home Environments &amp; Visual Design Videos ↗</h4>
+        <p class="text-slate-600 mt-1">Room-by-room video walkthroughs showing how lighting, flooring, and high-contrast signage reduce falls and confusion.</p>
+      </a>
+
+      <a href="https://www.met.police.uk/SysSiteAssets/media/downloads/central/advice/herbert-protocol/herbert-protocol-form.pdf" target="_blank" rel="noopener noreferrer" class="block border border-rose-200 bg-rose-50/50 hover:bg-rose-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-rose-700 text-white px-2 py-0.5 rounded">UK Police National Scheme</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">The Herbert Protocol: National Safe &amp; Found Initiative ↗</h4>
+        <p class="text-slate-600 mt-1">Learn how UK police forces use pre-completed life history forms to locate vulnerable missing persons rapidly.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Clinical &amp; Design Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. NICE Guideline NG97:</strong> <em>Dementia: assessment, management and support for people living with dementia and their carers.</em> <a href="https://www.nice.org.uk/guidance/ng97" target="_blank" class="text-amber-700 font-semibold underline">View NICE NG97 ↗</a>
+        </li>
+        <li>
+          <strong>2. Blackhall et al. (VERA Framework):</strong> <em>Validation, Emotion, Reassurance, Activity — A framework for person-centred communication in dementia care.</em> Nursing Standard.
+        </li>
+        <li>
+          <strong>3. Dunne et al. (Boston University Visual Contrast Study):</strong> <em>Visual contrast enhances food and liquid intake in advanced Alzheimer's disease (24% food / 84% liquid increase with high-contrast tableware).</em>
+        </li>
+        <li>
+          <strong>4. University of Stirling Dementia Services Development Centre (DSDC):</strong> <em>Dementia Design Audit Standards for Lighting, Contrast, and Wayfinding.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mb-2">📞 Free Specialist Dementia Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Dementia UK Admiral Nurse Line:</strong> 0800 888 6678</div>
+        <div>• <strong>Alzheimer's Society Dementia Connect:</strong> 0333 150 3456</div>
+        <div>• <strong>Age UK Advice Line:</strong> 0800 678 1602</div>
+        <div>• <strong>Missing Vulnerable Person:</strong> Dial 999 Immediately</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — 4 HIGH-CONTRAST ROOM & DOOR SIGNS
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-amber-500">
+    <div class="flex items-center justify-between border-b-2 border-amber-500 pb-3 mb-4">
+      <div>
+        <span class="bg-amber-500 text-slate-950 text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Cut Out &amp; Tape at Eye-Level (1.2m High)</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">4 High-Contrast Dementia Wayfinding Door &amp; Cupboard Signs</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-amber-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-amber-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-4">
+      <strong>Stirling University Design Rule:</strong> People with dementia often look slightly downward as they walk. Tape these high-contrast yellow-and-black signs on doors at **1.2 metres (4 feet) off the floor**—not high up at head height!
+    </p>
+
+    <!-- 2x2 High-Contrast Cut-Out Signs Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <!-- Sign 1: TOILET -->
+      <div class="bg-yellow-300 border-4 border-slate-950 rounded-2xl p-6 text-center shadow-sm flex flex-col items-center justify-between min-h-[340px]">
+        <span class="bg-slate-950 text-yellow-300 font-black text-xs px-3 py-1 rounded-full uppercase tracking-widest">Door Sign • Cut Out</span>
+        <div class="my-4">
+          <svg viewBox="0 0 120 120" class="w-28 h-28 mx-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect x="35" y="15" width="50" height="42" rx="6" fill="#0f172a"/>
+            <ellipse cx="60" cy="65" rx="32" ry="12" fill="#0f172a"/>
+            <path d="M36 65 Q38 102 60 102 Q82 102 84 65 Z" fill="#0f172a"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-4xl font-black text-slate-950 tracking-tight uppercase">TOILET</h3>
+          <p class="text-sm font-extrabold text-slate-900 mt-1">Bathroom &amp; Washbasin</p>
+        </div>
+      </div>
+
+      <!-- Sign 2: BEDROOM -->
+      <div class="bg-yellow-300 border-4 border-slate-950 rounded-2xl p-6 text-center shadow-sm flex flex-col items-center justify-between min-h-[340px]">
+        <span class="bg-slate-950 text-yellow-300 font-black text-xs px-3 py-1 rounded-full uppercase tracking-widest">Door Sign • Cut Out</span>
+        <div class="my-4">
+          <svg viewBox="0 0 120 120" class="w-28 h-28 mx-auto" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="30" width="12" height="68" rx="3" fill="#0f172a"/>
+            <rect x="96" y="52" width="12" height="46" rx="3" fill="#0f172a"/>
+            <rect x="18" y="64" width="84" height="18" fill="#0f172a"/>
+            <rect x="26" y="48" width="24" height="14" rx="5" fill="#0f172a"/>
+            <rect x="54" y="50" width="42" height="14" rx="4" fill="#0f172a"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-4xl font-black text-slate-950 tracking-tight uppercase">BEDROOM</h3>
+          <p class="text-sm font-extrabold text-slate-900 mt-1">Your Warm Bed &amp; Clothes</p>
+        </div>
+      </div>
+
+      <!-- Sign 3: KITCHEN / TEA & MUGS -->
+      <div class="bg-yellow-300 border-4 border-slate-950 rounded-2xl p-6 text-center shadow-sm flex flex-col items-center justify-between min-h-[340px]">
+        <span class="bg-slate-950 text-yellow-300 font-black text-xs px-3 py-1 rounded-full uppercase tracking-widest">Cupboard Sign • Cut Out</span>
+        <div class="my-4">
+          <svg viewBox="0 0 120 120" class="w-28 h-28 mx-auto" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25 38 L78 38 L74 92 Q73 102 51 102 Q30 102 29 92 Z" fill="#0f172a"/>
+            <path d="M76 48 H90 A14 14 0 0 1 90 78 H74" stroke="#0f172a" stroke-width="10" fill="none"/>
+            <path d="M40 26 Q44 16 40 10 M58 26 Q62 16 58 10" stroke="#0f172a" stroke-width="5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-3xl font-black text-slate-950 tracking-tight uppercase">TEA, COFFEE &amp; MUGS</h3>
+          <p class="text-sm font-extrabold text-slate-900 mt-1">Cups, Spoons &amp; Biscuits Inside</p>
+        </div>
+      </div>
+
+      <!-- Sign 4: DO NOT ENTER / KEEP CLOSED -->
+      <div class="bg-rose-600 border-4 border-slate-950 rounded-2xl p-6 text-center text-white shadow-sm flex flex-col items-center justify-between min-h-[340px]">
+        <span class="bg-slate-950 text-white font-black text-xs px-3 py-1 rounded-full uppercase tracking-widest">Safety Sign • Cut Out</span>
+        <div class="my-4">
+          <svg viewBox="0 0 120 120" class="w-28 h-28 mx-auto" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="60" r="46" fill="#ffffff" stroke="#0f172a" stroke-width="6"/>
+            <rect x="28" y="50" width="64" height="20" rx="4" fill="#dc2626"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-3xl font-black text-white tracking-tight uppercase">PRIVATE CUPBOARD</h3>
+          <p class="text-sm font-extrabold text-rose-100 mt-1">Please Keep This Door Closed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — 1-PAGE "THIS IS ME" PASSPORT
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Hand to Respite Carers, Agency Staff &amp; Hospitals</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">1-Page "This Is Me &amp; What Works" Life Story Passport</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Full Name &amp; Name I Like to Be Called:</label>
+        <input type="text" placeholder="e.g., Margaret ('Peggy')" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Former Job / Proud Life Roles:</label>
+        <input type="text" placeholder="e.g., Head Seamstress &amp; Mum of 3" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Primary Family Carer &amp; Phone:</label>
+        <input type="text" placeholder="Name &amp; Mobile" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="space-y-3.5 text-xs">
+      <div class="border-2 border-amber-500 rounded-xl p-3.5 bg-amber-50/30">
+        <h3 class="font-extrabold text-amber-950 text-sm uppercase mb-1">1. My Happy Topics, Music &amp; Comfort Memories (Instant Conversation Starters):</h3>
+        <textarea rows="3" placeholder="e.g., Loves talking about growing up in Yorkshire, her dog Barnaby, Vera Lynn / 1960s Motown music, and looking through gardening magazines..." class="w-full bg-white border border-amber-200 rounded-lg p-2 text-xs"></textarea>
+      </div>
+
+      <div class="border-2 border-teal-500 rounded-xl p-3.5 bg-teal-50/30">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase mb-2">2. My Daily Routine &amp; Personal Care Preferences:</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="font-bold text-teal-900">How I Take My Tea/Coffee &amp; Favourite Foods:</label>
+            <textarea rows="2" placeholder="e.g., Weak tea with milk and 1 sugar in her blue floral mug. Loves finger sandwiches and custard..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs mt-1"></textarea>
+          </div>
+          <div>
+            <label class="font-bold text-teal-900">What Works Best for Washing &amp; Dressing:</label>
+            <textarea rows="2" placeholder="e.g., Prefers a warm strip-wash at 10 AM after breakfast; gets distressed if water touches her face..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs mt-1"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-2 border-indigo-500 rounded-xl p-3.5 bg-indigo-50/30">
+        <h3 class="font-extrabold text-indigo-950 text-sm uppercase mb-1">3. When I Get Anxious or Say "I Want to Go Home" — Exact Reassurance That Calms Me:</h3>
+        <textarea rows="3" placeholder="e.g., If she asks for her late husband Arthur, tell her 'Arthur has popped to the club and will be back soon, let's put the kettle on and fold these towels together'..." class="w-full bg-white border border-indigo-200 rounded-lg p-2 text-xs"></textarea>
+      </div>
+
+      <div class="border-2 border-rose-500 rounded-xl p-3.5 bg-rose-50/30">
+        <h3 class="font-extrabold text-rose-950 text-sm uppercase mb-1">4. Hidden Triggers &amp; Things to Avoid:</h3>
+        <textarea rows="2" placeholder="e.g., Loud TV news, cold bathrooms, people standing behind her chair unannounced, or correcting her memory..." class="w-full bg-white border border-rose-200 rounded-lg p-2 text-xs"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — SUNDOWNING LOG & HERBERT PROTOCOL
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Daily Pattern Log &amp; Police Safety Sheet</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Sundowning Trigger Tracker + Herbert Protocol Sheet</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-amber-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-amber-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: Sundowning & Unmet Needs Tracker -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Toolkit #3: Daily Sundowning &amp; Unmet Needs Pattern Tracker</h3>
+      <p class="text-xs text-slate-600 mb-2">
+        Track afternoon agitation against fluids, bowel opening, and pain to spot hidden medical triggers (like UTIs or constipation):
+      </p>
+
+      <div class="overflow-hidden border border-slate-300 rounded-xl">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-2 border-r border-slate-700">Day / Time</th>
+              <th class="p-2 border-r border-slate-700">3:15 PM Curtain/Light &amp; Snack Done?</th>
+              <th class="p-2 border-r border-slate-700">What Happened? (Pacing / Asking for Home)</th>
+              <th class="p-2 bg-amber-900">What Calmed Them Down?</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-300">
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Mon 4:30 PM" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Lights</label><label><input type="checkbox"/> Snack/Toilet</label></td>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Packed coat bag..." class="toolkit-input"/></td>
+              <td class="p-2"><input type="text" placeholder="Warm tea + towel folding..." class="toolkit-input"/></td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Tue" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Lights</label><label><input type="checkbox"/> Snack/Toilet</label></td>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Notes..." class="toolkit-input"/></td>
+              <td class="p-2"><input type="text" placeholder="What worked..." class="toolkit-input"/></td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Wed" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Lights</label><label><input type="checkbox"/> Snack/Toilet</label></td>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Notes..." class="toolkit-input"/></td>
+              <td class="p-2"><input type="text" placeholder="What worked..." class="toolkit-input"/></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Herbert Protocol Missing Person Quick-Sheet -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-amber-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Police "Herbert Protocol" Safe &amp; Found Sheet</span>
+        <span class="text-xs text-slate-300">Keep in Hallway Folder + Photo on Phone</span>
+      </div>
+      <p class="text-[11px] text-slate-300 mb-3">
+        If a loved one ever wanders out of sight, hand this completed sheet (with a recent photo) straight to Police Officers so search teams know their childhood/former addresses immediately:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-amber-300 font-bold block">1. Previous Homes / Childhood Street Names:</span>
+          <input type="text" placeholder="Streets they often talk about returning to..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">2. Former Workplace, Church, Pub or Park:</span>
+          <input type="text" placeholder="Familiar landmarks or bus routes..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-sky-300 font-bold block">3. Physical Description, Coat Colour &amp; Glasses:</span>
+          <input type="text" placeholder="Height, hair, usual coat/shoes worn..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-rose-300 font-bold block">4. Essential Meds, GPS Tracker ID &amp; GP Details:</span>
+          <input type="text" placeholder="AirTag/Tracker name &amp; urgent meds..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #4 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

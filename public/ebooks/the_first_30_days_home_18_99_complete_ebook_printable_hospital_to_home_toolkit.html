@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The First 30 Days Home (£18.99) | carelearn.site eBook & Printable Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    /* Print-specific A4 eBook formatting */
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #0284c7;
+      background-color: #f0f9ff;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-sky-500 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #3 of 13 • £18.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">The First 30 Days Home — Hospital Discharge &amp; Stroke Recovery (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Discharge FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Videos
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          4 Printable Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £18.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £18.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-sky-100 text-sky-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #3 Storefront Kit • £18.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Adult children, spouses, and domiciliary/home care workers suddenly responsible for an elderly parent or loved one discharged home after a stroke, hip fracture, fall, or major surgery.</p>
+          <p class="mt-1"><strong>Catalog Price:</strong> £18.99 digital download on www.carelearn.site.</p>
+        </div>
+
+        <div class="bg-sky-50 p-4 rounded-xl border border-sky-200">
+          <p class="font-extrabold text-sky-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-sky-900">"Prevent Hospital Readmission &amp; Bring Them Home Safely: The Complete 30-Day Playbook for Room Setup, Medication Safety, Pressure Sore Prevention, and Post-Stroke Recovery."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The "Safe Discharge" Gatekeeper Questions:</strong> What to demand from the hospital discharge coordinator *before* they put your loved one in the ambulance home (including free 6-week NHS Reablement care).</li>
+            <li><strong>The Downstairs Micro-Ward Blueprint:</strong> Visual room layout showing where to place lighting, commodes, grab rails, and one-sided stroke tables to cut night-time falls by 70%.</li>
+            <li><strong>Zero-Mistake Medication &amp; Pressure Sore Systems:</strong> How to decode chaotic hospital TTO ("To Take Out") bags and run the 30-second SSKIN skin check on heels and tailbones.</li>
+            <li><strong>Green / Amber / Red Medical Triage Chart:</strong> Know instantly whether a new symptom means "Wait &amp; Monitor," "Call GP/NHS 111," or "Dial 999 Immediately."</li>
+            <li><strong>4 Ready-to-Print Hospital-to-Home Toolkits:</strong> Includes the Pre-Discharge &amp; Room Safety Checklist, Daily Medication &amp; MAR Chart, SSKIN Pressure &amp; Fluid Log, and Fridge Red-Flag Escalation Sheet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-sky-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-sky-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-sky-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-sky-400">.site</span></p>
+          <p class="text-xs text-sky-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-sky-500/20 border border-sky-400/40 text-sky-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #3 • £18.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Spouses &amp; Domiciliary Care Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        The First 30 Days Home
+      </h1>
+      <p class="text-lg sm:text-2xl text-sky-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        The Step-by-Step Guide to Safe Care After a Hospital Discharge, Fall, or Stroke
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-sky-950/80 border border-sky-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-sky-200">
+        <strong class="text-amber-300">The Core Transformation:</strong> Replace post-discharge panic with a calm, hospital-grade home routine that prevents falls, medication errors, pressure sores, and emergency readmission in the critical first month.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-sky-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bgGrad3" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0c4a6e"/>
+              <stop offset="50%" stop-color="#0f172a"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#bgGrad3)"/>
+
+          <!-- Left: Hospital Building Icon -->
+          <rect x="45" y="70" width="110" height="140" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+          <rect x="88" y="48" width="24" height="24" rx="4" fill="#ef4444"/>
+          <path d="M100 53 L100 67 M93 60 L107 60" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <!-- Windows -->
+          <rect x="62" y="90" width="22" height="22" rx="3" fill="#38bdf8" opacity="0.5"/>
+          <rect x="116" y="90" width="22" height="22" rx="3" fill="#38bdf8" opacity="0.5"/>
+          <rect x="62" y="125" width="22" height="22" rx="3" fill="#38bdf8" opacity="0.5"/>
+          <rect x="116" y="125" width="22" height="22" rx="3" fill="#38bdf8" opacity="0.5"/>
+          <text x="100" y="228" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="700">HOSPITAL WARD</text>
+
+          <!-- Center Transition Bridge & 30-Day Shield -->
+          <path d="M170 140 Q300 85 415 140" stroke="#38bdf8" stroke-width="3.5" stroke-dasharray="7,5" fill="none"/>
+          <circle cx="295" cy="115" r="34" fill="#0284c7" stroke="#bae6fd" stroke-width="2.5"/>
+          <text x="295" y="112" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">30-DAY</text>
+          <text x="295" y="127" text-anchor="middle" fill="#fde047" font-size="9.5" font-weight="800">SAFE BRIDGE</text>
+
+          <!-- Right: Warm Equipped Home Sanctuary -->
+          <polygon points="495,55 420,115 570,115" fill="#0d9488" stroke="#5eead4" stroke-width="2"/>
+          <rect x="435" y="115" width="120" height="95" rx="6" fill="#134e4a" stroke="#5eead4" stroke-width="2"/>
+          <!-- Warm Heart Window inside Home -->
+          <rect x="468" y="138" width="54" height="44" rx="6" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+          <path d="M495 170 L485 160 A7 7 0 0 1 495 150 A7 7 0 0 1 505 160 Z" fill="#f59e0b"/>
+          <text x="495" y="228" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="800">SAFE HOME RECOVERY</text>
+
+          <!-- Bottom Banner -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.8"/>
+          <text x="300" y="265" text-anchor="middle" fill="#e0f2fe" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "The first 72 hours at home set the foundation for the next 6 months of recovery."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-sky-400 font-bold text-xs uppercase">NICE NG27 &amp; NHS Cited</p>
+          <p class="text-xs text-slate-300 mt-1">Aligned with UK Hospital Discharge Service Requirements &amp; Stroke guidelines.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">7 Visual Care Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Room blueprints, SSKIN pressure maps, stroke positioning &amp; red-flag charts.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-emerald-300 font-bold text-xs uppercase">4 Fillable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">Medication MAR Chart, Pre-Discharge Checklist, Vitals Log &amp; 999 Sheet.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-sky-800/60 pt-4 flex items-center justify-between text-xs text-sky-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>The First 30 Days Home • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-sky-100 text-sky-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Introduction: The "Discharge Cliff-Edge"</span>
+            <span class="text-sky-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Ch 1: Before They Leave the Ward (Discharge Rights)</span>
+            <span class="text-sky-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Ch 2: Setting Up the Safe Recovery Room Blueprint</span>
+            <span class="text-sky-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Ch 3: Decoding Hospital Meds (TTOs) Safely</span>
+            <span class="text-sky-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Ch 4: Preventing Falls, Pressure Sores &amp; Clots</span>
+            <span class="text-sky-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Ch 5: Post-Stroke &amp; Post-Surgery Recovery Care</span>
+            <span class="text-sky-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-700 underline decoration-sky-300">Ch 6: Preventing Readmission (Red Flags &amp; Delirium)</span>
+            <span class="text-sky-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-800 group-hover:text-amber-950 underline decoration-amber-300">Ch 7: Real Carer FAQ Vault (Reablement &amp; Crisis)</span>
+            <span class="text-sky-7000 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-emerald-800 group-hover:text-emerald-950 underline decoration-emerald-300">Interactive Video Tutorials &amp; Cited Guidelines</span>
+            <span class="text-sky-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-900 group-hover:text-sky-950 underline decoration-sky-300">Toolkit 1: Pre-Discharge &amp; Room Safety Checklist</span>
+            <span class="text-sky-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-900 group-hover:text-sky-950 underline decoration-sky-300">Toolkit 2: Daily Medication &amp; MAR Administration Log</span>
+            <span class="text-sky-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-900 group-hover:text-sky-950 underline decoration-sky-300">Toolkit 3 &amp; 4: SSKIN Check &amp; Fridge Red-Flag Sheet</span>
+            <span class="text-sky-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Surviving the Transition Home</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Closing the "Hospital Discharge Cliff-Edge"</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        In hospital, a team of nurses, doctors, occupational therapists, and healthcare assistants surround your loved one 24 hours a day. Then, often with less than 24 hours' notice, you get the phone call: <em>"Good news—they are medically fit for discharge. Transport is bringing them home this afternoon."</em>
+      </p>
+      <p>
+        Suddenly, you are standing in your living room holding a plastic bag stuffed with unfamiliar medication boxes, a crumpled discharge summary full of medical abbreviations, and a frail, exhausted relative who struggles to get to the toilet.
+      </p>
+
+      <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-sky-950 text-sm">
+          Clinical Fact: Nearly 1 in 5 older adults discharged from hospital are readmitted as an emergency within 30 days—and over half of those readmissions are preventable.
+        </p>
+        <p class="text-xs text-sky-900 mt-1">
+          The culprits are almost never the original surgery or illness. They are **medication mix-ups, night-time bathroom falls, dehydration/UTIs, pressure sores, and carer exhaustion.**
+        </p>
+      </div>
+
+      <p>
+        This playbook translates official clinical transition standards—including <a href="https://www.nice.org.uk/guidance/ng27" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline hover:text-sky-900">NICE Guideline NG27 (Transition between hospital and home) ↗</a>, <a href="https://www.nhs.uk/conditions/social-care-and-support-guide/care-after-illness-or-hospital-stay/care-and-support-after-hospital-discharge/" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline hover:text-sky-900">NHS Discharge to Assess &amp; Intermediate Care Guidance ↗</a>, and <a href="https://www.stroke.org.uk/stroke/life-after/leaving-hospital" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline hover:text-sky-900">Stroke Association Home Recovery Protocols ↗</a>—into a clear, day-by-day plan anyone can follow.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — BEFORE THEY LEAVE THE WARD
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • Hospital Discharge Rights &amp; Preparation</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Before They Leave the Ward: How to Prevent an Unsafe Discharge</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Hospitals are under immense pressure to free up beds. While being **"Medically Fit for Discharge" (MFFD)** means a doctor believes your loved one no longer needs acute hospital tests, it does **not** automatically mean it is safe for them to walk into an unequipped house alone at 7 PM on a Friday. Under <a href="https://www.nice.org.uk/guidance/ng27" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline">NICE Guideline NG27 ↗</a> and <a href="https://www.ageuk.org.uk/information-advice/health-wellbeing/health-services/hospital-discharge/" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline">Age UK Discharge Standards ↗</a>, a discharge must be safe and coordinated.
+    </p>
+
+    <!-- Custom SVG Illustration: The 4 Discharge Pathways & Gatekeeper Flow -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-slate-900 text-xs uppercase tracking-wider text-center mb-2">Visual Guide: Understanding NHS "Discharge to Assess" Pathways &amp; Your 6-Week Free Care Right</h3>
+      <svg viewBox="0 0 660 165" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Pathway 0 -->
+        <rect x="10" y="12" width="150" height="92" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+        <text x="85" y="34" text-anchor="middle" fill="#334155" font-size="11" font-weight="800">PATHWAY 0</text>
+        <text x="85" y="52" text-anchor="middle" fill="#0f172a" font-size="10" font-weight="700">Simple Home Return</text>
+        <text x="85" y="70" text-anchor="middle" fill="#64748b" font-size="9">No new care needed</text>
+        <text x="85" y="86" text-anchor="middle" fill="#64748b" font-size="9">Family &amp; voluntary help</text>
+
+        <!-- Pathway 1 (Highlighted - Reablement) -->
+        <rect x="173" y="8" width="165" height="100" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+        <rect x="198" y="0" width="115" height="18" rx="4" fill="#0284c7"/>
+        <text x="255" y="13" text-anchor="middle" fill="#ffffff" font-size="8.5" font-weight="800">MOST IMPORTANT TO ASK FOR</text>
+        <text x="255" y="36" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">PATHWAY 1</text>
+        <text x="255" y="53" text-anchor="middle" fill="#0f172a" font-size="10" font-weight="800">Home + Free Reablement</text>
+        <text x="255" y="70" text-anchor="middle" fill="#0c4a6e" font-size="9">Up to 6 Weeks FREE NHS/</text>
+        <text x="255" y="84" text-anchor="middle" fill="#0c4a6e" font-size="9">Council Carers &amp; Physio at Home</text>
+
+        <!-- Pathway 2 -->
+        <rect x="351" y="12" width="145" height="92" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <text x="423" y="34" text-anchor="middle" fill="#92400e" font-size="11" font-weight="800">PATHWAY 2</text>
+        <text x="423" y="52" text-anchor="middle" fill="#0f172a" font-size="10" font-weight="700">Rehab Bed First</text>
+        <text x="423" y="70" text-anchor="middle" fill="#78350f" font-size="9">Short-term community</text>
+        <text x="423" y="86" text-anchor="middle" fill="#78350f" font-size="9">rehab unit before home</text>
+
+        <!-- Pathway 3 -->
+        <rect x="508" y="12" width="142" height="92" rx="10" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+        <text x="579" y="34" text-anchor="middle" fill="#9f1239" font-size="11" font-weight="800">PATHWAY 3</text>
+        <text x="579" y="52" text-anchor="middle" fill="#0f172a" font-size="10" font-weight="700">24-Hour Nursing Care</text>
+        <text x="579" y="70" text-anchor="middle" fill="#881337" font-size="9">Complex new needs;</text>
+        <text x="579" y="86" text-anchor="middle" fill="#881337" font-size="9">check NHS CHC funding</text>
+
+        <!-- Bottom Gatekeeper Banner -->
+        <rect x="10" y="118" width="640" height="40" rx="8" fill="#0f172a"/>
+        <text x="330" y="142" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="700">
+          🛡️ Gatekeeper Phrase: "I want to support discharge, but the home environment is currently unsafe without Pathway 1 Reablement &amp; OT equipment."
+        </text>
+      </svg>
+    </div>
+
+    <!-- 5 Non-Negotiables Before Leaving the Ward -->
+    <h3 class="font-bold text-slate-900 text-sm mb-2">The 5 Non-Negotiables Before They Get in the Car or Ambulance</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-white border border-slate-200 p-3 rounded-xl">
+        <strong class="text-sky-900 block">1. The Printed Discharge Summary &amp; TTO Meds</strong>
+        Never leave without a printed copy of the Discharge Letter (one copy goes to the GP, one stays in your home folder) and at least 7–14 days of **TTO ("To Take Out")** medications.
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl">
+        <strong class="text-sky-900 block">2. Occupational Therapy (OT) Equipment Delivered First</strong>
+        If they cannot climb stairs or stand from a low toilet, ask the ward OT for a **commode, raised toilet seat, walking frame, or hospital bed** to be delivered *before* arrival.
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl">
+        <strong class="text-sky-900 block">3. Ask for "Intermediate Care / Reablement" (Free for up to 6 Weeks)</strong>
+        In the UK, NHS/Council **Reablement Care** provides up to 6 weeks of free home care visits and physio after a hospital stay—regardless of savings—to help them regain independence.
+      </div>
+      <div class="bg-white border border-slate-200 p-3 rounded-xl">
+        <strong class="text-sky-900 block">4. District Nurse &amp; Continence Referrals</strong>
+        If they have surgical dressings, a catheter, pressure ulcer risk, or new incontinence, confirm the ward nurse has sent an active referral to the **Community District Nursing Team**.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — THE DOWNSTAIRS MICRO-WARD BLUEPRINT
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Home Environment &amp; Micro-Ward Setup</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Setting Up the "Home Recovery Zone" (First 72 Hours)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Most home accidents happen in the first 72 hours because the house is still set up for a healthy person. Loose rugs, dim hallway landings, and low soft sofas become obstacle courses after surgery or a stroke. Use this **Recovery Room Blueprint** (adapted from <a href="https://www.rcot.co.uk/" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline">Royal College of Occupational Therapists ↗</a> home adaptation guidance) to prepare their primary room in under an hour:
+    </p>
+
+    <!-- Custom SVG Illustration: Overhead Recovery Room Blueprint -->
+    <div class="bg-sky-50/60 border-2 border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-extrabold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Architectural Blueprint: The Fall-Proof Downstairs Recovery Room Layout</h3>
+      <svg viewBox="0 0 660 220" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Room Floor Outline -->
+        <rect x="15" y="10" width="630" height="200" rx="12" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
+
+        <!-- Bed in Center-Left -->
+        <rect x="40" y="55" width="190" height="110" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="2.5"/>
+        <rect x="48" y="65" width="45" height="90" rx="6" fill="#ffffff" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="155" y="105" text-anchor="middle" fill="#0c4a6e" font-size="12" font-weight="800">RECOVERY BED</text>
+        <text x="155" y="122" text-anchor="middle" fill="#0369a1" font-size="9.5">Knee-height firm mattress</text>
+
+        <!-- Zone 1: Stronger / Unaffected Side Transfer Zone -->
+        <rect x="65" y="18" width="160" height="28" rx="6" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <text x="145" y="36" text-anchor="middle" fill="#065f46" font-size="10" font-weight="800">1. EXIT ON STRONGER SIDE</text>
+
+        <!-- Zone 2: Reachable Command Table (Affected/Visible Side) -->
+        <rect x="242" y="65" width="95" height="90" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <text x="289" y="92" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">2. REACH TABLE</text>
+        <text x="289" y="108" text-anchor="middle" fill="#92400e" font-size="8.5">• Water &amp; Straw</text>
+        <text x="289" y="121" text-anchor="middle" fill="#92400e" font-size="8.5">• Call Bell / Phone</text>
+        <text x="289" y="134" text-anchor="middle" fill="#92400e" font-size="8.5">• Glasses &amp; Meds</text>
+
+        <!-- Zone 3: Clear 1.2m Walkway to Commode/Door (No Rugs) -->
+        <path d="M145 172 L540 172" stroke="#10b981" stroke-width="22" stroke-linecap="round" opacity="0.2"/>
+        <path d="M145 172 L540 172" stroke="#059669" stroke-width="2" stroke-dasharray="6,6"/>
+        <text x="345" y="176" text-anchor="middle" fill="#065f46" font-size="10" font-weight="800">3. 1.2m RUG-FREE, CORD-FREE WALKWAY + PLUG-IN NIGHTLIGHTS</text>
+
+        <!-- Zone 4: High-Backed Armchair & Commode Station -->
+        <rect x="370" y="30" width="120" height="95" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+        <text x="430" y="65" text-anchor="middle" fill="#1e293b" font-size="10" font-weight="800">4. HIGH ARMCHAIR</text>
+        <text x="430" y="82" text-anchor="middle" fill="#475569" font-size="8.5">Firm arms to push up</text>
+        <text x="430" y="96" text-anchor="middle" fill="#475569" font-size="8.5">(Avoid low soft sofas)</text>
+
+        <rect x="510" y="30" width="115" height="95" rx="8" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+        <text x="567" y="65" text-anchor="middle" fill="#312e81" font-size="10" font-weight="800">5. NIGHT COMMODE</text>
+        <text x="567" y="82" text-anchor="middle" fill="#4338ca" font-size="8.5">Prevents 2AM stairs/</text>
+        <text x="567" y="96" text-anchor="middle" fill="#4338ca" font-size="8.5">hallway falls</text>
+      </svg>
+    </div>
+
+    <!-- 4 Quick-Fix Room Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-xl">
+        <strong class="text-slate-900 text-sm block mb-1">💡 Banish Loose Rugs &amp; Trailing Cables</strong>
+        Roll up every scatter rug and bathmat immediately. Walking frames and post-stroke feet catch on a 5mm rug lip. Tape phone and lamp cables flat against skirting boards.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-xl">
+        <strong class="text-slate-900 text-sm block mb-1">🔔 The £10 Wireless Doorbell Trick</strong>
+        Shouting from another room doesn't work when someone is weak. Buy a cheap plug-in wireless doorbell—put the chime in your kitchen/bedroom and tape the push-button to their bedside table.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — DECODING HOSPITAL MEDS (TTOs)
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Zero-Error Medication Management</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Decoding the Hospital Medication Bag: Preventing Dangerous Double-Dosing</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      The #1 cause of emergency hospital readmission in the first 14 days is **medication error**. Why? Because hospitals often stop old blood pressure or blood-thinning tablets, start new ones, or supply generic packets that look completely different from the boxes still sitting in your kitchen cupboard at home. People accidentally take **both** the old cupboard box and the new hospital box—causing a dangerous double dose. (Follow <a href="https://www.nice.org.uk/guidance/sc1" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline">NICE Guideline SC1 on Managing Medicines in Care ↗</a>).
+    </p>
+
+    <!-- Custom SVG Illustration: The 3-Box Medication Quarantine System -->
+    <div class="bg-amber-50/70 border-2 border-amber-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-extrabold text-amber-950 text-xs uppercase tracking-wider text-center mb-2">Visual Protocol: The Day-1 "Medication Reconciliation &amp; Quarantine" System</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Step 1: Quarantine Old Cupboard Meds -->
+        <rect x="10" y="12" width="195" height="130" rx="12" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+        <text x="107" y="35" text-anchor="middle" fill="#9f1239" font-size="11" font-weight="800">1. QUARANTINE OLD MEDS</text>
+        <text x="107" y="55" text-anchor="middle" fill="#881337" font-size="9.5">Sweep ALL pre-hospital pill</text>
+        <text x="107" y="70" text-anchor="middle" fill="#881337" font-size="9.5">boxes from kitchen/bedroom</text>
+        <text x="107" y="85" text-anchor="middle" fill="#881337" font-size="9.5">into a sealed bag marked:</text>
+        <rect x="35" y="96" width="145" height="28" rx="6" fill="#e11d48"/>
+        <text x="107" y="114" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">"DO NOT USE — CHECK FIRST"</text>
+
+        <text x="220" y="78" text-anchor="middle" fill="#64748b" font-size="18" font-weight="800">→</text>
+
+        <!-- Step 2: Cross-Check Discharge Letter -->
+        <rect x="235" y="12" width="190" height="130" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <text x="330" y="35" text-anchor="middle" fill="#78350f" font-size="11" font-weight="800">2. MATCH THE TTO LIST</text>
+        <text x="330" y="55" text-anchor="middle" fill="#92400e" font-size="9.5">Check the Discharge Summary</text>
+        <text x="330" y="70" text-anchor="middle" fill="#92400e" font-size="9.5">for 3 critical columns:</text>
+        <text x="330" y="90" text-anchor="middle" fill="#0f172a" font-size="9.5" font-weight="700">• NEW Meds Started</text>
+        <text x="330" y="106" text-anchor="middle" fill="#0f172a" font-size="9.5" font-weight="700">• CHANGED Doses</text>
+        <text x="330" y="122" text-anchor="middle" fill="#e11d48" font-size="9.5" font-weight="800">• STOPPED Meds (Return to Chemist)</text>
+
+        <text x="440" y="78" text-anchor="middle" fill="#64748b" font-size="18" font-weight="800">→</text>
+
+        <!-- Step 3: 4-Slot Daily Station + MAR Log -->
+        <rect x="455" y="12" width="195" height="130" rx="12" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <text x="552" y="35" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">3. 4-SLOT STATION &amp; LOG</text>
+        <text x="552" y="55" text-anchor="middle" fill="#047857" font-size="9.5">Group active boxes into:</text>
+        <text x="552" y="72" text-anchor="middle" fill="#065f46" font-size="9.5" font-weight="700">☀️ Morning | 🕛 Lunch | 🍲 Tea | 🌙 Bed</text>
+        <rect x="475" y="88" width="155" height="38" rx="6" fill="#059669"/>
+        <text x="552" y="105" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">Sign Toolkit #2 (MAR Log)</text>
+        <text x="552" y="119" text-anchor="middle" fill="#a7f3d0" font-size="8.5">Every single time a pill is given</text>
+      </svg>
+    </div>
+
+    <!-- Plain-English Hospital Latin Decoder Table -->
+    <h3 class="font-bold text-slate-900 text-sm mb-2">Plain-English Decoder: What Those Hospital Abbreviations Actually Mean</h3>
+    <div class="overflow-hidden border border-slate-200 rounded-xl">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2.5 font-bold w-1/4 border-r border-slate-700">Code on Box / Letter</th>
+            <th class="p-2.5 font-bold w-1/3 border-r border-slate-700 bg-sky-900">Plain-English Meaning</th>
+            <th class="p-2.5 font-bold bg-teal-800">Practical Spacing Rule</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-bold">OD (Once Daily)</td>
+            <td class="p-2.5 border-r border-slate-200">Take **1 time** per day</td>
+            <td class="p-2.5">Give at the same time every day (check if morning e.g. water tablets, or night e.g. statins).</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-bold">BD (Twice Daily)</td>
+            <td class="p-2.5 border-r border-slate-200">Take **2 times** per day</td>
+            <td class="p-2.5">Space roughly 10–12 hours apart (e.g., **8:00 AM** and **8:00 PM**).</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-bold">TDS (Three Times Daily)</td>
+            <td class="p-2.5 border-r border-slate-200">Take **3 times** per day</td>
+            <td class="p-2.5">Morning (**8:00 AM**), Afternoon (**2:00 PM**), and Bedtime (**8:00 PM**).</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-bold">QDS (Four Times Daily)</td>
+            <td class="p-2.5 border-r border-slate-200">Take **4 times** per day</td>
+            <td class="p-2.5">Space at least 4–6 hours apart (never give paracetamol closer than 4 hours apart!).</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-bold">PRN (When Required)</td>
+            <td class="p-2.5 border-r border-slate-200">Only take **if needed** (e.g. pain/laxative)</td>
+            <td class="p-2.5">Do not give automatically if they have no pain or symptoms; always log exact time given.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — PREVENTING PRESSURE SORES, FALLS & CLOTS
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Skin Integrity, Pressure Ulcers &amp; Mobility</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-rose-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4 • Critical Physical Protection</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Preventing Pressure Sores, Postural Drop Falls &amp; Blood Clots</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      A painful **pressure ulcer (bed sore)** can begin developing in as little as **2 to 3 hours** if a frail person sits or lies in one position without shifting weight. Once skin breaks down, it can lead to life-threatening sepsis. Follow the NHS <a href="https://www.nice.org.uk/guidance/cg179" target="_blank" rel="noopener noreferrer" class="text-rose-700 font-bold underline">NICE CG179 / SSKIN Bundle Protocol ↗</a> every morning and evening:
+    </p>
+
+    <!-- Custom SVG Illustration: The 5 Pressure Sore Hotspots & Non-Blanching Finger Test -->
+    <div class="bg-rose-50/60 border border-rose-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-rose-950 text-xs uppercase tracking-wider text-center mb-2">Clinical Diagram: The 5 Pressure Ulcer Danger Zones &amp; The 3-Second "Finger Blanch Test"</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="650" height="145" rx="12" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5"/>
+
+        <!-- Left: Reclining Figure & 5 Pressure Hotspots -->
+        <line x1="25" y1="115" x2="390" y2="115" stroke="#94a3b8" stroke-width="6" stroke-linecap="round"/>
+        <!-- Body lying/semi-reclined -->
+        <circle cx="65" cy="70" r="18" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <path d="M85 82 L195 102 L295 85 L370 105" stroke="#64748b" stroke-width="18" stroke-linecap="round" fill="none"/>
+
+        <!-- Red Hotspot Dots -->
+        <circle cx="52" cy="75" r="7" fill="#e11d48"/> <!-- Back of Head/Ears -->
+        <circle cx="115" cy="92" r="8" fill="#e11d48"/> <!-- Shoulder Blades / Elbows -->
+        <circle cx="195" cy="108" r="9" fill="#e11d48"/> <!-- Sacrum / Tailbone (Danger #1) -->
+        <circle cx="295" cy="82" r="6" fill="#f59e0b"/> <!-- Knees/Hips -->
+        <circle cx="370" cy="110" r="8" fill="#e11d48"/> <!-- Heels (Danger #2) -->
+
+        <!-- Labels for Hotspots -->
+        <text x="55" y="42" text-anchor="middle" fill="#9f1239" font-size="9.5" font-weight="800">1. Ears/Head</text>
+        <text x="125" y="58" text-anchor="middle" fill="#9f1239" font-size="9.5" font-weight="800">2. Shoulders/Elbows</text>
+        <text x="200" y="138" text-anchor="middle" fill="#e11d48" font-size="10" font-weight="800">3. TAILBONE / SACRUM (#1 Risk)</text>
+        <text x="360" y="138" text-anchor="middle" fill="#e11d48" font-size="10" font-weight="800">4. HEELS (#2 Risk)</text>
+
+        <!-- Right Box: The Blanching Test -->
+        <rect x="415" y="16" width="225" height="122" rx="10" fill="#fff1f2" stroke="#fda4af" stroke-width="1.5"/>
+        <text x="527" y="36" text-anchor="middle" fill="#9f1239" font-size="11" font-weight="800">THE 3-SECOND FINGER TEST</text>
+        <text x="527" y="54" text-anchor="middle" fill="#334155" font-size="9.5">Press gently on a red/dark skin patch</text>
+        <text x="527" y="68" text-anchor="middle" fill="#334155" font-size="9.5">for 3 seconds, then release:</text>
+        <text x="428" y="90" fill="#065f46" font-size="9.5" font-weight="700">✅ Turns White then Red = OK (Relieve pressure)</text>
+        <text x="428" y="110" fill="#e11d48" font-size="9.5" font-weight="800">🚨 STAYS RED / PURPLE / DARK =</text>
+        <text x="428" y="124" fill="#9f1239" font-size="9" font-weight="700">Stage 1 Ulcer! Call District Nurse Today</text>
+      </svg>
+    </div>
+
+    <!-- SSKIN & Sit-Wait-Stand Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-xl">
+        <strong class="text-rose-900 text-sm block mb-1">🦶 "Float the Heels" &amp; Never Rub Red Skin</strong>
+        Place a soft pillow lengthwise under their calves so their heels float slightly off the mattress. **Never vigorously rub red bony skin**—rubbing tears fragile underlying capillaries. Use barrier cream if incontinence is present.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-xl">
+        <strong class="text-sky-950 text-sm block mb-1">⏳ The "Sit-for-60, Stand-for-10" Dizziness Rule</strong>
+        After days in a hospital bed, blood pressure drops suddenly when standing up (*postural hypotension*). Always have them **sit on the edge of the bed for 60 seconds** pumping their ankles, then **stand still holding the frame for 10 seconds** before taking a single step.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — POST-STROKE & SURGERY SPECIFIC CARE
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Stroke &amp; Post-Surgical Care Rules</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Caring After a Stroke or Hip/Joint Surgery: Protecting Vulnerable Limbs</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When caring for someone after a stroke (who may have weakness on one side of their body, called *hemiparesis*) or after a hip replacement/fracture repair, a single incorrect pull on an arm or low seat angle can dislocate a joint. Follow these <a href="https://www.stroke.org.uk/stroke/effects/physical/weakness-and-paralysis" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline">Stroke Association Limb Protection Guidelines ↗</a>:
+    </p>
+
+    <!-- Custom SVG Illustration: Post-Stroke Arm Support & Dressing Rule -->
+    <div class="bg-teal-50/60 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Visual Golden Rules: Protecting the Stroke Shoulder &amp; The "Weak-In First, Strong-Out First" Dressing Secret</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left Panel: Stroke Shoulder Support -->
+        <rect x="8" y="8" width="315" height="138" rx="10" fill="#ffffff" stroke="#14b8a6" stroke-width="2"/>
+        <text x="165" y="28" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">1. PROTECT THE STROKE SHOULDER</text>
+        <text x="165" y="46" text-anchor="middle" fill="#e11d48" font-size="9.5" font-weight="800">❌ NEVER pull under the armpit to help them stand!</text>
+        <text x="165" y="61" text-anchor="middle" fill="#475569" font-size="9">(Weak shoulder muscles sublux/dislocate easily)</text>
+        <rect x="28" y="74" width="275" height="56" rx="8" fill="#f0fdfa" stroke="#5eead4"/>
+        <text x="165" y="94" text-anchor="middle" fill="#065f46" font-size="10" font-weight="800">✅ ALWAYS Prop on a Pillow When Seated</text>
+        <text x="165" y="112" text-anchor="middle" fill="#0f766e" font-size="9">Support forearm + wrist forward on a pillow so</text>
+        <text x="165" y="124" text-anchor="middle" fill="#0f766e" font-size="9">gravity never drags the weak shoulder downward.</text>
+
+        <!-- Right Panel: Dressing Sequence -->
+        <rect x="337" y="8" width="315" height="138" rx="10" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+        <text x="494" y="28" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">2. PAIN-FREE SLEEVE &amp; TROUSER RULE</text>
+        <!-- Putting Clothes ON -->
+        <rect x="355" y="40" width="280" height="44" rx="8" fill="#eef2ff" stroke="#a5b4fc"/>
+        <text x="495" y="58" text-anchor="middle" fill="#312e81" font-size="10" font-weight="800">👕 PUTTING ON: Weak / Operated Side FIRST</text>
+        <text x="495" y="74" text-anchor="middle" fill="#4338ca" font-size="9">Slide sleeve over weak arm first, then strong arm.</text>
+        <!-- Taking Clothes OFF -->
+        <rect x="355" y="92" width="280" height="44" rx="8" fill="#fef3c7" stroke="#fcd34d"/>
+        <text x="495" y="110" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">🧥 TAKING OFF: Strong Side FIRST, Weak LAST</text>
+        <text x="495" y="126" text-anchor="middle" fill="#92400e" font-size="9">Slip strong arm out first, then slide off weak arm.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Post-Stroke / Post-Surgery Daily Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👁️ Watch for "Visual Neglect"</strong>
+        After a stroke, some people stop noticing the left or right half of their plate or room. Rotate their dinner plate halfway through the meal so they see all the food.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🪑 The 90-Degree Hip Rule</strong>
+        After hip surgery, never let them sit in a low chair where their knees are higher than their hips, cross their legs, or bend forward past 90 degrees to pick up slippers.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🔋 Respect "Neuro-Fatigue"</strong>
+        Post-stroke fatigue is a biological brain exhaustion, not laziness. Limit visitors to 20 minutes and schedule a mandatory 90-minute quiet rest every afternoon.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — PREVENTING READMISSION & RED FLAGS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • Medical Triage &amp; Preventing Readmission</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-rose-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Spotting Silent Complications Early: Delirium, UTIs, Clots &amp; Sepsis</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      In older adults, serious infections like a **Urinary Tract Infection (UTI)** or **chest infection** often do *not* cause a classic high fever first. Instead, the earliest warning sign is **sudden confusion, hallucinations, or uncharacteristic drowsiness (Delirium)**. Use this 3-tier clinical triage matrix so you never second-guess who to call:
+    </p>
+
+    <!-- Custom SVG Illustration: Green / Amber / Red Medical Triage Matrix -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-300 text-xs uppercase tracking-wider text-center mb-2.5">Visual Triage Chart: Green (Home Monitor) vs. Amber (GP / NHS 111 Today) vs. Red (Dial 999)</h3>
+      <svg viewBox="0 0 660 155" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Green Column -->
+        <rect x="6" y="6" width="208" height="143" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+        <text x="110" y="26" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="800">🟢 GREEN: EXPECTED RECOVERY</text>
+        <text x="18" y="48" fill="#ecfdf5" font-size="9.5">• Needing afternoon naps (fatigue)</text>
+        <text x="18" y="66" fill="#ecfdf5" font-size="9.5">• Smaller appetite (offer 5 mini-meals)</text>
+        <text x="18" y="84" fill="#ecfdf5" font-size="9.5">• Mild bruising around surgical site</text>
+        <text x="18" y="102" fill="#ecfdf5" font-size="9.5">• Emotional tearfulness in week 1</text>
+        <rect x="20" y="116" width="180" height="22" rx="5" fill="#059669"/>
+        <text x="110" y="131" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">Action: Rest, Hydrate &amp; Log</text>
+
+        <!-- Amber Column -->
+        <rect x="226" y="6" width="208" height="143" rx="10" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+        <text x="330" y="26" text-anchor="middle" fill="#fde047" font-size="11" font-weight="800">🟠 AMBER: SAME-DAY GP / 111</text>
+        <text x="238" y="48" fill="#fef3c7" font-size="9.5">• Sudden new confusion / delirium</text>
+        <text x="238" y="66" fill="#fef3c7" font-size="9.5">• Dark/smelly urine or painful pee</text>
+        <text x="238" y="84" fill="#fef3c7" font-size="9.5">• Red, hot, weeping wound or heel</text>
+        <text x="238" y="102" fill="#fef3c7" font-size="9.5">• Coughing when drinking water</text>
+        <rect x="240" y="116" width="180" height="22" rx="5" fill="#d97706"/>
+        <text x="330" y="131" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">Action: Call GP / District Nurse / 111</text>
+
+        <!-- Red Column -->
+        <rect x="446" y="6" width="208" height="143" rx="10" fill="#881337" stroke="#f43f5e" stroke-width="2"/>
+        <text x="550" y="26" text-anchor="middle" fill="#fda4af" font-size="11" font-weight="800">🔴 RED: DIAL 999 IMMEDIATELY</text>
+        <text x="458" y="48" fill="#ffe4e6" font-size="9.5">• FAST: Face droop, Arm weak, Speech</text>
+        <text x="458" y="66" fill="#ffe4e6" font-size="9.5">• One swollen, hot, red calf (DVT Clot)</text>
+        <text x="458" y="84" fill="#ffe4e6" font-size="9.5">• Breathlessness or chest pain</text>
+        <text x="458" y="102" fill="#ffe4e6" font-size="9.5">• Fall with head bump (esp. on thinners)</text>
+        <rect x="460" y="116" width="180" height="22" rx="5" fill="#e11d48"/>
+        <text x="550" y="131" text-anchor="middle" fill="#ffffff" font-size="9.5" font-weight="800">Action: Call 999 + Show Discharge Letter</text>
+      </svg>
+    </div>
+
+    <!-- 4 Real-World First-Week Scenarios -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3 bg-white">
+        <strong class="text-sky-900 block">Scenario A: "They had a fall on the carpet but say they aren't hurt."</strong>
+        <strong>Never lift someone straight off the floor by their arms!</strong> Check for pain/bleeding first. If they take blood thinners (Apixaban, Rivaroxaban, Warfarin, Clopidogrel) and bumped their head, **always call 111/999** even if they feel fine.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3 bg-white">
+        <strong class="text-sky-900 block">Scenario B: "The promised care agency hasn't turned up on Day 1."</strong>
+        Look at the top of the Discharge Summary for the **Hospital Discharge Hub / Integrated Care Team** phone number, or call your council's **Adult Social Care Emergency Duty Team** immediately.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Hospital Discharge FAQs</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Hospital Discharge &amp; Stroke Recovery: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions families and domiciliary carers ask when a loved one comes home from hospital:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "Can the hospital force me to become a full-time unpaid carer if I work or have a bad back?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>No.</strong> Under the UK Care Act 2014 and NHS Discharge Guidance, family members have no legal obligation to provide physical personal care or lifting. State clearly in writing to the ward manager: <em>"I love my relative, but I am physically/work-wise unable to provide personal care or safe transfers. They require a formal Pathway 1 Reablement or domiciliary care package."</em>
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "What happens if something goes wrong in the first 48 hours after they get home?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Most NHS trusts operate a **72-Hour Post-Discharge Direct Line** Back to the Ward (printed on the Discharge Summary). Calling the ward directly within the first 48–72 hours often gets you instant advice from the doctor who treated them or fast-tracks a community nurse visit without waiting in GP queues.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "How do we get a pharmacy blister pack (Dosette box) so my parent doesn't mix up their pills?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Hospitals usually send patients home with loose boxes for the first 14 days. On **Day 2 at home**, phone their regular high-street pharmacy and GP Practice Pharmacist and ask for a **Multi-Compartment Compliance Aid (Blister Pack) Assessment** before the hospital supply runs out.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "Why has my loved one become tearful, angry, or depressed since surviving a stroke?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Up to 1 in 3 stroke survivors experience **Emotionalism (Pseudobulbar Affect)**—physical damage to the brain's emotion-control centres causing sudden crying or laughing without warning—alongside grief over lost independence. Acknowledge it gently without telling them to "cheer up," and mention it to the Stroke Community Team.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "They haven't opened their bowels in 4 days since coming home—is that an emergency?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Hospital painkillers (especially codeine, co-codamol, or morphine) + reduced mobility almost always cause **severe post-discharge constipation**, which can trigger delirium, nausea, and urinary retention. Check if a PRN laxative (like Senna or Macrogol/Movicol) was included in their TTO bag, increase fluids, and call the GP/District Nurse by Day 3–4.
+        </p>
+      </div>
+
+      <div class="bg-sky-50 border border-sky-200 rounded-xl p-4">
+        <h4 class="font-bold text-sky-950">6. "What financial support can we claim immediately when care lasts longer than 6 weeks?"</h4>
+        <p class="text-sky-900 mt-1 leading-relaxed">
+          Apply immediately for **Attendance Allowance** (for adults over State Pension age—worth £72.65 to £108.55/week tax-free, not means-tested) or **Personal Independence Payment (PIP)** (for under pension age). You do not need to wait to download the forms—getting the claim stamped early secures backdated payments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-sky-600 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, Equipment Loan &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to watch official carer demonstrations, borrow mobility equipment, or read national discharge protocols.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Video Guides &amp; Practical Support Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.stroke.org.uk/stroke/life-after/leaving-hospital" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">Stroke Association UK</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Leaving Hospital &amp; Post-Stroke Home Recovery Hub ↗</h4>
+        <p class="text-slate-600 mt-1">Official guides and videos on Early Supported Discharge (ESD), arm positioning, swallowing safety, and aphasia.</p>
+      </a>
+
+      <a href="https://www.redcross.org.uk/get-help/hire-a-wheelchair" target="_blank" rel="noopener noreferrer" class="block border border-rose-200 bg-rose-50/50 hover:bg-rose-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-rose-700 text-white px-2 py-0.5 rounded">British Red Cross</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Short-Term Wheelchair, Commode &amp; Mobility Equipment Hire ↗</h4>
+        <p class="text-slate-600 mt-1">Need a wheelchair or commode urgently for hospital discharge? Find local same-week delivery and loan centres.</p>
+      </a>
+
+      <a href="https://www.ageuk.org.uk/information-advice/health-wellbeing/health-services/hospital-discharge/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">Age UK Advice</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Hospital Discharge Factsheet (FS37) &amp; Reablement Rights ↗</h4>
+        <p class="text-slate-600 mt-1">Step-by-step breakdown of legal discharge procedures, how to challenge an unsafe discharge, and free intermediate care.</p>
+      </a>
+
+      <a href="https://www.carersuk.org/help-and-advice/practical-support/coming-out-of-hospital/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">Carers UK</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Coming Out of Hospital: Carer's Assessment &amp; Checklist ↗</h4>
+        <p class="text-slate-600 mt-1">Know your rights as a family carer before discharge, including requesting a statutory Carer's Assessment.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Clinical &amp; Regulatory Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. NICE Guideline NG27:</strong> <em>Transition between inpatient hospital settings and community or care home settings for adults with social care needs.</em> <a href="https://www.nice.org.uk/guidance/ng27" target="_blank" class="text-sky-700 font-semibold underline">View NICE NG27 ↗</a>
+        </li>
+        <li>
+          <strong>2. NICE Guideline NG236 (2023/2026):</strong> <em>Stroke rehabilitation in adults — Early Supported Discharge (ESD), mobility, and fatigue management.</em> <a href="https://www.nice.org.uk/guidance/ng236" target="_blank" class="text-sky-700 font-semibold underline">View NICE NG236 ↗</a>
+        </li>
+        <li>
+          <strong>3. NICE Clinical Guideline CG179:</strong> <em>Pressure ulcers: prevention and management (SSKIN Care Bundle &amp; Repositioning Standards).</em> <a href="https://www.nice.org.uk/guidance/cg179" target="_blank" class="text-sky-700 font-semibold underline">View NICE CG179 ↗</a>
+        </li>
+        <li>
+          <strong>4. Department of Health &amp; Social Care (DHSC):</strong> <em>Hospital Discharge and Community Support Guidance (Pathways 0–3 Discharge to Assess Model).</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-sky-300 text-xs uppercase tracking-wider mb-2">📞 Free Post-Discharge &amp; Stroke Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Stroke Association Helpline:</strong> 0303 3033 100</div>
+        <div>• <strong>Age UK Advice Line (7 days):</strong> 0800 678 1602</div>
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>Urgent Medical Advice (Non-999):</strong> Call NHS 111</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — PRE-DISCHARGE & ROOM SAFETY CHECKLIST
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-sky-600">
+    <div class="flex items-center justify-between border-b-2 border-sky-600 pb-3 mb-4">
+      <div>
+        <span class="bg-sky-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Take to the Hospital Ward &amp; Use at Home</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Hospital Pre-Discharge Gatekeeper &amp; Room Setup Checklist</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-sky-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-sky-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Patient Name:</label>
+        <input type="text" placeholder="e.g., Arthur Miller" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Hospital Ward &amp; Direct Phone:</label>
+        <input type="text" placeholder="e.g., Ward 14 (01924...)" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Discharge Coordinator Name:</label>
+        <input type="text" placeholder="Name &amp; Extension" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+      <!-- Part A: Before Leaving the Ward -->
+      <div class="border-2 border-sky-500 rounded-xl p-4 bg-sky-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-sky-950 text-sm uppercase border-b border-sky-200 pb-1.5">Part A: Tick Before Leaving the Ward</h3>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Printed Discharge Summary</strong> in hand (with diagnosis, follow-up clinics &amp; 72-hr ward callback number).</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>TTO Medication Bag Checked:</strong> Nurse has explained which old home pills are STOPPED vs. NEW pills started.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Pathway 1 Reablement / Care Package:</strong> Exact time of the very first carer visit confirmed in writing.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>OT Equipment Delivered:</strong> Walking frame, commode, raised toilet seat, or hospital bed is already at the house.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>District Nurse / Stroke Team Referral:</strong> Sent for wound dressings, catheter care, injections, or physio.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Continence Pads / Wound Supplies:</strong> At least 7 days of pads, barrier cream, or dressings packed to take home.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>House Keys &amp; Heating:</strong> Keysafe code tested and heating turned on 2 hours before arrival.</span></label>
+      </div>
+
+      <!-- Part B: 60-Minute Home Room Prep -->
+      <div class="border-2 border-teal-500 rounded-xl p-4 bg-teal-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase border-b border-teal-200 pb-1.5">Part B: 60-Minute Home Room Safety Audit</h3>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>All Loose Rugs &amp; Mats Removed:</strong> Hallway, bedside, and bathroom floor completely bare and slip-free.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Bed Exit on Stronger Side:</strong> Bed positioned so their stronger leg leads when sitting up and standing.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Reachable Command Table:</strong> Water with straw, glasses, tissues, and call-bell placed on their visible/unaffected side.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>High-Backed Armchair Ready:</strong> Firm cushion added if seat is too low; low soft sofa cordoned off.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Night-Time Lighting &amp; Commode:</strong> Plug-in motion nightlights in bedroom/bathroom; commode placed beside bed.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Old Home Medications Quarantined:</strong> All pre-hospital tablet boxes removed from bedside and kitchen into a sealed bag.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Non-Slip Footwear Ready:</strong> Well-fitting enclosed velcro shoes or non-slip grip socks (no loose backless slippers).</span></label>
+      </div>
+    </div>
+
+    <div class="mt-4 bg-amber-50 border border-amber-300 rounded-xl p-3 text-xs">
+      <label class="font-bold text-amber-950 uppercase block">First Scheduled Community Visit (Carer / District Nurse / Physio Date &amp; Time):</label>
+      <input type="text" placeholder="e.g., District Nurse visiting Tomorrow (Wed) between 10:00 AM and 1:00 PM..." class="toolkit-input mt-1" />
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — DAILY MEDICATION & MAR CHART
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-indigo-600">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-3 mb-4">
+      <div>
+        <span class="bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Zero Double-Dosing</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Home Medication Schedule &amp; 7-Day Sign-Off (MAR) Sheet</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      <strong>Rule:</strong> Keep this sheet right next to the active medication box. Every family member or visiting carer must initial the day box the exact moment the tablet is swallowed.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-rose-50 border border-rose-200 p-3 rounded-xl text-xs">
+      <div>
+        <label class="font-bold text-rose-900 uppercase">🚨 Known Drug Allergies:</label>
+        <input type="text" placeholder="e.g., Penicillin / Aspirin / None Known" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-rose-900 uppercase">🛑 Old Meds STOPPED by Hospital (Do Not Give):</label>
+        <input type="text" placeholder="e.g., Stopped Bendroflumethiazide 2.5mg" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <!-- Fillable Medication MAR Table -->
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Time Slot</th>
+            <th class="p-2 w-2/6 border-r border-slate-700">Medication Name &amp; Strength</th>
+            <th class="p-2 w-1/6 border-r border-slate-700">Dose &amp; Special Instructions</th>
+            <th class="p-2 text-center bg-indigo-900">7-Day Initials Log<br/><span class="text-[10px] font-normal">M | T | W | T | F | S | S</span></th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <!-- Example Row -->
+          <tr class="bg-slate-50 text-slate-500 italic">
+            <td class="p-2 border-r border-slate-300 font-semibold">☀️ 8:00 AM<br/>(Morning)</td>
+            <td class="p-2 border-r border-slate-300">Example: Apixaban 5mg (Blood thinner)</td>
+            <td class="p-2 border-r border-slate-300">1 Tablet with water</td>
+            <td class="p-2 text-center">✓ | ✓ | ✓ | _ | _ | _ | _</td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold text-amber-800">☀️ Morning<br/>(8:00 AM)</td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Med name &amp; mg..."></textarea></td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="How many / with food..."></textarea></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold text-amber-800">☀️ Morning<br/>(8:00 AM)</td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Med name &amp; mg..."></textarea></td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="How many / with food..."></textarea></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold text-sky-800">🕛 Lunchtime<br/>(1:00 PM)</td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Med name &amp; mg..."></textarea></td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="How many / with food..."></textarea></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold text-teal-800">🍲 Teatime<br/>(5:00 PM)</td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Med name &amp; mg..."></textarea></td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="How many / with food..."></textarea></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold text-indigo-900">🌙 Bedtime<br/>(9:00 PM)</td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Med name &amp; mg..."></textarea></td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="How many / with food..."></textarea></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold text-rose-800">💊 PRN (As Needed Pain/Laxative)</td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="e.g., Paracetamol 500mg (Min 4h gap)"></textarea></td>
+            <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Exact times given..."></textarea></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Log times given"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — SSKIN LOG & RED-FLAG FRIDGE SHEET
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-rose-600">
+    <div class="flex items-center justify-between border-b-2 border-rose-600 pb-3 mb-4">
+      <div>
+        <span class="bg-rose-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Daily Skin, Bowel &amp; Emergency Sheet</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Daily SSKIN / Fluid Tracker + Fridge Emergency Contacts</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-rose-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-rose-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: Daily Skin, Fluid & Bowel Check Log -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Toolkit #3: Daily Pressure Skin (SSKIN), Fluid &amp; Bowel Tracker</h3>
+      <p class="text-xs text-slate-600 mb-2.5">
+        Tick off morning and evening skin checks on the **Tailbone (Sacrum)** and **Heels** plus fluid and bowel movements:
+      </p>
+
+      <div class="overflow-hidden border border-slate-300 rounded-xl">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-2 border-r border-slate-700">Day / Date</th>
+              <th class="p-2 border-r border-slate-700">AM &amp; PM Skin Check<br/><span class="text-[10px] font-normal">(Tailbone, Heels, Hips)</span></th>
+              <th class="p-2 border-r border-slate-700">Drinks Taken (6–8 Cups)<br/><span class="text-[10px] font-normal">(Tick each cup finished)</span></th>
+              <th class="p-2 border-r border-slate-700">Bowels Opened?<br/><span class="text-[10px] font-normal">(Alert GP if >3 days No)</span></th>
+              <th class="p-2 bg-sky-900">Mood / Confusion / Notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-300">
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Day 1" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> AM OK</label><label><input type="checkbox"/> PM OK</label></td>
+              <td class="p-2 border-r border-slate-300">🥤🥤🥤🥤🥤🥤</td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Yes</label><label><input type="checkbox"/> No</label></td>
+              <td class="p-2"><input type="text" placeholder="All clear / rested..." class="toolkit-input"/></td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Day 2" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> AM OK</label><label><input type="checkbox"/> PM OK</label></td>
+              <td class="p-2 border-r border-slate-300">🥤🥤🥤🥤🥤🥤</td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Yes</label><label><input type="checkbox"/> No</label></td>
+              <td class="p-2"><input type="text" placeholder="Notes..." class="toolkit-input"/></td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Day 3" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> AM OK</label><label><input type="checkbox"/> PM OK</label></td>
+              <td class="p-2 border-r border-slate-300">🥤🥤🥤🥤🥤🥤</td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Yes</label><label><input type="checkbox"/> No</label></td>
+              <td class="p-2"><input type="text" placeholder="Notes..." class="toolkit-input"/></td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><input type="text" placeholder="Day 4" class="toolkit-input"/></td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> AM OK</label><label><input type="checkbox"/> PM OK</label></td>
+              <td class="p-2 border-r border-slate-300">🥤🥤🥤🥤🥤🥤</td>
+              <td class="p-2 border-r border-slate-300"><label class="mr-2"><input type="checkbox"/> Yes</label><label><input type="checkbox"/> No</label></td>
+              <td class="p-2"><input type="text" placeholder="Notes..." class="toolkit-input"/></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Fridge Rapid-Escalation Directory -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-rose-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Stick on Fridge Door</span>
+        <span class="text-xs text-sky-300">Emergency Rapid-Response Contacts</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-sky-300 font-bold block">1. Hospital Ward (First 72 Hours Callback):</span>
+          <input type="text" placeholder="Ward Name &amp; Direct Line..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">2. Community District Nursing Hub:</span>
+          <input type="text" placeholder="24/7 District Nurse Number..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-amber-300 font-bold block">3. GP Surgery &amp; Local Pharmacy:</span>
+          <input type="text" placeholder="GP &amp; Chemist Phone Numbers..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-rose-300 font-bold block">4. Reablement / Home Care Agency On-Call:</span>
+          <input type="text" placeholder="Care Agency Out-of-Hours Number..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #3 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond Words (£14.99) | carelearn.site eBook & Printable Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.5rem 4rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    /* Print-specific A4 eBook formatting */
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 14mm 16mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.9rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #4f46e5;
+      background-color: #eef2ff;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-indigo-500 text-white font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #2 of 13 • £14.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">Beyond Words — Non-Verbal &amp; Neurodivergent Communication (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Forum FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Videos
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Printable Cards &amp; Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £14.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £14.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-indigo-100 text-indigo-800 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #2 Storefront Kit • £14.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Parents of non-speaking or minimally speaking children/teens, family carers of adults with speech loss (stroke/dementia/learning disabilities), and frontline support workers.</p>
+          <p class="mt-1"><strong>Catalog Price:</strong> £14.99 digital download on www.carelearn.site.</p>
+        </div>
+
+        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200">
+          <p class="font-extrabold text-indigo-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-indigo-900">"Stop the Guessing Game: How to Understand Needs, Spot Hidden Pain, and Build Calm Daily Routines When Words Aren't Enough."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The "Total Communication" Pyramid:</strong> Why waiting for spoken words creates frustration—and how to unlock gesture, objects, and visuals today.</li>
+            <li><strong>The "First / Then" Transition Secret:</strong> How two simple picture cards can end 75% of battles over getting dressed, bath time, and leaving the house.</li>
+            <li><strong>Spotting Hidden Physical Pain Without Speech:</strong> Decode subtle body cues (ear-pulling, chin-tucking, sudden biting) using clinical Abbey Pain Scale &amp; DISDAT principles.</li>
+            <li><strong>4 Ready-to-Print Communication Toolkits:</strong> Includes 16 Cut-Out Visual Routine &amp; Choice Cards, the 1-Page "How I Communicate" Hospital/Carer Passport, Visual Pain Body Map, and Gesture Dictionary Log.</li>
+            <li><strong>Cited Clinical Authority:</strong> Curated from Royal College of Speech &amp; Language Therapists (RCSLT), Makaton, PECS, and NICE Guidelines in zero-jargon plain English.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-indigo-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-indigo-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-indigo-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-indigo-400">.site</span></p>
+          <p class="text-xs text-indigo-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #2 • £14.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Parents, Family Carers &amp; Support Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        Beyond Words
+      </h1>
+      <p class="text-lg sm:text-2xl text-indigo-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        Practical Communication for Non-Verbal &amp; Neurodivergent Children and Adults
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-indigo-950/80 border border-indigo-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-indigo-200">
+        <strong class="text-amber-300">The Core Transformation:</strong> End the exhausting daily guessing game—learn to decode non-verbal cues, build stress-free visual routines, and give your loved one or client a clear voice today.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-indigo-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1e1b4b"/>
+              <stop offset="50%" stop-color="#312e81"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#bgGrad2)"/>
+          
+          <!-- Visual Symbol Cards Floating Between Two Figures -->
+          <!-- Card 1: Drink -->
+          <rect x="175" y="40" width="70" height="65" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
+          <path d="M198 58 L222 58 L218 85 L202 85 Z" fill="#3b82f6"/>
+          <text x="210" y="98" text-anchor="middle" fill="#78350f" font-size="9" font-weight="800">DRINK</text>
+
+          <!-- Card 2: Heart / Safe -->
+          <rect x="265" y="25" width="70" height="65" rx="10" fill="#dcfce7" stroke="#10b981" stroke-width="2.5"/>
+          <circle cx="300" cy="52" r="14" fill="#10b981"/>
+          <path d="M293 52 L298 57 L308 47" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <text x="300" y="82" text-anchor="middle" fill="#065f46" font-size="9" font-weight="800">ALL DONE</text>
+
+          <!-- Card 3: Music / Headphones -->
+          <rect x="355" y="40" width="70" height="65" rx="10" fill="#e0e7ff" stroke="#6366f1" stroke-width="2.5"/>
+          <path d="M376 72 A14 14 0 0 1 404 72" stroke="#4338ca" stroke-width="3.5" fill="none"/>
+          <rect x="372" y="68" width="7" height="12" rx="3" fill="#4338ca"/>
+          <rect x="401" y="68" width="7" height="12" rx="3" fill="#4338ca"/>
+          <text x="390" y="98" text-anchor="middle" fill="#312e81" font-size="9" font-weight="800">QUIET</text>
+
+          <!-- Left Figure (Child/Individual pointing to Visual Board) -->
+          <circle cx="145" cy="155" r="22" fill="#fcd34d"/>
+          <path d="M112 240 Q115 182 145 182 Q175 182 178 240 Z" fill="#818cf8"/>
+
+          <!-- Right Figure (Carer/Parent holding Visual Choice Board warmly) -->
+          <circle cx="455" cy="145" r="24" fill="#fdba74"/>
+          <path d="M418 240 Q422 175 455 175 Q488 175 492 240 Z" fill="#2dd4bf"/>
+
+          <!-- Connection Bridge Arc -->
+          <path d="M185 170 Q300 120 415 170" stroke="#a5b4fc" stroke-width="3.5" stroke-dasharray="6,6" fill="none"/>
+
+          <!-- Bottom Banner -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.75"/>
+          <text x="300" y="265" text-anchor="middle" fill="#e0e7ff" font-size="13" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Not being able to speak is not the same as having nothing to say."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-indigo-400 font-bold text-xs uppercase">RCSLT &amp; NICE Cited</p>
+          <p class="text-xs text-slate-300 mt-1">Built on Total Communication, PECS, Makaton &amp; Visual Schedule principles.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">Cut-Out Visual Cards</p>
+          <p class="text-xs text-slate-300 mt-1">16 ready-to-print daily routine &amp; choice symbols included inside.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-emerald-300 font-bold text-xs uppercase">Pain &amp; Cue Decoders</p>
+          <p class="text-xs text-slate-300 mt-1">Spot toothache, tummy pain, or sensory distress without a single spoken word.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-indigo-800/60 pt-4 flex items-center justify-between text-xs text-indigo-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Beyond Words • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-8">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-indigo-100 text-indigo-800 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Introduction: Ending the Guessing Game</span>
+            <span class="text-indigo-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Ch 1: The "Total Communication" Pyramid</span>
+            <span class="text-indigo-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Ch 2: Decoding Body Language, Sounds &amp; Echolalia</span>
+            <span class="text-indigo-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Ch 3: Visual Schedules &amp; "First / Then" Boards</span>
+            <span class="text-indigo-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Ch 4: Offering Choices Without Overwhelming</span>
+            <span class="text-indigo-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Ch 5: Spotting Hidden Physical Pain vs. Distress</span>
+            <span class="text-indigo-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-700 underline decoration-indigo-300">Ch 6: 4 Real-World Communication Playbooks</span>
+            <span class="text-indigo-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-800 group-hover:text-amber-950 underline decoration-amber-300">Ch 7: Real Carer FAQ Vault (AAC, Speech &amp; Myths)</span>
+            <span class="text-indigo-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-emerald-800 group-hover:text-emerald-950 underline decoration-emerald-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-indigo-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-800 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 1: 16 Cut-Out Visual Routine &amp; Choice Cards</span>
+            <span class="text-indigo-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-800 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 2: 1-Page "How I Communicate" Passport</span>
+            <span class="text-indigo-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50/70 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-800 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 3 &amp; 4: Pain Body Scale &amp; Cue Translator</span>
+            <span class="text-indigo-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Curated Action Guide</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-4">When Words Aren't Working, Everything Feels Harder</h2>
+    
+    <div class="space-y-4 text-slate-700 leading-relaxed text-[15.5px]">
+      <p>
+        Imagine waking up in a foreign country with a splitting toothache, or feeling terrified because someone is leading you into a noisy car, and you have no way to ask <em>"Where are we going?"</em> or say <em>"My mouth hurts."</em> When you try to point or pull away, people just speak louder at you and usher you along.
+      </p>
+      <p>
+        Within ten minutes, you would either scream, push someone away, or shut down completely.
+      </p>
+      <p>
+        This is the daily reality for millions of non-speaking or minimally speaking children, neurodivergent teenagers, and adults living with learning disabilities, stroke-related aphasia, or advanced dementia. And for the parents, family guardians, and support workers who love and care for them, the constant guessing game—<em>"Are they hungry? In pain? Bored? Anxious?"</em>—is emotionally exhausting.
+      </p>
+
+      <div class="bg-indigo-50 border-l-4 border-indigo-600 p-5 rounded-r-xl my-6">
+        <p class="font-bold text-indigo-950 text-base">
+          Communication is not just speech. Speech is only one tool in a much bigger toolbox.
+        </p>
+        <p class="text-sm text-indigo-900 mt-1">
+          Even when someone speaks fluently most of the day, high anxiety or sensory overload can cause <strong>"situational mutism"</strong> or temporary speech loss. Having visual and non-verbal backups helps <em>everyone</em>.
+        </p>
+      </div>
+
+      <p>
+        In this playbook, we have distilled clinical speech and language frameworks from the <a href="https://www.rcslt.org/speech-and-language-therapy/clinical-information/augmentative-and-alternative-communication/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">Royal College of Speech and Language Therapists (RCSLT) ↗</a>, <a href="https://www.nice.org.uk/guidance/cg170" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">NICE Guidelines (CG170 &amp; NG11) ↗</a>, <a href="https://makaton.org/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">The Makaton Charity ↗</a>, and <a href="https://pecs-unitedkingdom.com/pecs/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">PECS UK ↗</a> into simple, zero-cost tools you can start using at home or on shift today.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 & THE TOTAL COMMUNICATION PYRAMID
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • The Total Communication Approach</span>
+      <a href="#toc-page" class="text-indigo-600 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-4">The "Total Communication" Pyramid: How to Meet Them Where They Are</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15.5px] mb-5">
+      One of the biggest traps families and new care workers fall into is thinking: <em>"If I use picture cards or objects, they will get lazy and never try to talk."</em> **Decades of clinical research prove the exact opposite.** Picture cards, gestures, and real objects remove panic and build the brain pathways that actually *encourage* vocal sounds and spoken words.
+    </p>
+    <p class="text-slate-700 leading-relaxed text-[15.5px] mb-5">
+      Speech and Language Therapists use the **Hierarchy of Symbolic Development**. Spoken words sit right at the very top—they are the most abstract and hardest to process. When someone is struggling to understand you, **drop down the pyramid** to a more concrete level:
+    </p>
+
+    <!-- Custom SVG Diagram: The Total Communication Pyramid -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-base mb-1 text-center">Visual Guide: The 5-Level Communication Pyramid</h3>
+      <p class="text-xs text-slate-500 mb-4 text-center">When spoken words fail, step down to a lower, clearer layer of the pyramid.</p>
+
+      <svg viewBox="0 0 680 265" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Level 5 Top: Spoken / Written Words -->
+        <polygon points="340,12 260,56 420,56" fill="#4338ca"/>
+        <text x="340" y="45" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800">5. SPOKEN WORDS</text>
+        <text x="545" y="42" fill="#334155" font-size="11" font-weight="600">Most Abstract (Hardest when stressed)</text>
+
+        <!-- Level 4: Line Symbols / Icons -->
+        <polygon points="255,61 195,105 485,105 425,61" fill="#4f46e5"/>
+        <text x="340" y="88" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">4. SYMBOLS &amp; DRAWINGS (PECS / Makaton Signs)</text>
+
+        <!-- Level 3: Real Photographs -->
+        <polygon points="190,110 135,154 545,154 490,110" fill="#0d9488"/>
+        <text x="340" y="137" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">3. REAL PHOTOGRAPHS (Photo of their actual cup or bed)</text>
+
+        <!-- Level 2: Objects of Reference -->
+        <polygon points="130,159 75,203 605,203 550,159" fill="#d97706"/>
+        <text x="340" y="186" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">2. OBJECTS OF REFERENCE (Handing a spoon = Mealtime)</text>
+
+        <!-- Level 1 Base: Body Language, Touch & Tone -->
+        <polygon points="70,208 20,254 660,254 610,208" fill="#0f172a"/>
+        <text x="340" y="236" text-anchor="middle" fill="#5eead4" font-size="12.5" font-weight="800">1. BODY LANGUAGE, GESTURE, FACIAL WARMTH &amp; TONE (Foundation)</text>
+      </svg>
+    </div>
+
+    <!-- How to Use Objects of Reference Box -->
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h4 class="font-bold text-amber-950 text-sm">💡 The Secret Power of "Objects of Reference" (Level 2)</h4>
+        <a href="https://www.sense.org.uk/information-and-advice/communication/objects-of-reference/" target="_blank" rel="noopener noreferrer" class="text-[11px] font-bold text-amber-900 underline hover:text-amber-700">Watch Sense UK Objects of Reference Guide ↗</a>
+      </div>
+      <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+        For young children, individuals with profound learning disabilities, or adults with advanced dementia who no longer recognize 2D pictures, <strong>real physical objects</strong> work like magic. Consistently hand them the exact same object right before an activity:
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3 text-xs font-semibold text-amber-950">
+        <div class="bg-white p-2.5 rounded-lg border border-amber-200">🥄 Wooden Spoon = Dinner time</div>
+        <div class="bg-white p-2.5 rounded-lg border border-amber-200">🧼 Soft Flannel = Wash / Bath time</div>
+        <div class="bg-white p-2.5 rounded-lg border border-amber-200">🔑 Car Key Fob = Going in the car</div>
+        <div class="bg-white p-2.5 rounded-lg border border-amber-200">🧸 Small Cushion = Quiet rest time</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 (DECODING BODY LANGUAGE & ECHOLALIA)
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Reading Non-Verbal Signals</span>
+      <a href="#toc-page" class="text-indigo-600 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Becoming a Communication Detective: Sounds, Actions &amp; Echolalia</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Every person who doesn't use traditional speech already has their own rich language—we just need to learn their dictionary. Instead of viewing repetitive actions or vocal sounds as "random behaviours," ask yourself: <strong>"What job is this action doing for them right now?"</strong> (Learn more about <a href="https://www.meaningfulspeech.com/blog/What-is-GLP" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline">Gestalt Language Processing &amp; Echolalia here ↗</a>).
+    </p>
+
+    <!-- Translation Table -->
+    <div class="overflow-hidden border border-slate-200 rounded-xl mb-5">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2.5 font-bold w-1/3 border-r border-slate-700">What You See or Hear</th>
+            <th class="p-2.5 font-bold w-1/3 border-r border-slate-700 bg-indigo-900">What It Often Means</th>
+            <th class="p-2.5 font-bold w-1/3 bg-teal-800">How You Should Respond</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-semibold">Hand-Leading (Pulling your hand toward the fridge or door)</td>
+            <td class="p-2.5 border-r border-slate-200 bg-indigo-50/40">Using your hand as a tool to request something specific they can't reach or open.</td>
+            <td class="p-2.5 bg-teal-50/40">Walk with them, point to the two likely items, and model: <em>"Juice or apple? Juice!"</em></td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-semibold">Echolalia (Repeating a line from a cartoon, advert, or your last word)</td>
+            <td class="p-2.5 border-r border-slate-200 bg-indigo-50/40"><strong>Gestalt Processing:</strong> They tie a whole phrase to the <em>feeling</em> they had when they first heard it.</td>
+            <td class="p-2.5 bg-teal-50/40">Look at the emotion behind the quote. A scary cartoon quote often means <em>"I feel nervous."</em></td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-semibold">Loud Humming, Monotone Moaning, or Ear-Covering</td>
+            <td class="p-2.5 border-r border-slate-200 bg-indigo-50/40">Acoustic shielding—creating predictable vibration to block out overwhelming room noise.</td>
+            <td class="p-2.5 bg-teal-50/40">Never tell them to "shh." Lower environmental noise immediately and offer ear defenders.</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 font-semibold">Sudden Dropping to the Floor ("Flopping")</td>
+            <td class="p-2.5 border-r border-slate-200 bg-indigo-50/40"><em>"I don't know where we are going next, my legs are tired, or this transition feels unsafe."</em></td>
+            <td class="p-2.5 bg-teal-50/40">Pause, show a picture or object of the destination, and offer a 2-minute seated count.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- NEW ILLUSTRATION: The 10-Second Processing Queue Diagram -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-amber-300 font-extrabold text-xs uppercase tracking-wider">Illustrated Clinical Rule • The 10-Second Silent Wait</span>
+        <span class="text-[11px] text-indigo-300">Why Repeating Questions Causes Overload</span>
+      </div>
+      <p class="text-xs text-slate-300 mb-3 leading-relaxed">
+        Neurodivergent individuals and adults with dementia or aphasia often need <strong>8 to 10 seconds</strong> to decode a spoken sentence. Repeating the question after 2 seconds resets their brain's processing queue back to zero:
+      </p>
+
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top Track: Wrong Way (Resetting Queue) -->
+        <rect x="8" y="8" width="644" height="58" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+        <text x="20" y="28" fill="#fda4af" font-size="11" font-weight="800">❌ REPEATING EVERY 2 SECONDS (RESETS BRAIN QUEUE):</text>
+        <rect x="20" y="36" width="135" height="22" rx="5" fill="#9f1239"/>
+        <text x="87" y="51" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">"Coat on!" (0s)</text>
+        <text x="172" y="51" text-anchor="middle" fill="#fb7185" font-size="11" font-weight="800">⚡ RESET</text>
+        <rect x="200" y="36" width="165" height="22" rx="5" fill="#9f1239"/>
+        <text x="282" y="51" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">"Put your coat on!" (2s)</text>
+        <text x="382" y="51" text-anchor="middle" fill="#fb7185" font-size="11" font-weight="800">⚡ RESET</text>
+        <rect x="410" y="36" width="225" height="22" rx="5" fill="#e11d48"/>
+        <text x="522" y="51" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="800">"Are you listening?!" (4s) → MELTDOWN</text>
+
+        <!-- Bottom Track: Right Way (10-Second Wait) -->
+        <rect x="8" y="76" width="644" height="60" rx="10" fill="#0f172a" stroke="#10b981" stroke-width="1.5"/>
+        <text x="20" y="96" fill="#6ee7b7" font-size="11" font-weight="800">✅ THE 10-SECOND SILENT WAIT RULE (SUCCESSFUL PROCESSING):</text>
+        <rect x="20" y="104" width="125" height="24" rx="5" fill="#4f46e5"/>
+        <text x="82" y="120" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">1. "Coat, please."</text>
+        <rect x="155" y="104" width="320" height="24" rx="5" fill="#1e1b4b" stroke="#6366f1" stroke-dasharray="4,4"/>
+        <text x="315" y="120" text-anchor="middle" fill="#a5b4fc" font-size="10" font-weight="700">⏳ Count 1... 2... 3... 4... 5... 6... 7... 8... 9... 10 silently</text>
+        <rect x="485" y="104" width="150" height="24" rx="5" fill="#059669"/>
+        <text x="560" y="120" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="800">✓ Reaches for Coat!</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 (VISUAL SCHEDULES & FIRST/THEN BOARDS)
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Visual Routines &amp; Transitions</span>
+      <a href="#toc-page" class="text-indigo-600 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 (DECODING BODY LANGUAGE & ECHOLALIA)
+  ========================================================== -->
+  <section class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Reading Non-Verbal Signals</span>
+      <span>Page 4</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-4">Becoming a Communication Detective: Sounds, Actions &amp; Echolalia</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15.5px] mb-5">
+      Every person who doesn't use traditional speech already has their own rich language—we just need to learn their dictionary. Instead of viewing repetitive actions or vocal sounds as "random behaviours," ask yourself: <strong>"What job is this action doing for them right now?"</strong>
+    </p>
+
+    <!-- Translation Table -->
+    <div class="overflow-hidden border border-slate-200 rounded-xl mb-6">
+      <table class="w-full text-left border-collapse text-xs sm:text-sm">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-3 font-bold w-1/3 border-r border-slate-700">What You See or Hear</th>
+            <th class="p-3 font-bold w-1/3 border-r border-slate-700 bg-indigo-900">What It Often Means</th>
+            <th class="p-3 font-bold w-1/3 bg-teal-800">How You Should Respond</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="p-3 border-r border-slate-200 font-semibold">Hand-Leading (Pulling your hand toward the fridge or door)</td>
+            <td class="p-3 border-r border-slate-200 bg-indigo-50/40">They are using your hand as a tool to request something specific they can't reach or open.</td>
+            <td class="p-3 bg-teal-50/40">Walk with them, point to the two likely items, and name it simply: <em>"Juice or apple? Juice!"</em></td>
+          </tr>
+          <tr>
+            <td class="p-3 border-r border-slate-200 font-semibold">Echolalia (Repeating a line from a cartoon, advert, or your last word)</td>
+            <td class="p-3 border-r border-slate-200 bg-indigo-50/40"><strong>Gestalt Language Processing:</strong> They tie a whole phrase to the <em>feeling</em> they had when they first heard it.</td>
+            <td class="p-3 bg-teal-50/40">Look at the emotion behind the quote. A scary cartoon quote often means <em>"I feel nervous right now."</em></td>
+          </tr>
+          <tr>
+            <td class="p-3 border-r border-slate-200 font-semibold">Loud Humming, Monotone Moaning, or Ear-Covering</td>
+            <td class="p-3 border-r border-slate-200 bg-indigo-50/40">Acoustic shielding—creating their own predictable vibration to block out overwhelming room noise.</td>
+            <td class="p-3 bg-teal-50/40">Never tell them to "shh." Lower environmental noise immediately and offer ear defenders.</td>
+          </tr>
+          <tr>
+            <td class="p-3 border-r border-slate-200 font-semibold">Sudden Dropping to the Floor ("Flopping")</td>
+            <td class="p-3 border-r border-slate-200 bg-indigo-50/40"><em>"I don't know where we are going next, my legs are tired, or this transition feels unsafe."</em></td>
+            <td class="p-3 bg-teal-50/40">Pause, show a picture or object of the destination, and offer a 2-minute seated count before standing.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- The 10-Second Rule Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-amber-300 font-extrabold text-xs uppercase tracking-wider">The Golden Clinical Rule</span>
+          <h3 class="serif-heading text-xl font-bold mt-0.5">The "10-Second Silent Wait" Rule</h3>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1.5 leading-relaxed">
+            Neurodivergent individuals and adults with cognitive decline or brain injury often take **up to 10 full seconds** to process a spoken sentence. Most carers repeat the question after just 2 seconds—which resets their brain's processing queue back to zero!
+          </p>
+        </div>
+        <div class="bg-indigo-600/30 border border-indigo-400/50 rounded-xl p-4 text-center shrink-0 sm:w-48">
+          <p class="text-2xl font-black text-amber-300">Ask Once.</p>
+          <p class="text-xs text-indigo-100 mt-1">Then count slowly to 10 in your head while smiling warmly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 (VISUAL SCHEDULES & FIRST/THEN BOARDS)
+  ========================================================== -->
+  <section class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Visual Routines &amp; Transitions</span>
+      <span>Page 5</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-4">The Magic of "First / Then" Boards &amp; Visual Routines</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15.5px] mb-5">
+      Spoken words disappear into thin air the second you say them. If someone is anxious, distracted, or has working memory challenges, your spoken instruction is gone within two seconds. **A visual picture stays still.** They can look back at it as many times as they need to feel safe.
+    </p>
+
+    <p class="text-slate-700 leading-relaxed text-[15.5px] mb-6">
+      The single most effective tool in all of care and parenting is the **"First / Then" (or "Now / Next") Board**. It shows two simple boxes side by side:
+      <br/>• <strong>FIRST (Now):</strong> The necessary daily task (e.g., *Put on shoes*, *Take medicine*, *Wash hands*).
+      <br/>• <strong>THEN (Next):</strong> A motivating, comforting, or preferred activity right after (e.g., *Garden swing*, *Cup of tea*, *iPad time*).
+    </p>
+
+    <!-- Custom SVG Diagram: First / Then Board in Action -->
+    <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="font-extrabold text-indigo-950 text-sm uppercase tracking-wider">Visual Blueprint: How a "First / Then" Board Works</h3>
+        <span class="text-xs bg-indigo-200 text-indigo-900 font-bold px-2.5 py-0.5 rounded">Ends 75% of Transition Refusals</span>
+      </div>
+
+      <svg viewBox="0 0 660 210" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Board Background -->
+        <rect x="10" y="10" width="640" height="190" rx="16" fill="#ffffff" stroke="#6366f1" stroke-width="3"/>
+        <line x1="330" y1="10" x2="330" y2="200" stroke="#c7d2fe" stroke-width="3" stroke-dasharray="8,6"/>
+
+        <!-- FIRST Side -->
+        <rect x="35" y="25" width="270" height="34" rx="8" fill="#f59e0b"/>
+        <text x="170" y="47" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="800">1. FIRST (NOW)</text>
+        
+        <rect x="85" y="72" width="170" height="110" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2.5"/>
+        <!-- Toothbrush / Wash Icon -->
+        <rect x="130" y="95" width="80" height="12" rx="6" fill="#0284c7"/>
+        <rect x="185" y="83" width="22" height="12" rx="2" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+        <text x="170" y="145" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="800">Brush Teeth</text>
+        <text x="170" y="165" text-anchor="middle" fill="#64748b" font-size="11">(2-Minute Task)</text>
+
+        <!-- Arrow in Middle -->
+        <circle cx="330" cy="125" r="20" fill="#4f46e5"/>
+        <path d="M322 125 L338 125 M332 118 L339 125 L332 132" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- THEN Side -->
+        <rect x="355" y="25" width="270" height="34" rx="8" fill="#10b981"/>
+        <text x="490" y="47" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="800">2. THEN (NEXT)</text>
+
+        <rect x="405" y="72" width="170" height="110" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2.5"/>
+        <!-- Book / Music / Reward Icon -->
+        <rect x="465" y="88" width="50" height="36" rx="6" fill="#059669"/>
+        <polygon points="485,98 485,114 500,106" fill="#ffffff"/>
+        <text x="490" y="145" text-anchor="middle" fill="#0f172a" font-size="14" font-weight="800">Favourite Video</text>
+        <text x="490" y="165" text-anchor="middle" fill="#64748b" font-size="11">(Immediate Reward)</text>
+      </svg>
+    </div>
+
+    <!-- 3 Golden Rules for Visual Boards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl">
+        <strong class="text-slate-900 text-sm block mb-1">1. Tap, Don't Lecture</strong>
+        Point to the two cards and say just four words: <em>"First teeth, then video."</em> If they protest, don't argue—simply tap the board gently again.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl">
+        <strong class="text-slate-900 text-sm block mb-1">2. Let Them Remove It</strong>
+        As soon as the "First" task is finished, let the person pull the card off or tick it as **"All Done."** That physical action releases a hit of achievement dopamine.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl">
+        <strong class="text-slate-900 text-sm block mb-1">3. Always Honour "Then"</strong>
+        In the beginning, deliver the "Then" activity immediately so they learn 100% trust that the board always keeps its promise. (<a href="#toolkit-section" class="text-indigo-700 font-bold underline">Jump to Printable First/Then Cards on p. 11 ↘</a>)
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 (CHOICE MAKING & LOW-DEMAND LANGUAGE)
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Empowering Choice &amp; Reducing Frustration</span>
+      <a href="#toc-page" class="text-indigo-600 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">How to Offer Choices Without Overwhelming Their Brain</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When you cannot speak easily, other people control almost every minute of your day—what you wear, what you eat, when you bathe, and where you sit. That lack of control is one of the biggest hidden triggers for challenging behaviour. However, asking an open question like <em>"What would you like to eat?"</em> requires massive memory recall. Instead, use <strong>The Rule of Two Visual Choices</strong>:
+    </p>
+
+    <!-- NEW ILLUSTRATION: The 30cm "Rule of Two" Visual Choice Diagram -->
+    <div class="bg-teal-50/70 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Visual Technique: The 30cm "Two-Hand Choice" Method (Eye-Gaze, Pointing or Touch)</h3>
+      <svg viewBox="0 0 650 135" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="640" height="125" rx="12" fill="#ffffff" stroke="#14b8a6" stroke-width="2"/>
+        <!-- Left Choice Box -->
+        <rect x="35" y="22" width="165" height="90" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <circle cx="75" cy="67" r="20" fill="#fbbf24"/>
+        <text x="140" y="62" text-anchor="middle" fill="#78350f" font-size="12" font-weight="800">Option A</text>
+        <text x="140" y="80" text-anchor="middle" fill="#92400e" font-size="10">"Apple?"</text>
+
+        <!-- Center 30cm Distance Marker & Eye Gaze Lines -->
+        <line x1="215" y1="67" x2="435" y2="67" stroke="#0d9488" stroke-width="2" stroke-dasharray="5,5"/>
+        <rect x="260" y="52" width="130" height="28" rx="6" fill="#0f766e"/>
+        <text x="325" y="70" text-anchor="middle" fill="#ffffff" font-size="10.5" font-weight="800">Hold 30cm Apart</text>
+        <text x="325" y="102" text-anchor="middle" fill="#0f766e" font-size="10" font-weight="700">👁️ Clear separation lets you see Eye-Gaze or Reach</text>
+
+        <!-- Right Choice Box (Selected) -->
+        <rect x="450" y="22" width="165" height="90" rx="10" fill="#dcfce7" stroke="#10b981" stroke-width="2.5"/>
+        <rect x="470" y="47" width="36" height="40" rx="6" fill="#10b981"/>
+        <text x="550" y="62" text-anchor="middle" fill="#065f46" font-size="12" font-weight="800">Option B ✓</text>
+        <text x="550" y="80" text-anchor="middle" fill="#047857" font-size="10">"Or Banana?"</text>
+      </svg>
+    </div>
+
+    <!-- The Rule of Two Choices Steps -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-indigo-950 block mb-1">1. Hold Up Two Real Items</strong>
+        Hold one option in your left hand and one in your right hand 30cm apart so you can clearly see which one their eyes or hand move toward.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-indigo-950 block mb-1">2. Accept Gaze or Touch</strong>
+        Never force them to "say the word" before handing it over. Model the word warmly as you give it: <em>"You looked at banana! Here's banana."</em>
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-indigo-950 block mb-1">3. Stop Quizzing</strong>
+        Being tested all day (<em>"What colour is this? Say please!"</em>) triggers anxiety. Switch to calm narration without demanding a performance.
+      </div>
+    </div>
+
+    <!-- Verbal Swap Scripts Table -->
+    <h3 class="font-bold text-slate-900 text-sm mb-2">Everyday Communication Swaps (High-Pressure vs. Low-Pressure)</h3>
+    <div class="overflow-hidden border border-slate-200 rounded-xl">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2.5 font-bold w-1/2 border-r border-slate-700">❌ High-Pressure / Confusing</th>
+            <th class="p-2.5 font-bold w-1/2 bg-indigo-800">✅ Clear, Supportive &amp; Visual</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200">
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900">"What do you want for lunch today?" (Too open)</td>
+            <td class="p-2.5 bg-indigo-50/50 font-semibold text-indigo-950"><em>(Hold up both items)</em> "Soup or sandwich?"</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900">"Say 'drink'! I won't give it to you until you say 'drink'!"</td>
+            <td class="p-2.5 bg-indigo-50/50 font-semibold text-indigo-950"><em>(As they tap the cup)</em> "Drink! Here is your cold drink."</td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900">"Don't run in the hallway!" (Brain only hears 'Run!')</td>
+            <td class="p-2.5 bg-indigo-50/50 font-semibold text-indigo-950">"Walking feet, please." <em>(Walk slowly beside them)</em></td>
+          </tr>
+          <tr>
+            <td class="p-2.5 border-r border-slate-200 text-rose-900">"We're popping out in a bit to see the doctor then Nanna's."</td>
+            <td class="p-2.5 bg-indigo-50/50 font-semibold text-indigo-950"><em>(Show First/Then card)</em> "First Doctor, then Nanna's house."</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 (SPOTTING HIDDEN PAIN VS EMOTIONAL DISTRESS)
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Spotting Hidden Physical Pain</span>
+      <a href="#toc-page" class="text-indigo-600 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-rose-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5 • Critical Clinical Skill</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Pain vs. Frustration: How to Spot Hidden Illness Without Words</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      According to <a href="https://www.nice.org.uk/guidance/ng11" target="_blank" rel="noopener noreferrer" class="text-rose-700 font-bold underline">NICE Guideline NG11 ↗</a> and the clinical <strong>Disability Distress Assessment Tool (DISDAT)</strong>, undiagnosed physical pain is the #1 missed cause of sudden self-injury, head-banging, biting, or aggression in non-verbal children and adults. Because many neurodivergent individuals and people with dementia process internal body signals differently (<em>interoception</em>), they rarely point neatly to the sore spot.
+    </p>
+
+    <!-- NEW ILLUSTRATION: Non-Verbal Pain Hotspots Diagram -->
+    <div class="bg-rose-50/60 border border-rose-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-rose-950 text-xs uppercase tracking-wider text-center mb-2">Clinical Body Map: Where Non-Verbal Behaviour Signals Physical Pain</h3>
+      <svg viewBox="0 0 660 175" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="5" width="650" height="165" rx="12" fill="#ffffff" stroke="#f43f5e" stroke-width="1.5"/>
+        <!-- Central Body Silhouette -->
+        <circle cx="330" cy="42" r="22" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <rect x="302" y="68" width="56" height="65" rx="14" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+        <rect x="307" y="135" width="20" height="28" rx="6" fill="#cbd5e1"/>
+        <rect x="333" y="135" width="20" height="28" rx="6" fill="#cbd5e1"/>
+
+        <!-- Hotspot Pulses on Body -->
+        <circle cx="330" cy="30" r="6" fill="#e11d48"/> <!-- Forehead/Headache -->
+        <circle cx="346" cy="48" r="6" fill="#e11d48"/> <!-- Jaw/Teeth/Ear -->
+        <circle cx="330" cy="88" r="6" fill="#e11d48"/> <!-- Chest/Reflux -->
+        <circle cx="330" cy="118" r="6" fill="#e11d48"/> <!-- Lower Abdomen/UTI/Bowel -->
+
+        <!-- Left Callouts -->
+        <line x1="235" y1="35" x2="322" y2="30" stroke="#e11d48" stroke-width="2"/>
+        <rect x="20" y="16" width="215" height="42" rx="8" fill="#fff1f2" stroke="#fda4af"/>
+        <text x="30" y="33" fill="#9f1239" font-size="10.5" font-weight="800">1. HEAD / FOREHEAD PRESSING</text>
+        <text x="30" y="48" fill="#475569" font-size="9.5">Pushing head on wall/floor = Migraine / Sinus</text>
+
+        <line x1="235" y1="100" x2="322" y2="88" stroke="#e11d48" stroke-width="2"/>
+        <rect x="20" y="78" width="215" height="44" rx="8" fill="#fff1f2" stroke="#fda4af"/>
+        <text x="30" y="95" fill="#9f1239" font-size="10.5" font-weight="800">2. CHEST TAPPING &amp; 2AM WAKING</text>
+        <text x="30" y="110" fill="#475569" font-size="9.5">Arching back / throat clearing = Acid Reflux</text>
+
+        <!-- Right Callouts -->
+        <line x1="354" y1="48" x2="425" y2="35" stroke="#e11d48" stroke-width="2"/>
+        <rect x="425" y="16" width="215" height="42" rx="8" fill="#fff1f2" stroke="#fda4af"/>
+        <text x="435" y="33" fill="#9f1239" font-size="10.5" font-weight="800">3. BITING WRIST / CHEEK HITTING</text>
+        <text x="435" y="48" fill="#475569" font-size="9.5">Chewing collars / ear pull = Dental or Ear Infection</text>
+
+        <line x1="338" y1="118" x2="425" y2="105" stroke="#e11d48" stroke-width="2"/>
+        <rect x="425" y="78" width="215" height="44" rx="8" fill="#fff1f2" stroke="#fda4af"/>
+        <text x="435" y="95" fill="#9f1239" font-size="10.5" font-weight="800">4. SUDDEN PACING &amp; GROIN GUARDING</text>
+        <text x="435" y="110" fill="#475569" font-size="9.5">Sudden aggression spike = UTI or Constipation</text>
+      </svg>
+    </div>
+
+    <!-- 4 Classic Pain Red Flags Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-5">
+      <div class="bg-rose-50/70 border border-rose-200 rounded-xl p-3.5">
+        <span class="text-[11px] font-extrabold uppercase text-rose-700">1. Dental / Ear / Sinus Pain</span>
+        <h4 class="font-bold text-slate-900 text-xs mt-0.5">Hitting Cheek, Biting Wrist, or Ear-Pulling</h4>
+        <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+          Chewing hard on shirt collars, pushing knuckles into the jaw, or refusing crunchy/cold foods often signals a hidden tooth abscess or ear infection.
+        </p>
+      </div>
+      <div class="bg-rose-50/70 border border-rose-200 rounded-xl p-3.5">
+        <span class="text-[11px] font-extrabold uppercase text-rose-700">2. Acid Reflux / Stomach Pain</span>
+        <h4 class="font-bold text-slate-900 text-xs mt-0.5">Arching Back, Throat-Clearing &amp; Night Waking</h4>
+        <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+          Silent acid reflux burns more when lying flat. Watch for waking up screaming at 2 AM, leaning tummy over sofa arms, or tapping the chest.
+        </p>
+      </div>
+    </div>
+
+    <!-- Clinical Tip Box -->
+    <div class="bg-slate-900 text-white rounded-xl p-4">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h4 class="font-bold text-amber-300 text-sm">🩺 How to Prepare for a GP or Hospital Visit (The 20-Second Video Tip)</h4>
+        <a href="#toolkit-3" class="text-xs text-indigo-300 underline font-bold">Jump to Printable Pain Body Scale (p. 13) ↘</a>
+      </div>
+      <p class="text-xs text-slate-200 mt-1 leading-relaxed">
+        Doctors only see your loved one for 10 minutes in a stressful clinic room. Before the appointment, record a <strong>20-second video on your phone</strong> showing the exact physical behaviour at home, and bring the completed <strong>Toolkit #2 ("How I Communicate" Passport)</strong> and <strong>Toolkit #3 (Pain Body Map)</strong> from the back of this book.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 (4 REAL-WORLD COMMUNICATION PLAYBOOKS)
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Communication Playbooks</span>
+      <a href="#toc-page" class="text-indigo-600 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-4">4 Real-World Playbooks: Solving Daily Flashpoints</h2>
+
+    <!-- NEW ILLUSTRATION: The 60-Second "Rule of 5" Elimination Flowchart -->
+    <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-3.5 mb-4">
+      <p class="text-[11px] font-extrabold uppercase text-amber-900 text-center mb-2">Visual Flowchart: The 60-Second "Rule of 5" Distress Elimination Walk (Wait 10s Between Each)</p>
+      <svg viewBox="0 0 660 70" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="5" y="8" width="115" height="54" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+        <text x="62" y="30" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">1. DRINK / SNACK</text>
+        <text x="62" y="46" text-anchor="middle" fill="#92400e" font-size="9">Show cup &amp; food</text>
+
+        <text x="130" y="38" text-anchor="middle" fill="#64748b" font-size="13" font-weight="800">→</text>
+
+        <rect x="140" y="8" width="115" height="54" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+        <text x="197" y="30" text-anchor="middle" fill="#075985" font-size="10" font-weight="800">2. TOILET / PAD</text>
+        <text x="197" y="46" text-anchor="middle" fill="#0369a1" font-size="9">Show bathroom card</text>
+
+        <text x="265" y="38" text-anchor="middle" fill="#64748b" font-size="13" font-weight="800">→</text>
+
+        <rect x="275" y="8" width="115" height="54" rx="8" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/>
+        <text x="332" y="30" text-anchor="middle" fill="#312e81" font-size="10" font-weight="800">3. SENSORY</text>
+        <text x="332" y="46" text-anchor="middle" fill="#4338ca" font-size="9">Noise / Temp / Tags</text>
+
+        <text x="400" y="38" text-anchor="middle" fill="#64748b" font-size="13" font-weight="800">→</text>
+
+        <rect x="410" y="8" width="115" height="54" rx="8" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2"/>
+        <text x="467" y="30" text-anchor="middle" fill="#9f1239" font-size="10" font-weight="800">4. PAIN CHECK</text>
+        <text x="467" y="46" text-anchor="middle" fill="#be123c" font-size="9">Point to body map</text>
+
+        <text x="535" y="38" text-anchor="middle" fill="#64748b" font-size="13" font-weight="800">→</text>
+
+        <rect x="545" y="8" width="110" height="54" rx="8" fill="#dcfce7" stroke="#10b981" stroke-width="2"/>
+        <text x="600" y="30" text-anchor="middle" fill="#065f46" font-size="10" font-weight="800">5. SPACE / REST</text>
+        <text x="600" y="46" text-anchor="middle" fill="#047857" font-size="9">Offer "Break" card</text>
+      </svg>
+    </div>
+
+    <div class="space-y-3.5">
+      <!-- Scenario 1 -->
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white shadow-sm">
+          This is super common when starting out—usually because cards were only introduced for boring tasks like <em>"Brush teeth"</em> or <em>"Tidy up."</em> For the first 7 days, **only use picture cards for their absolute favourite things** (e.g., bubbles, crisps, garden swing, favourite song). Once they realize <em>"Tapping this square gets me what I love in 2 seconds,"</em> the cards become treasured tools. (Tip: Laminate cards or stick them onto sturdy coasters/cardboard).
+        </p>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "How do I teach 'No' or 'Stop' safely when they usually bite or hit to refuse?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Someone hits or bites because it is the fastest way they know to make an unwanted demand go away. Give them a faster, easier tool: place a bright yellow **"Break / Not Now"** card next to them. The moment they even brush their hand against that card, immediately step back and say: <em>"You asked for a break! Okay, we'll stop for two minutes."</em>
+        </p>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "My child/client can talk in full sentences sometimes, so why do they go completely mute when upset?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Spoken language requires huge amounts of energy from the brain's prefrontal cortex (Broca's area). During sensory overload, illness, or anxiety, the brain diverts energy to survival mode, causing **situational mutism** or intermittent speech loss. Always keep a low-tech visual choice board available—even for verbal individuals—for high-stress moments.
+        </p>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "Should we start with high-tech tablet apps or simple paper picture cards?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Always keep **paper/laminated visuals** alongside any tablet app. Paper cards never run out of battery, can go in the bath or swimming pool, don't have distracting YouTube notifications, and can be stuck directly where they are needed (like on the fridge door or bathroom mirror).
+        </p>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+        <h4 class="font-bold text-indigo-950">6. "How do we get school staff, agency carers, or grandparents to actually use the visuals consistently?"</h4>
+        <p class="text-indigo-900 mt-1 leading-relaxed">
+          People skip complicated 30-page folders. Give them **Toolkit #2 (The 1-Page 'How I Communicate' Passport)** on Page 12 of this guide. It takes 60 seconds to read and lists the exact top 5 gestures/cues and 3 golden rules for anyone walking onto shift.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <span>Page 10</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, AAC Tools &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below while reading on your phone, tablet, or computer to access free symbol libraries, video demonstrations, and official UK/international guidelines.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Video Demonstrations &amp; Free Symbol Libraries</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.autism.org.uk/advice-and-guidance/topics/communication/visual-supports" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">National Autistic Society</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Visual Supports &amp; Total Communication Step-by-Step Guide ↗</h4>
+        <p class="text-slate-600 mt-1">Official guidance and video examples on setting up First/Then boards, visual timetables, and objects of reference.</p>
+      </a>
+
+      <a href="https://makaton.org/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">The Makaton Charity</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Makaton Core Vocabulary Signs &amp; Free Family Library ↗</h4>
+        <p class="text-slate-600 mt-1">Watch short video clips of everyday hand signs paired with speech (Drink, More, Finished, Help, Toilet).</p>
+      </a>
+
+      <a href="https://arasaac.org/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">ARASAAC Open Symbol Portal</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">10,000+ Free Printable Communication Symbols ↗</h4>
+        <p class="text-slate-600 mt-1">Search and print custom high-contrast communication symbols for any specific hobby, meal, or place for free.</p>
+      </a>
+
+      <a href="https://www.stroke.org.uk/stroke/effects/communication/communication-tools" target="_blank" rel="noopener noreferrer" class="block border border-emerald-200 bg-emerald-50/50 hover:bg-emerald-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-emerald-700 text-white px-2 py-0.5 rounded">Stroke Association &amp; Dementia Care</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Aphasia &amp; Adult Speech Loss Practical Conversation Tools ↗</h4>
+        <p class="text-slate-600 mt-1">Communication charts and video coaching for families supporting adults after a stroke or cognitive decline.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Clinical &amp; Regulatory Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. Royal College of Speech and Language Therapists (RCSLT):</strong> <em>Five Good Communication Standards &amp; Augmentative and Alternative Communication (AAC) Clinical Guidance.</em> <a href="https://www.rcslt.org/" target="_blank" class="text-indigo-700 font-semibold underline">View RCSLT Standards ↗</a>
+        </li>
+        <li>
+          <strong>2. NICE Clinical Guideline CG170 &amp; NG11:</strong> <em>Autism spectrum disorder in under 19s: support and management &amp; Functional communication training for challenging behaviour.</em> <a href="https://www.nice.org.uk/guidance/cg170" target="_blank" class="text-indigo-700 font-semibold underline">View NICE CG170 ↗</a>
+        </li>
+        <li>
+          <strong>3. DISDAT &amp; Abbey Pain Scale:</strong> <em>Disability Distress Assessment Tool (Regnard et al.) for identifying non-verbal pain cues in severe communication impairment.</em>
+        </li>
+        <li>
+          <strong>4. Pyramid Educational Consultants (Bondy &amp; Frost):</strong> <em>The Picture Exchange Communication System (PECS) &amp; Visual Schedule Evidence Base.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-indigo-300 text-xs uppercase tracking-wider mb-2">📞 Free Communication &amp; Family Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Speech &amp; Language UK Family Line:</strong> 0800 888 0040</div>
+        <div>• <strong>Mencap Learning Disability Helpline:</strong> 0808 808 1111</div>
+        <div>• <strong>Stroke Association Helpline:</strong> 0303 3033 100</div>
+        <div>• <strong>Dementia Connect Support Line:</strong> 0333 150 3456</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — 16 CUT-OUT VISUAL ROUTINE CARDS
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-indigo-600">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-3 mb-4">
+      <div>
+        <span class="bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Cut Out &amp; Stick on Fridge or Velcro Strip</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">16 Essential Visual Routine, Choice &amp; Request Cards</h2>
+      </div>
+      <span class="text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-4">
+      <strong>How to use:</strong> Print this page on thick card (or standard paper and cover with clear tape). Cut along the dashed lines to use on your **First / Then Board** below or stick around the house where choices happen.
+    </p>
+
+    <!-- Cut-Out First / Then Strip at Top -->
+    <div class="grid grid-cols-2 gap-4 mb-5 p-3 bg-indigo-50 border-2 border-dashed border-indigo-400 rounded-xl text-center">
+      <div class="bg-white border-2 border-amber-500 rounded-xl p-3">
+        <span class="bg-amber-500 text-white font-black text-xs px-3 py-0.5 rounded uppercase">1. FIRST (NOW)</span>
+        <div class="h-14 flex items-center justify-center text-xs text-slate-400 font-semibold mt-1">[ Place First Card Here ]</div>
+      </div>
+      <div class="bg-white border-2 border-emerald-500 rounded-xl p-3">
+        <span class="bg-emerald-600 text-white font-black text-xs px-3 py-0.5 rounded uppercase">2. THEN (NEXT)</span>
+        <div class="h-14 flex items-center justify-center text-xs text-slate-400 font-semibold mt-1">[ Place Reward/Next Card Here ]</div>
+      </div>
+    </div>
+
+    <!-- 16 Cut-Out Visual Cards Grid (4x4) -->
+    <div class="grid grid-cols-4 gap-3 text-center">
+      <!-- Row 1: Core Needs -->
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-amber-50/40 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-amber-800">Request</span>
+        <div class="text-2xl my-1">🥤</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">DRINK</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-amber-50/40 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-amber-800">Request</span>
+        <div class="text-2xl my-1">🍎</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">HUNGRY / EAT</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-amber-50/40 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-amber-800">Urgent</span>
+        <div class="text-2xl my-1">🚽</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">TOILET</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-rose-50/60 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-rose-800">Self-Advocacy</span>
+        <div class="text-2xl my-1">✋</div>
+        <span class="font-extrabold text-rose-900 text-xs uppercase">STOP / BREAK</span>
+      </div>
+
+      <!-- Row 2: Sensory & Help -->
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-rose-50/60 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-rose-800">Support</span>
+        <div class="text-2xl my-1">🤝</div>
+        <span class="font-extrabold text-rose-900 text-xs uppercase">HELP PLEASE</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-indigo-50/50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-indigo-800">Sensory</span>
+        <div class="text-2xl my-1">🎧</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">TOO LOUD</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-emerald-50/50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-emerald-800">Completion</span>
+        <div class="text-2xl my-1">✅</div>
+        <span class="font-extrabold text-emerald-900 text-xs uppercase">ALL DONE</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-rose-50/60 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-rose-800">Medical</span>
+        <div class="text-2xl my-1">🩹</div>
+        <span class="font-extrabold text-rose-900 text-xs uppercase">IT HURTS</span>
+      </div>
+
+      <!-- Row 3: Daily Routine -->
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-slate-50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-slate-500">Routine</span>
+        <div class="text-2xl my-1">👕</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">GET DRESSED</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-slate-50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-slate-500">Routine</span>
+        <div class="text-2xl my-1">🛁</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">WASH / BATH</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-slate-50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-slate-500">Routine</span>
+        <div class="text-2xl my-1">🪥</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">BRUSH TEETH</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-slate-50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-slate-500">Routine</span>
+        <div class="text-2xl my-1">💊</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">MEDICINE</span>
+      </div>
+
+      <!-- Row 4: Transitions & Rewards -->
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-teal-50/50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-teal-800">Transition</span>
+        <div class="text-2xl my-1">🚗</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">CAR / GO OUT</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-teal-50/50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-teal-800">Reward</span>
+        <div class="text-2xl my-1">🌳</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">GARDEN / WALK</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-teal-50/50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-teal-800">Reward</span>
+        <div class="text-2xl my-1">📱</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">MUSIC / SCREEN</span>
+      </div>
+      <div class="border-2 border-dashed border-slate-400 rounded-xl p-3 bg-indigo-50/50 flex flex-col items-center justify-between">
+        <span class="text-[10px] font-bold uppercase text-indigo-800">Rest</span>
+        <div class="text-2xl my-1">🛌</div>
+        <span class="font-extrabold text-slate-900 text-xs uppercase">REST / BED</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — 1-PAGE "HOW I COMMUNICATE" PASSPORT
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-5">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Hand to Carers, Teachers &amp; Hospital Staff</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">1-Page "How I Communicate" Personal Passport</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline">↑ Contents • carelearn.site</a>
+    </div>
+      <span class="text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+      <div>
+        <label class="text-xs font-bold text-slate-700 uppercase">My Name / Preferred Name:</label>
+        <input type="text" placeholder="e.g., Noah / Mrs. Evans" class="toolkit-input mt-1" />
+      </div>
+      <div>
+        <label class="text-xs font-bold text-slate-700 uppercase">Date of Birth / Key Diagnosis:</label>
+        <input type="text" placeholder="e.g., Autism / Post-Stroke Aphasia" class="toolkit-input mt-1" />
+      </div>
+      <div>
+        <label class="text-xs font-bold text-slate-700 uppercase">Key Contact &amp; Phone:</label>
+        <input type="text" placeholder="e.g., Mum / Care Lead (07700...)" class="toolkit-input mt-1" />
+      </div>
+    </div>
+
+    <div class="space-y-4 text-xs">
+      <!-- Box 1: How I Understand You Best -->
+      <div class="border-2 border-indigo-500 rounded-xl p-4 bg-indigo-50/30">
+        <h3 class="font-extrabold text-indigo-950 text-sm uppercase mb-1">1. How to Speak to Me So I Understand You Best:</h3>
+        <p class="text-[11px] text-slate-500 mb-2">Processing time needed, sentence length, visual boards, or objects of reference I use.</p>
+        <textarea rows="3" placeholder="e.g., Please say my name first before speaking. Use short 3-4 word sentences and wait 10 full seconds for me to process. Always show me my First/Then picture cards before changing activities..." class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-xs"></textarea>
+      </div>
+
+      <!-- Box 2: My Personal Dictionary -->
+      <div class="border-2 border-teal-500 rounded-xl p-4 bg-teal-50/30">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase mb-2">2. My Personal Signal Dictionary (How I Tell You Things Without Speech):</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="text-[11px] font-bold text-teal-900">How I show "YES / I LIKE THIS":</label>
+            <textarea rows="2" placeholder="e.g., Reaching toward the item, smiling, humming softly, tapping your hand..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs mt-1"></textarea>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-rose-900">How I show "NO / STOP / ALL DONE":</label>
+            <textarea rows="2" placeholder="e.g., Turning my head away, pushing the plate slightly, dropping to the floor..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs mt-1"></textarea>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-amber-900">How I show "I AM HUNGRY OR THIRSTY":</label>
+            <textarea rows="2" placeholder="e.g., Leading you by the wrist to the kitchen door or bringing my blue cup..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs mt-1"></textarea>
+          </div>
+          <div>
+            <label class="text-[11px] font-bold text-indigo-900">How I show "I AM IN PAIN OR UNWELL":</label>
+            <textarea rows="2" placeholder="e.g., Biting the back of my wrist, pulling my right ear, refusing favourite snacks..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs mt-1"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Box 3: Sensory & Communication Don'ts -->
+      <div class="border-2 border-rose-500 rounded-xl p-4 bg-rose-50/30">
+        <h3 class="font-extrabold text-rose-950 text-sm uppercase mb-1">3. Golden Rules — Please NEVER Do This:</h3>
+        <textarea rows="2" placeholder="e.g., Never force eye contact, never take my comfort toy without showing a timer first, and never demand I say 'please' before giving me water..." class="w-full bg-white border border-rose-200 rounded-lg p-2.5 text-xs"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — PAIN SCALE & CUE TRANSLATOR
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-5">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Clinical Observation Tools</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Visual Pain &amp; Emotion Scale + Non-Verbal Cue Log</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline">↑ Contents • carelearn.site</a>
+    </div>
+      <span class="text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: Visual Pain & Feeling Pointing Strip -->
+    <div class="mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Toolkit #3: Point-and-Show Feeling &amp; Discomfort Scale</h3>
+      <p class="text-xs text-slate-600 mb-3">
+        Hold this strip in front of the person so they can point to how their body feels, and tick the body zone below to show a GP or nurse:
+      </p>
+
+      <div class="grid grid-cols-5 gap-2 text-center mb-4">
+        <div class="bg-emerald-50 border-2 border-emerald-500 rounded-xl p-2.5">
+          <div class="text-2xl">😊</div>
+          <p class="font-extrabold text-emerald-950 text-xs mt-1">0 • FEEL GOOD</p>
+          <p class="text-[10px] text-emerald-700">Calm &amp; Comfy</p>
+        </div>
+        <div class="bg-teal-50 border-2 border-teal-400 rounded-xl p-2.5">
+          <div class="text-2xl">😐</div>
+          <p class="font-extrabold text-teal-950 text-xs mt-1">1 • UNSURE</p>
+          <p class="text-[10px] text-teal-700">Tired / Bored</p>
+        </div>
+        <div class="bg-amber-50 border-2 border-amber-500 rounded-xl p-2.5">
+          <div class="text-2xl">😟</div>
+          <p class="font-extrabold text-amber-950 text-xs mt-1">2 • UNCOMFY</p>
+          <p class="text-[10px] text-amber-800">Loud / Mild Ache</p>
+        </div>
+        <div class="bg-orange-50 border-2 border-orange-500 rounded-xl p-2.5">
+          <div class="text-2xl">😣</div>
+          <p class="font-extrabold text-orange-950 text-xs mt-1">3 • SORE / SCARED</p>
+          <p class="text-[10px] text-orange-800">Need Help / Meds</p>
+        </div>
+        <div class="bg-rose-50 border-2 border-rose-600 rounded-xl p-2.5">
+          <div class="text-2xl">😭</div>
+          <p class="font-extrabold text-rose-950 text-xs mt-1">4 • BAD PAIN</p>
+          <p class="text-[10px] text-rose-800">Urgent Check</p>
+        </div>
+      </div>
+
+      <!-- Quick Body Location Checkboxes -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs">
+        <span class="font-bold text-slate-900 uppercase block mb-2">Where They Are Touching, Rubbing, or Guarding (Tick to show Doctor):</span>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Head / Forehead</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Teeth / Jaw / Cheek</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Left or Right Ear</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Throat / Chest</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Tummy / Bowels</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Bladder / Groin (UTI)</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Back / Hips / Knees</label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox"/> Feet / Shoes / Skin</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Behaviour-to-Need Translation Tracker -->
+    <div>
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-1">Toolkit #4: The Non-Verbal Cue &amp; Pattern Translator</h3>
+      <p class="text-xs text-slate-600 mb-3">
+        Use this log to build your loved one's personal dictionary when a new sound, gesture, or behaviour appears:
+      </p>
+
+      <div class="overflow-hidden border border-slate-300 rounded-xl">
+        <table class="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-2.5 w-1/4 border-r border-slate-700">What They Did / Sound Made</th>
+              <th class="p-2.5 w-1/4 border-r border-slate-700">When &amp; Where It Happened</th>
+              <th class="p-2.5 w-1/4 border-r border-slate-700">What Actually Resolved It?</th>
+              <th class="p-2.5 w-1/4 bg-indigo-900">What This Signal Means</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-300">
+            <tr class="bg-slate-50 text-slate-500 italic">
+              <td class="p-2 border-r border-slate-300">Example: Tapped chin repeatedly &amp; hummed</td>
+              <td class="p-2 border-r border-slate-300">3:30 PM in lounge before dinner</td>
+              <td class="p-2 border-r border-slate-300">Stopped immediately after warm drink</td>
+              <td class="p-2">Signal for "I am thirsty"</td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Action / vocal cue..."></textarea></td>
+              <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Time &amp; room..."></textarea></td>
+              <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="What worked..."></textarea></td>
+              <td class="p-2"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Meaning discovered..."></textarea></td>
+            </tr>
+            <tr>
+              <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Action / vocal cue..."></textarea></td>
+              <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Time &amp; room..."></textarea></td>
+              <td class="p-2 border-r border-slate-300"><textarea rows="2" class="w-full p-1 text-xs" placeholder="What worked..."></textarea></td>
+              <td class="p-2"><textarea rows="2" class="w-full p-1 text-xs" placeholder="Meaning discovered..."></textarea></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="mt-6 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #2 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>
