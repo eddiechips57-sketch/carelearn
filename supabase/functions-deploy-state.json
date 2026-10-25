@@ -13,9 +13,9 @@
       "hasChanged": false,
       "hash": "8f69a9e2be4e50be98dfce858a319f38bd1601a9932a1ad602e814eb4c404be5"
     },
-    "stripe-setup-prices": {
+    "stripe-test-flow": {
       "hasChanged": false,
-      "hash": "071ee0dd0da8cbe66b4e1b1ced929a79880ef6369face15476fa6be780d300b5"
+      "hash": "4f7b7ceb1e241dd87bb4718aa6f1258cdffc84fb54e04e8a9674b3e95eff2c18"
     }
   }
 }
