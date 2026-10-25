@@ -43,7 +43,7 @@ Deno.serve(async (req) => {
       return corsResponse({ error: 'Method not allowed' }, 405);
     }
 
-    const { price_id, success_url, cancel_url, mode, ebook_slug } = await req.json();
+    const { price_id, success_url, cancel_url, mode, ebook_slug, guest_email } = await req.json();
 
     const error = validateParameters(
       { price_id, success_url, cancel_url, mode },
@@ -63,126 +63,135 @@ Deno.serve(async (req) => {
       return corsResponse({ error: 'Expected parameter ebook_slug to be a string' }, 400);
     }
 
-    const authHeader = req.headers.get('Authorization')!;
-    const token = authHeader.replace('Bearer ', '');
-    const {
-      data: { user },
-      error: getUserError,
-    } = await supabase.auth.getUser(token);
+    const authHeader = req.headers.get('Authorization');
+    const isGuest = !authHeader || guest_email != null;
 
-    if (getUserError) {
-      return corsResponse({ error: 'Failed to authenticate user' }, 401);
-    }
+    let userId: string | null = null;
+    let userEmail: string | null = guest_email ?? null;
 
-    if (!user) {
-      return corsResponse({ error: 'User not found' }, 404);
-    }
+    if (!isGuest) {
+      const token = authHeader!.replace('Bearer ', '');
+      const {
+        data: { user },
+        error: getUserError,
+      } = await supabase.auth.getUser(token);
 
-    const { data: customer, error: getCustomerError } = await supabase
-      .from('stripe_customers')
-      .select('customer_id')
-      .eq('user_id', user.id)
-      .is('deleted_at', null)
-      .maybeSingle();
-
-    if (getCustomerError) {
-      console.error('Failed to fetch customer information from the database', getCustomerError);
-
-      return corsResponse({ error: 'Failed to fetch customer information' }, 500);
-    }
-
-    let customerId;
-
-    /**
-     * In case we don't have a mapping yet, the customer does not exist and we need to create one.
-     */
-    if (!customer || !customer.customer_id) {
-      const newCustomer = await stripe.customers.create({
-        email: user.email,
-        metadata: {
-          userId: user.id,
-        },
-      });
-
-      console.log(`Created new Stripe customer ${newCustomer.id} for user ${user.id}`);
-
-      const { error: createCustomerError } = await supabase.from('stripe_customers').insert({
-        user_id: user.id,
-        customer_id: newCustomer.id,
-      });
-
-      if (createCustomerError) {
-        console.error('Failed to save customer information in the database', createCustomerError);
-
-        // Try to clean up both the Stripe customer and subscription record
-        try {
-          await stripe.customers.del(newCustomer.id);
-          await supabase.from('stripe_subscriptions').delete().eq('customer_id', newCustomer.id);
-        } catch (deleteError) {
-          console.error('Failed to clean up after customer mapping error:', deleteError);
-        }
-
-        return corsResponse({ error: 'Failed to create customer mapping' }, 500);
+      if (getUserError) {
+        return corsResponse({ error: 'Failed to authenticate user' }, 401);
       }
 
-      if (mode === 'subscription') {
-        const { error: createSubscriptionError } = await supabase.from('stripe_subscriptions').insert({
-          customer_id: newCustomer.id,
-          status: 'not_started',
-        });
+      if (user) {
+        userId = user.id;
+        userEmail = user.email ?? userEmail;
+      }
+    }
 
-        if (createSubscriptionError) {
-          console.error('Failed to save subscription in the database', createSubscriptionError);
+    // For guest checkout, we still need an email (collected by Stripe at checkout)
+    if (isGuest && !userEmail) {
+      // Let Stripe collect the email on the checkout page
+      userEmail = undefined as unknown as string;
+    }
 
-          // Try to clean up the Stripe customer since we couldn't create the subscription
-          try {
-            await stripe.customers.del(newCustomer.id);
-          } catch (deleteError) {
-            console.error('Failed to delete Stripe customer after subscription creation error:', deleteError);
+    let customerId: string;
+
+    if (userId) {
+      const { data: customer, error: getCustomerError } = await supabase
+        .from('stripe_customers')
+        .select('customer_id')
+        .eq('user_id', userId)
+        .is('deleted_at', null)
+        .maybeSingle();
+
+      if (getCustomerError) {
+        console.error('Failed to fetch customer information from the database', getCustomerError);
+        return corsResponse({ error: 'Failed to fetch customer information' }, 500);
+      }
+
+      if (customer && customer.customer_id) {
+        customerId = customer.customer_id;
+
+        if (mode === 'subscription') {
+          const { data: subscription, error: getSubscriptionError } = await supabase
+            .from('stripe_subscriptions')
+            .select('status')
+            .eq('customer_id', customerId)
+            .maybeSingle();
+
+          if (getSubscriptionError) {
+            console.error('Failed to fetch subscription information from the database', getSubscriptionError);
+            return corsResponse({ error: 'Failed to fetch subscription information' }, 500);
           }
 
-          return corsResponse({ error: 'Unable to save the subscription in the database' }, 500);
+          if (!subscription) {
+            const { error: createSubscriptionError } = await supabase.from('stripe_subscriptions').insert({
+              customer_id: customerId,
+              status: 'not_started',
+            });
+
+            if (createSubscriptionError) {
+              console.error('Failed to create subscription record for existing customer', createSubscriptionError);
+              return corsResponse({ error: 'Failed to create subscription record for existing customer' }, 500);
+            }
+          }
         }
-      }
+      } else {
+        const newCustomer = await stripe.customers.create({
+          email: userEmail ?? undefined,
+          metadata: { userId },
+        });
 
-      customerId = newCustomer.id;
+        console.log(`Created new Stripe customer ${newCustomer.id} for user ${userId}`);
 
-      console.log(`Successfully set up new customer ${customerId} with subscription record`);
-    } else {
-      customerId = customer.customer_id;
+        const { error: createCustomerError } = await supabase.from('stripe_customers').insert({
+          user_id: userId,
+          customer_id: newCustomer.id,
+        });
 
-      if (mode === 'subscription') {
-        // Verify subscription exists for existing customer
-        const { data: subscription, error: getSubscriptionError } = await supabase
-          .from('stripe_subscriptions')
-          .select('status')
-          .eq('customer_id', customerId)
-          .maybeSingle();
-
-        if (getSubscriptionError) {
-          console.error('Failed to fetch subscription information from the database', getSubscriptionError);
-
-          return corsResponse({ error: 'Failed to fetch subscription information' }, 500);
+        if (createCustomerError) {
+          console.error('Failed to save customer information in the database', createCustomerError);
+          try {
+            await stripe.customers.del(newCustomer.id);
+            await supabase.from('stripe_subscriptions').delete().eq('customer_id', newCustomer.id);
+          } catch (deleteError) {
+            console.error('Failed to clean up after customer mapping error:', deleteError);
+          }
+          return corsResponse({ error: 'Failed to create customer mapping' }, 500);
         }
 
-        if (!subscription) {
-          // Create subscription record for existing customer if missing
+        if (mode === 'subscription') {
           const { error: createSubscriptionError } = await supabase.from('stripe_subscriptions').insert({
-            customer_id: customerId,
+            customer_id: newCustomer.id,
             status: 'not_started',
           });
 
           if (createSubscriptionError) {
-            console.error('Failed to create subscription record for existing customer', createSubscriptionError);
-
-            return corsResponse({ error: 'Failed to create subscription record for existing customer' }, 500);
+            console.error('Failed to save subscription in the database', createSubscriptionError);
+            try {
+              await stripe.customers.del(newCustomer.id);
+            } catch (deleteError) {
+              console.error('Failed to delete Stripe customer after subscription creation error:', deleteError);
+            }
+            return corsResponse({ error: 'Unable to save the subscription in the database' }, 500);
           }
         }
+
+        customerId = newCustomer.id;
+        console.log(`Successfully set up new customer ${customerId} with subscription record`);
       }
+    } else {
+      // Guest checkout: create a Stripe customer without a user mapping.
+      // The webhook will auto-provision the user account after payment.
+      const newCustomer = await stripe.customers.create({
+        email: userEmail ?? undefined,
+        metadata: { guest: 'true', ebook_slug: ebook_slug ?? '' },
+      });
+
+      customerId = newCustomer.id;
+      console.log(`Created guest Stripe customer ${customerId}`);
     }
 
     // create Checkout Session
-    const session = await stripe.checkout.sessions.create({
+    const sessionParams: Stripe.Checkout.SessionCreateParams = {
       customer: customerId,
       payment_method_types: ['card'],
       line_items: [
@@ -195,7 +204,14 @@ Deno.serve(async (req) => {
       success_url,
       cancel_url,
       client_reference_id: ebook_slug ?? undefined,
-    });
+    };
+
+    // For guest checkout without a pre-supplied email, let Stripe collect it
+    if (isGuest && !userEmail) {
+      sessionParams.customer_email = undefined;
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionParams);
 
     console.log(`Created checkout session ${session.id} for customer ${customerId}`);
 

@@ -78,7 +78,6 @@ export default function EbookStore() {
   const [sortBy, setSortBy] = useState<'popular' | 'newest' | 'shortest'>('popular');
   const [page, setPage] = useState(1);
   const [showLeadCapture, setShowLeadCapture] = useState(false);
-  const [pendingReadSlug, setPendingReadSlug] = useState<string | null>(null);
   const [checkoutSlug, setCheckoutSlug] = useState<string | null>(null);
   const [checkoutError, setCheckoutError] = useState('');
   const [toast, setToast] = useState<{ type: 'success' | 'cancel' | null; slug: string }>({ type: null, slug: '' });
@@ -183,12 +182,6 @@ export default function EbookStore() {
 
   const handleBuy = async (ebook: Ebook) => {
     recordEbookView(ebook.title, { slug: ebook.slug, category: ebook.category });
-
-    if (!user) {
-      setPendingReadSlug(ebook.slug);
-      setShowLeadCapture(true);
-      return;
-    }
 
     if (!ebook.stripe_price_id) {
       setCheckoutError('This guide is not available for purchase yet.');
@@ -589,10 +582,6 @@ export default function EbookStore() {
           onClose={() => {
             setShowLeadCapture(false);
             dismissLeadCapture();
-            if (pendingReadSlug) {
-              window.location.href = `/login?redirect=/ebooks&buy=${pendingReadSlug}`;
-              setPendingReadSlug(null);
-            }
           }}
           recordedCourses={recordedEbooks}
           recordedCourseData={recordedEbookData.map((e) => ({ title: e.title, fundingTags: [], qualLevel: e.category }))}
@@ -628,15 +617,17 @@ export default function EbookStore() {
                 </p>
                 <p className="text-xs text-slate-500 mt-0.5">
                   {toast.type === 'success'
-                    ? 'Your guide is ready to read.'
+                    ? user
+                      ? 'Your guide is ready to read.'
+                      : 'Check your email for your account details and a link to set your password. Then sign in to read your guide.'
                     : 'Your card was not charged.'}
                 </p>
                 {toast.type === 'success' && (
                   <button
-                    onClick={() => window.open(`/read/${toast.slug}`, '_blank', 'noopener,noreferrer')}
+                    onClick={() => window.open(user ? `/read/${toast.slug}` : '/login', '_blank', 'noopener,noreferrer')}
                     className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:underline"
                   >
-                    <BookOpen size={14} /> Open your guide
+                    <BookOpen size={14} /> {user ? 'Open your guide' : 'Sign in to read'}
                   </button>
                 )}
               </div>

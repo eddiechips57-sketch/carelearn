@@ -99,7 +99,81 @@ async function handleEvent(event: Stripe.Event) {
           amount_total,
           currency,
           client_reference_id,
+          customer_details,
         } = stripeData as Stripe.Checkout.Session;
+
+        // Check if this customer already has a user mapping
+        const { data: existingMapping } = await supabase
+          .from('stripe_customers')
+          .select('user_id')
+          .eq('customer_id', customerId)
+          .is('deleted_at', null)
+          .maybeSingle();
+
+        if (!existingMapping) {
+          // Guest checkout: auto-provision a user account
+          const guestEmail = customer_details?.email;
+
+          if (guestEmail) {
+            // Check if a user with this email already exists
+            const { data: existingUser } = await supabase
+              .from('profiles')
+              .select('id')
+              .eq('email', guestEmail)
+              .maybeSingle();
+
+            if (existingUser) {
+              // Link the existing user to this Stripe customer
+              const { error: linkError } = await supabase.from('stripe_customers').insert({
+                user_id: existingUser.id,
+                customer_id: customerId,
+              });
+              if (linkError) {
+                console.error('Failed to link existing user to Stripe customer:', linkError);
+              } else {
+                console.info(`Linked existing user ${existingUser.id} to Stripe customer ${customerId}`);
+              }
+            } else {
+              // Create a new auth user with a random password
+              const tempPassword = crypto.randomUUID() + crypto.randomUUID();
+              const { data: newUser, error: createUserError } = await supabase.auth.admin.createUser({
+                email: guestEmail,
+                password: tempPassword,
+                email_confirm: true,
+                user_metadata: { guest_checkout: true, ebook_slug: client_reference_id ?? '' },
+              });
+
+              if (createUserError || !newUser.user) {
+                console.error('Failed to create user for guest checkout:', createUserError);
+              } else {
+                // Link the new user to this Stripe customer
+                const { error: linkError } = await supabase.from('stripe_customers').insert({
+                  user_id: newUser.user.id,
+                  customer_id: customerId,
+                });
+                if (linkError) {
+                  console.error('Failed to link new user to Stripe customer:', linkError);
+                } else {
+                  console.info(`Auto-provisioned user ${newUser.user.id} for guest customer ${customerId}`);
+                }
+
+                // Send a password reset email so the user can set their own password
+                const { error: resetError } = await supabase.auth.admin.generateLink({
+                  type: 'recovery',
+                  email: guestEmail,
+                });
+
+                if (resetError) {
+                  console.error('Failed to send password setup email:', resetError);
+                } else {
+                  console.info(`Sent password setup email to ${guestEmail}`);
+                }
+              }
+            }
+          } else {
+            console.warn(`Guest checkout for customer ${customerId} has no email — cannot provision user`);
+          }
+        }
 
         // Insert the order into the stripe_orders table
         const { error: orderError } = await supabase.from('stripe_orders').insert({

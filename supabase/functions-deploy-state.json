@@ -7,15 +7,11 @@
     },
     "stripe-checkout": {
       "hasChanged": false,
-      "hash": "2883f7d28de0f11579ddfcf021cf24ebfe5033f6252ef60f5462f2390a0448d2"
+      "hash": "dfecd694b770047c009aa49dec00ab1fd8f0e988c0ee8de44747520712701be5"
     },
     "stripe-webhook": {
       "hasChanged": false,
-      "hash": "8f69a9e2be4e50be98dfce858a319f38bd1601a9932a1ad602e814eb4c404be5"
-    },
-    "stripe-test-flow": {
-      "hasChanged": false,
-      "hash": "4f7b7ceb1e241dd87bb4718aa6f1258cdffc84fb54e04e8a9674b3e95eff2c18"
+      "hash": "40de77118a334e1d40c2fedeb3d3e28f062ba1dd3d444bd3edce13a34a6abb1d"
     }
   }
 }

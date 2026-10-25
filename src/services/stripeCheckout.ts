@@ -11,20 +11,22 @@ export async function createCheckoutSession(
   slug: string
 ): Promise<CheckoutResult> {
   const { data: { session } } = await supabase.auth.getSession();
-  if (!session) {
-    throw new Error('Please sign in to complete your purchase.');
-  }
 
   const origin = window.location.origin;
   const successUrl = `${origin}/ebooks?checkout=success&slug=${slug}`;
   const cancelUrl = `${origin}/ebooks?checkout=cancel&slug=${slug}`;
 
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+
+  if (session?.access_token) {
+    headers.Authorization = `Bearer ${session.access_token}`;
+  }
+
   const response = await fetch(CHECKOUT_URL, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${session.access_token}`,
-    },
+    headers,
     body: JSON.stringify({
       price_id: priceId,
       success_url: successUrl,
