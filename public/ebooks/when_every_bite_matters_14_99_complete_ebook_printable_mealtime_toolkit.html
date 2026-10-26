@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When Every Bite Matters (£14.99) | carelearn.site eBook & Printable Mealtime Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    /* Print-specific A4 eBook formatting */
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #d97706;
+      background-color: #fffbeb;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-amber-500 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #6 of 13 • £14.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">When Every Bite Matters — Mealtime Struggles &amp; Dysphagia (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Carer FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Videos
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Mealtime Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £14.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £14.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-amber-100 text-amber-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #6 Storefront Kit • £14.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Family carers and care home staff supporting frail older adults, dementia patients, or stroke survivors experiencing weight loss, pocketing food, coughing while drinking, or refusing meals.</p>
+          <p class="mt-1"><strong>Catalog Price: £14.99 digital download on www.carelearn.site.</strong></p>
+        </div>
+
+        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+          <p class="font-extrabold text-amber-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-amber-900">"End Mealtime Stress and Weight Loss: Exact IDDSI Texture Guides, High-Calorie Food Enrichment Tricks, and Safe Swallowing Protocols for Frail Older Adults."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The IDDSI Framework Made Simple:</strong> Exactly how to prepare and test pureed, minced, and soft bite-sized foods (Levels 4–7) without meals looking unappetising.</li>
+            <li><strong>Food Enrichment Without Extra Volume:</strong> How to add double cream, butter, cheese, and milk powder to small portions so every bite packs maximum calories for someone with a tiny appetite.</li>
+            <li><strong>Safe Swallowing &amp; Positioning Secrets:</strong> The 90-degree upright posture rule, eliminating distractions, and how to stop coughing or silent aspiration.</li>
+            <li><strong>Hydration Hacks for Water Refusers:</strong> Jellies, smooth soups, and moisture-rich fruits for people who push away glasses of water.</li>
+            <li><strong>4 Ready-to-Print Mealtime Toolkits:</strong> Includes the 7-Day High-Energy Meal Planner, Daily Fluid &amp; Food Intake Chart, IDDSI Texture Checklist, and Choking First-Aid Quick Guide.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-amber-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-amber-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-amber-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-amber-400">.site</span></p>
+          <p class="text-xs text-amber-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #6 • £14.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Care Homes &amp; Domiciliary Support Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        When Every Bite Matters
+      </h1>
+      <p class="text-lg sm:text-2xl text-amber-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        Overcoming Mealtime Struggles, Appetite Loss, and Swallowing Difficulties
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-amber-950/80 border border-amber-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-amber-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop worrying about dangerous weight loss and stressful mealtime battles—learn food enrichment, IDDSI texture standards, and safe swallowing techniques that restore nutrition and dignity.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-amber-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="biteGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#451a03"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#biteGrad)"/>
+
+          <!-- Warm Dining Glow -->
+          <circle cx="300" cy="130" r="85" fill="#fbbf24" opacity="0.12"/>
+
+          <!-- Center: Warm Mealplate & Upright Seated Figure -->
+          <circle cx="245" cy="95" r="18" fill="#fde68a"/>
+          <path d="M220 170 Q225 125 245 125 Q265 125 270 170 Z" fill="#d97706"/>
+
+          <!-- Dining Table & Plate -->
+          <ellipse cx="365" cy="165" rx="75" ry="25" fill="#334155" stroke="#fbbf24" stroke-width="2.5"/>
+          <ellipse cx="365" cy="160" rx="55" ry="16" fill="#fef3c7"/>
+
+          <!-- Left Badge: IDDSI Levels -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">🍲</text>
+          <text x="97" y="142" text-anchor="middle" fill="#fbbf24" font-size="13" font-weight="900">IDDSI TEXTURES</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">LEVELS 4 TO 7</text>
+
+          <!-- Right Badge: High Calorie -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">💪</text>
+          <text x="502" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">HIGH CALORIE</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">ENRICHED BITES</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#fef3c7" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Good nutrition is about more than calories—it is comfort, nourishment, and safety."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">RCSLT &amp; IDDSI Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on Royal College of Speech &amp; Language Therapists swallowing standards.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Care Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Salivation cycles, 90-degree posture, IDDSI levels, and choking triage matrices.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-sky-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">7-day meal planner, fluid intake chart, IDDSI checklist &amp; choking guide.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-amber-800/60 pt-4 flex items-center justify-between text-xs text-amber-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>When Every Bite Matters • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Introduction: The Hidden Nutrition Crisis in Care</span>
+            <span class="text-amber-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 1: The Anatomy of Swallowing &amp; Dysphagia</span>
+            <span class="text-amber-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 2: The IDDSI Texture Framework (Levels 4–7)</span>
+            <span class="text-amber-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 3: Food Enrichment (Maximum Calories, Small Portions)</span>
+            <span class="text-amber-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 4: Positioning, Environment &amp; Safe Pacing</span>
+            <span class="text-amber-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 5: Hydration Tricks for Water Refusers</span>
+            <span class="text-amber-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-amber-800 underline decoration-amber-300">Ch 6: 4 Real-World Mealtime Flashpoint Playbooks</span>
+            <span class="text-amber-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Coughing &amp; Weight Loss)</span>
+            <span class="text-amber-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-amber-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-900 group-hover:text-amber-950 underline decoration-amber-300">Toolkit 1: 7-Day High-Energy Meal Planner</span>
+            <span class="text-amber-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-900 group-hover:text-amber-950 underline decoration-amber-300">Toolkit 2: Daily Fluid &amp; Food Intake Chart</span>
+            <span class="text-amber-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-amber-900 group-hover:text-amber-950 underline decoration-amber-300">Toolkit 3 &amp; 4: IDDSI Checklist &amp; Choking First-Aid</span>
+            <span class="text-amber-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Nourishment, Safety &amp; Dignity</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Hidden Nutrition Crisis in Care (And How to Fix It)</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        Mealtimes should be one of the most comforting, social parts of the day. Yet for many family carers and frontline support workers, preparing a meal has become a source of daily dread. You spend an hour cooking, only for your loved one to push the plate away after two bites, or worse—cough violently when taking a sip of water.
+      </p>
+      <p>
+        Weight loss, dehydration, and silent choking hazards are among the most terrifying silent risks in home and residential care. When frail older adults or individuals with neurological conditions stop eating well, their muscle strength plummets, fall risks triple, and confusion deepens.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-amber-950 text-sm">
+          The Golden Rule of Mealtime Care: You don't need a huge plate of food to provide great nutrition. When appetite is small, every single bite must be packed with maximum calories and flavor.
+        </p>
+        <p class="text-xs text-amber-900 mt-1">
+          By understanding the <strong>International Dysphagia Diet Standardisation Initiative (IDDSI)</strong> framework and using clever food enrichment, you can turn tiny portions into power-packed meals while eliminating aspiration risks.
+        </p>
+      </div>
+
+      <p>
+        This playbook translates professional speech and language therapy standards—including <a href="https://www.rcslt.org/" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline hover:text-amber-900">Royal College of Speech &amp; Language Therapists (RCSLT) dysphagia guidelines ↗</a>, the <a href="https://iddsi.org/" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline hover:text-amber-900">IDDSI Framework ↗</a>, and <a href="https://www.nice.org.uk/" target="_blank" rel="noopener noreferrer" class="text-amber-700 font-bold underline hover:text-amber-900">NICE nutritional care standards ↗</a>—into clear, practical steps you can use today.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — ANATOMY OF SWALLOWING & DYSPHAGIA
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • Swallowing Anatomy &amp; Dysphagia</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Anatomy of Swallowing &amp; Spotting Early Signs of Dysphagia</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Swallowing is a complex neurological choreography involving over 50 pairs of muscles and nerves in the mouth, throat, and esophagus. When someone develops **dysphagia** (medical difficulty swallowing)—often caused by a stroke, Parkinson's, dementia, or general frailty—that coordination slows down, allowing food or liquid to slip past the vocal cords into the lungs. This is called **aspiration**, which can lead to aspiration pneumonia.
+    </p>
+
+    <!-- Custom SVG Illustration: The 5 Silent Signs of Dysphagia -->
+    <div class="bg-amber-50/60 border border-amber-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-950 text-xs uppercase tracking-wider text-center mb-2">Visual Diagram: The 5 Silent Warning Signs of Swallowing Difficulties</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- 5 Cards for 5 Signs -->
+        <rect x="10" y="12" width="120" height="120" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="70" y="36" text-anchor="middle" font-size="24">🗣️</text>
+        <text x="70" y="65" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">WET VOICE</text>
+        <text x="70" y="82" text-anchor="middle" fill="#334155" font-size="8.5">Gurgling or wet voice</text>
+        <text x="70" y="96" text-anchor="middle" fill="#334155" font-size="8.5">sound right after</text>
+        <text x="70" y="110" text-anchor="middle" fill="#334155" font-size="8.5">taking a drink/bite.</text>
+
+        <rect x="140" y="12" width="120" height="120" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="200" y="36" text-anchor="middle" font-size="24">🤧</text>
+        <text x="200" y="65" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">COUGHING</text>
+        <text x="200" y="82" text-anchor="middle" fill="#334155" font-size="8.5">Frequent coughing</text>
+        <text x="200" y="96" text-anchor="middle" fill="#334155" font-size="8.5">or throat clearing</text>
+        <text x="200" y="110" text-anchor="middle" fill="#334155" font-size="8.5">during meals.</text>
+
+        <rect x="270" y="12" width="120" height="120" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="330" y="36" text-anchor="middle" font-size="24">🦷</text>
+        <text x="330" y="65" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">POCKETING</text>
+        <text x="330" y="82" text-anchor="middle" fill="#334155" font-size="8.5">Food left hiding</text>
+        <text x="330" y="96" text-anchor="middle" fill="#334155" font-size="8.5">in the cheeks or</text>
+        <text x="330" y="110" text-anchor="middle" fill="#334155" font-size="8.5">under tongue after.</text>
+
+        <rect x="400" y="12" width="120" height="120" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="460" y="36" text-anchor="middle" font-size="24">⏱️</text>
+        <text x="460" y="65" text-anchor="middle" fill="#78350f" font-size="10" font-weight="800">SLOW CHEW</text>
+        <text x="460" y="82" text-anchor="middle" fill="#334155" font-size="8.5">Taking over 45 mins</text>
+        <text x="460" y="96" text-anchor="middle" fill="#334155" font-size="8.5">per meal or extreme</text>
+        <text x="460" y="110" text-anchor="middle" fill="#334155" font-size="8.5">fatigue eating.</text>
+
+        <rect x="530" y="12" width="120" height="120" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+        <text x="590" y="36" text-anchor="middle" font-size="24">🚨</text>
+        <text x="590" y="65" text-anchor="middle" fill="#92400e" font-size="10" font-weight="800">SILENT ASP.</text>
+        <text x="590" y="82" text-anchor="middle" fill="#92400e" font-size="8.5">No cough, but wet</text>
+        <text x="590" y="96" text-anchor="middle" fill="#92400e" font-size="8.5">breathing &amp; chest</text>
+        <text x="590" y="110" text-anchor="middle" fill="#92400e" font-size="8.5">infections occur.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Action Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🩺 Request a Speech &amp; Language Referral</strong>
+        If you notice coughing or pocketing, contact your GP or district nurse immediately for a Speech and Language Therapy (SALT) swallow assessment.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🪑 Check Upright Posture</strong>
+        Never feed someone while they are lying back in bed or slumped sideways. Gravity is essential for safe swallowing.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛑 No Talking While Eating</strong>
+        Encourage them not to talk or answer questions while food is in their mouth, as talking opens the airway.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — THE IDDSI TEXTURE FRAMEWORK
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • The IDDSI Texture Framework</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Mastering the IDDSI Framework (Levels 4 to 7)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      The **International Dysphagia Diet Standardisation Initiative (IDDSI)** provides a globally standardized framework (Levels 0 to 7) for testing and preparing modified foods and thickened liquids. Knowing these levels ensures that whether at home, in hospital, or at a care home, everyone speaks the exact same safety language.
+    </p>
+
+    <!-- Custom SVG Illustration: IDDSI Pyramid Levels 4-7 -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-300 text-xs uppercase tracking-wider text-center mb-2.5">Visual Blueprint: IDDSI Food &amp; Drink Consistency Hierarchy</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <!-- Level 4: Pureed -->
+        <rect x="8" y="10" width="150" height="125" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+        <text x="83" y="32" text-anchor="middle" fill="#fde047" font-size="11" font-weight="800">LEVEL 4: PUREED</text>
+        <text x="83" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Smooth, no lumps,</text>
+        <text x="83" y="68" text-anchor="middle" fill="#cbd5e1" font-size="9">holds shape on spoon,</text>
+        <text x="83" y="82" text-anchor="middle" fill="#cbd5e1" font-size="9">no chewing required.</text>
+        <text x="83" y="110" text-anchor="middle" fill="#fef3c7" font-size="8.5">Spoon drip / tilt test</text>
+
+        <!-- Level 5: Minced & Moist -->
+        <rect x="172" y="10" width="150" height="125" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+        <text x="247" y="32" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="800">LEVEL 5: MINCED</text>
+        <text x="247" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Soft, moist lumps</text>
+        <text x="247" y="68" text-anchor="middle" fill="#d1fae5" font-size="9">(max 4mm size), easily</text>
+        <text x="247" y="82" text-anchor="middle" fill="#d1fae5" font-size="9">mashed with a fork.</text>
+        <text x="247" y="110" text-anchor="middle" fill="#a7f3d0" font-size="8.5">Fork pressure test</text>
+
+        <!-- Level 6: Soft & Bite-Sized -->
+        <rect x="336" y="10" width="150" height="125" rx="10" fill="#0f766e" stroke="#2dd4bf" stroke-width="2"/>
+        <text x="411" y="32" text-anchor="middle" fill="#5eead4" font-size="11" font-weight="800">LEVEL 6: SOFT</text>
+        <text x="411" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Tender pieces up to</text>
+        <text x="411" y="68" text-anchor="middle" fill="#ccfbf1" font-size="9">1.5cm size, breaks</text>
+        <text x="411" y="82" text-anchor="middle" fill="#ccfbf1" font-size="9">apart under pressure.</text>
+        <text x="411" y="110" text-anchor="middle" fill="#99f6e4" font-size="8.5">Thumbnail test</text>
+
+        <!-- Level 7: Regular -->
+        <rect x="500" y="10" width="152" height="125" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="2"/>
+        <text x="576" y="32" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="800">LEVEL 7: REGULAR</p>
+        <text x="576" y="52" text-anchor="middle" fill="#ffffff" font-size="9.5">Normal everyday foods</text>
+        <text x="576" y="68" text-anchor="middle" fill="#e0e7ff" font-size="9">of all textures with</text>
+        <text x="576" y="82" text-anchor="middle" fill="#e0e7ff" font-size="9">no modification.</text>
+        <text x="576" y="110" text-anchor="middle" fill="#c7d2fe" font-size="8.5">Unrestricted diet</text>
+      </svg>
+    </div>
+
+    <!-- 2 Texture Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🍴 The Fork Pressure Test</strong>
+        Press a fork firmly into a piece of Level 6 food until the thumbnail blanches white (approx. 18kPa pressure). If the food mashes easily and doesn't reform, it is safe.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⚠️ Beware Mixed Textures</strong>
+        Never give cereal with milk (crunchy + liquid), minestrone soup (liquid + hard bits), or fruit with skins to someone with dysphagia unless specifically cleared by a SALT therapist.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — FOOD ENRICHMENT (MAXIMUM CALORIES)
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • High-Calorie Food Enrichment</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Food Enrichment: Maximum Calories in Small Portions</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When someone eats only 3 or 4 spoonfuls of food per meal, serving plain boiled vegetables or low-fat meals will quickly lead to dangerous malnutrition. **Food enrichment** means boosting the calorie and protein density of everyday meals without increasing the physical volume on the plate.
+    </p>
+
+    <!-- Custom SVG Illustration: High Calorie Enrichment Plate -->
+    <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-emerald-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: 4 Ways to Supercharge Everyday Meals</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="87" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">1. BUTTER &amp; CREAM</text>
+        <text x="87" y="58" text-anchor="middle" fill="#334155" font-size="9">Stir an extra tablespoon</text>
+        <text x="87" y="72" text-anchor="middle" fill="#334155" font-size="9">of double cream or butter</text>
+        <text x="87" y="86" text-anchor="middle" fill="#334155" font-size="9">into mash potato, soups,</text>
+        <text x="87" y="100" text-anchor="middle" fill="#059669" font-size="9" font-weight="700">+100 extra calories!</text>
+
+        <rect x="175" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="247" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">2. MILK POWDER</text>
+        <text x="247" y="58" text-anchor="middle" fill="#334155" font-size="9">Whisk 4 tablespoons of</text>
+        <text x="247" y="72" text-anchor="middle" fill="#334155" font-size="9">dried skimmed milk powder</text>
+        <text x="247" y="86" text-anchor="middle" fill="#334155" font-size="9">into a pint of ordinary milk</text>
+        <text x="247" y="100" text-anchor="middle" fill="#059669" font-size="9" font-weight="700">for protein-rich drinks.</text>
+
+        <rect x="335" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="407" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">3. MELTED CHEESE</text>
+        <text x="407" y="58" text-anchor="middle" fill="#334155" font-size="9">Stir grated cheddar or</text>
+        <text x="407" y="72" text-anchor="middle" fill="#334155" font-size="9">mascarpone into sauces,</text>
+        <text x="407" y="86" text-anchor="middle" fill="#334155" font-size="9">omelettes, and soft pasta</text>
+        <text x="407" y="100" text-anchor="middle" fill="#059669" font-size="9" font-weight="700">for savory richness.</text>
+
+        <rect x="495" y="15" width="150" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="570" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">4. FORTIFIED PORRIDGE</text>
+        <text x="570" y="58" text-anchor="middle" fill="#334155" font-size="9">Make morning porridge</text>
+        <text x="570" y="72" text-anchor="middle" fill="#334155" font-size="9">with full-fat milk + cream</text>
+        <text x="570" y="86" text-anchor="middle" fill="#334155" font-size="9">+ honey or maple syrup</text>
+        <text x="570" y="100" text-anchor="middle" fill="#059669" font-size="9" font-weight="700">instead of water.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Enrichment Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🍯 Small, Frequent Meals</strong>
+        Three large plates a day can overwhelm someone with a poor appetite. Serve 5 or 6 mini-meals (e.g., custard, fortified soup, milky puddings) every 2.5 hours.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🍳 Add Egg Yolks</strong>
+        Stirring an extra pasteurized egg yolk into scrambled eggs, custards, or soups adds pure bioavailable protein and healthy fats seamlessly.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🎨 Visual Appeal</strong>
+        Use colorful sauces and garnishes so pureed or soft food still looks appetizing and stimulates salivary flow.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — POSITIONING, ENVIRONMENT & PACING
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Upright Positioning &amp; Safe Pacing</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Positioning, Environment, and Safe Feeding Pacing</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      How and where someone eats is just as important as what is on their plate. Poor posture or a noisy, distracting environment dramatically increases the risk of choking and mealtime refusal.
+    </p>
+
+    <!-- Custom SVG Illustration: 90-Degree Upright Posture -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The Golden 90-Degree Upright Feeding Posture</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">1. 90-DEGREE UPRIGHT</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Sit fully upright in chair or bed</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">at 90 degrees. Never feed</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">someone lying flat or reclining</text>
+        <text x="30" y="106" fill="#0284c7" font-size="9" font-weight="700">✓ Keeps airway protected.</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">2. CHIN SLIGHTLY DOWN</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">Tilt chin slightly downward</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">toward chest when swallowing</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">(never tilt head backwards).</text>
+        <text x="245" y="106" fill="#0284c7" font-size="9" font-weight="700">✓ Closes windpipe safely.</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">3. EYE-LEVEL SEATING</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">Sit directly facing them at</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">eye level—never stand</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">above them feeding down.</text>
+        <text x="460" y="106" fill="#0284c7" font-size="9" font-weight="700">✓ Encourages safe pacing.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Pacing Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⏱️ Zero Rushing</strong>
+        Allow 30 to 45 minutes per meal. Rushing causes choking and exhaustion.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🤫 Quiet Dining Room</strong>
+        Turn off the loud TV news or blaring radio. Reduce clutter so they can focus entirely on eating.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🥄 Small Teaspoons</strong>
+        Use small teaspoons rather than large forks to control mouthful size. Wait until the mouth is completely empty before offering the next bite.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — HYDRATION TRICKS FOR WATER REFUSERS
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Hydration &amp; Water Refusal</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Hydration Tricks for Water Refusers</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Dehydration is one of the leading causes of sudden hospital admission for older adults and dementia patients, triggering confusion, urinary tract infections, and falls. When someone repeatedly pushes away a glass of water, you have to get creative with **hidden moisture foods**.
+    </p>
+
+    <!-- Custom SVG Illustration: High Moisture Foods -->
+    <div class="bg-teal-50/70 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: 4 Ways to Hydrate Without Forcing Glasses of Water</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="87" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">1. JELLY &amp; CUSTARD</text>
+        <text x="87" y="58" text-anchor="middle" fill="#334155" font-size="9">Fruit jellies are 85% water</text>
+        <text x="87" y="72" text-anchor="middle" fill="#334155" font-size="9">and slip down easily for</text>
+        <text x="87" y="86" text-anchor="middle" fill="#334155" font-size="9">people who refuse drinks.</text>
+        <text x="87" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Serve chilled with cream.</text>
+
+        <rect x="175" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="247" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">2. SMOOTH SOUPS</text>
+        <text x="247" y="58" text-anchor="middle" fill="#334155" font-size="9">Fortified blended soups</text>
+        <text x="247" y="72" text-anchor="middle" fill="#334155" font-size="9">provide both sustained</text>
+        <text x="247" y="86" text-anchor="middle" fill="#334155" font-size="9">hydration and calories.</text>
+        <text x="247" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Serve in a handled mug.</text>
+
+        <rect x="335" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="407" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">3. HIGH-WATER FRUIT</text>
+        <text x="407" y="58" text-anchor="middle" fill="#334155" font-size="9">Watermelon, grapes, tinned</text>
+        <text x="407" y="72" text-anchor="middle" fill="#334155" font-size="9">peaches, and stewed apples</text>
+        <text x="407" y="86" text-anchor="middle" fill="#334155" font-size="9">provide massive fluid intake.</text>
+        <text x="407" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Offer as finger snacks.</text>
+
+        <rect x="495" y="15" width="150" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="570" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">4. ICE LOLLIES</text>
+        <text x="570" y="58" text-anchor="middle" fill="#334155" font-size="9">Fruit juice or milk ice lollies</text>
+        <text x="570" y="72" text-anchor="middle" fill="#334155" font-size="9">are refreshing, fun, and</text>
+        <text x="570" y="86" text-anchor="middle" fill="#334155" font-size="9">deliver continuous water.</text>
+        <text x="570" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Great in warm weather.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Hydration Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🥤 Colored Cups</strong>
+        Use bright contrasting cups (red or blue) rather than clear glasses so the liquid is visible.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🕒 Sip All Day</strong>
+        Offer small sips every time you walk into the room rather than expecting them to finish a huge glass at once.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">☕ Warm Drinks Count</strong>
+        Tea, milky coffee, and hot chocolate all count toward daily fluid intake totals.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD MEALTIME PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Mealtime Playbooks</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Pocketing, Refusal &amp; Coughing</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 1: Pocketing Food in Cheeks</strong>
+        If they hold food in their cheek without swallowing, never poke your fingers inside their mouth (choking risk). Offer a sip of thick fluid or a gentle prompt: <em>"Swallow that lovely bite before taking another."</em>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 2: Pushing the Plate Away Immediately</strong>
+        Do not force them or scold. Take the plate away calmly, wait 20 minutes, and return with a small, high-calorie finger food snack (like cheese cubes or banana slices) when tension has cleared.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 3: Coughing on Thin Liquids</strong>
+        If water triggers coughing, stop drinking immediately. Consult the GP/SALT team about adding prescribed IDDSI starch thickeners to slow down fluid flow so the throat muscles can close safely.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-amber-900 block text-sm mb-1">Playbook 4: Falling Asleep Mid-Meal</strong>
+        If they nod off halfway through eating, do not force food into a sleepy mouth (high aspiration risk). Stop the meal, wipe their mouth gently, let them rest, and offer fortified snacks later when alert.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Mealtime Carer FAQs</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Mealtime &amp; Swallowing Care: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions family carers and care home staff ask about appetite loss, weight, and dysphagia:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "When should I worry that weight loss is becoming a medical emergency?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          If someone loses more than 5% of their body weight unintentionally over 1–3 months, or if clothes are noticeably loose and skin is becoming paper-thin, contact your GP immediately for a dietitian referral and blood tests.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "Are nutritional supplement drinks (like Fortisip or Ensure) available on prescription?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>Yes.</strong> If your GP or dietitian confirms significant malnutrition risk, sip feeds can be prescribed on the NHS. However, many people get tired of the milky taste—mixing them into porridge or smoothies often helps.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "Should we remove dentures if they keep falling out during meals?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Ill-fitting dentures make chewing painful and difficult. If dentures are loose, consult a dentist or try softening the diet (Level 5/6) so they can eat comfortably without denture friction.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "What should I do immediately if someone starts choking on food?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Encourage them to cough if they can breathe and make sound. If they cannot breathe, speak, or cough, lean them forward and give up to 5 sharp back blows between the shoulder blades, followed by 5 abdominal thrusts if necessary, and dial 999.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "Why do they refuse meals at lunchtime but eat well in the evening?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Morning fatigue or medication side effects often suppress daytime appetite. Take advantage of their hungriest time of day by making the evening meal their largest, most nutrient-dense meal.
+        </p>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <h4 class="font-bold text-amber-950">6. "How can I keep meals looking dignified when everything has to be pureed?"</h4>
+        <p class="text-amber-900 mt-1 leading-relaxed">
+          Use silicone food moulds (shaped like carrots, chicken breasts, or peas) to shape pureed foods before steaming them, and serve with rich, glossy gravies and sauces of the correct IDDSI consistency.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, IDDSI Framework &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to explore official swallowing standards, IDDSI testing methods, and nutritional support guides.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Video Demonstrations &amp; Practical Support Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://iddsi.org/Framework" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">IDDSI Official Portal</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">International Dysphagia Diet Standardisation Framework &amp; Testing ↗</h4>
+        <p class="text-slate-600 mt-1">Official global guidelines, flow tests, and fork pressure testing instructions for food and drink safety.</p>
+      </a>
+
+      <a href="https://www.rcslt.org/speech-and-language-therapy/clinical-information/dysphagia/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">Royal College of Speech &amp; Language Therapists</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">RCSLT Dysphagia Clinical Guidance &amp; Swallowing Standards ↗</h4>
+        <p class="text-slate-600 mt-1">Professional standards on swallowing assessments, carer training, and safe mealtime environments.</p>
+      </a>
+
+      <a href="https://www.bda.uk.com/" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">British Dietetic Association (BDA)</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Food Enrichment &amp; Malnutrition Advice for Carers ↗</h4>
+        <p class="text-slate-600 mt-1">Expert dietary advice on fortifying meals, managing poor appetite, and maintaining nutritional health.</p>
+      </a>
+
+      <a href="https://www.nhs.uk/conditions/swallowing-problems-dysphagia/" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">NHS Health Advisory</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">NHS Dysphagia Overview &amp; When to Seek Medical Help ↗</h4>
+        <p class="text-slate-600 mt-1">Official NHS guidance on swallowing difficulties, symptoms, and treatment pathways.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Clinical &amp; Safety Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. IDDSI Framework (Cichero et al., 2017):</strong> <em>Development of international terminology and definitions for texture-modified foods and thickened fluids used in dysphagia management.</em> <a href="https://iddsi.org/" target="_blank" class="text-amber-700 font-semibold underline">View IDDSI Standard ↗</a>
+        </li>
+        <li>
+          <strong>2. RCSLT Clinical Guidelines:</strong> <em>Dysphagia training and management standards for health and social care workers.</em>
+        </li>
+        <li>
+          <strong>3. NICE Nutritional Care Guidelines:</strong> <em>Supportive nutrition and hydration in care homes and community settings.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mb-2">📞 Free Nutritional &amp; Carer Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Age UK Advice Line (7 days):</strong> 0800 678 1602</div>
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>BAPEN Nutritional Support:</strong> www.bapen.org.uk</div>
+        <div>• <strong>Medical Emergency:</strong> Dial 999</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — 7-DAY HIGH-ENERGY MEAL PLANNER
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-amber-500">
+    <div class="flex items-center justify-between border-b-2 border-amber-500 pb-3 mb-4">
+      <div>
+        <span class="bg-amber-500 text-slate-950 text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • High-Calorie Meal Planner</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">7-Day High-Energy Meal Planner &amp; Enrichment Guide</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-amber-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-amber-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Patient Name:</label>
+        <input type="text" placeholder="e.g., Arthur Miller" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Prescribed IDDSI Texture:</label>
+        <input type="text" placeholder="e.g., Level 6 Soft & Bite-Sized" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Target Calorie Goal:</label>
+        <input type="text" placeholder="e.g., Fortified small portions" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <!-- 7-Day Meal Planner Table -->
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Day</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">Breakfast (Enriched)</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">Lunch (Fortified)</th>
+            <th class="p-2 w-1/3 bg-amber-900">Dinner &amp; High-Calorie Snack</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr class="bg-slate-50 text-slate-500 italic">
+            <td class="p-2 border-r border-slate-300 font-semibold">Example: Mon</td>
+            <td class="p-2 border-r border-slate-300">Porridge + cream + honey</td>
+            <td class="p-2 border-r border-slate-300">Blended soup + buttered bread</td>
+            <td class="p-2">Shepherd's pie (Level 6) + custard</td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Monday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Breakfast..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Lunch..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input" placeholder="Dinner & Snack..."/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Tuesday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Breakfast..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Lunch..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input" placeholder="Dinner & Snack..."/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Wednesday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Breakfast..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Lunch..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input" placeholder="Dinner & Snack..."/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Thursday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Breakfast..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Lunch..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input" placeholder="Dinner & Snack..."/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Friday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Breakfast..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Lunch..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input" placeholder="Dinner & Snack..."/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — DAILY FLUID & FOOD INTAKE CHART
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Intake Monitoring</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Daily Fluid &amp; Food Intake Monitoring Chart</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      Record estimated meal portions eaten (e.g., All, Half, Quarter, None) and total fluid cups finished each day to track nutritional stability.
+    </p>
+
+    <!-- Fillable Intake Log Table -->
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Day &amp; Date</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">Breakfast Eaten</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">Lunch Eaten</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">Dinner Eaten</th>
+            <th class="p-2 text-center bg-teal-900">Total Fluid Cups</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr class="bg-slate-50 text-slate-500 italic">
+            <td class="p-2 border-r border-slate-300 font-semibold">Example: Mon</td>
+            <td class="p-2 border-r border-slate-300">Half eaten</td>
+            <td class="p-2 border-r border-slate-300">All eaten</td>
+            <td class="p-2 border-r border-slate-300">Quarter eaten</td>
+            <td class="p-2 text-center font-bold text-emerald-800">6 Cups (OK)</td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Monday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Cups total"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Tuesday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Cups total"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Wednesday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Cups total"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Thursday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Cups total"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Friday"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Portion..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Cups total"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — IDDSI CHECKLIST & CHOKING GUIDE
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • IDDSI Safety &amp; Emergency Guide</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">IDDSI Texture Checklist &amp; Choking First-Aid Quick Guide</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-amber-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-amber-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: IDDSI Texture & Positioning Checklist -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-2">Toolkit #3: Mealtime Safety &amp; IDDSI Kitchen Checklist</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+          <input type="checkbox" class="rounded text-amber-600"/>
+          <span><strong>Upright Seated Position:</strong> Patient seated at 90 degrees with chin tilted slightly down.</span>
+        </label>
+        <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+          <input type="checkbox" class="rounded text-amber-600"/>
+          <span><strong>Correct IDDSI Texture:</strong> Checked via fork pressure or syringe test before serving.</span>
+        </label>
+        <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+          <input type="checkbox" class="rounded text-amber-600"/>
+          <span><strong>Zero Distractions:</strong> TV and radio off; no rushing or talking with food in mouth.</span>
+        </label>
+        <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+          <input type="checkbox" class="rounded text-amber-600"/>
+          <span><strong>Mouth Clear After Meal:</strong> Oral hygiene checked; patient upright for 30 mins post-meal.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Choking First-Aid Quick Reference -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-amber-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Emergency Choking Protocol</span>
+        <span class="text-xs text-slate-300">Stick on Kitchen Wall</span>
+      </div>
+      <p class="text-[11px] text-slate-300 mb-3">
+        If someone shows signs of choking (clutching throat, inability to speak, turning blue):
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-amber-300 font-bold block">1. Encourage Coughing:</span>
+          <p class="text-slate-300 mt-1">If they can breathe, speak, or cough effectively, encourage them to cough up the blockage naturally.</p>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">2. 5 Back Blows:</span>
+          <p class="text-slate-300 mt-1">If choking worsens, lean them well forward and deliver 5 sharp blows between the shoulder blades with the heel of your hand.</p>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-rose-300 font-bold block">3. 5 Thrusts &amp; Call 999:</span>
+          <p class="text-slate-300 mt-1">If obstruction persists, give 5 abdominal thrusts and dial 999 immediately for emergency ambulance assistance.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #6 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

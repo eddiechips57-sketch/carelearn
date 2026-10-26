@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Family Care Organiser (£15.99) | carelearn.site eBook & Printable Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #4f46e5;
+      background-color: #eef2ff;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-indigo-500 text-white font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #7 of 13 • £15.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">The Family Care Organiser — Coordination &amp; Medical Binder (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Carer FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Videos
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Family Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £15.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £15.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-indigo-100 text-indigo-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #7 Storefront Kit • £15.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Primary family carers drowning in sibling arguments, chaotic medical paperwork, conflicting appointments, and lack of support from extended relatives.</p>
+          <p class="mt-1"><strong>Catalog Price: £15.99 digital download on www.carelearn.site.</strong></p>
+        </div>
+
+        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200">
+          <p class="font-extrabold text-indigo-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-indigo-900">"Stop Drowning in Medical Paperwork and Family Arguments: The Ultimate Step-by-Step System to Build a Master Care Binder, Divide Duties Fairly Among Siblings, and Master Doctor Appointments."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The Sibling Care Summit Framework:</strong> Exact scripts for holding a family meeting, dividing tasks without guilt, and setting fair boundaries for relatives who "can't help out."</li>
+            <li><strong>The Master Medical Binder System:</strong> How to organize hospital letters, LPA (Power of Attorney) documents, medication lists, and emergency contacts into one foolproof folder.</li>
+            <li><strong>Doctor Appointment Mastery:</strong> How to stop leaving the GP surgery remembering half of what you wanted to say using the SBAR handover method.</li>
+            <li><strong>Agency &amp; Caregiver Handover Systems:</strong> Keeping visiting domiciliary care workers synchronized so medications and routines never get missed.</li>
+            <li><strong>4 Ready-to-Print Organiser Toolkits:</strong> Includes the Emergency "Grab-and-Go" Medical Binder, Visiting Carer Daily Handover Log, Family Task &amp; Respite Rota, and Medical Appointment Master Tracker.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-indigo-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-indigo-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-indigo-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-indigo-400">.site</span></p>
+          <p class="text-xs text-indigo-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #7 • £15.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Primary Family Carers, Siblings &amp; Spouses</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        The Family Care Organiser
+      </h1>
+      <p class="text-lg sm:text-2xl text-indigo-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        How to Coordinate Siblings, Carers, and Medical Appointments Without Losing Your Mind
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-indigo-950/80 border border-indigo-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-indigo-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop drowning in loose medical letters, confusing medication lists, and stressful family arguments—build a bulletproof Master Care Binder and share the load fairly.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-indigo-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="orgGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#312e81"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#orgGrad)"/>
+
+          <!-- Warm Organizing Glow -->
+          <circle cx="300" cy="130" r="85" fill="#818cf8" opacity="0.12"/>
+
+          <!-- Center: Master Binder & Rota Icons -->
+          <rect x="250" y="80" width="100" height="110" rx="10" fill="#f8fafc" stroke="#6366f1" stroke-width="2.5"/>
+          <line x1="270" y1="105" x2="330" y2="105" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+          <line x1="270" y1="130" x2="330" y2="130" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+          <line x1="270" y1="155" x2="310" y2="155" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- Left Badge: Master Binder -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#818cf8" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">📁</text>
+          <text x="97" y="142" text-anchor="middle" fill="#818cf8" font-size="13" font-weight="900">MASTER BINDER</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">PAPERWORK SYSTEM</text>
+
+          <!-- Right Badge: Sibling Rota -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">🤝</text>
+          <text x="502" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">FAMILY ROTA</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">SHARED RESPONSIBILITY</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#e0e7ff" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Caregiving is a relay race, not a sprint. You cannot run it alone without dropping the baton."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-indigo-300 font-bold text-xs uppercase">Carers UK &amp; CQC Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on Carer Rights, Power of Attorney standards, and NHS care coordination.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Binder layouts, SBAR appointment sheets, sibling meeting scripts &amp; handover logs.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-sky-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">Emergency binder, visiting carer log, family rota &amp; appointment tracker.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-indigo-800/60 pt-4 flex items-center justify-between text-xs text-indigo-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>The Family Care Organiser • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-indigo-100 text-indigo-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Introduction: The Invisible Load of Care Coordination</span>
+            <span class="text-indigo-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 1: Building the Master Care Binder System</span>
+            <span class="text-indigo-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 2: The Sibling Care Summit (Dividing Duties Fairly)</span>
+            <span class="text-indigo-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 3: Doctor Appointment Mastery &amp; SBAR Handover</span>
+            <span class="text-indigo-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 4: Synchronizing Visiting Carers &amp; Agency Staff</span>
+            <span class="text-indigo-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 5: Legal &amp; Financial Paperwork (LPA, Finances &amp; Benefits)</span>
+            <span class="text-indigo-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 6: 4 Real-World Family Flashpoint Playbooks</span>
+            <span class="text-indigo-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Respite &amp; Sibling Friction)</span>
+            <span class="text-indigo-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-indigo-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 1: Emergency "Grab-and-Go" Medical Binder</span>
+            <span class="text-indigo-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 2: Visiting Carer Daily Handover Log</span>
+            <span class="text-indigo-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 3 &amp; 4: Family Task Rota &amp; Appointment Tracker</span>
+            <span class="text-indigo-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Controlling the Chaos</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Invisible Load of Care Coordination (And How to Share It)</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        Being the primary family carer for an ageing parent or relative doesn't just mean helping them get dressed or making meals. It means running a high-stress medical administrative office out of your kitchen—juggling pharmacy refills, district nurse phone calls, hospital discharge letters, and family group chats that never seem to end.
+      </p>
+      <p>
+        Many primary carers experience severe burnout not solely from the physical tasks of caregiving, but from the **mental load**: holding every medication name, appointment date, and emergency protocol entirely in their own head.
+      </p>
+
+      <div class="bg-indigo-50 border-l-4 border-indigo-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-indigo-950 text-sm">
+          The Golden Rule of Care Organisation: If it lives only in your head, it is a crisis waiting to happen. Centralise everything into one system.
+        </p>
+        <p class="text-xs text-indigo-900 mt-1">
+          By building a Master Care Binder and running structured family coordination, you can cut administrative chaos in half and ensure that everyone—siblings, visiting carers, and doctors—is finally on the same page.
+        </p>
+      </div>
+
+      <p>
+        This playbook translates professional care management standards—including <a href="https://www.carersuk.org/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">Carers UK Coordination Guides ↗</a>, <a href="https://www.cqc.org.uk/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">CQC Person-Centred Care Standards ↗</a>, and <a href="https://www.ageuk.org.uk/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">Age UK Family Carer Toolkits ↗</a>—into a foolproof system you can set up today.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — BUILDING THE MASTER CARE BINDER SYSTEM
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • The Master Care Binder System</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Building the Master Care Binder System (The 5 Essential Tabs)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When emergency services are called or a new doctor walks into the room, scrambling through kitchen drawers for a discharge letter or medication list wastes precious minutes. A **Master Care Binder** is a simple lever-arch folder or ring binder with plastic wallets divided into 5 clear sections.
+    </p>
+
+    <!-- Custom SVG Illustration: The 5-Tab Master Binder Blueprint -->
+    <div class="bg-indigo-50/60 border border-indigo-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-indigo-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 5 Tabs Every Master Care Binder Needs</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="122" height="125" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="71" y="32" text-anchor="middle" fill="#312e81" font-size="10.5" font-weight="800">TAB 1: CONTACTS</text>
+        <text x="71" y="55" text-anchor="middle" fill="#334155" font-size="9">GP, District Nurse,</text>
+        <text x="71" y="70" text-anchor="middle" fill="#334155" font-size="9">Pharmacy, Social Worker,</text>
+        <text x="71" y="85" text-anchor="middle" fill="#334155" font-size="9">Family &amp; Neighbors</text>
+        <text x="71" y="115" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Immediate Dial List</text>
+
+        <rect x="142" y="10" width="122" height="125" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="203" y="32" text-anchor="middle" fill="#312e81" font-size="10.5" font-weight="800">TAB 2: MEDS</text>
+        <text x="203" y="55" text-anchor="middle" fill="#334155" font-size="9">Current MAR sheet,</text>
+        <text x="203" y="70" text-anchor="middle" fill="#334155" font-size="9">allergy records, repeat</text>
+        <text x="203" y="85" text-anchor="middle" fill="#334155" font-size="9">prescription slips &amp;</text>
+        <text x="203" y="100" text-anchor="middle" fill="#334155" font-size="9">chemist details</text>
+        <text x="203" y="118" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Zero Double-Dosing</text>
+
+        <rect x="274" y="10" width="122" height="125" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="335" y="32" text-anchor="middle" fill="#312e81" font-size="10.5" font-weight="800">TAB 3: LEGAL</text>
+        <text x="335" y="55" text-anchor="middle" fill="#334155" font-size="9">Power of Attorney (LPA),</text>
+        <text x="335" y="70" text-anchor="middle" fill="#334155" font-size="9">DNACPR paperwork,</text>
+        <text x="335" y="85" text-anchor="middle" fill="#334155" font-size="9">will copies &amp; ID</text>
+        <text x="335" y="100" text-anchor="middle" fill="#334155" font-size="9">documents</text>
+        <text x="335" y="118" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Instant Authority</text>
+
+        <rect x="406" y="10" width="122" height="125" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="467" y="32" text-anchor="middle" fill="#312e81" font-size="10.5" font-weight="800">TAB 4: HEALTH</text>
+        <text x="467" y="55" text-anchor="middle" fill="#334155" font-size="9">Diagnosis summaries,</text>
+        <text x="467" y="70" text-anchor="middle" fill="#334155" font-size="9">discharge letters,</text>
+        <text x="467" y="85" text-anchor="middle" fill="#334155" font-size="9">recent blood test results</text>
+        <text x="467" y="100" text-anchor="middle" fill="#334155" font-size="9">&amp; clinic notes</text>
+        <text x="467" y="118" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Full Medical History</text>
+
+        <rect x="538" y="10" width="112" height="125" rx="8" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="594" y="32" text-anchor="middle" fill="#312e81" font-size="10.5" font-weight="800">TAB 5: LOGS</text>
+        <text x="594" y="55" text-anchor="middle" fill="#1e293b" font-size="9">Daily care logs,</text>
+        <text x="594" y="70" text-anchor="middle" fill="#1e293b" font-size="9">fluid charts, visiting</text>
+        <text x="594" y="85" text-anchor="middle" fill="#1e293b" font-size="9">carer notes &amp; appt</text>
+        <text x="594" y="100" text-anchor="middle" fill="#1e293b" font-size="9">trackers</text>
+        <text x="594" y="118" text-anchor="middle" fill="#312e81" font-size="8.5" font-weight="700">Daily Continuity</text>
+      </svg>
+    </div>
+
+    <!-- 3 Binder Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📍 Keep in One Spot</strong>
+        Store the binder in a prominent, agreed-upon location (like a shelf in the hallway or kitchen counter) with a neon sticker saying **"MASTER CARE BINDER — GRAB IN EMERGENCY."**
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🖊️ Use Pencil for Meds</strong>
+        Always use pencil or print fresh sheets for medication schedules so updates don't leave messy crossed-out lines that confuse visiting nurses.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚗 The Hospital Grab-Bag</strong>
+        In the front pocket of the binder, keep photocopies of ID, insurance/NHS numbers, and the emergency contact sheet ready to grab if an ambulance is called.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — THE SIBLING CARE SUMMIT
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • The Sibling Care Summit</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Sibling Care Summit: Dividing Duties Fairly Without Guilt</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      One of the most painful sources of carer burnout isn't caring for the parent—it's the bitter resentment that builds when siblings or relatives don't pull their weight. The primary carer often feels isolated, while siblings feel micromanaged or guilty. Solving this requires a structured family meeting rather than emotional text-message arguments.
+    </p>
+
+    <!-- Custom SVG Illustration: The Sibling Task Grid -->
+    <div class="bg-teal-50/70 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 4 Pillars of Fair Family Care Distribution</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="87" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">1. HANDS-ON CARE</text>
+        <text x="87" y="58" text-anchor="middle" fill="#334155" font-size="9">Personal care, visits,</text>
+        <text x="87" y="72" text-anchor="middle" fill="#334155" font-size="9">bathing support, meals,</text>
+        <text x="87" y="86" text-anchor="middle" fill="#334155" font-size="9">and companionship</text>
+        <text x="87" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Assigned Sibling A</text>
+
+        <rect x="175" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="247" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">2. ADMIN &amp; FINANCE</text>
+        <text x="247" y="58" text-anchor="middle" fill="#334155" font-size="9">Bill paying, benefit claims,</text>
+        <text x="247" y="72" text-anchor="middle" fill="#334155" font-size="9">insurance, council tax</text>
+        <text x="247" y="86" text-anchor="middle" fill="#334155" font-size="9">exemptions &amp; paperwork</text>
+        <text x="247" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Assigned Sibling B</text>
+
+        <rect x="335" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="407" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">3. MEDICAL LIAISON</text>
+        <text x="407" y="58" text-anchor="middle" fill="#334155" font-size="9">Attending GP appointments,</text>
+        <text x="407" y="72" text-anchor="middle" fill="#334155" font-size="9">ordering repeat scripts,</text>
+        <text x="407" y="86" text-anchor="middle" fill="#334155" font-size="9">pharmacy &amp; hospital calls</text>
+        <text x="407" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Assigned Sibling C</text>
+
+        <rect x="495" y="15" width="150" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="570" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">4. HOME &amp; ERRANDS</text>
+        <text x="570" y="58" text-anchor="middle" fill="#334155" font-size="9">Grocery shopping, garden</text>
+        <text x="570" y="72" text-anchor="middle" fill="#334155" font-size="9">maintenance, repairs,</text>
+        <text x="570" y="86" text-anchor="middle" fill="#334155" font-size="9">and equipment delivery</text>
+        <text x="570" y="100" text-anchor="middle" fill="#0d9488" font-size="9" font-weight="700">Assigned Sibling D</text>
+      </svg>
+    </div>
+
+    <!-- 3 Summit Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📅 Set a Structured Agenda</strong>
+        Never ambush siblings with complaints over Sunday dinner. Schedule a formal 45-minute video call or meeting with a clear list of what needs solving.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⚖️ Match Skills, Not Hours</strong>
+        If a sibling lives 2 hours away and hates personal care, don't demand physical help. Assign them remote admin tasks like managing bills or online grocery ordering.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📝 Put It in Writing</strong>
+        After the meeting, email a summary of who agreed to do what so there is zero confusion or finger-pointing later.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — DOCTOR APPOINTMENT MASTERY & SBAR HANDOVER
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Doctor Appointments &amp; SBAR Handover</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Doctor Appointment Mastery: The SBAR Handover Method</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      How many times have you walked out of a 10-minute GP appointment, only to realize in the car park that you forgot to mention the new dizziness, the missed pills, or the swollen ankle? Doctors are rushed, so you need a structured medical communication framework used by nurses worldwide: **SBAR (Situation, Background, Assessment, Recommendation)**.
+    </p>
+
+    <!-- Custom SVG Illustration: SBAR Framework -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The SBAR Script for GP &amp; Consultant Visits</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="87" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">S — SITUATION</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">State the core problem in 1 sentence:</text>
+        <text x="30" y="78" fill="#0284c7" font-size="9" font-weight="700">"I am here because Mum has fallen twice this week."</text>
+
+        <rect x="175" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="247" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">B — BACKGROUND</text>
+        <text x="190" y="58" fill="#334155" font-size="9.5">Give context:</text>
+        <text x="190" y="74" fill="#334155" font-size="9.5">"She has mild vascular dementia and takes blood pressure meds."</text>
+
+        <rect x="335" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="407" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">A — ASSESSMENT</text>
+        <text x="350" y="58" fill="#334155" font-size="9.5">What you observe:</text>
+        <text x="350" y="74" fill="#334155" font-size="9.5">"Dizziness happens 20 mins after her morning tablet."</text>
+
+        <rect x="495" y="15" width="150" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="570" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">R — RECOMMEND</text>
+        <text x="510" y="58" fill="#334155" font-size="9.5">Your clear request:</text>
+        <text x="510" y="74" fill="#0284c7" font-size="9" font-weight="700">"Can we review her blood pressure medication timing?"</text>
+      </svg>
+    </div>
+
+    <!-- 3 Appointment Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📝 Write Down Top 3 Only</strong>
+        GPs cannot fix 10 ailments in 10 minutes. List your top 3 most urgent concerns on a notepad and hand it to the doctor immediately.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👥 Bring a Second Pair of Ears</strong>
+        Medical consultations are stressful. Have a sibling or relative attend with you to take notes while you focus on your loved one.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📁 File Instantly</strong>
+        Put the doctor's letter straight into **Tab 4 (Health)** of your Master Care Binder as soon as you get home.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — SYNCHRONIZING VISITING CARERS & AGENCY STAFF
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Synchronizing Visiting Carers</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Synchronizing Visiting Carers, Domiciliary Staff and Respite Workers</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When domiciliary care agencies provide visiting carers (often 2 to 4 times a day), different staff members will cycle through your home every week. Without a clear communication system, medication is missed, routines get jumbled, and frustration builds. You need a foolproof **Carer Handover Station**.
+    </p>
+
+    <!-- Custom SVG Illustration: Handover Station -->
+    <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-amber-950 text-xs uppercase tracking-wider text-center mb-2">Environmental Blueprint: Setting Up the Hallway Carer Handover Station</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#78350f" font-size="11" font-weight="800">1. THE HANDOVER CLIPBOARD</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Hang a clipboard near the kitchen</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">door with Toolkit #2 (Daily Log)</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">so carers initial every visit instantly.</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#78350f" font-size="11" font-weight="800">2. KEY SAFE &amp; NOTICEBOARD</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">Clear instructions on emergency</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">numbers, dietary likes/dislikes,</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">and daily routines visible to all.</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#78350f" font-size="11" font-weight="800">3. DIGITAL GROUP CHAT</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">Set up a WhatsApp group for</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">family + primary agency leads</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">for instant photo &amp; update shares.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Handover Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📋 Leave Bullet Points</strong>
+        Keep agency notes brief and positive: <em>"Ate half lunch, slept well, mood cheerful."</em> Highlight any red flags immediately.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🤝 Introduce New Staff</strong>
+        When a new agency carer arrives, take 2 minutes to introduce them warmly and show them where the Master Care Binder lives.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📞 Regular Agency Reviews</strong>
+        Request a review meeting with the care agency manager every 3 months to ensure care times and tasks match your loved one's changing needs.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — LEGAL & FINANCIAL PAPERWORK (LPA & BENEFITS)
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Legal &amp; Financial Paperwork (LPA &amp; Benefits)</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Legal &amp; Financial Paperwork: Power of Attorney, Benefits &amp; Council Tax</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Managing money and medical decisions for someone else without legal authority is one of the biggest administrative traps families face. Banks will freeze accounts and hospitals will block medical updates if **Lasting Power of Attorney (LPA)** is not set up *before* mental capacity is lost.
+    </p>
+
+    <!-- Custom SVG Illustration: LPA & Financial Rights -->
+    <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-emerald-950 text-xs uppercase tracking-wider text-center mb-2">Visual Guide: The 3 Essential Legal &amp; Financial Checkpoints</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">1. LASTING POWER OF ATTORNEY</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Set up both <strong>Health &amp; Welfare</strong></text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">and <strong>Property &amp; Financial Affairs</strong></text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">LPAs via the Office of the Public Guardian.</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">2. ATTENDANCE ALLOWANCE</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">Claim tax-free state support</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">for over-65s needing help with</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">personal care (up to £108.55/wk).</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">3. COUNCIL TAX SMI DISCOUNT</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">If diagnosed with dementia/severe</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">impairment, apply for 25%–100%</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">council tax reduction.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Legal Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⚖️ Do It Early</strong>
+        An LPA can only be signed while the person still has mental capacity to understand what they are signing. Do not wait for a medical crisis.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🏦 Register with Banks</strong>
+        Once LPA is registered, take the official stamped document directly to their bank so you can manage direct debits and care fees seamlessly.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">💡 Carer's Allowance</strong>
+        If you care for someone 35+ hours a week and earn under £151/week, apply for Carer's Allowance to protect your state pension credits.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD FAMILY FLASHPOINT PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Family Playbooks</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Sibling Friction, Lost Paperwork &amp; Burnout</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 1: Sibling Refuses to Help or Criticizes Your Decisions</strong>
+        Instead of getting defensive, assign them a specific, discrete task: <em>"Mum needs someone to audit her utility bills and switch energy providers this week—can you take point on that?"</em> Giving a concrete job replaces vague complaints with actionable ownership.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 2: Vital Hospital Letter Goes Missing</strong>
+        Never panic or tear the house apart. Call the hospital switchboard, ask to be put through to the consultant's **Patient Pathway Coordinator (PPC)** or ward secretary, and request an immediate email copy of the discharge letter or clinic summary.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 3: Managing Conflicting Medical Advice</strong>
+        When a GP says one thing and a hospital consultant suggests another, do not play middleman. Ask both clinicians to communicate directly via an e-consultation or copy each other into official clinical correspondence.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 4: Sudden Carer Exhaustion &amp; Needing Emergency Respite</strong>
+        If you hit total burnout, contact your local council's **Adult Social Care Team** and request an emergency Carer's Assessment under the Care Act 2014, or call Carers UK to arrange temporary emergency respite cover.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Coordination Carer FAQs</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Family Care Coordination: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions primary carers ask about organizing siblings, paperwork, and medical appointments:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "What can I do if a sibling refuses to contribute financially or help care for our parents?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Focus on what you can control. If financial contributions are unequal, keep every single receipt in **Tab 2** of your Master Binder; if formal care costs are drawn from your parent's estate, legitimate care expenses can often be accounted for legally later, but consult a solicitor specialising in elderly care.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "How do I make sure visiting care agency staff read our handover notes?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Place your handover clipboard right next to the kettle or medication box where carers naturally gather. Keep notes under 4 bullet points in large, clear handwriting so busy staff can absorb them in 15 seconds.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "Is it legal to record doctor appointments on my phone so I don't miss details?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>Yes, for personal use.</strong> Always ask the doctor politely at the start: <em>"Do you mind if I record this on my phone so I can review the care plan with my siblings later?"</em> Most clinicians appreciate families being organized.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "What happens if I lose the physical Master Care Binder?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Take smartphone photos of every key page (medication list, emergency contacts, LPA certificate) and save them in a secure folder on your phone or cloud storage (like Google Drive or iCloud) as an instant digital backup.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "How do I deal with 'carer martyrdom'—feeling like I can't ask for help?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Recognize that asking for help is not a sign of failure; it is a sign of professional management. Your loved one deserves a well-rested carer, not an exhausted martyr on the verge of collapse.
+        </p>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+        <h4 class="font-bold text-indigo-950">6. "Where can I find free legal advice on care funding and Power of Attorney?"</h4>
+        <p class="text-indigo-900 mt-1 leading-relaxed">
+          Contact **Age UK Advice (0800 678 1602)** or **Civil Legal Advice (CLA)** for free, accredited guidance on social care rights, benefits entitlement, and LPA registration processes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, LPA Portals &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to access official carer organization toolkits, set up Power of Attorney, or explore care coordination guides.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Video Demonstrations &amp; Practical Support Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.carersuk.org/" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">Carers UK Portal</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Carers UK: Rights, Equipment &amp; Family Coordination Guides ↗</h4>
+        <p class="text-slate-600 mt-1">Official UK advice on carer assessments, juggling work and care, and managing family responsibilities.</p>
+      </a>
+
+      <a href="https://www.gov.uk/power-of-attorney" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">GOV.UK Official Portal</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Make, Register or End a Lasting Power of Attorney (LPA) ↗</h4>
+        <p class="text-slate-600 mt-1">Official government portal for setting up Health &amp; Welfare and Property &amp; Financial LPAs.</p>
+      </a>
+
+      <a href="https://www.ageuk.org.uk/information-advice/care/arranging-care/" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">Age UK Care Advice</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Arranging Care &amp; Managing Medical Appointments Guide ↗</h4>
+        <p class="text-slate-600 mt-1">Expert checklists on coordinating care agencies, NHS continuing healthcare, and family planning.</p>
+      </a>
+
+      <a href="https://www.cqc.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">CQC Care Regulator</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Care Quality Commission: Inspecting &amp; Finding Good Care ↗</h4>
+        <p class="text-slate-600 mt-1">Check inspection ratings for local care homes and domiciliary care agencies across England.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Clinical &amp; Organizational Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. Carers UK State of Caring Report:</strong> <em>The impact of caring on family coordination, mental health, and employment.</em> <a href="https://www.carersuk.org/" target="_blank" class="text-indigo-700 font-semibold underline">View Report ↗</a>
+        </li>
+        <li>
+          <strong>2. Mental Capacity Act 2005 (UK Statutory Code of Practice):</strong> <em>Lasting Power of Attorney, best interests decision-making, and assessing mental capacity.</em>
+        </li>
+        <li>
+          <strong>3. NHS SBAR Communication Protocol:</strong> <em>Standardized clinical handover framework for medical appointments and inter-professional care.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-indigo-300 text-xs uppercase tracking-wider mb-2">📞 Free Family Carer Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>Age UK Advice Line (7 days):</strong> 0800 678 1602</div>
+        <div>• <strong>Office of the Public Guardian:</strong> 0300 456 0300</div>
+        <div>• <strong>NHS Medical Advice:</strong> Call 111</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — EMERGENCY MEDICAL BINDER TEMPLATE
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-indigo-600">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-3 mb-4">
+      <div>
+        <span class="bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Master Care Binder Front Sheet</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Emergency "Grab-and-Go" Medical Binder Index &amp; Contacts</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Patient Full Name &amp; DOB:</label>
+        <input type="text" placeholder="e.g., Arthur Miller (12/04/1942)" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">NHS / Insurance Number:</label>
+        <input type="text" placeholder="e.g., 948 382 1920" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Primary Carer Contact:</label>
+        <input type="text" placeholder="Name &amp; Mobile" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+      <!-- Emergency Contacts -->
+      <div class="border-2 border-indigo-500 rounded-xl p-4 bg-indigo-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-indigo-950 text-sm uppercase border-b border-indigo-200 pb-1.5">Emergency &amp; Medical Dial List</h3>
+        <div>
+          <label class="font-bold text-slate-700">GP Surgery Name &amp; Phone:</label>
+          <input type="text" placeholder="Surgery name & phone number..." class="toolkit-input mt-0.5"/>
+        </div>
+        <div>
+          <label class="font-bold text-slate-700">Community Pharmacy &amp; Phone:</label>
+          <input type="text" placeholder="Chemist name & phone number..." class="toolkit-input mt-0.5"/>
+        </div>
+        <div>
+          <label class="font-bold text-slate-700">District Nursing Team Hub:</label>
+          <input type="text" placeholder="District nurse phone number..." class="toolkit-input mt-0.5"/>
+        </div>
+        <div>
+          <label class="font-bold text-slate-700">Social Worker / Care Manager:</label>
+          <input type="text" placeholder="Name & direct number..." class="toolkit-input mt-0.5"/>
+        </div>
+      </div>
+
+      <!-- Key Medical Info -->
+      <div class="border-2 border-teal-500 rounded-xl p-4 bg-teal-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase border-b border-teal-200 pb-1.5">Key Medical Summary</h3>
+        <div>
+          <label class="font-bold text-slate-700">Primary Medical Conditions / Diagnoses:</label>
+          <input type="text" placeholder="e.g., Hypertension, Dementia, Type 2 Diabetes..." class="toolkit-input mt-0.5"/>
+        </div>
+        <div>
+          <label class="font-bold text-slate-700">Known Drug &amp; Food Allergies:</label>
+          <input type="text" placeholder="e.g., Penicillin, Latex, None Known..." class="toolkit-input mt-0.5"/>
+        </div>
+        <div>
+          <label class="font-bold text-slate-700">Lasting Power of Attorney (LPA) Holder:</label>
+          <input type="text" placeholder="Name & relationship (Health & Financial)..." class="toolkit-input mt-0.5"/>
+        </div>
+        <div>
+          <label class="font-bold text-slate-700">DNACPR Status / Resuscitation Plan:</label>
+          <input type="text" placeholder="In place? Location of yellow form in binder..." class="toolkit-input mt-0.5"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — VISITING CARER DAILY HANDOVER LOG
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Hallway Clipboard Log</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Visiting Carer &amp; Family Daily Handover Log</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      Carers and family members initial each visit, record meals eaten, fluids finished, and note any red flags.
+    </p>
+
+    <!-- Fillable Handover Log Table -->
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Date &amp; Time Slot</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">Meals &amp; Fluids Taken</th>
+            <th class="p-2 w-2/5 border-r border-slate-700">Mood, Mobility &amp; Care Notes</th>
+            <th class="p-2 text-center bg-teal-900">Carer Initials</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr class="bg-slate-50 text-slate-500 italic">
+            <td class="p-2 border-r border-slate-300 font-semibold">Example: Mon 9:00 AM</td>
+            <td class="p-2 border-r border-slate-300">Porridge eaten, 2 cups tea</td>
+            <td class="p-2 border-r border-slate-300">Cheerful, walked with frame to lounge</td>
+            <td class="p-2 text-center font-bold text-emerald-800">JS (Carer)</td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Date & Time"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Meals/Fluids..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Date & Time"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Meals/Fluids..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Date & Time"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Meals/Fluids..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Date & Time"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Meals/Fluids..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="Initials"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — FAMILY ROTA & APPOINTMENT TRACKER
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Family Rota &amp; Appointment Sheet</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Family Care Task Rota + Medical Appointment Master Tracker</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: Family Task Rota -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-2">Toolkit #3: Weekly Family Care Task &amp; Respite Rota</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-indigo-900 font-bold block mb-1">Primary Carer (Main Support):</span>
+          <input type="text" placeholder="Name & Days covered..." class="toolkit-input mt-1"/>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-teal-900 font-bold block mb-1">Supporting Relative 1 (Admin/Shopping):</span>
+          <input type="text" placeholder="Name & Tasks covered..." class="toolkit-input mt-1"/>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-sky-900 font-bold block mb-1">Supporting Relative 2 (Weekend Visits):</span>
+          <input type="text" placeholder="Name & Tasks covered..." class="toolkit-input mt-1"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Medical Appointment Tracker -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-indigo-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Master Medical Appointment Tracker</span>
+        <span class="text-xs text-slate-300">Keep in Tab 4 of Binder</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-indigo-300 font-bold block">1. Upcoming GP / Clinic Visit:</span>
+          <input type="text" placeholder="Date, Time, Doctor Name & Location..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">2. Top 3 Questions to Ask (SBAR):</span>
+          <input type="text" placeholder="Key symptom or medication query..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #7 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

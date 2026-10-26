@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>101 Meaningful Days (£12.99) | carelearn.site eBook & Printable Activity Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #0284c7;
+      background-color: #f0f9ff;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-sky-500 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #9 of 13 • £12.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">101 Meaningful Days — Activities for Seniors &amp; Additional Needs (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Activity FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Sources
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Activity Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £12.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £12.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-sky-100 text-sky-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #9 Storefront Kit • £12.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Family carers, activity coordinators, and support workers struggling to keep older adults, dementia patients, or adults with additional needs engaged and preventing boredom.</p>
+          <p class="mt-1"><strong>Catalog Price: £12.99 digital download on www.carelearn.site.</strong></p>
+        </div>
+
+        <div class="bg-sky-50 p-4 rounded-xl border border-sky-200">
+          <p class="font-extrabold text-sky-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-sky-900">"Stop Staring at Blank Walls and Endless Television: 101 Low-Cost, Dignity-Preserving Activities Tailored for Every Mobility Level, Cognitive Stage, and Mood."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The 4-Quadrant Ability Grid:</strong> Instantly match activities to energy levels—from armchair reminiscence to sensory engagement and active gentle movement.</li>
+            <li><strong>15-Minute Boredom Busters:</strong> Zero-prep ideas using household items (folded towels, photo albums, scent jars, texture matching) to break up long afternoons.</li>
+            <li><strong>Dementia &amp; Stroke Adapted Ideas:</strong> Activities designed specifically to maintain self-esteem and spark joy without causing frustration or failure.</li>
+            <li><strong>4 Ready-to-Print Activity Toolkits:</strong> Includes the Weekly Meaningful Activity Planner, Reminiscence Conversation Cards, Sensory Recipe Checklist, and Participant Engagement Tracker.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-sky-950 via-slate-900 to-indigo-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-sky-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-sky-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-sky-400">.site</span></p>
+          <p class="text-xs text-sky-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-sky-500/20 border border-sky-400/40 text-sky-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #9 • £12.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Activity Coordinators &amp; Support Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        101 Meaningful Days
+      </h1>
+      <p class="text-lg sm:text-2xl text-sky-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        Low-Cost Activities, Reminiscence &amp; Engagement Ideas for Seniors and Adults with Additional Needs
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-sky-950/80 border border-sky-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-sky-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop afternoon boredom and endless television—discover 101 easy, low-cost activities matched to every energy level, mobility stage, and cognitive ability to spark joy and connection.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-sky-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="actGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0369a1"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#312e81"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#actGrad)"/>
+
+          <!-- Warm Engagement Glow -->
+          <circle cx="300" cy="130" r="85" fill="#38bdf8" opacity="0.12"/>
+
+          <!-- Center: Joy & Connection Icons -->
+          <rect x="250" y="80" width="100" height="110" rx="10" fill="#f8fafc" stroke="#0284c7" stroke-width="2.5"/>
+          <text x="300" y="125" text-anchor="middle" font-size="32">🎨</text>
+          <text x="300" y="160" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="900">101 IDEAS</text>
+
+          <!-- Left Badge: Sensory & Armchair -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">🧩</text>
+          <text x="97" y="142" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="900">SENSORY &amp; GAMES</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">LOW-COST FUN</text>
+
+          <!-- Right Badge: Reminiscence -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">💬</text>
+          <text x="502" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">REMINISCENCE</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">SPARKING JOY</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#e0f2fe" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Engagement is not about keeping someone busy—it is about making them feel alive and valued."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-sky-300 font-bold text-xs uppercase">SCIE &amp; Age UK Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on social care standards for wellbeing, stimulation, and person-centred care.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Ability grids, sensory wheels, reminiscence maps &amp; 15-min boredom busters.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">Weekly activity planner, conversation cards, sensory checklist &amp; mood tracker.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-sky-800/60 pt-4 flex items-center justify-between text-xs text-sky-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>101 Meaningful Days • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-sky-100 text-sky-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Introduction: The Antidote to Afternoon Boredom</span>
+            <span class="text-sky-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Ch 1: The 4-Quadrant Ability-Matched Activity Grid</span>
+            <span class="text-sky-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Ch 2: 15-Minute Zero-Prep Boredom Busters</span>
+            <span class="text-sky-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Ch 3: Reminiscence &amp; Life-Story Sparkers</span>
+            <span class="text-sky-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Ch 4: Sensory Engagement for Advanced Needs</span>
+            <span class="text-sky-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Ch 5: Gentle Movement &amp; Armchair Fitness</span>
+            <span class="text-sky-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-sky-800 underline decoration-sky-300">Ch 6: 4 Real-World Activity Playbooks (Refusal)</span>
+            <span class="text-sky-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Engagement &amp; Fatigue)</span>
+            <span class="text-sky-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-sky-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-900 group-hover:text-sky-950 underline decoration-sky-300">Toolkit 1: Weekly Meaningful Activity Planner</span>
+            <span class="text-sky-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-900 group-hover:text-sky-950 underline decoration-sky-300">Toolkit 2: Reminiscence Conversation Cards</span>
+            <span class="text-sky-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-900 group-hover:text-sky-950 underline decoration-sky-300">Toolkit 3 &amp; 4: Sensory Checklist &amp; Mood Tracker</span>
+            <span class="text-sky-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Purpose &amp; Joy</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Why Meaningful Activity is Medicine (Not Just a Time-Filler)</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        Too often in care settings or at home, older adults or individuals with additional needs spend hours staring at blank walls or sitting in front of a flickering television screen simply because carers are exhausted and out of ideas. But true engagement is not about keeping someone "busy"—it is about making them feel alive, valued, and connected.
+      </p>
+      <p>
+        Lack of stimulation breeds apathy, depression, and restless behaviours like sundowning or pacing. When someone has a sense of purpose and joy in their day, challenging behaviours drop dramatically.
+      </p>
+
+      <div class="bg-sky-50 border-l-4 border-sky-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-sky-950 text-sm">
+          The Golden Rule of Activities: Match the activity to the person's current ability and energy level—never test them or make them feel like they have failed.
+        </p>
+        <p class="text-xs text-sky-900 mt-1">
+          This playbook provides 101 low-cost, zero-prep ideas categorized so you can instantly find something that fits their exact mood right now.
+        </p>
+      </div>
+
+      <p>
+        This guide draws upon social care best practices from <a href="https://www.scie.org.uk/" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline hover:text-sky-900">SCIE Activity Standards ↗</a>, <a href="https://www.ageuk.org.uk/" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline hover:text-sky-900">Age UK Wellbeing Portals ↗</a>, and <a href="https://www.nice.org.uk/" target="_blank" rel="noopener noreferrer" class="text-sky-700 font-bold underline hover:text-sky-900">NICE Engagement Guidelines ↗</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — 4-QUADRANT ABILITY GRID
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • The 4-Quadrant Ability Grid</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The 4-Quadrant Ability-Matched Activity Grid</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      An activity that thrills a vibrant senior will overwhelm someone with advanced dementia, while a sensory tactile game might bore an active adult. Use this 4-quadrant grid to match activities to energy and cognitive capacity.
+    </p>
+
+    <!-- Custom SVG Illustration: 4-Quadrant Activity Grid -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: Matching Activities to Energy &amp; Cognition</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="310" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="170" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">QUADRANT 1: ARMCHAIR REMINISCENCE</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Low physical energy + Good long-term memory.</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">Ideas: Looking at old photo albums, sorting buttons,</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">naming 1950s music hits, folding tea towels.</text>
+
+        <rect x="335" y="15" width="310" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="490" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">QUADRANT 2: SENSORY &amp; TACTILE</text>
+        <text x="350" y="58" fill="#334155" font-size="9.5">Low physical energy + Advanced cognitive decline.</text>
+        <text x="350" y="74" fill="#334155" font-size="9.5">Ideas: Fidget blankets, smelling lavender/citrus jars,</text>
+        <text x="350" y="90" fill="#334155" font-size="9.5">brushing soft fabrics, hand massage.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Core Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🎯 Purposeful Tasks</strong>
+        Adults want to feel useful, not patronized. Folding laundry or polishing silver is far more dignified than colouring children's books.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⏱️ Short 15-Min Windows</strong>
+        Attention spans can be brief. Stop while everyone is still smiling rather than dragging an activity out until fatigue sets in.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👥 1-to-1 vs Group</strong>
+        Some thrive in group singsongs; others become anxious in crowds and prefer quiet 1-to-1 card games.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — 15-MINUTE ZERO-PREP BOREDOM BUSTERS
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • 15-Minute Boredom Busters</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">15-Minute Zero-Prep Boredom Busters (Using Household Items)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When restlessness strikes in the middle of the afternoon, you don't need expensive craft supplies. Here are four instant boredom busters using items already in your cupboards:
+    </p>
+
+    <!-- Custom SVG Illustration: Boredom Busters Grid -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-300 text-xs uppercase tracking-wider text-center mb-2.5">Visual Guide: 4 Instant Household Activities</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="10" width="150" height="125" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+        <text x="83" y="32" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800">1. BUTTON SORT</text>
+        <text x="83" y="55" text-anchor="middle" fill="#ffffff" font-size="9.5">Jar of mixed buttons</text>
+        <text x="83" y="70" text-anchor="middle" fill="#cbd5e1" font-size="9">sorted by color or size</text>
+        <text x="83" y="85" text-anchor="middle" fill="#cbd5e1" font-size="9">into muffin tins.</text>
+
+        <rect x="172" y="10" width="150" height="125" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+        <text x="247" y="32" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="800">2. TOWEL FOLD</text>
+        <text x="247" y="55" text-anchor="middle" fill="#ffffff" font-size="9.5">Warm tea towels or</text>
+        <text x="247" y="70" text-anchor="middle" fill="#d1fae5" font-size="9">socks folded neatly</text>
+        <text x="247" y="85" text-anchor="middle" fill="#d1fae5" font-size="9">into matching pairs.</text>
+
+        <rect x="336" y="10" width="150" height="125" rx="10" fill="#451a03" stroke="#fbbf24" stroke-width="2"/>
+        <text x="411" y="32" text-anchor="middle" fill="#fde047" font-size="11" font-weight="800">3. SCENT JARS</text>
+        <text x="411" y="55" text-anchor="middle" fill="#ffffff" font-size="9.5">Cotton wool with vanilla,</text>
+        <text x="411" y="70" text-anchor="middle" fill="#fef3c7" font-size="9">lavender or coffee in</text>
+        <text x="411" y="85" text-anchor="middle" fill="#fef3c7" font-size="9">discreet spice jars.</text>
+
+        <rect x="500" y="10" width="152" height="125" rx="10" fill="#312e81" stroke="#818cf8" stroke-width="2"/>
+        <text x="576" y="32" text-anchor="middle" fill="#a5b4fc" font-size="11" font-weight="800">4. PHOTO MATCH</text>
+        <text x="576" y="55" text-anchor="middle" fill="#ffffff" font-size="9.5">Matching old family</text>
+        <text x="576" y="70" text-anchor="middle" fill="#e0e7ff" font-size="9">photos to names or</text>
+        <text x="576" y="85" text-anchor="middle" fill="#e0e7ff" font-size="9">decades on a board.</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — REMINISCENCE & LIFE-STORY SPARKERS
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Reminiscence Sparkers</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Reminiscence &amp; Life-Story Sparkers (Long-Term Memory Gold)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Long-term memory remains remarkably intact even when short-term memory fades. Asking someone about their childhood, first car, favourite meals, or school days sparks deep pleasure and self-esteem.
+    </p>
+
+    <!-- 4 Reminiscence Themes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🎵 Music from Their Youth</strong>
+        Play songs from their teens and twenties (e.g., 1950s/60s swing, Beatles, Sinatra). Music activates emotional brain regions unaffected by memory loss.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🍲 Taste &amp; Smell Triggers</strong>
+        Baking bread, brewing real coffee, or tasting sharp lemon curd can instantly unlock vivid childhood memories.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — SENSORY ENGAGEMENT FOR ADVANCED NEEDS
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Sensory Engagement</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Sensory Engagement for Advanced Cognitive or Physical Needs</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When verbal conversation or complex games are no longer accessible, sensory engagement provides soothing tactile and visual pleasure without cognitive pressure.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🧸 Fidget Aprons &amp; Muffs</strong>
+        Textured ribbons, wooden rings, and zippers sewn onto a lap blanket provide soothing hand movement for restless fingers.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">💡 LED Sensory Lamps</strong>
+        Gentle color-changing bubble tubes or projector lamps create calming visual focus in bedrooms or quiet rooms.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">✋ Hand Massages</strong>
+        Using scented hand cream with slow, warm touch promotes relaxation and deep personal connection.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — GENTLE MOVEMENT & ARMCHAIR FITNESS
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Gentle Movement &amp; Armchair Fitness</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Gentle Movement &amp; Seated Armchair Fitness</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Physical movement boosts mood, improves circulation, and aids sleep. Seated armchair exercises allow frail seniors to participate safely without fall risks.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🎈 Balloon Volleyball</strong>
+        Sitting in a circle and tapping a lightweight balloon back and forth builds upper body mobility and laughter.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👣 Ankle Pumps &amp; Toe Taps</strong>
+        Simple seated toe lifts and ankle rotations maintain leg circulation and joint flexibility.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD ACTIVITY PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Activity Playbooks</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Refusal, Restlessness &amp; Fatigue</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-sky-900 block text-sm mb-1">Playbook 1: "I'm Bored of Everything / Leave Me Alone"</strong>
+        Don't offer 10 choices. Bring one tactile item (like a smooth wooden carving or photo) and sit beside them in silence without demanding participation.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-sky-900 block text-sm mb-1">Playbook 2: Sundowning Restlessness at 4 PM</strong>
+        Channel late-afternoon pacing into purposeful movement like walking in the garden or folding laundry together.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-slate-900 block text-sm mb-1">Playbook 3: Refusing Group Activities in Care Homes</strong>
+        Respect personal introversion; offer a quiet 1-to-1 jigsaw or music session in their room instead of forcing group attendance.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-slate-900 block text-sm mb-1">Playbook 4: Short Attention Span / Dropping Items</strong>
+        Switch immediately to sensory tactile objects or passive music listening when fine motor focus fades.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Activity Carer FAQs</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Meaningful Activities: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions carers ask about keeping loved ones engaged and beating apathy:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "What do I do when they say every activity is 'childish'?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Adult dignity is paramount. Avoid puzzles with cartoon characters or childish crafts. Focus on adult tasks like sorting real tools, cooking prep, current affairs discussions, or adult card games.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "How do I prevent burnout as the sole activity planner?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Involve volunteers, family members, or use pre-recorded audiobooks and familiar music playlists so you aren't performing 24/7.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "Is leaving the television on all day harmful?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Passive viewing all day can increase apathy and confusion. Balance TV time with interactive music, conversation, or tactile tasks.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "How do I engage someone who is visually impaired?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Rely on audiobooks, tactile objects with distinct textures, scent jars, and music rather than visual crafts.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "What if they fall asleep 5 minutes into an activity?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Accept their need for rest. Do not force participation if their body is asking for sleep.
+        </p>
+      </div>
+
+      <div class="bg-sky-50 border border-sky-200 rounded-xl p-4">
+        <h4 class="font-bold text-sky-950">6. "Where can I find free community activity groups?"</h4>
+        <p class="text-sky-900 mt-1 leading-relaxed">
+          Contact Age UK, local Alzheimer's Society branches, or community libraries for "Memory Cafes" and seated exercise clubs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-sky-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-sky-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, Activity Hubs &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to explore activity ideas, reminiscence tools, and social care standards.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Activity Hubs &amp; Support Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.ageuk.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">Age UK Hub</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Age UK: Later Life Wellbeing &amp; Activities ↗</h4>
+        <p class="text-slate-600 mt-1">Community activity groups, befriending services, and senior fitness guides.</p>
+      </a>
+
+      <a href="https://www.scie.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">SCIE Social Care</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">SCIE: Meaningful Activity Standards in Care ↗</h4>
+        <p class="text-slate-600 mt-1">Evidence-based guidelines on person-centred engagement and reducing apathy.</p>
+      </a>
+
+      <a href="https://www.alzheimers.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">Alzheimer's Society</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Activity Ideas &amp; Reminiscence Therapy for Dementia ↗</h4>
+        <p class="text-slate-600 mt-1">Practical ideas for music, sensory boxes, and memory sharing.</p>
+      </a>
+
+      <a href="https://www.nice.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">NICE Guidance</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">NICE Standards on Independence and Mental Wellbeing ↗</h4>
+        <p class="text-slate-600 mt-1">Official clinical guidelines supporting social inclusion and purposeful daily activity.</p>
+      </a>
+    </div>
+
+    <!-- Cited References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based References</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. SCIE Social Care Guide:</strong> <em>Enabling older people to live well through meaningful engagement.</em> <a href="https://www.scie.org.uk/" target="_blank" class="text-sky-700 font-semibold underline">View SCIE ↗</a>
+        </li>
+        <li>
+          <strong>2. Age UK Later Life Research:</strong> <em>Combating loneliness and apathy through structured community activities.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-sky-300 text-xs uppercase tracking-wider mb-2">📞 Free Activity &amp; Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Age UK Advice Line:</strong> 0800 678 1602</div>
+        <div>• <strong>Alzheimer's Society:</strong> 0333 150 3456</div>
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>Emergency:</strong> Dial 999</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — WEEKLY ACTIVITY PLANNER
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-sky-600">
+    <div class="flex items-center justify-between border-b-2 border-sky-600 pb-3 mb-4">
+      <div>
+        <span class="bg-sky-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Weekly Planner</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Weekly Meaningful Activity Schedule</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-sky-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-sky-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Participant Name:</label>
+        <input type="text" placeholder="e.g., Arthur Miller" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Week Commencing:</label>
+        <input type="text" placeholder="DD/MM/YYYY" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Day</th>
+            <th class="p-2 w-1/3 border-r border-slate-700">Morning Activity (High Energy)</th>
+            <th class="p-2 w-1/3 border-r border-slate-700">Afternoon Activity (Relaxed/Sensory)</th>
+            <th class="p-2 text-center bg-sky-900">Enjoyment Rating (1–5)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Monday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="e.g., Seated exercises"/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="e.g., Photo sorting"/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Tuesday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Wednesday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Thursday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Friday</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Activity..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — REMINISCENCE CONVERSATION CARDS
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Conversation Prompts</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Reminiscence &amp; Life-Story Sparker Cards</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      Cut out these prompt cards to spark warm, engaging conversations about childhood, first jobs, and favourite pastimes.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-teal-50/60 border border-teal-200 p-3.5 rounded-xl">
+        <strong class="text-teal-950 block mb-1">💬 Card 1: Childhood &amp; School</strong>
+        <p class="text-slate-700">"What games did you used to play outside with your friends when you were ten years old?"</p>
+      </div>
+      <div class="bg-teal-50/60 border border-teal-200 p-3.5 rounded-xl">
+        <strong class="text-teal-950 block mb-1">💬 Card 2: First Job / Work</strong>
+        <p class="text-slate-700">"What was your very first job, and what did your first wage packet feel like?"</p>
+      </div>
+      <div class="bg-teal-50/60 border border-teal-200 p-3 rounded-xl">
+        <strong class="text-teal-950 block mb-1">💬 Card 3: Holidays &amp; Travel</strong>
+        <p class="text-slate-700">"Where was your favourite family holiday destination when you were younger?"</p>
+      </div>
+      <div class="bg-teal-50/60 border border-teal-200 p-3 rounded-xl">
+        <strong class="text-teal-950 block mb-1">💬 Card 4: Music &amp; Dancing</strong>
+        <p class="text-slate-700">"What song or band always makes you want to tap your toes or dance?"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — SENSORY CHECKLIST & MOOD TRACKER
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Sensory Audit &amp; Mood Log</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Sensory Material Checklist + Engagement Mood Tracker</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-sky-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-sky-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3 -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-2">Toolkit #3: Low-Cost Sensory &amp; Craft Box Checklist</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+          <input type="checkbox" class="rounded text-sky-600"/>
+          <span><strong>Textured Fabrics:</strong> Velvet, fleece, satin, and wool scraps for tactile exploration.</span>
+        </label>
+        <label class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200 cursor-pointer">
+          <input type="checkbox" class="rounded text-sky-600"/>
+          <span><strong>Scent Jars:</strong> Lavender, coffee beans, vanilla, and cinnamon cotton pads in sealed jars.</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Toolkit 4 -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-sky-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Daily Engagement &amp; Mood Tracker</span>
+        <span class="text-xs text-slate-300">Track Joy &amp; Apathy</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-sky-300 font-bold block">1. Most Successful Activity Today:</span>
+          <input type="text" placeholder="What brought the biggest smile..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-amber-300 font-bold block">2. Signs of Fatigue / Boredom Noted:</span>
+          <input type="text" placeholder="When did engagement drop off..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #9 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Ultimate Caregiver Binder (£9.99) | carelearn.site eBook & Printable Binder Template</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #6366f1;
+      background-color: #eef2ff;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-indigo-500 text-white font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #11 of 13 • £9.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">The Ultimate Caregiver Binder — 25+ Fillable Master Templates (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Binder FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Sources
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Fillable Templates
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £9.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £9.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-indigo-100 text-indigo-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #11 Storefront Kit • £9.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Family carers, spouses, and private caregivers drowning in loose medical paperwork, conflicting appointment cards, and unorganized medication lists.</p>
+          <p class="mt-1"><strong>Catalog Price: £9.99 digital download on www.carelearn.site.</strong></p>
+        </div>
+
+        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200">
+          <p class="font-extrabold text-indigo-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-indigo-900">"Stop Scrambling Through Kitchen Drawers for Medical Letters: The Complete 25+ Template Fillable Caregiver Binder System for Emergency Readiness and Daily Peace of Mind."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The 5-Tab Master System:</strong> Instant structure for emergency contacts, medication MAR sheets, legal/LPA documents, health histories, and daily care logs.</li>
+            <li><strong>Fillable Digital &amp; Printable Formats:</strong> Type directly into the PDF fields on your iPad or computer, or print out clean A4 pages for a physical ring binder.</li>
+            <li><strong>Emergency Grab-and-Go Sheet:</strong> Have all vital NHS numbers, allergies, and diagnoses ready in 5 seconds when paramedics or doctors arrive.</li>
+            <li><strong>4 Ready-to-Print Master Toolkits:</strong> Includes the Emergency Medical Summary, 7-Day MAR Medication Tracker, Master Appointment SBAR Log, and Care Team Rota.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-indigo-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-indigo-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-indigo-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-indigo-400">.site</span></p>
+          <p class="text-xs text-indigo-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Toolkit #11 • £9.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Spouses &amp; Private Caregivers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        The Ultimate Caregiver Binder
+      </h1>
+      <p class="text-lg sm:text-2xl text-indigo-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        25+ Fillable Master Templates to Organize Medical History, Medications, and Emergency Contacts
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-indigo-950/80 border border-indigo-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-indigo-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop scrambling through kitchen drawers for lost hospital letters or incorrect medication lists—organize everything into a foolproof 5-tab master binder system.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-indigo-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="binderGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#312e81"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#binderGrad)"/>
+
+          <!-- Warm Binder Organization Glow -->
+          <circle cx="300" cy="130" r="85" fill="#818cf8" opacity="0.12"/>
+
+          <!-- Center: Master Ring Binder Icon -->
+          <rect x="235" y="70" width="130" height="130" rx="12" fill="#f8fafc" stroke="#6366f1" stroke-width="2.5"/>
+          <rect x="250" y="85" width="20" height="100" rx="4" fill="#cbd5e1"/>
+          <circle cx="260" cy="105" r="4" fill="#0f172a"/>
+          <circle cx="260" cy="135" r="4" fill="#0f172a"/>
+          <circle cx="260" cy="165" r="4" fill="#0f172a"/>
+          <line x1="285" y1="100" x2="340" y2="100" stroke="#4338ca" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="285" y1="125" x2="340" y2="125" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+          <line x1="285" y1="150" x2="330" y2="150" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+
+          <!-- Left Badge: Emergency Ready -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#818cf8" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">🚨</text>
+          <text x="97" y="142" text-anchor="middle" fill="#818cf8" font-size="13" font-weight="900">EMERGENCY READY</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">GRAB &amp; GO FOLDER</text>
+
+          <!-- Right Badge: Fillable PDFs -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">💻</text>
+          <text x="502" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">FILLABLE PDFs</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">TYPE OR PRINT</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#e0e7ff" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Organization is the shield that protects caregivers from overwhelm."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-indigo-300 font-bold text-xs uppercase">Carers UK Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on NHS record-keeping standards, MAR safety, and emergency protocols.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">5-tab layouts, emergency card blueprints, MAR charts &amp; appointment logs.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">4 Master Templates</p>
+          <p class="text-xs text-slate-300 mt-1">Emergency summary, MAR schedule, SBAR appointment log &amp; team rota.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-indigo-800/60 pt-4 flex items-center justify-between text-xs text-indigo-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>The Ultimate Caregiver Binder • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Master Toolkit</h2>
+        <span class="text-[11px] bg-indigo-100 text-indigo-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Introduction: Why Every Carer Needs a Master Binder</span>
+            <span class="text-indigo-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Tab 1: Emergency Contacts &amp; Grab-and-Go Sheet</span>
+            <span class="text-indigo-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Tab 2: Medication Schedules &amp; MAR Safety</span>
+            <span class="text-indigo-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Tab 3: Legal, Power of Attorney &amp; DNACPR</span>
+            <span class="text-indigo-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Tab 4: Health Summaries &amp; Doctor Visits (SBAR)</span>
+            <span class="text-indigo-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Tab 5: Daily Care Logs &amp; Handover Rosters</span>
+            <span class="text-indigo-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 6: 4 Real-World Binder Scenarios (Ambulances)</span>
+            <span class="text-indigo-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Digital vs Paper)</span>
+            <span class="text-indigo-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-indigo-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Template 1: Emergency Grab-and-Go Summary</span>
+            <span class="text-indigo-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Template 2: Daily Medication (MAR) Record</span>
+            <span class="text-indigo-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Template 3 &amp; 4: SBAR Appointment &amp; Team Rota</span>
+            <span class="text-indigo-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Organisation is Protection</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Why Relying on Memory in a Crisis is a Recipe for Burnout</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        When an ambulance is called at 2:00 AM or a new doctor walks into a clinic room asking for your relative's exact medication list, trying to remember dosages, past surgeries, and GP phone numbers under stress is nearly impossible.
+      </p>
+      <p>
+        The Ultimate Caregiver Binder is a plug-and-play organizational system designed to put every vital fact at your fingertips in 5 seconds.
+      </p>
+
+      <div class="bg-indigo-50 border-l-4 border-indigo-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-indigo-950 text-sm">
+          The Golden Rule of Care Organization: Centralise everything. If vital health information lives only in your head or scattered across kitchen drawers, you are carrying an unnecessary cognitive burden.
+        </p>
+      </div>
+
+      <p>
+        This guide draws upon carer record-keeping standards from <a href="https://www.carersuk.org/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">Carers UK ↗</a> and <a href="https://www.cqc.org.uk/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">CQC Record Standards ↗</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — TAB 1: EMERGENCY CONTACTS
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Tab 1 • Emergency Contacts &amp; Grab Sheet</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Tab 1 of 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Emergency Contacts &amp; The "Grab-and-Go" Summary</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Tab 1 should always face outward as soon as you open your binder. It features immediate dial numbers (GP, pharmacy, district nurse, family backup) and a concise medical summary that paramedics can read instantly.
+    </p>
+
+    <!-- Custom SVG Illustration -->
+    <div class="bg-indigo-50/60 border border-indigo-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-indigo-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: Tab 1 Layout</h3>
+      <svg viewBox="0 0 660 120" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="10" width="200" height="100" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+        <text x="115" y="32" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">1. IMMEDIATE DIAL</text>
+        <text x="30" y="52" fill="#334155" font-size="9">999 / 111 / Local GP</text>
+        <text x="30" y="68" fill="#334155" font-size="9">Out of hours service</text>
+        
+        <rect x="230" y="10" width="200" height="100" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+        <text x="330" y="32" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">2. CARE TEAM</text>
+        <text x="245" y="52" fill="#334155" font-size="9">District Nurse / Social Worker</text>
+        <text x="245" y="68" fill="#334155" font-size="9">Care Agency Supervisor</text>
+
+        <rect x="445" y="10" width="200" height="100" rx="8" fill="#ffffff" stroke="#6366f1" stroke-width="2"/>
+        <text x="545" y="32" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">3. FAMILY BACKUP</text>
+        <text x="460" y="52" fill="#334155" font-size="9">Primary Carer &amp; Relatives</text>
+        <text x="460" y="68" fill="#334155" font-size="9">Emergency Keyholder</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — TAB 2: MEDICATION SCHEDULES
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Tab 2 • Medication Schedules &amp; MAR Safety</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Tab 2 of 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Medication Schedules &amp; MAR Administration Safety</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Tab 2 houses your active Medication Administration Record (MAR) sheet. Keeping this updated prevents missed doses and double-dosing when multiple family members or carers assist with pills.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — TAB 3: LEGAL, POWER OF ATTORNEY
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Tab 3 • Legal, Power of Attorney &amp; DNACPR</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Tab 3 of 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Legal Paperwork: Lasting Power of Attorney &amp; DNACPR Forms</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Tab 3 stores copies of registered Lasting Power of Attorney (LPA) documents (both Health &amp; Welfare and Property &amp; Financial), ReSPECT forms, and yellow DNACPR resuscitation notices.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — TAB 4: HEALTH SUMMARIES & SBAR
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Tab 4 • Health Summaries &amp; Doctor Visits (SBAR)</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Tab 4 of 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Health Summaries &amp; Doctor Appointment Mastery (SBAR)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Tab 4 keeps track of diagnoses, hospital discharge letters, and structured SBAR appointment prep sheets so you never forget to mention symptoms during GP visits.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — TAB 5: DAILY CARE LOGS
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Tab 5 • Daily Care Logs &amp; Handover Rosters</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Tab 5 of 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Daily Care Logs, Fluid Charts &amp; Handover Rosters</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Tab 5 holds ongoing daily logs—tracking meals, fluid intake, bowel movements, and visiting carer notes to maintain flawless continuity of care.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD BINDER SCENARIOS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Binder Scenarios</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Scenarios: Ambulances, New Doctors &amp; Emergencies</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Scenario 1: Parametics Arrive at 3 AM</strong>
+        Hand the paramedic Tab 1 and Tab 2 immediately. They will have allergies, medications, and emergency contacts in 5 seconds.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Scenario 2: New Locum GP Visits</strong>
+        Open Tab 4 to show previous consultant letters and your SBAR appointment questions for instant clinical clarity.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Scenario 3: Agency Carer Handover Change</strong>
+        Point visiting agency staff to Tab 5 for daily routine notes and fluid charts.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Scenario 4: Hospital Admission Paperwork</strong>
+        Bring the entire binder so hospital admissions staff have immediate access to LPA and DNACPR documents.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Binder Carer FAQs</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Caregiver Binders: The Hard Questions Answered</h2>
+
+    <div class="space-y-3.5 text-xs sm:text-sm mt-4">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "Should I keep a physical paper binder or a digital cloud folder?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>Both!</strong> A physical paper binder in the hallway is essential for paramedics who can't unlock your phone, while a digital cloud backup (Google Drive/Dropbox) lets you view records on your phone anywhere.
+        </p>
+      </div>
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "How often should I update the medication and contact tabs?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Review and update your binder sheets immediately whenever there is a hospital discharge, a medication change, or a new GP phone number added.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, Record Standards &amp; Support Portals</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-5 text-xs">
+      <a href="https://www.carersuk.org/" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">Carers UK Hub</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Carers UK: Emergency Planning &amp; Record Guides ↗</h4>
+        <p class="text-slate-600 mt-1">Official advice on emergency planning cards and organizing care records.</p>
+      </a>
+      <a href="https://www.cqc.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">CQC Standards</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">CQC Guidance on Care Records &amp; Safety ↗</h4>
+        <p class="text-slate-600 mt-1">Official standards on maintaining accurate care logs and medication records.</p>
+      </a>
+    </div>
+
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-indigo-300 text-xs uppercase tracking-wider mb-2">📞 Free Emergency &amp; Support Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>Age UK Advice Line:</strong> 0800 678 1602</div>
+        <div>• <strong>Emergency Services:</strong> Dial 999</div>
+        <div>• <strong>NHS Health Advice:</strong> Call 111</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TEMPLATE 1 — EMERGENCY SUMMARY
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-indigo-600">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-3 mb-4">
+      <div>
+        <span class="bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Master Template #1 • Tab 1 Grab Sheet</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Emergency "Grab-and-Go" Medical &amp; Contact Summary</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Patient Full Name &amp; DOB:</label>
+        <input type="text" placeholder="e.g., Arthur Miller (12/04/1942)" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">NHS / Insurance Number:</label>
+        <input type="text" placeholder="e.g., 948 382 1920" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+      <div class="border-2 border-indigo-500 rounded-xl p-4 bg-indigo-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-indigo-950 text-sm uppercase border-b border-indigo-200 pb-1.5">Emergency Dial List</h3>
+        <div><label class="font-bold text-slate-700">GP Surgery Name &amp; Phone:</label><input type="text" placeholder="Surgery name & phone..." class="toolkit-input mt-0.5"/></div>
+        <div><label class="font-bold text-slate-700">Pharmacy Name &amp; Phone:</label><input type="text" placeholder="Chemist name & phone..." class="toolkit-input mt-0.5"/></div>
+      </div>
+      <div class="border-2 border-teal-500 rounded-xl p-4 bg-teal-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase border-b border-teal-200 pb-1.5">Medical Summary</h3>
+        <div><label class="font-bold text-slate-700">Primary Diagnoses:</label><input type="text" placeholder="Conditions..." class="toolkit-input mt-0.5"/></div>
+        <div><label class="font-bold text-slate-700">Allergies:</label><input type="text" placeholder="Allergies..." class="toolkit-input mt-0.5"/></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TEMPLATE 2 — DAILY MAR MEDICATION RECORD
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Master Template #2 • Tab 2 MAR Sheet</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Daily Medication Administration (MAR) Record</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+    </div>
+
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Time Slot</th>
+            <th class="p-2 w-2/6 border-r border-slate-700">Medication Name &amp; Strength</th>
+            <th class="p-2 w-1/6 border-r border-slate-700">Dose</th>
+            <th class="p-2 text-center bg-teal-900">7-Day Initials (M|T|W|T|F|S|S)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Morning (8 AM)</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Medication name..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Dose..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Lunch (1 PM)</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Medication name..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Dose..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Bedtime (9 PM)</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Medication name..."/></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Dose..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="__|__|__|__|__|__|__"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TEMPLATES 3 & 4 — SBAR LOG & TEAM ROTA
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Master Templates #3 &amp; #4 • Tabs 4 &amp; 5</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Master Medical Appointment Tracker + Care Team Rota</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+    </div>
+
+    <!-- Template 3 -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-2">Template #3: Master Appointment &amp; SBAR Log</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-indigo-900 font-bold block mb-1">Upcoming GP / Clinic Visit:</span>
+          <input type="text" placeholder="Date, Time & Doctor Name..." class="toolkit-input mt-1"/>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+          <span class="text-teal-900 font-bold block mb-1">Top 3 Questions to Ask (SBAR):</span>
+          <input type="text" placeholder="Symptom or medication query..." class="toolkit-input mt-1"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Template 4 -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-indigo-400 font-extrabold text-xs uppercase tracking-wider">Template #4 • Care Team &amp; Family Rota</span>
+        <span class="text-xs text-slate-300">Keep in Tab 5</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-indigo-300 font-bold block">Primary Carer / Main Support:</span>
+          <input type="text" placeholder="Name & Days covered..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">Supporting Relative / Agency Carer:</span>
+          <input type="text" placeholder="Name & Tasks covered..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #11 of 13 • End of Master Binder Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

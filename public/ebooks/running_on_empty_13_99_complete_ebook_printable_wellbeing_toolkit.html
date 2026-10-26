@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Running on Empty (£13.99) | carelearn.site eBook & Printable Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #6366f1;
+      background-color: #eef2ff;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-indigo-500 text-white font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #10 of 13 • £13.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">Running on Empty — Beating Carer Burnout &amp; Guilt (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Burnout FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Sources
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Wellbeing Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £13.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-white font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £13.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-indigo-100 text-indigo-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #10 Storefront Kit • £13.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Exhausted family carers, parents, and shift-working healthcare staff suffering from compassion fatigue, crushing carer guilt, and physical exhaustion.</p>
+          <p class="mt-1"><strong>Catalog Price: £13.99 digital download on www.carelearn.site.</strong></p>
+        </div>
+
+        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200">
+          <p class="font-extrabold text-indigo-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-indigo-900">"Stop Running on Empty and Breaking Down in Secret: The Compassionate Guide to Overcoming Carer Guilt, Setting Healthy Boundaries, and Recovering from Compassion Fatigue."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The Burnout Cycle Decoded:</strong> Recognizing the transition from high-functioning stress to chronic compassion fatigue before physical illness strikes.</li>
+            <li><strong>Shattering Carer Guilt:</strong> Exact mindset shifts and scripts to silence the voice telling you that "doing more" is never enough.</li>
+            <li><strong>The Boundary-Setting Compass:</strong> How to say "no" to unreasonable demands from family members or employers without feeling selfish.</li>
+            <li><strong>Emergency Respite &amp; Contingency Planning:</strong> How to secure temporary relief and set up a backup care plan before hitting total crisis.</li>
+            <li><strong>4 Ready-to-Print Wellbeing Toolkits:</strong> Includes the 10-Minute Daily Reset Tracker, Respite Handover Sheet, Boundary Script Card, and Emergency Backup Contact Plan.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-indigo-950 via-slate-900 to-teal-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-indigo-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-indigo-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-indigo-400">.site</span></p>
+          <p class="text-xs text-indigo-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #10 • £13.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Parents &amp; Healthcare Workers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        Running on Empty
+      </h1>
+      <p class="text-lg sm:text-2xl text-indigo-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        The Real-World Guide to Beating Carer Burnout, Guilt, and Compassion Fatigue
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-indigo-950/80 border border-indigo-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-indigo-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop carrying the weight of the world in secret—learn how to dismantle crushing carer guilt, set firm boundaries, and restore your physical and emotional wellbeing before hitting total burnout.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-indigo-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="emptyGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#312e81"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#134e4a"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#emptyGrad)"/>
+
+          <!-- Warm Renewal Glow -->
+          <circle cx="300" cy="130" r="85" fill="#818cf8" opacity="0.12"/>
+
+          <!-- Center: Battery / Renewal Icons -->
+          <rect x="250" y="80" width="100" height="110" rx="10" fill="#f8fafc" stroke="#6366f1" stroke-width="2.5"/>
+          <text x="300" y="125" text-anchor="middle" font-size="32">🔋</text>
+          <text x="300" y="160" text-anchor="middle" fill="#4338ca" font-size="11" font-weight="900">RECHARGE</text>
+
+          <!-- Left Badge: Guilt Relief -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#818cf8" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">🕊️</text>
+          <text x="97" y="142" text-anchor="middle" fill="#818cf8" font-size="13" font-weight="900">GUILT RELIEF</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">MINDSET SHIFT</text>
+
+          <!-- Right Badge: Respite & Boundaries -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">🛡️</text>
+          <text x="502" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">BOUNDARIES</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">PROTECTING ENERGY</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#e0e7ff" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "You cannot pour from an empty cup. Caring for yourself is part of caring for them."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-indigo-300 font-bold text-xs uppercase">Carers UK Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on Carer Rights, NHS wellbeing standards, and compassion fatigue recovery.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">7 Visual Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Burnout cycles, guilt reframing maps, boundary compasses &amp; 10-min resets.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">Daily reset tracker, respite handover log, boundary script card &amp; emergency plan.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-indigo-800/60 pt-4 flex items-center justify-between text-xs text-indigo-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Running on Empty • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-indigo-100 text-indigo-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Introduction: The Silent Cost of Caring</span>
+            <span class="text-indigo-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 1: The Anatomy of Burnout &amp; Compassion Fatigue</span>
+            <span class="text-indigo-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 2: Dismantling Crushing Carer Guilt</span>
+            <span class="text-indigo-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 3: The Boundary-Setting Compass (Saying No)</span>
+            <span class="text-indigo-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 4: Securing Respite Before Crisis Hits</span>
+            <span class="text-indigo-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 5: The 10-Minute Daily Nervous System Reset</span>
+            <span class="text-indigo-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-indigo-800 underline decoration-indigo-300">Ch 6: 4 Real-World Carer Flashpoint Playbooks</span>
+            <span class="text-indigo-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Respite &amp; Resentment)</span>
+            <span class="text-indigo-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-indigo-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 1: Daily Carer Reset &amp; Mood Tracker</span>
+            <span class="text-indigo-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 2: Respite Handover &amp; Family Cover Sheet</span>
+            <span class="text-indigo-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-indigo-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-indigo-900 group-hover:text-indigo-950 underline decoration-indigo-300">Toolkit 3 &amp; 4: Boundary Script Card &amp; Emergency Plan</span>
+            <span class="text-indigo-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Acknowledging the Weight</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Why Caregivers Break Down in Secret (And Why It's Not Your Fault)</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        Caring for someone you love—or dedicating your working life to health and social care—is an act of profound generosity. But it also exacts a hidden toll. Too many carers spend their days holding back tears in supermarket aisles, snapping at partners over trivial things, and collapsing into bed at night with a racing heart, only to wake up and do it all over again.
+      </p>
+      <p>
+        The most dangerous myth in caregiving is the idea of the "martyr"—the belief that a good carer sacrifices their own health, sleep, and sanity without complaint. When you try to run on empty, exhaustion isn't a personal failure; it is a biological inevitability.
+      </p>
+
+      <div class="bg-indigo-50 border-l-4 border-indigo-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-indigo-950 text-sm">
+          The Golden Rule of Wellbeing: You cannot pour from an empty cup. Looking after your own nervous system isn't selfish—it is the single most important qualification for keeping someone else safe.
+        </p>
+        <p class="text-xs text-indigo-900 mt-1">
+          This playbook provides actionable strategies to dismantle crushing carer guilt, set firm boundaries, secure respite before hitting crisis, and run a 10-minute nervous system reset.
+        </p>
+      </div>
+
+      <p>
+        This guide draws upon carer wellbeing research from <a href="https://www.carersuk.org/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">Carers UK State of Caring Reports ↗</a>, <a href="https://www.nhs.uk/conditions/social-care-and-support-guide/support-and-benefits-for-carers/carers-breaks-and-respite-care/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">NHS Carer Health Standards ↗</a>, and <a href="https://www.nice.org.uk/" target="_blank" rel="noopener noreferrer" class="text-indigo-700 font-bold underline hover:text-indigo-900">NICE Wellbeing Guidance ↗</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — ANATOMY OF BURNOUT & COMPASSION FATIGUE
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • The Anatomy of Burnout</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Anatomy of Burnout &amp; Compassion Fatigue</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Burnout doesn't happen overnight. It creeps up through distinct stages—moving from high-functioning stress to chronic fatigue, emotional numbness, and eventually physical breakdown. Recognizing the warning signs early lets you course-correct before crisis hits.
+    </p>
+
+    <!-- Custom SVG Illustration: Burnout Cycle -->
+    <div class="bg-indigo-50/60 border border-indigo-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-indigo-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 4 Stages of Carer Burnout &amp; Compassion Fatigue</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="10" width="150" height="125" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="85" y="32" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">1. HIGH STRESS</text>
+        <text x="85" y="55" text-anchor="middle" fill="#334155" font-size="9.5">Constant adrenaline,</text>
+        <text x="85" y="70" text-anchor="middle" fill="#334155" font-size="9">skipping meals, racing</text>
+        <text x="85" y="85" text-anchor="middle" fill="#334155" font-size="9">thoughts &amp; poor sleep.</text>
+        <text x="85" y="112" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Running on Nerves</text>
+
+        <rect x="172" y="10" width="150" height="125" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="247" y="32" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">2. COMPASSION FATIGUE</text>
+        <text x="247" y="55" text-anchor="middle" fill="#334155" font-size="9.5">Feeling drained, irritable,</text>
+        <text x="247" y="70" text-anchor="middle" fill="#334155" font-size="9">resentful, or emotionally</text>
+        <text x="247" y="85" text-anchor="middle" fill="#334155" font-size="9">numb toward care tasks.</text>
+        <text x="247" y="112" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Empathy Reserves Low</text>
+
+        <rect x="336" y="10" width="150" height="125" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="411" y="32" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">3. PHYSICAL COLLAPSE</text>
+        <text x="411" y="55" text-anchor="middle" fill="#334155" font-size="9.5">Frequent colds, migraines,</text>
+        <text x="411" y="70" text-anchor="middle" fill="#334155" font-size="9">back spasms, and total</text>
+        <text x="411" y="85" text-anchor="middle" fill="#334155" font-size="9">exhaustion that sleep doesn't fix.</text>
+        <text x="411" y="112" text-anchor="middle" fill="#4f46e5" font-size="8.5" font-weight="700">Body Shuts Down</text>
+
+        <rect x="500" y="10" width="152" height="125" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+        <text x="576" y="32" text-anchor="middle" fill="#991b1b" font-size="11" font-weight="800">4. TOTAL CRISIS</text>
+        <text x="576" y="55" text-anchor="middle" fill="#7f1d1d" font-size="9.5">Inability to continue care,</text>
+        <text x="576" y="70" text-anchor="middle" fill="#7f1d1d" font-size="9">emergency hospitalisation</text>
+        <text x="576" y="85" text-anchor="middle" fill="#7f1d1d" font-size="9">or sudden breakdown.</text>
+        <text x="576" y="112" text-anchor="middle" fill="#dc2626" font-size="8.5" font-weight="700">Forced Intervention</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛑 Spotting the Early Warning Signs</strong>
+        If you find yourself crying in your car before entering the house, dreading every interaction, or feeling resentful toward someone you love, your body is sounding the alarm.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🧠 Compassion Fatigue is Real</strong>
+        Frontline and family carers absorb chronic stress daily. Without active decompression, your capacity to empathize naturally shrinks.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — DISMANTLING CARER GUILT
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Dismantling Carer Guilt</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Dismantling Crushing Carer Guilt (The Inner Critic)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Carer guilt is a relentless internal voice: <em>"I didn't do enough today," "I lost my patience too quickly," "If I loved them more, I wouldn't feel so exhausted."</em> This guilt is toxic because it masquerades as love while actively draining the emotional energy you need to survive.
+    </p>
+
+    <!-- Custom SVG Illustration: Guilt Reframing Matrix -->
+    <div class="bg-indigo-50/70 border border-indigo-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-indigo-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: Reframing Toxic Carer Guilt Into Compassionate Truth</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="310" height="115" rx="10" fill="#ffffff" stroke="#f43f5e" stroke-width="2"/>
+        <text x="170" y="38" text-anchor="middle" fill="#9f1239" font-size="11" font-weight="800">❌ THE TOXIC GUILT VOICE</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">"I wanted an hour of peace, so I am a bad carer."</text>
+        <text x="30" y="76" fill="#334155" font-size="9.5">"I snapped when they asked the same question."</text>
+        <text x="30" y="94" fill="#334155" font-size="9.5">"I shouldn't need respite if I cared enough."</text>
+
+        <rect x="335" y="15" width="310" height="115" rx="10" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+        <text x="490" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">✅ THE COMPASSIONATE TRUTH</text>
+        <text x="350" y="58" fill="#334155" font-size="9.5">"Needing rest is human biology, not moral failure."</text>
+        <text x="350" y="76" fill="#334155" font-size="9.5">"My brain tripped a fuse; I will repair and reconnect."</text>
+        <text x="350" y="94" fill="#334155" font-size="9.5">"Respite protects my health so I can keep them safe."</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🕊️ The Repair Rule</strong>
+        If you lose your patience, don't spiral into guilt. Simply repair the moment later: <em>"I'm sorry I raised my voice earlier; it's been a long day and I love you."</em>
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⚖️ Redefining Perfection</strong>
+        Aim for "Good Enough Care"—where safety, warmth, and basic needs are met—rather than an impossible standard of 24/7 cheerful perfection.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — THE BOUNDARY-SETTING COMPASS
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Boundary-Setting Compass</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Boundary-Setting Compass: How to Say "No" Without Guilt</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Carers often struggle to say "no" to extra shifts, demanding family members, or unrealistic expectations. Every time you say "yes" to something that drains your last remaining energy, you are saying "no" to your own health.
+    </p>
+
+    <!-- Custom SVG Illustration: Boundary Compass -->
+    <div class="bg-teal-50/70 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 3-Part Boundary Script (Firm, Kind, Clear)</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">1. VALIDATE &amp; EMPATHIZE</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Acknowledge their request</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">warmly without making</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">false promises.</text>
+        <text x="30" y="106" fill="#0d9488" font-size="9" font-weight="700">"I know you need help..."</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">2. THE FIRM "NO"</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">State your limitation</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">clearly without over-explaining</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">or making up excuses.</text>
+        <text x="245" y="106" fill="#0d9488" font-size="9" font-weight="700">"I cannot take that shift."</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">3. ALTERNATIVE / BOUNDARY</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">Offer an alternative if</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">possible, or hold the line</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">without folding.</text>
+        <text x="460" y="106" fill="#0d9488" font-size="9" font-weight="700">"Let's look at tomorrow."</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🛡️ Stop Over-Explaining</strong>
+        When you give a 10-minute speech justifying why you can't help, people view it as a debate. Keep your "no" simple and polite.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⏳ The 24-Hour Rule</strong>
+        Never say "yes" to a new request on the spot. Say: <em>"Let me check my schedule and get back to you tomorrow."</em>
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🤝 Protect Days Off</strong>
+        Treat your scheduled rest days with the same legal and professional urgency as a medical appointment.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — SECURING RESPITE BEFORE CRISIS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • Securing Respite Before Crisis</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Securing Respite Care Before Crisis Hits</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Respite care isn't a luxury; it is a vital safety valve. Waiting until you are hospitalised with exhaustion before asking for relief puts both you and your loved one at risk.
+    </p>
+
+    <!-- Custom SVG Illustration: Respite Options -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: 4 Types of Respite Support Available</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="87" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">1. DAY CARE CENTRES</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Local community clubs</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">providing social activities</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">and meals 1–3 days a week.</text>
+        <text x="30" y="110" fill="#0284c7" font-size="9" font-weight="700">Daytime Relief</text>
+
+        <rect x="175" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="247" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">2. SITTING SERVICES</text>
+        <text x="190" y="58" fill="#334155" font-size="9.5">Trained volunteers or</text>
+        <text x="190" y="74" fill="#334155" font-size="9.5">care workers sit at home</text>
+        <text x="190" y="90" fill="#334155" font-size="9.5">so you can leave safely.</text>
+        <text x="247" y="110" text-anchor="middle" fill="#0284c7" font-size="9" font-weight="700">In-Home Break</text>
+
+        <rect x="335" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="407" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">3. RESIDENTIAL STAY</text>
+        <text x="350" y="58" fill="#334155" font-size="9.5">Short-term care home stay</text>
+        <text x="350" y="74" fill="#334155" font-size="9.5">(1–2 weeks) to let carers</text>
+        <text x="350" y="90" fill="#334155" font-size="9.5">take a holiday or rest.</text>
+        <text x="407" y="110" text-anchor="middle" fill="#0284c7" font-size="9" font-weight="700">Extended Break</text>
+
+        <rect x="495" y="15" width="150" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="570" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">4. CARER'S ASSESSMENT</text>
+        <text x="510" y="58" fill="#334155" font-size="9.5">Statutory right to council</text>
+        <text x="510" y="74" fill="#334155" font-size="9.5">funding for respite support</text>
+        <text x="510" y="90" fill="#334155" font-size="9.5">under the Care Act 2014.</text>
+        <text x="570" y="110" text-anchor="middle" fill="#0284c7" font-size="9" font-weight="700">Legal Entitlement</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📋 Request a Carer's Assessment</strong>
+        Contact your local council social services and request a **Carer's Assessment** specifically to evaluate your need for regular respite breaks.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🤝 Charities &amp; Local Grants</strong>
+        Organizations like Age UK, Carers UK, and local hospices offer grant-funded respite breaks and sitting services.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — 10-MINUTE NERVOUS SYSTEM RESET
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • The 10-Minute Nervous System Reset</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The 10-Minute Daily Nervous System Reset</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      When stress hormones surge, your nervous system gets locked in "fight or flight." Use this evidence-based 10-minute protocol daily to clear cortisol and signal safety to your brain.
+    </p>
+
+    <!-- Custom SVG Illustration: Reset Protocol -->
+    <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-emerald-950 text-xs uppercase tracking-wider text-center mb-2">Visual Guide: 3 Steps to Clear Adrenaline in 10 Minutes</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">1. COLD WATER SHOCK (2 MINS)</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Splash cold water on face</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">or hold wrists under cold tap.</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">Stimulates vagus nerve.</text>
+        <text x="30" y="106" fill="#059669" font-size="9" font-weight="700">✓ Instant heart rate drop.</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">2. BOX BREATHING (5 MINS)</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">Inhale 4s, hold 4s,</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">exhale 4s, hold 4s.</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">Repeated 10 times.</text>
+        <text x="245" y="106" fill="#059669" font-size="9" font-weight="700">✓ Stops adrenaline surge.</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">3. SILENCE &amp; HYDRATION (3 MINS)</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">Sit in quiet room without</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">phone or screens; drink</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">a full glass of water.</text>
+        <text x="460" y="106" fill="#059669" font-size="9" font-weight="700">✓ Rehydrates &amp; resets.</text>
+      </svg>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⏱️ Non-Negotiable 10 Mins</strong>
+        Protect this 10-minute window daily. Even locked in a bathroom or car, taking this break prevents total burnout.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📵 Screen-Free Reset</strong>
+        Scrolling social media during a break does not rest your brain—it floods it with more stimulation. Choose actual silence.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">💧 Rehydrate</strong>
+        Dehydration mimics anxiety and brain fog. Drinking water during your reset clears physical tension instantly.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD CARER PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Carer Playbooks</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Guilt, Boundaries &amp; Exhaustion</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 1: Overwhelming Guilt When Taking Time Off</strong>
+        When guilt tells you that resting makes you selfish, reply: <em>"Resting protects their safety. If I collapse, who looks after them?"</em> Frame self-care as a clinical necessity, not a luxury.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 2: Family Members Demanding More Than You Can Give</strong>
+        Use the 3-part boundary script: <em>"I know you want the best for Mum. I cannot take on extra visits this week. Let's look at what other family members can contribute."</em>
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 3: Hitting Total Exhaustion Mid-Shift or Mid-Day</strong>
+        Stop what you are doing, hand over supervision safely to another adult or place, step away for 5 minutes, run cold water over your wrists, and breathe.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-indigo-900 block text-sm mb-1">Playbook 4: Dealing with Compassion Fatigue &amp; Numbness</strong>
+        Acknowledge your emotional reserves are depleted. Scale back non-essential tasks immediately and activate your emergency respite backup plan.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Wellbeing Carer FAQs</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Carer Burnout &amp; Wellbeing: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions family carers and healthcare staff ask about guilt, boundaries, and overcoming exhaustion:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "Is feeling resentful toward someone I love a sign that I'm a terrible person?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>Absolutely not.</strong> Resentment is a flashing warning light telling you that your life has become entirely unbalanced and your needs are being ignored. Acknowledge the feeling without shame, and use it as fuel to set better boundaries and secure help.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "How do I handle other family members who criticize my care decisions while doing nothing?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Decline to debate them. Say: <em>"Since you feel strongly about how this is handled, I'd love to hand that task over to you this week."</em> People who spectate from the sidelines quickly quiet down when offered actual responsibility.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "What should I do if I wake up with complete dread and cannot face getting out of bed?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Recognize this as clinical burnout. If possible, trigger your emergency backup plan immediately, call in sick if you are a professional, or contact Carers UK for urgent advice and respite support.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "How can I sleep when my brain won't stop running through tomorrow's tasks?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Keep a "Brain Dump" notepad by your bed. Write down every single worry and to-do item before closing your eyes so your brain knows the information is safely captured and doesn't need to hold onto it overnight.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "Where can I find free, confidential emotional support specifically for carers?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Contact the **Carers UK Helpline (0808 808 7777)** or local carer support hubs which offer free listening services and peer support groups.
+        </p>
+      </div>
+
+      <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+        <h4 class="font-bold text-indigo-950">6. "How do I transition from work mode to home mode without bringing stress to my family?"</h4>
+        <p class="text-indigo-900 mt-1 leading-relaxed">
+          Create an intentional ritual—such as a 15-minute podcast in the car, changing clothes immediately upon entering the house, or washing your hands while intentionally visualizing washing away the day's stress.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-indigo-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-indigo-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Video Tutorials, Support Portals &amp; Clinical Sources</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to explore carer wellbeing guides, respite support, and mental health resources.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Wellbeing Portals &amp; Support Hubs</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.carersuk.org/" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">Carers UK Hub</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Carers UK: Wellbeing, Rights &amp; Respite Guides ↗</h4>
+        <p class="text-slate-600 mt-1">Comprehensive support on carer rights, mental health resources, and peer forums.</p>
+      </a>
+
+      <a href="https://www.nhs.uk/conditions/social-care-and-support-guide/support-and-benefits-for-carers/carers-breaks-and-respite-care/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">NHS Social Care</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">NHS: Carer Breaks and Respite Care Information ↗</h4>
+        <p class="text-slate-600 mt-1">Official NHS guidance on accessing council-funded respite and carer assessments.</p>
+      </a>
+
+      <a href="https://www.mind.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">Mind Mental Health</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Mind: Managing Stress and Coping with Burnout ↗</h4>
+        <p class="text-slate-600 mt-1">Expert mental health toolkits for managing chronic stress and nervous system overload.</p>
+      </a>
+
+      <a href="https://www.nice.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">NICE Guidance</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">NICE Standards on Mental Wellbeing &amp; Support ↗</h4>
+        <p class="text-slate-600 mt-1">Clinical guidelines supporting mental health resilience and carer support services.</p>
+      </a>
+    </div>
+
+    <!-- Cited References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based References</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. Carers UK State of Caring Report:</strong> <em>The impact of caring on physical health, mental wellbeing, and isolation.</em> <a href="https://www.carersuk.org/" target="_blank" class="text-indigo-700 font-semibold underline">View Carers UK ↗</a>
+        </li>
+        <li>
+          <strong>2. NHS Carer Health and Wellbeing Standards:</strong> <em>Support frameworks for unpaid and professional carers experiencing burnout.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-indigo-300 text-xs uppercase tracking-wider mb-2">📞 Free Carer Wellbeing Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>Mind Infoline:</strong> 0300 123 3393</div>
+        <div>• <strong>Samaritans (24/7):</strong> 116 123</div>
+        <div>• <strong>Emergency:</strong> Dial 999</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — DAILY CARER RESET TRACKER
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-indigo-600">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-3 mb-4">
+      <div>
+        <span class="bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Daily Reset Tracker</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">10-Minute Daily Carer Reset &amp; Mood Tracker</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Carer Name:</label>
+        <input type="text" placeholder="e.g., Sarah Jenkins" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Week Commencing:</label>
+        <input type="text" placeholder="DD/MM/YYYY" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-1/6 border-r border-slate-700">Day</th>
+            <th class="p-2 w-1/4 border-r border-slate-700">10-Min Reset Done? (Cold Water / Breathe)</th>
+            <th class="p-2 w-1/3 border-r border-slate-700">Boundary Held Today?</th>
+            <th class="p-2 text-center bg-indigo-900">Energy Level (1–5)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Monday</td>
+            <td class="p-2 border-r border-slate-300"><label><input type="checkbox"/> Yes (10 mins)</label></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="e.g., Said no to extra shift"/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Tuesday</td>
+            <td class="p-2 border-r border-slate-300"><label><input type="checkbox"/> Yes (10 mins)</label></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Boundary note..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Wednesday</td>
+            <td class="p-2 border-r border-slate-300"><label><input type="checkbox"/> Yes (10 mins)</label></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Boundary note..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Thursday</td>
+            <td class="p-2 border-r border-slate-300"><label><input type="checkbox"/> Yes (10 mins)</label></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Boundary note..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">Friday</td>
+            <td class="p-2 border-r border-slate-300"><label><input type="checkbox"/> Yes (10 mins)</label></td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Boundary note..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — RESPITE HANDOVER SHEET
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Respite Handover</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Respite &amp; Family Cover Handover Sheet</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      Fill out this sheet when handing over care to a family member, respite worker, or sitter so you can step away with complete peace of mind.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-teal-50/60 border border-teal-200 p-3.5 rounded-xl">
+        <strong class="text-teal-950 block mb-1">📋 Daily Routine &amp; Meal Times</strong>
+        <textarea rows="3" placeholder="Breakfast at 8:30, medication at 9:00, afternoon nap from 2 to 3 PM..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs"></textarea>
+      </div>
+      <div class="bg-teal-50/60 border border-teal-200 p-3 rounded-xl">
+        <strong class="text-teal-950 block mb-1">🚨 Emergency Contacts &amp; Numbers</strong>
+        <textarea rows="3" placeholder="Carer mobile, GP surgery, district nurse, emergency backup contact..." class="w-full bg-white border border-teal-200 rounded-lg p-2 text-xs"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — BOUNDARY SCRIPT & EMERGENCY PLAN
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Boundary Cards &amp; Backup Plan</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Boundary Script Card + Emergency Backup Contingency Plan</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3 -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-2">Toolkit #3: Personal Boundary &amp; "No" Script Card</h3>
+      <div class="bg-slate-50 border border-slate-200 p-3.5 rounded-xl text-xs space-y-2">
+        <p><strong>My Go-To Boundary Phrase (Practice saying this out loud):</strong></p>
+        <p class="italic text-indigo-900 bg-indigo-50 p-2.5 rounded-lg border border-indigo-200 font-semibold">
+          "I understand this is important, but I am at my limit and cannot take this on right now. Let's look at another solution."
+        </p>
+      </div>
+    </div>
+
+    <!-- Toolkit 4 -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-indigo-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Emergency Backup Contingency Plan</span>
+        <span class="text-xs text-slate-300">Keep on Fridge</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-indigo-300 font-bold block">1. Designated Backup Carer / Family Member:</span>
+          <input type="text" placeholder="Name & phone number..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">2. Emergency Respite Agency / Care Line:</span>
+          <input type="text" placeholder="Agency name & out-of-hours number..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #10 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>

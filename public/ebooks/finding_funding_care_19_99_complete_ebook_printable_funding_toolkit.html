@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding & Funding Care (£19.99) | carelearn.site eBook & Printable Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #0d9488;
+      background-color: #f0fdfa;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-teal-500 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Guide #8 of 13 • £19.99</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">Finding &amp; Funding Care — Agencies, Care Homes &amp; Financial Support (13 Pages)</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#faq-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Funding FAQs
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Links &amp; Calculators
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Funding Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          £19.99 Storefront Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: £19.99 GUMROAD / WHOP & LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-teal-100 text-teal-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Product #8 Storefront Kit • £19.99</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Landing Page &amp; Checkout Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Target "Pocket of Demand" &amp; Price</p>
+          <p><strong>Audience:</strong> Families navigating the maze of social care, care home fees, council means tests, and NHS continuing healthcare for the first time.</p>
+          <p class="mt-1"><strong>Catalog Price: £19.99 digital download on www.carelearn.site.</strong></p>
+        </div>
+
+        <div class="bg-teal-50 p-4 rounded-xl border border-teal-200">
+          <p class="font-extrabold text-teal-950 uppercase text-xs mb-1">Core Transformation Headline (Hero Section)</p>
+          <p class="font-bold text-base text-teal-900">"Stop Overpaying for Care and Demystify the Means Test: The Plain-English Guide to Council Assessments, NHS CHC Funding, Care Home Fees, and Protecting Family Assets."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Landing Page Bullet Points ("What's Inside")</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>The Means-Test Decoded (£23,250 &amp; £14,250):</strong> Exactly how savings, pensions, and property are calculated, and how to prepare for your local authority financial assessment.</li>
+            <li><strong>Unlocking Free NHS Continuing Healthcare (CHC):</strong> How to qualify for 100% NHS-funded care if your loved one has primary health needs.</li>
+            <li><strong>Care Home Tour Scorecard &amp; Agency Red Flags:</strong> 20 crucial questions to ask before signing any care contract or agency agreement.</li>
+            <li><strong>Deferred Payment Schemes &amp; Attendance Allowance:</strong> Legal mechanisms to avoid selling your family home prematurely.</li>
+            <li><strong>4 Ready-to-Print Funding Toolkits:</strong> Includes the Care Home Tour Scorecard, 20 Questions for Home Care Agencies, Monthly Care Budget Worksheet, and Needs Assessment Prep Sheet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-teal-950 via-slate-900 to-indigo-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-teal-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-teal-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-teal-400">.site</span></p>
+          <p class="text-xs text-teal-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-teal-500/20 border border-teal-400/40 text-teal-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Playbook #8 • £19.99 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Families, Adult Children &amp; Carers</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        Finding &amp; Funding Care
+      </h1>
+      <p class="text-lg sm:text-2xl text-teal-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        The Plain-English Guide to Home Care Agencies, Care Homes, and Financial Support
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-teal-950/80 border border-teal-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-teal-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Stop feeling overwhelmed by confusing social care jargon, means tests, and care fees—learn how to secure local authority support, unlock NHS funding, and choose quality care with confidence.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-teal-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fundGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#134e4a"/>
+              <stop offset="50%" stop-color="#1e293b"/>
+              <stop offset="100%" stop-color="#312e81"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="14" fill="url(#fundGrad)"/>
+
+          <!-- Warm Financial Guidance Glow -->
+          <circle cx="300" cy="130" r="85" fill="#2dd4bf" opacity="0.12"/>
+
+          <!-- Center: Shield & Calculator / Budget Icons -->
+          <rect x="250" y="80" width="100" height="110" rx="10" fill="#f8fafc" stroke="#0d9488" stroke-width="2.5"/>
+          <text x="300" y="125" text-anchor="middle" font-size="32">💷</text>
+          <text x="300" y="160" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="900">MEANS TEST</text>
+
+          <!-- Left Badge: Care Options -->
+          <rect x="35" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5"/>
+          <text x="97" y="105" text-anchor="middle" font-size="28">🏡</text>
+          <text x="97" y="142" text-anchor="middle" fill="#38bdf8" font-size="13" font-weight="900">CHOOSING CARE</text>
+          <text x="97" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">HOME VS RESIDENTIAL</text>
+
+          <!-- Right Badge: NHS Funding -->
+          <rect x="440" y="65" width="125" height="130" rx="12" fill="#1e293b" stroke="#34d399" stroke-width="2.5"/>
+          <text x="502" y="105" text-anchor="middle" font-size="28">🛡️</text>
+          <text x="502" y="142" text-anchor="middle" fill="#34d399" font-size="13" font-weight="900">NHS &amp; BENEFITS</text>
+          <text x="502" y="165" text-anchor="middle" fill="#cbd5e1" font-size="9" font-weight="800">CHC &amp; ALLOWANCES</text>
+
+          <!-- Bottom Quote Bar -->
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#ccfbf1" font-size="12.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="600">
+            "Knowing your rights in the social care system is the first step to protecting your family."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-teal-300 font-bold text-xs uppercase">Care Act 2014 Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on statutory duties, means-test thresholds (£23,250), and NHS CHC standards.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-sky-300 font-bold text-xs uppercase">7 Visual Diagrams</p>
+          <p class="text-xs text-slate-300 mt-1">Needs assessment flows, means-test brackets, CHC checklists &amp; care scorecards.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">4 Printable Toolkits</p>
+          <p class="text-xs text-slate-300 mt-1">Care home scorecard, agency questions, budget worksheet &amp; assessment prep.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Cover Footer -->
+    <div class="border-t border-teal-800/60 pt-4 flex items-center justify-between text-xs text-teal-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Curated Evidence-Based Edition • Practical Care Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: INTERACTIVE TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Finding &amp; Funding Care • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <!-- Clickable Hyperlinked Table of Contents Box -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="serif-heading text-2xl font-bold text-slate-900">Inside This Curated Playbook</h2>
+        <span class="text-[11px] bg-teal-100 text-teal-900 font-bold px-2.5 py-1 rounded-full">💡 Click any section to jump directly</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Introduction: The Social Care Maze</span>
+            <span class="text-teal-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Ch 1: The Care Needs Assessment (Your Statutory Right)</span>
+            <span class="text-teal-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Ch 2: The Means Test Decoded (£23,250 &amp; £14,250)</span>
+            <span class="text-teal-700 font-bold">p. 4</span>
+          </a>
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Ch 3: Home Care vs. Care Homes vs. Nursing Homes</span>
+            <span class="text-teal-700 font-bold">p. 5</span>
+          </a>
+          <a href="#ch-4" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Ch 4: Unlocking Free NHS Continuing Healthcare (CHC)</span>
+            <span class="text-teal-700 font-bold">p. 6</span>
+          </a>
+          <a href="#ch-5" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Ch 5: Benefits, Deferred Payments &amp; Asset Protection</span>
+            <span class="text-teal-700 font-bold">p. 7</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-6" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-slate-700 group-hover:text-teal-800 underline decoration-teal-300">Ch 6: 4 Real-World Funding Flashpoint Playbooks</span>
+            <span class="text-teal-700 font-bold">p. 8</span>
+          </a>
+          <a href="#faq-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-800 group-hover:text-teal-950 underline decoration-teal-300">Ch 7: Real Carer FAQ Vault (Property &amp; Self-Funding)</span>
+            <span class="text-teal-700 font-bold">p. 9</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-sky-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-sky-800 group-hover:text-sky-950 underline decoration-sky-300">Interactive Video Tutorials &amp; Cited Sources</span>
+            <span class="text-teal-700 font-bold">p. 10</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-900 group-hover:text-teal-950 underline decoration-teal-300">Toolkit 1: Care Home Tour Scorecard &amp; Checklist</span>
+            <span class="text-teal-700 font-bold">p. 11</span>
+          </a>
+          <a href="#toolkit-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-900 group-hover:text-teal-950 underline decoration-teal-300">Toolkit 2: 20 Questions to Ask Home Care Agencies</span>
+            <span class="text-teal-700 font-bold">p. 12</span>
+          </a>
+          <a href="#toolkit-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-teal-50 px-1.5 rounded transition group">
+            <span class="font-semibold text-teal-900 group-hover:text-teal-950 underline decoration-teal-300">Toolkit 3 &amp; 4: Monthly Budget &amp; Assessment Sheet</span>
+            <span class="text-teal-700 font-bold">p. 13</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Introduction Content -->
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Navigating the Social Care Maze</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Why Finding and Funding Care Feels Like Walking Through Fog</h2>
+    
+    <div class="space-y-3.5 text-slate-700 leading-relaxed text-[15px]">
+      <p>
+        When an ageing parent or relative reaches the point where they can no longer manage safely at home alone, families are usually thrust into a bewildering administrative maze overnight. Suddenly you are forced to learn unfamiliar terms like <em>means tests, capital thresholds, continuing healthcare, reablement, and deferred payment agreements</em>—often while dealing with emotional exhaustion and grief.
+      </p>
+      <p>
+        Many families make costly mistakes simply because they don't know their statutory rights under the law. They assume they must sell their parents' home immediately, or they skip asking the local council for a formal Care Needs Assessment because they assume they have too much savings.
+      </p>
+
+      <div class="bg-teal-50 border-l-4 border-teal-600 p-4 rounded-r-xl my-4">
+        <p class="font-bold text-teal-950 text-sm">
+          The Golden Rule of Care Funding: Everyone has a legal right to a Care Needs Assessment from their local authority, regardless of their financial savings or property value.
+        </p>
+        <p class="text-xs text-teal-900 mt-1">
+          Never let a local authority skip your care needs assessment just because they assume you will be a "self-funder." An official assessment establishes your baseline needs and opens doors to NHS funding and council advice.
+        </p>
+      </div>
+
+      <p>
+        This playbook translates official social care standards—including the <a href="https://www.gov.uk/government/publications/care-act-2014-statutory-guidance" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline hover:text-teal-900">Care Act 2014 Statutory Guidance ↗</a>, <a href="https://www.ageuk.org.uk/" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline hover:text-teal-900">Age UK Care Funding Guides ↗</a>, and <a href="https://www.independentage.org/" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline hover:text-teal-900">Independent Age Social Care Portals ↗</a>—into a clear, plain-English roadmap.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — THE CARE NEEDS ASSESSMENT
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • The Care Needs Assessment</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+      <span class="hidden print:inline">Page 3</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Care Needs Assessment: Your Legal Right (And How to Ace It)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Under Section 9 of the **Care Act 2014**, every local authority in England and Wales has a legal duty to carry out a free **Care Needs Assessment** for anyone who appears to have care and support needs. This assessment evaluates how well the person can manage everyday tasks—such as washing, dressing, preparing meals, and moving around their home safely—independent of what is in their bank account.
+    </p>
+
+    <!-- Custom SVG Illustration: Needs Assessment Flowchart -->
+    <div class="bg-teal-50/60 border border-teal-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 4-Step Social Services Assessment Journey</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="87" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">1. CONTACT COUNCIL</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Call local adult social</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">services and request a Care</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">Needs Assessment.</text>
+        <text x="87" y="112" text-anchor="middle" fill="#0d9488" font-size="8.5" font-weight="700">Free Statutory Right</text>
+
+        <rect x="175" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="247" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">2. THE VISIT / CALL</text>
+        <text x="190" y="58" fill="#334155" font-size="9.5">Social worker or OT visits</text>
+        <text x="190" y="74" fill="#334155" font-size="9.5">to evaluate daily struggles</text>
+        <text x="190" y="90" fill="#334155" font-size="9.5">with washing, cooking, etc.</text>
+        <text x="247" y="112" text-anchor="middle" fill="#0d9488" font-size="8.5" font-weight="700">Describe Worst Day</text>
+
+        <rect x="335" y="15" width="145" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="407" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">3. ELIGIBILITY TEST</text>
+        <text x="350" y="58" fill="#334155" font-size="9.5">Council checks national</text>
+        <text x="350" y="74" fill="#334155" font-size="9.5">eligibility criteria (inability</text>
+        <text x="350" y="90" fill="#334155" font-size="9.5">to achieve 2+ outcomes).</text>
+        <text x="407" y="112" text-anchor="middle" fill="#0d9488" font-size="8.5" font-weight="700">National Threshold</text>
+
+        <rect x="495" y="15" width="150" height="115" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="2"/>
+        <text x="570" y="38" text-anchor="middle" fill="#0f766e" font-size="11" font-weight="800">4. CARE &amp; SUPPORT PLAN</text>
+        <text x="510" y="58" fill="#334155" font-size="9.5">Identifies equipment,</text>
+        <text x="510" y="74" fill="#334155" font-size="9.5">reablement, or direct</text>
+        <text x="510" y="90" fill="#334155" font-size="9.5">payments / council support.</text>
+        <text x="570" y="112" text-anchor="middle" fill="#0d9488" font-size="8.5" font-weight="700">Official Blueprint</text>
+      </svg>
+    </div>
+
+    <!-- 3 Assessment Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🚨 Describe Their "Worst Day"</strong>
+        Older adults often put on a brave face when an official visits: <em>"Oh I'm fine, I manage!"</em> Always describe how they function on their absolute worst, most exhausted day, not their best morning.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">👥 Be Present at the Visit</strong>
+        Never let social services assess a frail parent alone. Sit in to ensure safety issues (like recent falls or missed pills) are fully documented.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📋 Request a Carer's Assessment Too</strong>
+        If you provide unpaid care, you have a separate legal right to your own **Carer's Assessment** to get respite support or direct payments for yourself.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — THE MEANS TEST DECODED
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • The Means Test Decoded</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+      <span class="hidden print:inline">Page 4</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">The Means Test Decoded: Capital Limits (£23,250 &amp; £14,250)</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Once a Care Needs Assessment proves someone needs support, the local authority conducts a **Financial Assessment (Means Test)** to determine who pays. In England and Northern Ireland, the rules revolve around two strict capital limits (<a href="https://www.independentage.org/" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline">Independent Age Care Funding Standards ↗</a>):
+    </p>
+
+    <!-- Custom SVG Illustration: Means Test Brackets -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-teal-300 text-xs uppercase tracking-wider text-center mb-2.5">Visual Blueprint: The 3 Financial Tiers of Social Care Funding</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="10" width="204" height="125" rx="10" fill="#1e293b" stroke="#f43f5e" stroke-width="2"/>
+        <text x="110" y="32" text-anchor="middle" fill="#fda4af" font-size="11" font-weight="800">ABOVE £23,250</text>
+        <text x="110" y="52" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">Self-Funder</text>
+        <text x="110" y="70" text-anchor="middle" fill="#cbd5e1" font-size="9">Must pay 100% of care</text>
+        <text x="110" y="85" text-anchor="middle" fill="#cbd5e1" font-size="9">home or home care fees</text>
+        <text x="110" y="105" text-anchor="middle" fill="#fca5a5" font-size="8.5">Council contributes £0</text>
+
+        <rect x="228" y="10" width="204" height="125" rx="10" fill="#451a03" stroke="#fbbf24" stroke-width="2"/>
+        <text x="330" y="32" text-anchor="middle" fill="#fde047" font-size="11" font-weight="800">£14,250 TO £23,250</text>
+        <text x="330" y="52" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">Partial Council Support</text>
+        <text x="330" y="70" text-anchor="middle" fill="#fef3c7" font-size="9">Council contributes + tariff</text>
+        <text x="330" y="85" text-anchor="middle" fill="#fef3c7" font-size="9">income (£1/wk per £250)</text>
+        <text x="330" y="105" text-anchor="middle" fill="#fde047" font-size="8.5">Shared funding tier</text>
+
+        <rect x="448" y="10" width="204" height="125" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+        <text x="550" y="32" text-anchor="middle" fill="#6ee7b7" font-size="11" font-weight="800">BELOW £14,250</text>
+        <text x="550" y="52" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="700">Full Council Support</text>
+        <text x="550" y="70" text-anchor="middle" fill="#d1fae5" font-size="9">Capital disregarded entirely;</text>
+        <text x="550" y="85" text-anchor="middle" fill="#d1fae5" font-size="9">only income assessed</text>
+        <text x="550" y="105" text-anchor="middle" fill="#a7f3d0" font-size="8.5">Max local authority help</text>
+      </svg>
+    </div>
+
+    <!-- 2 Asset Rules -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🏡 Does the House Get Counted?</strong>
+        If moving into a care home, your property is usually counted as capital—<strong>unless</strong> a spouse, civil partner, or relative aged 60+ (or disabled) still lives there. For home care (domiciliary care), your home is **never** counted.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⚠️ Beware "Deliberate Deprivation"</strong>
+        Gifting your house or large savings to your children right before needing care to avoid fees is illegal ("deprivation of assets"). Councils investigate financial records back several years and can reverse the transfer.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — HOME CARE VS CARE HOMES
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Home Care vs. Care Homes</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+      <span class="hidden print:inline">Page 5</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Comparing Care Settings: Domiciliary Care, Care Homes &amp; Nursing Homes</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Choosing where care takes place is one of the most emotional decisions a family makes. Understanding the differences between visiting home care, residential homes, and 24-hour nursing homes ensures you match the environment to their actual medical needs.
+    </p>
+
+    <!-- Custom SVG Illustration: Care Setting Comparison -->
+    <div class="bg-sky-50/70 border border-sky-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-sky-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 3 Primary Care Delivery Settings</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">1. DOMICILIARY HOME CARE</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Carers visit 1–4 times a day</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">for meals, meds &amp; washing.</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">Best for remaining independent</text>
+        <text x="30" y="106" fill="#0284c7" font-size="9" font-weight="700">✓ Familiar home surroundings.</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">2. RESIDENTIAL CARE HOME</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">24/7 staff support, meals,</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">activities &amp; social living.</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">No registered nurses on-site.</text>
+        <text x="245" y="106" fill="#0284c7" font-size="9" font-weight="700">✓ Companion community living.</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#0284c7" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#0369a1" font-size="11" font-weight="800">3. NURSING CARE HOME</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">24/7 care PLUS registered</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">nurses on duty around the</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">clock for complex needs.</text>
+        <text x="460" y="106" fill="#0284c7" font-size="9" font-weight="700">✓ Clinical medical oversight.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Setting Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🏡 Live-In Care Alternative</strong>
+        For those who refuse care homes, full-time live-in carers provide 1-to-1 round-the-clock support in their own home for comparable monthly costs to residential care.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⭐ Check CQC Ratings</strong>
+        Always check the Care Quality Commission (CQC) inspection rating (*Outstanding, Good, Requires Improvement, Inadequate*) before shortlisting any home.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🍲 Unannounced Visits</strong>
+        When touring care homes, drop in unannounced on a Tuesday afternoon to observe dining quality, staff warmth, and ambient noise levels.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 6: CHAPTER 4 — NHS CONTINUING HEALTHCARE (CHC)
+  ========================================================== -->
+  <section id="ch-4" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 4 • NHS Continuing Healthcare (CHC)</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 6</a>
+      <span class="hidden print:inline">Page 6</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 4</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Unlocking Free NHS Continuing Healthcare (CHC) Funding</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Many families spend thousands of pounds on care home fees without realizing their relative's primary needs are actually **health-based**, not social care-based. Under **NHS Continuing Healthcare (CHC)**, if someone has a "primary health need" (such as end-of-life care, severe neurological impairment, or complex medical wounds), the NHS is legally required to **fund 100% of their care fees** in any setting—including care homes or at home—regardless of savings or property (<a href="https://www.nhs.uk/conditions/social-care-and-support-guide/money-work-and-benefits/nhs-continuing-healthcare/" target="_blank" rel="noopener noreferrer" class="text-teal-700 font-bold underline">NHS CHC Guidelines ↗</a>).
+    </p>
+
+    <!-- Custom SVG Illustration: CHC Checklist Criteria -->
+    <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-emerald-950 text-xs uppercase tracking-wider text-center mb-2">Visual Blueprint: The 12 Domains of the NHS CHC Checklist</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">1. CLINICAL DOMAINS</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Assesses 12 health areas:</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">Breathing, Eating/Drinking,</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">Mobility, Continence, Skin</text>
+        <text x="30" y="106" fill="#059669" font-size="9" font-weight="700">integrity &amp; altered states.</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">2. NATURE &amp; INTENSITY</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">Evaluates the complexity,</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">unpredictability, and sheer</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">intensity of care required</text>
+        <text x="245" y="106" fill="#059669" font-size="9" font-weight="700">by professional nurses.</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#059669" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#065f46" font-size="11" font-weight="800">3. 100% STATE FUNDED</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">If eligible, the NHS pays</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">the entire care fee directly</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">with zero means-testing</text>
+        <text x="460" y="106" fill="#059669" font-size="9" font-weight="700">or property deductions.</text>
+      </svg>
+    </div>
+
+    <!-- 3 CHC Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📋 Request Checklist</strong>
+        Ask your GP, hospital discharge team, or social worker explicitly: <em>"We would like an NHS Continuing Healthcare Checklist assessment conducted."</em>
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">⚡ Fast-Track Pathway</strong>
+        If your loved one has a rapidly deteriorating condition or end-of-life prognosis, ask for the **Fast-Track CHC Pathway** which bypasses panels and secures funding in 48 hours.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">💡 Funded Nursing Care (FNC)</strong>
+        If they don't qualify for full CHC but live in a nursing home requiring a registered nurse, the NHS pays a flat weekly **FNC contribution** directly to the home.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 7: CHAPTER 5 — BENEFITS & DEFERRED PAYMENTS
+  ========================================================== -->
+  <section id="ch-5" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 5 • Benefits &amp; Asset Protection</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 7</a>
+      <span class="hidden print:inline">Page 7</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Attendance Allowance, Deferred Payment Agreements &amp; Asset Protection</h2>
+
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Even if your family savings exceed thresholds, several crucial state entitlements and legal schemes protect family assets and help offset monthly care costs.
+    </p>
+
+    <!-- Custom SVG Illustration: Financial Options -->
+    <div class="bg-indigo-50/70 border border-indigo-200 rounded-2xl p-4 mb-5">
+      <h3 class="font-bold text-indigo-950 text-xs uppercase tracking-wider text-center mb-2">Visual Guide: 3 Financial Tools Every Family Should Know</h3>
+      <svg viewBox="0 0 660 145" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+        <rect x="15" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="115" y="38" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">1. ATTENDANCE ALLOWANCE</text>
+        <text x="30" y="58" fill="#334155" font-size="9.5">Tax-free state benefit for</text>
+        <text x="30" y="74" fill="#334155" font-size="9.5">over-65s needing help day</text>
+        <text x="30" y="90" fill="#334155" font-size="9.5">or night (£72.65–£108.55/wk).</text>
+        <text x="30" y="106" fill="#4f46e5" font-size="9" font-weight="700">✓ Not means-tested!</text>
+
+        <rect x="230" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="330" y="38" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">2. DEFERRED PAYMENT SCHEME</text>
+        <text x="245" y="58" fill="#334155" font-size="9.5">Council pays care home fees</text>
+        <text x="245" y="74" fill="#334155" font-size="9.5">using house as collateral so</text>
+        <text x="245" y="90" fill="#334155" font-size="9.5">you never have to sell urgently.</text>
+        <text x="245" y="106" fill="#4f46e5" font-size="9" font-weight="700">✓ Repaid after property sale.</text>
+
+        <rect x="445" y="15" width="200" height="115" rx="10" fill="#ffffff" stroke="#4f46e5" stroke-width="2"/>
+        <text x="545" y="38" text-anchor="middle" fill="#312e81" font-size="11" font-weight="800">3. SMI COUNCIL TAX DISCOUNT</text>
+        <text x="460" y="58" fill="#334155" font-size="9.5">Severe Mental Impairment</text>
+        <text x="460" y="74" fill="#334155" font-size="9.5">exemption grants 25% to</text>
+        <text x="460" y="90" fill="#334155" font-size="9.5">100% council tax reduction.</text>
+        <text x="460" y="106" fill="#4f46e5" font-size="9" font-weight="700">✓ Backdateable claims.</text>
+      </svg>
+    </div>
+
+    <!-- 3 Financial Tips -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">💷 Claim Attendance Allowance</strong>
+        Never delay claiming Attendance Allowance; it is not means-tested and does not affect other pensions.
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">📝 Power of Attorney First</strong>
+        You cannot access bank accounts or sign care contracts on behalf of a parent without a registered Lasting Power of Attorney (LPA).
+      </div>
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl">
+        <strong class="text-slate-900 block mb-1">🤝 Independent Financial Advice</strong>
+        Use a SOLLA (Society of Later Life Advisers) accredited independent financial adviser before buying care annuities.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: CHAPTER 6 — 4 REAL-WORLD FUNDING PLAYBOOKS
+  ========================================================== -->
+  <section id="ch-6" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 6 • On-the-Scene Funding Playbooks</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 8</a>
+      <span class="hidden print:inline">Page 8</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Chapter 6</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">4 Real-World Playbooks: Means Tests, House Sales &amp; CHC Appeals</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs">
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-teal-900 block text-sm mb-1">Playbook 1: Council Refuses Care Needs Assessment</strong>
+        If social services say <em>"Your relative has too much savings for an assessment,"</em> politely quote the Care Act 2014: <strong>Every person has a legal right to a Care Needs Assessment regardless of their financial position.</strong> Insist in writing that the assessment be booked.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-teal-900 block mb-1">Playbook 2: Pressured to Sell House Immediately</strong>
+        If a care home insists the house must be sold within weeks to pay fees, request a **Deferred Payment Agreement (DPA)** from your local council. The council loans the care fees using the house as security so you can sell at market value later.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-teal-900 block mb-1">Playbook 3: NHS CHC Application Rejected</strong>
+        If your CHC funding application is turned down, do not accept the first decision. Request a full written breakdown, gather supporting medical letters from consultants, and invoke your right to an **NHS Independent Review Panel**.
+      </div>
+      <div class="border border-slate-200 rounded-xl p-3.5 bg-white">
+        <strong class="text-teal-900 block mb-1">Playbook 4: Care Home Top-Up Fees Demand</strong>
+        If a council-funded care home placement demands extra weekly "third-party top-up fees" from family, ensure you sign a formal agreement and check that the top-up is genuinely voluntary and sustainable long-term.
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 9: CHAPTER 7 — REAL CARER FAQ VAULT
+  ========================================================== -->
+  <section id="faq-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 7 • Real-World Funding Carer FAQs</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 9</a>
+      <span class="hidden print:inline">Page 9</span>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 7 • Validated Carer Questions</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Finding &amp; Funding Care: The Hard Questions Answered</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+      Here are the six most urgent questions families ask about paying for care and protecting their parents' assets:
+    </p>
+
+    <div class="space-y-3.5 text-xs sm:text-sm">
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">1. "Can we legally give our parents' house to the children to avoid care home fees?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>No.</strong> Under UK social care law, this is classed as "deliberate deprivation of assets." Councils check financial history and can treat the house as still belonging to your parent during means-testing—leaving you owing back-fees while your parent has no legal claim to the property.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">2. "What happens when savings drop below the £23,250 upper capital limit?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          The moment savings drop to around £24,000, contact your local council immediately to request a financial reassessment. The council will step in to fund the difference once savings cross the £23,250 threshold downward.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">3. "Does Attendance Allowance stop if someone moves into a care home?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          If your relative is self-funding their care home place entirely out of their own pocket, **Attendance Allowance continues**. However, if the local council is subsidising their place, Attendance Allowance stops after 28 days.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">4. "How do we choose between a cheap care home and an expensive one?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          Look beyond the lobby decor. Check CQC inspection reports for safety and leadership ratings, talk to existing residents' families during visits, and observe staff interaction quality during lunch service.
+        </p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <h4 class="font-bold text-slate-900">5. "Can the NHS refuse CHC funding even if someone has severe dementia?"</h4>
+        <p class="text-slate-700 mt-1 leading-relaxed">
+          <strong>Yes.</strong> Dementia alone does not automatically grant CHC funding unless the symptoms (such as aggressive behavioural distress, swallowing risks, or medical vulnerability) reach a high level of complexity and intensity.
+        </p>
+      </div>
+
+      <div class="bg-teal-50 border border-teal-200 rounded-xl p-4">
+        <h4 class="font-bold text-teal-950">6. "Where can I get free, accredited financial advice on paying for care?"</h4>
+        <p class="text-teal-900 mt-1 leading-relaxed">
+          Contact **Age UK Advice (0800 678 1602)**, **Independent Age (0800 319 6789)**, or the **Society of Later Life Advisers (SOLLA)** for expert, regulated guidance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 10: CURATED INTERACTIVE RESOURCE & CITATION VAULT
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Interactive Resource &amp; Evidence Vault • carelearn.site</span>
+      <a href="#toc-page" class="text-teal-700 hover:underline no-print">↑ Back to Contents • Page 10</a>
+      <span class="hidden print:inline">Page 10</span>
+    </div>
+
+    <span class="text-teal-600 font-extrabold uppercase tracking-widest text-xs">Curated Authority &amp; Interactive Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-2">Interactive Calculators, Funding Portals &amp; Official Guidance</h2>
+    <p class="text-xs sm:text-sm text-slate-600 mb-6">
+      Click any resource below to access official social care portals, check benefits calculators, or read statutory care guidance.
+    </p>
+
+    <!-- Clickable Video & Web Guides Grid -->
+    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">🎥 Curated Funding Calculators &amp; Official Portals</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-7 text-xs">
+      <a href="https://www.ageuk.org.uk/information-advice/care/paying-for-care/" target="_blank" rel="noopener noreferrer" class="block border border-teal-200 bg-teal-50/50 hover:bg-teal-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-teal-700 text-white px-2 py-0.5 rounded">Age UK Care Funding Hub</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Age UK: Paying for Care &amp; Means Test Explainer ↗</h4>
+        <p class="text-slate-600 mt-1">Comprehensive guides on care home fees, council contributions, and capital thresholds.</p>
+      </a>
+
+      <a href="https://www.independentage.org/" target="_blank" rel="noopener noreferrer" class="block border border-sky-200 bg-sky-50/50 hover:bg-sky-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-sky-700 text-white px-2 py-0.5 rounded">Independent Age Advice</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Independent Age: Care Fees &amp; Benefits Calculator ↗</h4>
+        <p class="text-slate-600 mt-1">Free benefit calculators and expert advice guides for older adults and families.</p>
+      </a>
+
+      <a href="https://www.gov.uk/apply-needs-assessment-social-services" target="_blank" rel="noopener noreferrer" class="block border border-indigo-200 bg-indigo-50/50 hover:bg-indigo-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-indigo-700 text-white px-2 py-0.5 rounded">GOV.UK Official Portal</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">Apply for a Care Needs Assessment via Local Council ↗</h4>
+        <p class="text-slate-600 mt-1">Official government portal to connect directly with your local authority social services department.</p>
+      </a>
+
+      <a href="https://www.cqc.org.uk/" target="_blank" rel="noopener noreferrer" class="block border border-amber-200 bg-amber-50/50 hover:bg-amber-100/60 p-4 rounded-xl transition">
+        <span class="text-[10px] font-extrabold uppercase bg-amber-700 text-white px-2 py-0.5 rounded">Care Quality Commission</span>
+        <h4 class="font-bold text-slate-900 text-sm mt-1.5 underline">CQC: Inspecting &amp; Finding Rated Care Homes &amp; Agencies ↗</h4>
+        <p class="text-slate-600 mt-1">Search inspection reports and ratings for every registered care provider in England.</p>
+      </a>
+    </div>
+
+    <!-- Cited Clinical & Evidence-Based References -->
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-3">📚 Evidence-Based Legal &amp; Statutory Citations</h3>
+      <ul class="space-y-2.5 text-xs text-slate-700 leading-relaxed">
+        <li>
+          <strong>1. Care Act 2014 (Statutory Guidance):</strong> <em>Local authority duties regarding Care Needs Assessments, charging, and deferred payment agreements.</em> <a href="https://www.gov.uk/government/publications/care-act-2014-statutory-guidance" target="_blank" class="text-teal-700 font-semibold underline">View Guidance ↗</a>
+        </li>
+        <li>
+          <strong>2. National Framework for NHS Continuing Healthcare:</strong> <em>Eligibility criteria, checklists, and decision support tools for 100% NHS-funded care.</em>
+        </li>
+        <li>
+          <strong>3. Social Security Contributions and Benefits Act:</strong> <em>Statutory regulations governing Attendance Allowance and Disability Living Allowance.</em>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Direct Support Helplines Box -->
+    <div class="bg-slate-900 text-white rounded-2xl p-5">
+      <h4 class="font-bold text-teal-300 text-xs uppercase tracking-wider mb-2">📞 Free Social Care &amp; Financial Advice Helplines</h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-200">
+        <div>• <strong>Age UK Advice Line (7 days):</strong> 0800 678 1602</div>
+        <div>• <strong>Independent Age Helpline:</strong> 0800 319 6789</div>
+        <div>• <strong>Carers UK Helpline:</strong> 0808 808 7777</div>
+        <div>• <strong>SOLLA (Later Life Advisers):</strong> www.societyoflaterlifeadvisers.co.uk</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 11: PRINTABLE TOOLKIT 1 — CARE HOME TOUR SCORECARD
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-teal-600">
+    <div class="flex items-center justify-between border-b-2 border-teal-600 pb-3 mb-4">
+      <div>
+        <span class="bg-teal-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #1 • Care Home Tour Checklist</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Care Home Tour Scorecard &amp; Quality Audit Checklist</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Care Home Name &amp; Location:</label>
+        <input type="text" placeholder="e.g., Oakwood Lodge Care Home" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Date of Visit &amp; Contact Person:</label>
+        <input type="text" placeholder="e.g., 28/10/2026 (Manager: Susan)" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">CQC Rating &amp; Weekly Fee Quote:</label>
+        <input type="text" placeholder="e.g., Good / £1,250 per week" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+      <!-- Part A: Environment & Atmosphere -->
+      <div class="border-2 border-teal-500 rounded-xl p-4 bg-teal-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-teal-950 text-sm uppercase border-b border-teal-200 pb-1.5">Part A: Atmosphere &amp; Environment</h3>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Odour-Free &amp; Clean:</strong> Corridors and rooms smell fresh with no lingering unpleasant odours.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Resident Engagement:</strong> Residents are interacting, smiling, or joining activities rather than slumped in chairs.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Staff Warmth &amp; Tone:</strong> Staff speak to residents by name with respect, warmth, and patience.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Personalised Bedrooms:</strong> Residents can bring their own furniture, photos, and bedding.</span></label>
+      </div>
+
+      <!-- Part B: Dining & Safety -->
+      <div class="border-2 border-indigo-500 rounded-xl p-4 bg-indigo-50/30 space-y-2.5">
+        <h3 class="font-extrabold text-indigo-950 text-sm uppercase border-b border-indigo-200 pb-1.5">Part B: Dining, Safety &amp; Management</h3>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Appetising Dining:</strong> Food looks and smells appealing; menu offers choices and modified diets.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Garden &amp; Outdoor Access:</strong> Secure, accessible gardens for unhindered fresh air and walking.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Staff-to-Resident Ratios:</strong> Ask what staffing levels are day and night during weekends.</span></label>
+        <label class="flex items-start gap-2 cursor-pointer"><input type="checkbox" class="mt-0.5"/> <span><strong>Transparent Contract:</strong> Fee review clauses and third-party top-up policies clearly explained.</span></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 12: PRINTABLE TOOLKIT 2 — 20 QUESTIONS FOR HOME CARE AGENCIES
+  ========================================================== -->
+  <section id="toolkit-2" class="ebook-page border-2 border-indigo-600">
+    <div class="flex items-center justify-between border-b-2 border-indigo-600 pb-3 mb-4">
+      <div>
+        <span class="bg-indigo-600 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkit #2 • Home Care Evaluation</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">20 Essential Questions to Ask Home Care Agencies</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-indigo-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-indigo-800">carelearn.site</span>
+    </div>
+
+    <p class="text-xs text-slate-600 mb-3">
+      Use this checklist when interviewing domiciliary care agencies to ensure high staff retention, reliable timing, and proper training.
+    </p>
+
+    <!-- Fillable Questions Table -->
+    <div class="overflow-hidden border border-slate-300 rounded-xl mb-4">
+      <table class="w-full text-left border-collapse text-xs">
+        <thead>
+          <tr class="bg-slate-900 text-white">
+            <th class="p-2 w-2/5 border-r border-slate-700">Question to Ask Agency Manager</th>
+            <th class="p-2 w-1/3 border-r border-slate-700">Agency Answer / Notes</th>
+            <th class="p-2 text-center bg-indigo-900">Rating (1–5)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-300">
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">1. How do you ensure continuity so the same carers visit regularly?</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">2. Are care visits scheduled with travel time buffers so they aren't rushed?</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">3. What is your policy when a regular carer calls in sick?</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">4. Are all staff directly employed and DBS checked?</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+          <tr>
+            <td class="p-2 border-r border-slate-300 font-bold">5. How do family members check daily care logs (app or paper)?</td>
+            <td class="p-2 border-r border-slate-300"><input type="text" class="toolkit-input" placeholder="Notes..."/></td>
+            <td class="p-2"><input type="text" class="toolkit-input text-center" placeholder="1-5"/></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 13: PRINTABLE TOOLKITS 3 & 4 — BUDGET & ASSESSMENT SHEET
+  ========================================================== -->
+  <section id="toolkit-3" class="ebook-page border-2 border-slate-800">
+    <div class="flex items-center justify-between border-b-2 border-slate-800 pb-3 mb-4">
+      <div>
+        <span class="bg-slate-800 text-white text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Toolkits #3 &amp; #4 • Care Budget &amp; Assessment Prep</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Monthly Care Budget Worksheet + Needs Assessment Prep Sheet</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-teal-800 hover:underline no-print">↑ Contents</a>
+      <span class="hidden print:inline text-xs font-bold text-teal-800">carelearn.site</span>
+    </div>
+
+    <!-- Toolkit 3: Monthly Care Budget Worksheet -->
+    <div class="mb-5">
+      <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider mb-2">Toolkit #3: Monthly Care Income &amp; Expense Budget</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
+          <span class="text-teal-900 font-bold block mb-1">Estimated Monthly Income:</span>
+          <input type="text" placeholder="State Pension (£...)" class="toolkit-input"/>
+          <input type="text" placeholder="Private / Occupational Pension (£...)" class="toolkit-input"/>
+          <input type="text" placeholder="Attendance Allowance / Benefits (£...)" class="toolkit-input"/>
+        </div>
+        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
+          <span class="text-indigo-900 font-bold block mb-1">Estimated Monthly Care Expenses:</span>
+          <input type="text" placeholder="Home Care Visits or Care Home Fees (£...)" class="toolkit-input"/>
+          <input type="text" placeholder="Continence supplies &amp; personal care (£...)" class="toolkit-input"/>
+          <input type="text" placeholder="Remaining Personal Spending Buffer (£...)" class="toolkit-input"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toolkit 4: Needs Assessment Preparation Sheet -->
+    <div class="bg-slate-900 text-white rounded-2xl p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-teal-400 font-extrabold text-xs uppercase tracking-wider">Toolkit #4 • Social Services Assessment Prep Sheet</span>
+        <span class="text-xs text-slate-300">Complete Before Assessor Visits</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-teal-300 font-bold block">1. Top 3 Daily Struggles (Worst Day):</span>
+          <input type="text" placeholder="e.g., Falling getting out of bed, unable to cook safely..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+        <div class="bg-slate-800 p-2.5 rounded-lg border border-slate-700">
+          <span class="text-amber-300 font-bold block">2. Risk to Carer Health / Burnout:</span>
+          <input type="text" placeholder="e.g., Sleep deprivation, back strain lifting..." class="w-full bg-transparent border-b border-slate-600 text-white mt-1 py-0.5 focus:outline-none"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Guide #8 of 13 • End of Playbook &amp; Toolkit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>
