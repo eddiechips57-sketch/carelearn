@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import { useAuth } from '../contexts/AuthContext';
 import SEOHead from '../components/SEOHead';
-import { BookOpen, ArrowLeft, Loader2, AlertCircle, ExternalLink, Lock, LogIn } from 'lucide-react';
+import { BookOpen, ArrowLeft, Loader2, AlertCircle, ExternalLink, Lock, LogIn, Download, Printer } from 'lucide-react';
 
 interface Ebook {
   id: string;
@@ -88,6 +88,21 @@ export default function EbookReader() {
       return;
     }
     window.open(ebook.pdf_url, '_blank', 'noopener,noreferrer');
+    setOpened(true);
+  };
+
+  const downloadPdf = () => {
+    if (!ebook?.pdf_url || ebook.pdf_url === '#') {
+      setAccessState('error');
+      setError('The ebook file is not available yet.');
+      return;
+    }
+    const win = window.open(ebook.pdf_url, '_blank', 'noopener,noreferrer');
+    if (win) {
+      win.addEventListener('load', () => {
+        try { win.focus(); win.print(); } catch { /* cross-origin, user uses toolbar */ }
+      });
+    }
     setOpened(true);
   };
 
@@ -218,22 +233,38 @@ export default function EbookReader() {
             {opened ? (
               <div className="bg-secondary-container/40 border border-secondary/20 rounded-2xl p-6 mb-6">
                 <p className="text-body-md text-on-surface mb-4">
-                  Your guide has opened in a new tab. Use the "Export / Print PDF" button at the top of the guide to save or print it.
+                  Your guide has opened in a new tab. Use the buttons below to download it as a PDF or open it again.
                 </p>
-                <button
-                  onClick={openEbook}
-                  className="inline-flex items-center gap-2 rounded-lg border-2 border-secondary text-secondary px-5 py-2.5 font-semibold hover:bg-secondary-container transition-all"
-                >
-                  <ExternalLink size={18} /> Open Guide Again
-                </button>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <button
+                    onClick={downloadPdf}
+                    className="inline-flex items-center gap-2 rounded-lg bg-primary text-on-primary px-5 py-2.5 font-semibold hover:bg-primary-container transition-all"
+                  >
+                    <Download size={18} /> Download as PDF
+                  </button>
+                  <button
+                    onClick={openEbook}
+                    className="inline-flex items-center gap-2 rounded-lg border-2 border-secondary text-secondary px-5 py-2.5 font-semibold hover:bg-secondary-container transition-all"
+                  >
+                    <ExternalLink size={18} /> Open Guide Again
+                  </button>
+                </div>
               </div>
             ) : (
-              <button
-                onClick={openEbook}
-                className="inline-flex items-center gap-2 rounded-lg bg-primary text-on-primary px-6 py-3 font-semibold hover:bg-primary-container transition-all mb-6"
-              >
-                <BookOpen size={20} /> Open Guide in New Tab
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+                <button
+                  onClick={downloadPdf}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary px-6 py-3 font-semibold hover:bg-primary-container transition-all"
+                >
+                  <Download size={20} /> Download as PDF
+                </button>
+                <button
+                  onClick={openEbook}
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-outline text-on-surface px-6 py-3 font-semibold hover:bg-surface-container transition-all"
+                >
+                  <BookOpen size={20} /> Open in New Tab
+                </button>
+              </div>
             )}
 
             <div className="pt-6 border-t border-outline-variant/20">
