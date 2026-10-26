@@ -9,18 +9,9 @@ const footerLinks = {
     { label: 'Family & Behaviour Support', path: '/ebooks?category=family_behaviour_support' },
     { label: 'Home Care & Recovery', path: '/ebooks?category=home_care_recovery' },
     { label: 'Carer Wellbeing', path: '/ebooks?category=carer_wellbeing' },
-    { label: 'Printable Packs', path: '/ebooks?category=printable_packs' },
-  ],
-  guides: [
-    { label: 'HCA to Nurse', path: '/guides/hca-to-registered-nurse' },
-    { label: 'Care Worker to Manager', path: '/guides/care-worker-to-registered-manager' },
-    { label: 'Become a Social Worker', path: '/guides/support-worker-to-social-worker' },
-    { label: 'Nursing Associate', path: '/guides/becoming-a-nursing-associate' },
-    { label: 'All Career Guides', path: '/guides' },
+    { label: 'Digital Packs', path: '/ebooks?category=printable_packs' },
   ],
   resources: [
-    { label: 'Funding Hub', path: '/funding' },
-    { label: 'Role Library', path: '/roles' },
     { label: 'Community', path: '/community' },
     { label: 'Support', path: '/support' },
   ],
@@ -42,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-brand-950 to-slate-900 text-slate-300">
       <div className="section-container pt-16 pb-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 mb-4">
               <img
@@ -56,7 +47,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed mb-6 max-w-sm">
-              Practical, plain-English care guides and printable toolkits for families, unpaid carers, and frontline support workers. Read the guide, print the toolkit, use it today.
+              Practical, plain-English care guides and toolkits for families, unpaid carers, and frontline support workers. Read the guide, use the toolkit today.
             </p>
             <form onSubmit={handleSubscribe} className="flex gap-2">
               <input
@@ -79,19 +70,6 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Care Guides</h4>
             <ul className="space-y-2.5">
               {footerLinks.ebooks.map((link) => (
-                <li key={link.label}>
-                  <Link to={link.path} className="text-sm text-slate-400 hover:text-white transition-colors">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4">Career Guides</h4>
-            <ul className="space-y-2.5">
-              {footerLinks.guides.map((link) => (
                 <li key={link.label}>
                   <Link to={link.path} className="text-sm text-slate-400 hover:text-white transition-colors">
                     {link.label}

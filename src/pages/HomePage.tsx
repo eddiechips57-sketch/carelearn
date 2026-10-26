@@ -120,7 +120,7 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'CareLearn — Practical Care Guides for Families and Carers',
-    description: 'Plain-English care ebooks and printable toolkits for families, unpaid carers, and frontline support workers.',
+    description: 'Plain-English care ebooks and toolkits for families, unpaid carers, and frontline support workers.',
     url: 'https://carelearn.site/',
   };
 
@@ -128,7 +128,7 @@ export default function HomePage() {
     <>
       <SEOHead
         title="CareLearn — Practical Care Guides for Families and Carers"
-        description="Plain-English care ebooks with printable toolkits. De-escalation, dementia care, hospital recovery, burnout, and more. Read the guide, print the toolkit, use it today."
+        description="Plain-English care ebooks with toolkits. De-escalation, dementia care, hospital recovery, burnout, and more. Read the guide, use the toolkit today."
         canonical="/"
         jsonLd={homeJsonLd}
       />
@@ -152,7 +152,7 @@ export default function HomePage() {
                 Practical care guides <span className="text-primary">you can use today</span>.
               </h1>
               <p className="text-body-lg text-on-surface-variant mb-8 max-w-xl">
-                Plain-English, jargon-free ebooks with printable toolkits for families, unpaid carers, and frontline support workers. Read the guide, print the sheets, use them today.
+                Plain-English, jargon-free ebooks with toolkits for families, unpaid carers, and frontline support workers. Read the guide, use the sheets today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link to="/ebooks" className="btn-primary inline-flex items-center justify-center gap-2 text-label-md">
@@ -179,7 +179,7 @@ export default function HomePage() {
                   <Check size={14} className="text-secondary" /> Read + Use formula
                 </div>
                 <div className="flex items-center gap-2 text-label-sm text-on-surface-variant">
-                  <Check size={14} className="text-secondary" /> Printable toolkits included
+                  <Check size={14} className="text-secondary" /> Toolkits included
                 </div>
               </div>
             </div>
@@ -314,13 +314,13 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <h2 className="text-headline-lg font-headline text-on-surface mb-3">The Read + Use Formula</h2>
               <p className="text-body-md text-on-surface-variant max-w-2xl mx-auto">
-                Every guide follows the same simple approach: practical advice you can read in an evening, paired with printable sheets you can use the very next day.
+                Every guide follows the same simple approach: practical advice you can read in an evening, paired with toolkit sheets you can use the very next day.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { icon: BookOpen, title: 'Read the Guide', desc: '30-50 pages of plain-English, jargon-free advice written for real families and carers — not textbooks.' },
-                { icon: FileText, title: 'Print the Toolkit', desc: 'Every guide includes printable checklists, trackers, and templates. Stick them on the fridge or keep them in a handover folder.' },
+                { icon: FileText, title: 'Use the Toolkit', desc: 'Every guide includes checklists, trackers, and templates. Stick them on the fridge or keep them in a handover folder.' },
                 { icon: Check, title: 'Use It Today', desc: 'No theory, no exams. Just practical steps you can apply on your next shift or the next time things get tough at home.' },
               ].map((step, i) => {
                 const Icon = step.icon;

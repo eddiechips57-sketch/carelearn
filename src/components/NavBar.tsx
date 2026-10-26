@@ -4,11 +4,9 @@ import { Menu, X, ChevronDown, User, LogOut } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 const navLinks = [
-  { label: 'Ebooks', path: '/ebooks' },
-  { label: 'Career Guides', path: '/guides' },
-  { label: 'Funding Hub', path: '/funding' },
-  { label: 'Role Library', path: '/roles' },
+  { label: 'Guides', path: '/ebooks' },
   { label: 'Community', path: '/community' },
+  { label: 'Support', path: '/support' },
 ];
 
 export default function NavBar() {

@@ -35,7 +35,7 @@ const categoryLabels: Record<string, string> = {
   home_care_recovery: 'Home Care & Recovery',
   navigating_care_system: 'Navigating the Care System',
   carer_wellbeing: 'Carer Wellbeing',
-  printable_packs: 'Printable Packs',
+  printable_packs: 'Digital Packs',
 };
 
 const categoryDescriptions: Record<string, string> = {
@@ -57,7 +57,7 @@ const categoryFilters = [
   { key: 'home_care_recovery', label: 'Home Care & Recovery' },
   { key: 'navigating_care_system', label: 'Navigating the Care System' },
   { key: 'carer_wellbeing', label: 'Carer Wellbeing' },
-  { key: 'printable_packs', label: 'Printable Packs' },
+  { key: 'printable_packs', label: 'Digital Packs' },
 ];
 
 const audienceFilters = [
@@ -207,8 +207,8 @@ export default function EbookStore() {
   return (
     <>
       <SEOHead
-        title="Practical Care Guides & Printable Toolkits — CareLearn"
-        description="Browse plain-English care ebooks and printable toolkits for families, carers, and support workers. De-escalation, dementia care, recovery, burnout, and more."
+        title="Practical Care Guides & Toolkits — CareLearn"
+        description="Browse plain-English care ebooks and toolkits for families, carers, and support workers. De-escalation, dementia care, recovery, burnout, and more."
         canonical="/ebooks"
       />
       <div className="min-h-screen bg-surface">
@@ -222,7 +222,7 @@ export default function EbookStore() {
               </span>
               <span className="hidden sm:block opacity-40">→</span>
               <span className="flex items-center gap-2 text-label-md">
-                <FileText size={16} /> Print the toolkit sheets
+                <FileText size={16} /> Use the toolkit sheets
               </span>
               <span className="hidden sm:block opacity-40">→</span>
               <span className="flex items-center gap-2 text-label-md">
@@ -394,7 +394,7 @@ export default function EbookStore() {
                 <div>
                   <h1 className="text-headline-lg font-headline text-on-surface">Browse Care Guides</h1>
                   <p className="text-body-md text-on-surface-variant">
-                    {filteredEbooks.length} guide{filteredEbooks.length !== 1 ? 's' : ''} with printable toolkits
+                    {filteredEbooks.length} guide{filteredEbooks.length !== 1 ? 's' : ''} with toolkits
                   </p>
                 </div>
                 <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-lg border border-slate-200">
@@ -473,7 +473,7 @@ export default function EbookStore() {
                             {ebook.included_toolkit_items && ebook.included_toolkit_items.length > 0 && (
                               <div className="mb-4 p-3 bg-surface-container-low rounded-lg border border-outline-variant/20">
                                 <p className="text-[10px] font-bold text-secondary uppercase tracking-wider mb-1.5 flex items-center gap-1">
-                                  <FileText size={11} /> Includes Printable Toolkit
+                                  <FileText size={11} /> Includes Toolkit
                                 </p>
                                 <p className="text-[11px] text-on-surface-variant line-clamp-1">
                                   {ebook.included_toolkit_items[0]}
@@ -490,7 +490,7 @@ export default function EbookStore() {
                               )}
                               {ebook.format === 'printable_pack' && (
                                 <span className="flex items-center gap-1">
-                                  <FileText size={13} /> Printable Pack
+                                  <FileText size={13} /> Digital Pack
                                 </span>
                               )}
                             </div>
