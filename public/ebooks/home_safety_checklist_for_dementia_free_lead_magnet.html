@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Safety Checklist for Dementia (Free Lead Magnet) | carelearn.site Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+      color: #1e293b;
+    }
+    .serif-heading {
+      font-family: 'Lora', serif;
+    }
+    .ebook-page {
+      background: white;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 3.25rem 3.75rem;
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+      border-radius: 12px;
+      position: relative;
+    }
+    @media (max-width: 768px) {
+      .ebook-page {
+        padding: 1.75rem 1.25rem;
+        margin: 1rem 0.5rem;
+      }
+    }
+    @media print {
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .ebook-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 13mm 15mm !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+      }
+      .ebook-page:last-child {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      input, textarea {
+        border: 1px solid #94a3b8 !important;
+        background: #ffffff !important;
+      }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+    }
+    .toolkit-input {
+      width: 100%;
+      border-bottom: 1.5px dashed #cbd5e1;
+      padding: 4px 6px;
+      font-size: 0.88rem;
+      color: #0f172a;
+      background: transparent;
+      transition: border-color 0.2s;
+    }
+    .toolkit-input:focus {
+      outline: none;
+      border-bottom-color: #f59e0b;
+      background-color: #fef3c7;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Top Sticky Action Bar (Hidden when exporting to PDF) -->
+  <header class="no-print sticky top-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-white px-4 py-3 shadow-lg">
+    <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="bg-amber-400 text-slate-950 font-extrabold px-2.5 py-1 rounded text-xs tracking-wider uppercase">Free Lead Magnet (£0.00)</span>
+        <h1 class="font-bold text-sm sm:text-base text-slate-100 truncate">Home Safety Checklist for Dementia — 11-Page Lead Magnet &amp; Audit</h1>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="#toc-page" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Contents
+        </a>
+        <a href="#resource-vault" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Cited Sources
+        </a>
+        <a href="#toolkit-section" class="text-xs bg-slate-800 hover:bg-slate-700 text-teal-300 font-semibold px-3 py-2 rounded-lg border border-slate-700 transition">
+          Audit Toolkits
+        </a>
+        <button onclick="document.getElementById('sales-modal').classList.toggle('hidden')" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-2 rounded-lg shadow transition cursor-pointer">
+          Opt-In Page Copy
+        </button>
+        <button onclick="window.print()" class="flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-lg shadow transition cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-12 0h12v4H6v-4z"/>
+          </svg>
+          Export / Print PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MODAL: OPT-IN LANDING PAGE COPYKIT
+  ========================================================== -->
+  <div id="sales-modal" class="no-print hidden fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-2xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-5">
+        <div>
+          <span class="bg-amber-100 text-amber-900 text-xs font-extrabold px-2.5 py-0.5 rounded uppercase">Free Lead Magnet Kit • £0.00</span>
+          <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Ready-to-Paste Email Opt-In &amp; Landing Page Copy</h2>
+        </div>
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-700 font-bold text-xl px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-700">
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-1">Strategy &amp; Purpose</p>
+          <p><strong>Goal:</strong> Offer this free checklist on www.carelearn.site in exchange for visitor email addresses to build your audience for all 13 paid guides.</p>
+        </div>
+
+        <div class="bg-amber-50 p-4 rounded-xl border border-amber-200">
+          <p class="font-extrabold text-amber-950 uppercase text-xs mb-1">Opt-In Headline (Hero Section)</p>
+          <p class="font-bold text-base text-amber-900">"Is Your Home Safe for Someone Living With Dementia? Get the Free Room-by-Room Safety Audit &amp; Checklists."</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <p class="font-extrabold text-slate-900 uppercase text-xs mb-2">Opt-In Form Bullet Points</p>
+          <ul class="space-y-1.5 list-disc pl-5">
+            <li><strong>Room-by-Room Audit:</strong> Check kitchen cookers, bathroom grab rails, stairs, and exit doors in 15 minutes.</li>
+            <li><strong>Visual Optics &amp; Traps:</strong> Spot dangerous shiny floor tiles and dark mats that look like holes.</li>
+            <li><strong>Instant PDF Download:</strong> Sent straight to your inbox ready to print or check off on your phone.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 flex justify-end">
+        <button onclick="document.getElementById('sales-modal').classList.add('hidden')" class="bg-slate-900 text-white font-bold text-xs px-5 py-2.5 rounded-lg cursor-pointer">Close Copykit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       PAGE 1: EBOOK COVER PAGE
+  ========================================================== -->
+  <section class="ebook-page bg-gradient-to-br from-amber-950 via-slate-900 to-slate-950 text-white flex flex-col justify-between min-h-[980px]">
+    <!-- Top Brand Header -->
+    <div class="flex items-center justify-between border-b border-amber-700/50 pb-5">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-amber-400 flex items-center justify-center text-slate-950 font-black text-lg">C</div>
+        <div>
+          <p class="font-extrabold tracking-tight text-lg leading-none text-white">carelearn<span class="text-amber-400">.site</span></p>
+          <p class="text-xs text-amber-200/80">Practical Guides for Everyday Care &amp; Support</p>
+        </div>
+      </div>
+      <span class="bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+        Free Lead Magnet • £0.00 Edition
+      </span>
+    </div>
+
+    <!-- Center Title & Cover Illustration -->
+    <div class="my-auto py-8 text-center">
+      <p class="text-amber-300 font-bold tracking-widest uppercase text-xs mb-3">For Family Carers, Spouses &amp; Care Homes</p>
+      <h1 class="serif-heading text-4xl sm:text-6xl font-bold leading-tight text-white mb-5">
+        Home Safety Checklist for Dementia
+      </h1>
+      <p class="text-lg sm:text-2xl text-amber-100 font-normal max-w-2xl mx-auto leading-relaxed">
+        Room-by-Room Audit to Prevent Falls, Kitchen Hazards, and Unsafe Wandering
+      </p>
+
+      <!-- Transformation Promise Banner -->
+      <div class="mt-5 max-w-2xl mx-auto bg-amber-950/80 border border-amber-400/30 rounded-xl px-4 py-2.5 text-xs sm:text-sm text-amber-100">
+        <strong class="text-amber-300">The Core Transformation:</strong> Spot hidden household hazards in 15 minutes—from kitchen gas safety and slippery bathroom tiles to visual door camouflage and fall prevention.
+      </div>
+
+      <!-- Custom Cover SVG Illustration -->
+      <div class="my-8 bg-slate-900/80 border border-amber-500/30 rounded-2xl p-6 max-w-xl mx-auto shadow-inner">
+        <svg viewBox="0 0 600 280" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="280" rx="14" fill="#0f172a"/>
+          <circle cx="300" cy="130" r="85" fill="#fbbf24" opacity="0.15"/>
+          
+          <!-- Center House Shield Preview -->
+          <rect x="235" y="65" width="130" height="130" rx="12" fill="#facc15" stroke="#0f172a" stroke-width="3"/>
+          <text x="300" y="115" text-anchor="middle" font-size="32">🛡️</text>
+          <text x="300" y="152" text-anchor="middle" fill="#0f172a" font-size="16" font-weight="900">AUDIT</text>
+          <text x="300" y="172" text-anchor="middle" fill="#1e293b" font-size="9" font-weight="800">ROOM BY ROOM</text>
+
+          <rect x="0" y="240" width="600" height="40" fill="#0f172a" opacity="0.85"/>
+          <text x="300" y="265" text-anchor="middle" fill="#fef3c7" font-size="12.5" font-weight="600">
+            "A safe home preserves independence and prevents needless hospital admissions."
+          </text>
+        </svg>
+      </div>
+
+      <!-- Key Feature Pills -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-2xl mx-auto text-left">
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-amber-300 font-bold text-xs uppercase">Alzheimer's Society Aligned</p>
+          <p class="text-xs text-slate-300 mt-1">Built on national dementia home safety and fall prevention standards.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-yellow-300 font-bold text-xs uppercase">Room-by-Room Check</p>
+          <p class="text-xs text-slate-300 mt-1">Kitchen, bathroom, stairs, bedroom and exit doors fully audited.</p>
+        </div>
+        <div class="bg-slate-800/80 border border-slate-700 p-3.5 rounded-xl">
+          <p class="text-emerald-300 font-bold text-xs uppercase">Free PDF Checklist</p>
+          <p class="text-xs text-slate-300 mt-1">Fillable on screen or printable for immediate home safety checks.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-amber-800/60 pt-4 flex items-center justify-between text-xs text-amber-200/70">
+      <span>Published by www.carelearn.site</span>
+      <span>Free Lead Magnet • Safety &amp; Audit Series</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PAGE 2: TABLE OF CONTENTS & INTRODUCTION
+  ========================================================== -->
+  <section id="toc-page" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Home Safety Checklist for Dementia • carelearn.site</span>
+      <span>Page 2 • Interactive Contents</span>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-7">
+      <h2 class="serif-heading text-2xl font-bold text-slate-900 mb-4">Inside This Safety Audit</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+        <div class="space-y-2">
+          <a href="#toc-page" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition">
+            <span class="font-semibold text-slate-700">Introduction: Why Home Safety Matters</span>
+            <span class="text-amber-700 font-bold">p. 2</span>
+          </a>
+          <a href="#ch-1" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition">
+            <span class="font-semibold text-slate-700">Kitchen &amp; Appliance Safety</span>
+            <span class="text-amber-700 font-bold">p. 3</span>
+          </a>
+          <a href="#ch-2" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition">
+            <span class="font-semibold text-slate-700">Bathroom &amp; Fall Prevention</span>
+            <span class="text-amber-700 font-bold">p. 4</span>
+          </a>
+        </div>
+        <div class="space-y-2">
+          <a href="#ch-3" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition">
+            <span class="font-semibold text-slate-700">Stairs, Hallways &amp; Visual Optics</span>
+            <span class="text-amber-700 font-bold">p. 5</span>
+          </a>
+          <a href="#resource-vault" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-emerald-50 px-1.5 rounded transition">
+            <span class="font-semibold text-emerald-800">Cited Links &amp; Sources</span>
+            <span class="text-amber-700 font-bold">p. 8</span>
+          </a>
+          <a href="#toolkit-section" class="flex justify-between border-b border-slate-200/80 pb-1.5 hover:bg-amber-50 px-1.5 rounded transition">
+            <span class="font-semibold text-amber-900">Printable Audit Checklists</span>
+            <span class="text-amber-700 font-bold">p. 9–11</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Introduction • Proactive Protection</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Creating a Safe Environment Without Restricting Freedom</h2>
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      As memory and cognitive processing change, familiar homes can suddenly present hidden hazards like hot gas hobs, slippery bathroom tiles, or confusing exit doors. This checklist helps you audit every room in 15 minutes.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 3: CHAPTER 1 — KITCHEN SAFETY
+  ========================================================== -->
+  <section id="ch-1" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 1 • Kitchen &amp; Appliance Safety</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 3</a>
+    </div>
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 1</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Kitchen &amp; Appliance Safety</h2>
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      The kitchen is the heart of the home, but open flames, hot kettles, and cleaning chemicals present major risks when memory fluctuates. Install a lockable gas isolation valve, automatic kettle shut-offs, and move cleaning products out of reach.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 4: CHAPTER 2 — BATHROOM SAFETY
+  ========================================================== -->
+  <section id="ch-2" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 2 • Bathroom &amp; Fall Prevention</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 4</a>
+    </div>
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 2</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Bathroom &amp; Fall Prevention</h2>
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Fit vertical grab rails beside toilets and showers, use non-slip suction mats, and ensure lighting is bright enough to prevent shadows that look like holes in the floor.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 5: CHAPTER 3 — STAIRS & VISUAL OPTICS
+  ========================================================== -->
+  <section id="ch-3" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapter 3 • Stairs, Hallways &amp; Visual Optics</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents • Page 5</a>
+    </div>
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapter 3</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Stairs, Hallways &amp; Visual Depth Perception</h2>
+    <p class="text-slate-700 leading-relaxed text-[15px] mb-4">
+      Dementia changes depth perception. Dark doormats look like deep holes, and shiny tiles look like puddles. Remove loose rugs and mark stair edges with high-contrast yellow tape.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGES 6 & 7: CHAPTERS 4 & 5
+  ========================================================== -->
+  <section class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Chapters 4 &amp; 5 • Exits &amp; Night Lighting</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents</a>
+    </div>
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">Chapters 4 &amp; 5</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Exits, Wandering &amp; Night-Time Lighting</h2>
+    <p class="text-slate-700 leading-relaxed text-[15px]">
+      Keep plug-in motion nightlights along the path to the bathroom, and use door curtains or chime alerts to ensure safe night-time wandering response.
+    </p>
+  </section>
+
+  <!-- =========================================================
+       PAGE 8: RESOURCE VAULT & CITED SOURCES
+  ========================================================== -->
+  <section id="resource-vault" class="ebook-page">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-6 text-xs text-slate-400 font-semibold uppercase tracking-wider">
+      <span>Cited Sources &amp; Resources • carelearn.site</span>
+      <a href="#toc-page" class="text-amber-700 hover:underline no-print">↑ Back to Contents</a>
+    </div>
+    <span class="text-amber-600 font-extrabold uppercase tracking-widest text-xs">References &amp; Links</span>
+    <h2 class="serif-heading text-3xl font-bold text-slate-900 mt-1 mb-3">Official Safety Standards</h2>
+    <ul class="space-y-2 text-xs text-slate-700">
+      <li><strong>1. Alzheimer's Society:</strong> <a href="https://www.alzheimers.org.uk/" target="_blank" class="text-amber-700 underline">Home Safety and Dementia Guide ↗</a></li>
+      <li><strong>2. RoSPA:</strong> <a href="https://www.rospa.com/" target="_blank" class="text-amber-700 underline">Fall Prevention and Home Safety Standards ↗</a></li>
+    </ul>
+  </section>
+
+  <!-- =========================================================
+       PAGES 9-11: PRINTABLE AUDIT TOOLKITS
+  ========================================================== -->
+  <section id="toolkit-section" class="ebook-page border-2 border-amber-500">
+    <div class="flex items-center justify-between border-b-2 border-amber-500 pb-3 mb-4">
+      <div>
+        <span class="bg-amber-500 text-slate-950 text-[11px] font-extrabold uppercase px-2.5 py-0.5 rounded">Printable Lead Magnet • Home Audit Checklist</span>
+        <h2 class="serif-heading text-2xl font-bold text-slate-900 mt-1">Room-by-Room Home Safety Audit Tool</h2>
+      </div>
+      <a href="#toc-page" class="text-xs font-bold text-amber-800 hover:underline no-print">↑ Contents</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Audit For (Name):</label>
+        <input type="text" placeholder="e.g., Margaret Miller" class="toolkit-input mt-0.5" />
+      </div>
+      <div>
+        <label class="font-bold text-slate-700 uppercase">Date Audited:</label>
+        <input type="text" placeholder="DD/MM/YYYY" class="toolkit-input mt-0.5" />
+      </div>
+    </div>
+
+    <div class="space-y-3 text-xs">
+      <label class="flex items-start gap-2 cursor-pointer bg-slate-50 p-3 rounded-xl border border-slate-200"><input type="checkbox" class="mt-0.5"/> <span><strong>Kitchen:</strong> Gas cooker isolation valve fitted / kettle auto shut-off in place / cleaning products locked.</span></label>
+      <label class="flex items-start gap-2 cursor-pointer bg-slate-50 p-3 rounded-xl border border-slate-200"><input type="checkbox" class="mt-0.5"/> <span><strong>Bathroom:</strong> Vertical grab rails fitted / non-slip mats in shower / hot water temperature regulated.</span></label>
+      <label class="flex items-start gap-2 cursor-pointer bg-slate-50 p-3 rounded-xl border border-slate-200"><input type="checkbox" class="mt-0.5"/> <span><strong>Stairs &amp; Hallways:</strong> Scatter rugs removed / stair edges highlighted / motion nightlights active.</span></label>
+    </div>
+
+    <div class="mt-5 pt-3 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-400">
+      <span>© www.carelearn.site — Practical Guides for Everyday Care &amp; Support</span>
+      <span>Free Lead Magnet • End of Safety Audit Pack</span>
+    </div>
+  </section>
+
+</body>
+</html>
