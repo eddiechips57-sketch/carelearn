@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import { createCheckoutSession } from '../services/stripeCheckout';
 import SEOHead from '../components/SEOHead';
-import NewsTicker from '../components/NewsTicker';
 import { useClickTracking } from '../contexts/ClickTrackingContext';
 import {
   BookOpen,
@@ -461,15 +460,6 @@ export default function HomePage() {
 
           {/* Content */}
           <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 pb-12">
-            <div className="hidden md:block mb-4">
-              <div className="max-w-md">
-                <NewsTicker />
-              </div>
-            </div>
-            <div className="md:hidden mb-4">
-              <NewsTicker />
-            </div>
-
             <div className="max-w-2xl">
               <span className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-1.5 rounded-full text-label-sm uppercase tracking-wider mb-6">
                 Practical Care Guides
