@@ -1,8 +1,18 @@
 User-agent: *
 Allow: /
 
-# Disallow private pages
+# Disallow private/authenticated pages
 Disallow: /profile
 Disallow: /login
+
+# Allow crawling of public content pages
+Allow: /ebooks
+Allow: /courses
+Allow: /guides
+Allow: /funding
+Allow: /roles
+Allow: /community
+Allow: /support
+Allow: /read/
 
 Sitemap: https://carelearn.site/sitemap.xml
