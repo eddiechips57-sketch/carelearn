@@ -44,39 +44,39 @@ interface BlogPost {
 
 const QA_CATEGORIES = [
   { key: '', label: 'All Topics' },
-  { key: 'funding', label: 'Funding' },
-  { key: 'career_advice', label: 'Career Advice' },
-  { key: 'qualifications', label: 'Qualifications' },
-  { key: 'cqc', label: 'CQC' },
-  { key: 'workplace', label: 'Workplace' },
+  { key: 'family_behaviour_support', label: 'Family & Behaviour' },
+  { key: 'home_care_recovery', label: 'Home Care & Recovery' },
+  { key: 'carer_wellbeing', label: 'Carer Wellbeing' },
+  { key: 'printable_packs', label: 'Digital Packs' },
+  { key: 'navigating_care_system', label: 'Navigating Care' },
   { key: 'other', label: 'Other' },
 ];
 
 const BLOG_CATEGORIES = [
   { key: '', label: 'All' },
-  { key: 'cqc', label: 'CQC' },
-  { key: 'funding', label: 'Funding' },
-  { key: 'career_advice', label: 'Career Advice' },
-  { key: 'qualifications', label: 'Qualifications' },
-  { key: 'workplace', label: 'Workplace' },
+  { key: 'family_behaviour_support', label: 'Family & Behaviour' },
+  { key: 'home_care_recovery', label: 'Home Care & Recovery' },
+  { key: 'carer_wellbeing', label: 'Carer Wellbeing' },
+  { key: 'printable_packs', label: 'Digital Packs' },
+  { key: 'navigating_care_system', label: 'Navigating Care' },
 ];
 
 const CATEGORY_STYLES: Record<string, string> = {
-  funding: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  career_advice: 'bg-sky-50 text-sky-700 border-sky-200',
-  qualifications: 'bg-violet-50 text-violet-700 border-violet-200',
-  cqc: 'bg-amber-50 text-amber-700 border-amber-200',
-  workplace: 'bg-rose-50 text-rose-700 border-rose-200',
+  family_behaviour_support: 'bg-sky-50 text-sky-700 border-sky-200',
+  home_care_recovery: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+  carer_wellbeing: 'bg-amber-50 text-amber-700 border-amber-200',
+  printable_packs: 'bg-rose-50 text-rose-700 border-rose-200',
+  navigating_care_system: 'bg-violet-50 text-violet-700 border-violet-200',
   other: 'bg-slate-50 text-slate-600 border-slate-200',
   general: 'bg-slate-50 text-slate-600 border-slate-200',
 };
 
 const CATEGORY_LABELS: Record<string, string> = {
-  funding: 'Funding',
-  career_advice: 'Career Advice',
-  qualifications: 'Qualifications',
-  cqc: 'CQC',
-  workplace: 'Workplace',
+  family_behaviour_support: 'Family & Behaviour',
+  home_care_recovery: 'Home Care & Recovery',
+  carer_wellbeing: 'Carer Wellbeing',
+  printable_packs: 'Digital Packs',
+  navigating_care_system: 'Navigating Care',
   other: 'Other',
   general: 'General',
 };
@@ -637,13 +637,13 @@ export default function Community() {
   return (
     <>
       <SEOHead
-        title="CareLearn Community — Q&A, Blog & Advice for UK Care Professionals"
-        description="Join the CareLearn community. Get answers to care career questions, read expert blog posts on UK immigration rules, CQC updates, employment rights, and career progression for care workers."
+        title="CareLearn Community — Q&A, Guides & Advice for Families and Carers"
+        description="Join the CareLearn community. Ask questions about dementia care, recovery, behaviour support, and carer wellbeing. Read expert articles and find the right digital guide for your situation."
         canonical="/community"
       />
-    <div className="min-h-screen bg-slate-50">
-      {/* Hero */}
-      <div className="bg-white border-b border-slate-200">
+      <div className="min-h-screen bg-slate-50">
+        {/* Hero */}
+        <div className="bg-white border-b border-slate-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="flex flex-col sm:flex-row sm:items-end gap-6">
             <div className="flex-1">
@@ -657,8 +657,16 @@ export default function Community() {
                 Questions, answers and insights<br className="hidden sm:block" /> from the care community
               </h1>
               <p className="text-sm text-slate-500 max-w-xl leading-relaxed">
-                Ask anything about care careers, qualifications, funding or workplace rights. Browse expert articles from the CareLearn team. No account required.
+                Ask anything about dementia, behaviour, recovery, mealtimes, or caring for someone at home. Browse expert articles from the CareLearn team. No account required.
               </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Link to="/ebooks" className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-colors shadow-sm">
+                  <BookOpen size={16} /> Browse Digital Guides
+                </Link>
+                <Link to="/ebooks?price=free" className="inline-flex items-center gap-2 px-5 py-2.5 border border-slate-200 text-slate-600 text-sm font-semibold rounded-xl hover:bg-slate-50 transition-colors">
+                  Free Downloads
+                </Link>
+              </div>
             </div>
             {isAdmin && (
               <div className="flex items-center gap-2 px-4 py-2 bg-amber-50 text-amber-700 rounded-xl border border-amber-200 text-xs font-medium shrink-0">

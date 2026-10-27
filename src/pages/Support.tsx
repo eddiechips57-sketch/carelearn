@@ -1,4 +1,5 @@
 import SEOHead from '../components/SEOHead';
+import { Link } from 'react-router-dom';
 
 const emergencyContacts = [
   { name: 'CQC Enquiries', description: 'Report a concern about a health or social care service', phone: '03000 616 161', hours: 'Mon-Fri 8:30am - 5:30pm', icon: 'shield', bg: 'bg-surface-container text-primary' },
@@ -8,24 +9,25 @@ const emergencyContacts = [
 ];
 
 const supportCategories = [
-  { title: 'For Care Providers', items: ['CQC registration and compliance queries', 'Listing your organisation on CareLearn', "Updating your organisation's information", 'CQC inspection preparation support', 'Policy and regulation guidance'] },
-  { title: 'For Individuals & Families', items: ['Finding suitable care providers', 'Understanding CQC ratings and reports', 'Navigating care options for loved ones', 'Reporting concerns about a care service', 'Accessing funding and benefits information'] },
-  { title: 'For Professionals', items: ['Career resources and job listings', 'Industry news and regulatory updates', 'Professional development guidance', 'Networking and community access', 'Research and data enquiries'] },
+  { title: 'For Families & Carers', items: ['Choosing the right guide for your situation', 'Downloading and opening your digital guide', 'Saving a guide as a PDF', 'Accessing free downloads and lead magnets', 'Using the Care Passport, Binder, and Sign Pack'] },
+  { title: 'For Buyers & Readers', items: ['Purchasing a guide and completing checkout', 'Accessing guides you have already bought', 'Resetting your account password', 'Downloading guide updates and re-downloads', 'Refund and exchange queries'] },
+  { title: 'For Community Members', items: ['Asking and answering questions in the community hub', 'Reading and sharing blog articles', 'Suggesting a topic for a new guide', 'Reporting a problem with a guide file', 'Getting help by email'] },
 ];
 
 const faqs = [
-  { q: 'How do I list my organisation on CareLearn?', a: 'Create a free account and submit your organisation details through our provider listing form. Our team will verify your information before publishing.' },
-  { q: 'What does a CQC rating mean?', a: 'CQC rates services as Outstanding, Good, Requires Improvement, or Inadequate based on assessments across safety, effectiveness, caring, responsiveness, and leadership.' },
-  { q: 'How often are directory listings updated?', a: 'Listings are continuously updated. Verified organisations can update their own profiles at any time. CQC ratings are synced regularly.' },
-  { q: 'Is the CQC Hub guidance official?', a: 'Our CQC Hub provides practical tips and best practices based on official CQC frameworks. For official guidance, always refer to cqc.org.uk directly.' },
+  { q: 'How do I access a guide I have bought?', a: 'Sign in to your account, then go to the guide page or your profile. Any guide you have purchased shows an Open button that opens the full guide in a new tab, where you can also download it as a PDF.' },
+  { q: 'Can I download a guide as a PDF?', a: 'Yes. Every guide opens as a printable page with a Download as PDF button. This uses your browser save-as-PDF option so you can keep a copy on your device.' },
+  { q: 'Are the free downloads really free?', a: 'Yes. Our free guides and lead magnets are completely free with no sign-up required. Just hit Download Free on the guide card.' },
+  { q: 'What is included with each guide?', a: 'Each guide is a plain-English ebook paired with a practical toolkit — checklists, trackers, templates, and visual aids you can use the same day.' },
+  { q: 'Can I suggest a topic for a new guide?', a: 'Absolutely. Email us at admin@carelearn.site with your idea, or ask in the community hub. We build new guides around the real situations families and carers tell us about.' },
 ];
 
 export default function Support() {
   return (
     <>
       <SEOHead
-        title="Support — CareLearn Help Centre for UK Care Professionals"
-        description="Get help with CareLearn. Find emergency contacts, CQC reporting, safeguarding resources, and support for care providers, individuals, and healthcare professionals."
+        title="Support — CareLearn Help Centre for Digital Guides & Toolkits"
+        description="Get help with CareLearn digital guides and toolkits. Find answers about downloading PDFs, accessing purchased guides, free downloads, and reaching our team."
         canonical="/support"
       />
     <div className="min-h-screen bg-surface">
@@ -38,7 +40,7 @@ export default function Support() {
             <h1 className="text-headline-lg font-headline font-bold text-on-surface">Support</h1>
           </div>
           <p className="text-body-md text-on-surface-variant max-w-lg">
-            Get help with CareLearn services, find emergency contacts, or reach out to our team.
+            Get help with your digital guides, find emergency contacts, or reach out to our team.
           </p>
         </div>
       </div>
@@ -112,6 +114,16 @@ export default function Support() {
           </div>
 
           <div className="space-y-5">
+            <div className="rounded-2xl bg-gradient-to-br from-teal-600 to-teal-700 p-6 text-white">
+              <h3 className="text-label-md font-semibold mb-2">Looking for a guide?</h3>
+              <p className="text-label-sm text-teal-100 leading-relaxed mb-4">
+                Browse our full range of plain-English digital guides and toolkits for families and carers.
+              </p>
+              <Link to="/ebooks" className="inline-flex items-center justify-center gap-2 w-full bg-white text-teal-700 text-label-md font-semibold rounded-xl px-4 py-2.5 hover:bg-teal-50 transition-colors">
+                Browse All Guides
+              </Link>
+            </div>
+
             <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-card">
               <h3 className="text-label-md font-semibold text-on-surface mb-4">Contact Us</h3>
               <div className="space-y-4">
@@ -158,15 +170,23 @@ export default function Support() {
               <h3 className="text-label-md font-semibold text-on-surface mb-3">Useful Links</h3>
               <div className="space-y-2">
                 {[
-                  { label: 'CQC Website', url: 'https://www.cqc.org.uk' },
-                  { label: 'NHS Choices', url: 'https://www.nhs.uk' },
-                  { label: 'Gov.uk Social Care', url: 'https://www.gov.uk/browse/disabilities/carers' },
-                  { label: 'Age UK', url: 'https://www.ageuk.org.uk' },
+                  { label: 'Browse All Guides', url: '/ebooks', internal: true },
+                  { label: 'Free Downloads', url: '/ebooks?price=free', internal: true },
+                  { label: 'Community Hub', url: '/community', internal: true },
+                  { label: 'NHS Choices', url: 'https://www.nhs.uk', internal: false },
+                  { label: 'Age UK', url: 'https://www.ageuk.org.uk', internal: false },
                 ].map((link) => (
-                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-label-md text-on-surface-variant hover:text-primary transition-colors py-0.5">
-                    {link.label}
-                    <span className="material-symbols-outlined" style={{ fontSize: '12px', opacity: 0.4 }}>open_in_new</span>
-                  </a>
+                  link.internal ? (
+                    <Link key={link.label} to={link.url} className="flex items-center justify-between text-label-md text-on-surface-variant hover:text-primary transition-colors py-0.5">
+                      {link.label}
+                      <span className="material-symbols-outlined" style={{ fontSize: '12px', opacity: 0.4 }}>arrow_forward</span>
+                    </Link>
+                  ) : (
+                    <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between text-label-md text-on-surface-variant hover:text-primary transition-colors py-0.5">
+                      {link.label}
+                      <span className="material-symbols-outlined" style={{ fontSize: '12px', opacity: 0.4 }}>open_in_new</span>
+                    </a>
+                  )
                 ))}
               </div>
             </div>
