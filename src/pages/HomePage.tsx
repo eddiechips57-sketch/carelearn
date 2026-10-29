@@ -20,6 +20,7 @@ import {
   Sparkles,
   Sun,
   HelpCircle,
+  Clock,
 } from 'lucide-react';
 
 interface Ebook {

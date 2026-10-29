@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { format } from 'date-fns';
-import { ArrowLeft, Clock, BookOpen, MessageSquare, ChevronRight, ShoppingBag, Download, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Clock, BookOpen, MessageSquare, ChevronRight, ShoppingBag, Download } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
 import SEOHead from '../components/SEOHead';
 
