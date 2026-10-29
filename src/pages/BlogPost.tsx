@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { format } from 'date-fns';
-import { ArrowLeft, Clock, BookOpen, MessageSquare, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Clock, BookOpen, MessageSquare, ChevronRight, ShoppingBag, Download, ArrowRight } from 'lucide-react';
 import { supabase } from '../services/supabaseClient';
 import SEOHead from '../components/SEOHead';
 
@@ -16,6 +16,16 @@ interface BlogPost {
   author_name: string;
   read_time_minutes: number;
   created_at: string;
+  linked_ebook_id: string | null;
+}
+
+interface LinkedEbook {
+  id: string;
+  title: string;
+  slug: string;
+  short_description: string;
+  cover_image_url: string | null;
+  price_gbp: number;
 }
 
 interface RelatedQuestion {
@@ -24,6 +34,15 @@ interface RelatedQuestion {
   category: string;
   status: string;
   helpful_count: number;
+}
+
+interface RelatedArticle {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  read_time_minutes: number;
+  cover_image_url: string | null;
 }
 
 const CATEGORY_STYLES: Record<string, string> = {
@@ -94,10 +113,94 @@ function renderBody(body: string) {
   return elements;
 }
 
+// ─── Ebook upsell banner ─────────────────────────────────────────────────────
+
+function EbookUpsellBanner({ ebook }: { ebook: LinkedEbook }) {
+  const isFree = Number(ebook.price_gbp) === 0;
+  const to = `/ebooks`;
+  const readTo = `/read/${ebook.slug}`;
+
+  return (
+    <div className="mt-10 rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-sky-50 overflow-hidden">
+      <div className="flex flex-col sm:flex-row gap-5 p-5 sm:p-6">
+        {ebook.cover_image_url ? (
+          <div className="shrink-0 w-full sm:w-28 h-36 sm:h-36 rounded-xl overflow-hidden border border-slate-200 bg-white">
+            <img src={ebook.cover_image_url} alt={ebook.title} className="w-full h-full object-cover" />
+          </div>
+        ) : null}
+        <div className="flex-1 min-w-0">
+          <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-teal-600 text-white mb-2">
+            {isFree ? <Download size={11} /> : <ShoppingBag size={11} />}
+            {isFree ? 'Free Download' : `Complete Guide — £${Number(ebook.price_gbp).toFixed(2)}`}
+          </span>
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-1.5">{ebook.title}</h3>
+          <p className="text-sm text-slate-600 leading-relaxed mb-4">{ebook.short_description}</p>
+          <div className="flex flex-wrap gap-2.5">
+            <Link
+              to={to}
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-colors"
+            >
+              {isFree ? <><Download size={15} /> Get it Free</> : <><ShoppingBag size={15} /> Get the Guide</>}
+            </Link>
+            <Link
+              to={readTo}
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-teal-700 text-sm font-semibold rounded-xl border border-teal-200 hover:bg-teal-50 transition-colors"
+            >
+              <BookOpen size={15} /> Read a Sample
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Related articles ────────────────────────────────────────────────────────
+
+function RelatedArticles({ articles }: { articles: RelatedArticle[] }) {
+  if (articles.length === 0) return null;
+  return (
+    <div className="mt-10">
+      <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+        <BookOpen size={16} className="text-teal-500" />
+        Related Articles
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        {articles.map((a) => (
+          <Link
+            key={a.id}
+            to={`/community/blog/${a.slug}`}
+            className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-all"
+          >
+            <div className="h-24 overflow-hidden bg-slate-100">
+              {a.cover_image_url ? (
+                <img src={a.cover_image_url} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <BookOpen size={20} className="text-slate-300" />
+                </div>
+              )}
+            </div>
+            <div className="p-3.5">
+              <h4 className="text-xs font-semibold text-slate-800 leading-snug line-clamp-2 group-hover:text-teal-700 transition-colors mb-1.5">{a.title}</h4>
+              <div className="flex items-center gap-1 text-[10px] text-slate-400">
+                <Clock size={9} />
+                {a.read_time_minutes} min read
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [related, setRelated] = useState<RelatedQuestion[]>([]);
+  const [linkedEbook, setLinkedEbook] = useState<LinkedEbook | null>(null);
+  const [relatedArticles, setRelatedArticles] = useState<RelatedArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -114,13 +217,33 @@ export default function BlogPost() {
       if (!data) { setNotFound(true); setLoading(false); return; }
       setPost(data);
 
-      const { data: questions } = await supabase
-        .from('community_questions')
-        .select('id,title,category,status,helpful_count')
-        .eq('category', data.category)
-        .order('helpful_count', { ascending: false })
-        .limit(4);
-      setRelated(questions || []);
+      const [questionsRes, ebookRes, articlesRes] = await Promise.all([
+        supabase
+          .from('community_questions')
+          .select('id,title,category,status,helpful_count')
+          .eq('category', data.category)
+          .order('helpful_count', { ascending: false })
+          .limit(4),
+        data.linked_ebook_id
+          ? supabase
+              .from('ebooks')
+              .select('id,title,slug,short_description,cover_image_url,price_gbp')
+              .eq('id', data.linked_ebook_id)
+              .maybeSingle()
+          : Promise.resolve({ data: null }),
+        supabase
+          .from('community_blog_posts')
+          .select('id,title,slug,excerpt,read_time_minutes,cover_image_url')
+          .eq('is_published', true)
+          .eq('category', data.category)
+          .neq('id', data.id)
+          .order('created_at', { ascending: false })
+          .limit(3),
+      ]);
+
+      setRelated(questionsRes.data || []);
+      setLinkedEbook(ebookRes.data as LinkedEbook | null);
+      setRelatedArticles((articlesRes.data as RelatedArticle[]) || []);
       setLoading(false);
     };
     if (slug) load();
@@ -161,6 +284,18 @@ export default function BlogPost() {
     mainEntityOfPage: `https://carelearn.site/community/blog/${post.slug}`,
   } : undefined;
 
+  const faqJsonLd = post ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: post.title,
+        acceptedAnswer: { '@type': 'Answer', text: post.excerpt },
+      },
+    ],
+  } : undefined;
+
   return (
     <>
       {post && (
@@ -169,7 +304,7 @@ export default function BlogPost() {
           description={post.excerpt}
           canonical={`/community/blog/${post.slug}`}
           ogImage={post.cover_image_url || undefined}
-          jsonLd={articleJsonLd}
+          jsonLd={[articleJsonLd, faqJsonLd].filter(Boolean) as object[]}
         />
       )}
     <div className="min-h-screen bg-slate-50">
@@ -221,6 +356,12 @@ export default function BlogPost() {
               <div className="prose-custom">
                 {renderBody(post.body)}
               </div>
+
+              {/* Ebook upsell banner */}
+              {linkedEbook && <EbookUpsellBanner ebook={linkedEbook} />}
+
+              {/* Related articles */}
+              <RelatedArticles articles={relatedArticles} />
             </div>
           </article>
 

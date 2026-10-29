@@ -367,6 +367,79 @@ function ClarityStory() {
   );
 }
 
+// ─── Helpful Articles Section (SEO funnel) ───────────────────────────────────
+
+function HelpfulArticlesSection() {
+  const [articles, setArticles] = useState<{ id: string; title: string; slug: string; excerpt: string; read_time_minutes: number; cover_image_url: string | null; category: string }[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await supabase
+        .from('community_blog_posts')
+        .select('id,title,slug,excerpt,read_time_minutes,cover_image_url,category')
+        .eq('is_published', true)
+        .order('created_at', { ascending: false })
+        .limit(3);
+      setArticles(data || []);
+      setLoading(false);
+    })();
+  }, []);
+
+  if (loading || articles.length === 0) return null;
+
+  return (
+    <section className="py-20 bg-surface-container-low">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <HelpCircle size={18} className="text-secondary" />
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-secondary">Free Articles</span>
+            </div>
+            <h2 className="text-headline-lg font-headline text-on-surface mb-2">
+              Answers to the questions you are asking at 2am
+            </h2>
+            <p className="text-body-md text-on-surface-variant max-w-xl">
+              Short, practical, free articles for the moments you need an answer right now — from wandering to sundowning to safe lifting.
+            </p>
+          </div>
+          <Link to="/community?tab=blog" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all shrink-0">
+            All Articles <ArrowRight size={16} />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {articles.map((a) => (
+            <Link
+              key={a.id}
+              to={`/community/blog/${a.slug}`}
+              className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-elevation-2 hover:-translate-y-1 transition-all"
+            >
+              <div className="h-40 overflow-hidden bg-slate-100">
+                {a.cover_image_url ? (
+                  <img src={a.cover_image_url} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <BookOpen size={28} className="text-slate-300" />
+                  </div>
+                )}
+              </div>
+              <div className="p-5">
+                <h3 className="text-sm font-semibold text-on-surface leading-snug mb-2 line-clamp-2 group-hover:text-primary transition-colors">{a.title}</h3>
+                <p className="text-xs text-on-surface-variant leading-relaxed line-clamp-2 mb-3">{a.excerpt}</p>
+                <div className="flex items-center gap-1 text-[11px] text-on-surface-variant">
+                  <Clock size={11} />
+                  {a.read_time_minutes} min read
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
@@ -689,6 +762,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* ─── Helpful Articles (SEO Funnel) ─── */}
+        <HelpfulArticlesSection />
 
         {/* ─── Community callout ─── */}
         <section className="py-16 bg-white">
