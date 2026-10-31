@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import { createCheckoutSession } from '../services/stripeCheckout';
+import { getEbookCoverUrl } from '../services/ebookCoverAssets';
 import SEOHead from '../components/SEOHead';
 import { useClickTracking } from '../contexts/ClickTrackingContext';
 import {
@@ -172,7 +173,7 @@ function GuideCard({
           <img
             alt=""
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            src={ebook.cover_image_url}
+            src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

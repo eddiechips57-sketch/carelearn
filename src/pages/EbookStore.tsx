@@ -4,6 +4,7 @@ import { supabase } from '../services/supabaseClient';
 import { useAuth } from '../contexts/AuthContext';
 import { useClickTracking } from '../contexts/ClickTrackingContext';
 import { createCheckoutSession } from '../services/stripeCheckout';
+import { getEbookCoverUrl } from '../services/ebookCoverAssets';
 import LeadCapture from '../components/LeadCapture';
 import SEOHead from '../components/SEOHead';
 import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check, Loader2, Lock, CheckCircle2, X } from 'lucide-react';
@@ -253,7 +254,7 @@ export default function EbookStore() {
                           <img
                             alt=""
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            src={ebook.cover_image_url}
+                            src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
                           />
                         )}
                         <div className="absolute top-2 left-2">
@@ -440,7 +441,7 @@ export default function EbookStore() {
                               <img
                                 alt=""
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                src={ebook.cover_image_url}
+                                src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
                               />
                             )}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
