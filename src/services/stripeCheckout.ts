@@ -13,8 +13,8 @@ export async function createCheckoutSession(
   const { data: { session } } = await supabase.auth.getSession();
 
   const origin = window.location.origin;
-  const successUrl = `${origin}/ebooks?checkout=success&slug=${slug}`;
-  const cancelUrl = `${origin}/ebooks?checkout=cancel&slug=${slug}`;
+  const successUrl = `${origin}/ebooks/${slug}?checkout=success&slug=${slug}`;
+  const cancelUrl = `${origin}/ebooks/${slug}?checkout=cancel&slug=${slug}`;
 
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',

@@ -7,7 +7,7 @@ import { createCheckoutSession } from '../services/stripeCheckout';
 import { getEbookCoverUrl } from '../services/ebookCoverAssets';
 import LeadCapture from '../components/LeadCapture';
 import SEOHead from '../components/SEOHead';
-import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check, Loader2, Lock, CheckCircle2, X } from 'lucide-react';
+import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check, Loader2, Lock, CheckCircle2, X, ArrowRight } from 'lucide-react';
 
 interface Ebook {
   id: string;
@@ -245,8 +245,9 @@ export default function EbookStore() {
                 {featuredEbooks.map((ebook) => {
                   const isFree = Number(ebook.price_gbp) === 0;
                   return (
-                    <div
+                    <Link
                       key={ebook.id}
+                      to={`/ebooks/${ebook.slug}`}
                       className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all group flex flex-col sm:flex-row"
                     >
                       <div className="w-full sm:w-32 h-40 sm:h-full overflow-hidden relative shrink-0">
@@ -273,30 +274,35 @@ export default function EbookStore() {
                         <p className="text-label-sm text-on-surface-variant line-clamp-2 mb-3">
                           {ebook.short_description}
                         </p>
-                        {isFree ? (
-                          <button
-                            onClick={() => handleDownload(ebook)}
-                            className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-secondary border border-secondary rounded-lg px-3 py-1.5 hover:bg-secondary-container transition-all w-fit"
-                          >
-                            <Download size={14} /> Download Free
-                          </button>
-                        ) : (
-                          <button
-                            onClick={() => handleBuy(ebook)}
-                            disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
-                            className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-on-primary bg-primary rounded-lg px-3 py-1.5 hover:bg-primary-container transition-all w-fit disabled:opacity-60 disabled:cursor-not-allowed"
-                          >
-                            {checkoutSlug === ebook.slug ? (
-                              <><Loader2 size={14} className="animate-spin" /> Redirecting...</>
-                            ) : !ebook.stripe_price_id ? (
-                              <><Lock size={14} /> Coming Soon</>
-                            ) : (
-                              <><ShoppingBag size={14} /> Buy Now</>
-                            )}
-                          </button>
-                        )}
+                        <div className="flex items-center gap-2">
+                          <span className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-primary px-3 py-1.5 w-fit">
+                            View details <ArrowRight size={14} />
+                          </span>
+                          {isFree ? (
+                            <button
+                              onClick={(e) => { e.preventDefault(); handleDownload(ebook); }}
+                              className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-secondary border border-secondary rounded-lg px-3 py-1.5 hover:bg-secondary-container transition-all w-fit"
+                            >
+                              <Download size={14} /> Download Free
+                            </button>
+                          ) : (
+                            <button
+                              onClick={(e) => { e.preventDefault(); handleBuy(ebook); }}
+                              disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
+                              className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-on-primary bg-primary rounded-lg px-3 py-1.5 hover:bg-primary-container transition-all w-fit disabled:opacity-60 disabled:cursor-not-allowed"
+                            >
+                              {checkoutSlug === ebook.slug ? (
+                                <><Loader2 size={14} className="animate-spin" /> Redirecting...</>
+                              ) : !ebook.stripe_price_id ? (
+                                <><Lock size={14} /> Coming Soon</>
+                              ) : (
+                                <><ShoppingBag size={14} /> Buy Now</>
+                              )}
+                            </button>
+                          )}
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   );
                 })}
               </div>
@@ -436,37 +442,41 @@ export default function EbookStore() {
                           key={ebook.id}
                           className="group bg-white rounded-xl border border-slate-200 overflow-hidden shadow-[0_4px_20px_0_rgba(15,23,42,0.05)] hover:shadow-[0_10px_30px_0_rgba(15,23,42,0.1)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
                         >
-                          <div className="relative h-52 overflow-hidden">
-                            {ebook.cover_image_url && (
-                              <img
-                                alt=""
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
-                              />
-                            )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                            <div className="absolute top-3 left-3 flex gap-2">
-                              <span className="bg-white/90 backdrop-blur-sm text-on-surface px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight">
-                                {categoryLabels[ebook.category]}
-                              </span>
-                            </div>
-                            <div className="absolute top-3 right-3">
-                              {isFree ? (
-                                <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[11px] font-bold uppercase">
-                                  Free
-                                </span>
-                              ) : (
-                                <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[11px] font-bold">
-                                  £{price.toFixed(2)}
-                                </span>
+                          <Link to={`/ebooks/${ebook.slug}`} className="block">
+                            <div className="relative h-52 overflow-hidden">
+                              {ebook.cover_image_url && (
+                                <img
+                                  alt=""
+                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                  src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
+                                />
                               )}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                              <div className="absolute top-3 left-3 flex gap-2">
+                                <span className="bg-white/90 backdrop-blur-sm text-on-surface px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight">
+                                  {categoryLabels[ebook.category]}
+                                </span>
+                              </div>
+                              <div className="absolute top-3 right-3">
+                                {isFree ? (
+                                  <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[11px] font-bold uppercase">
+                                    Free
+                                  </span>
+                                ) : (
+                                  <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[11px] font-bold">
+                                    £{price.toFixed(2)}
+                                  </span>
+                                )}
+                              </div>
                             </div>
-                          </div>
+                          </Link>
 
                           <div className="p-5 flex flex-col flex-1">
-                            <h3 className="text-headline-md font-headline text-lg text-on-surface leading-tight mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                              {ebook.title}
-                            </h3>
+                            <Link to={`/ebooks/${ebook.slug}`}>
+                              <h3 className="text-headline-md font-headline text-lg text-on-surface leading-tight mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                                {ebook.title}
+                              </h3>
+                            </Link>
                             <p className="text-label-md text-on-surface-variant mb-3 line-clamp-2 flex-1">
                               {ebook.short_description}
                             </p>
@@ -496,27 +506,33 @@ export default function EbookStore() {
                               )}
                             </div>
 
-                            <div className="pt-3 border-t border-slate-100">
+                            <div className="pt-3 border-t border-slate-100 flex gap-2">
+                              <Link
+                                to={`/ebooks/${ebook.slug}`}
+                                className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border-2 border-slate-200 text-on-surface text-label-md font-semibold py-2.5 hover:bg-slate-50 transition-all"
+                              >
+                                View details
+                              </Link>
                               {isFree ? (
                                 <button
                                   onClick={() => handleDownload(ebook)}
-                                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg border-2 border-secondary text-secondary text-label-md font-semibold py-2.5 hover:bg-secondary-container transition-all"
+                                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border-2 border-secondary text-secondary text-label-md font-semibold py-2.5 hover:bg-secondary-container transition-all"
                                 >
-                                  <Download size={16} /> Download Free
+                                  <Download size={16} /> Free
                                 </button>
                               ) : (
                                 <button
                                   onClick={() => handleBuy(ebook)}
                                   onMouseEnter={() => handleCardView(ebook)}
                                   disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
-                                  className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary text-label-md font-semibold py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary text-label-md font-semibold py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
                                   {checkoutSlug === ebook.slug ? (
-                                    <><Loader2 size={16} className="animate-spin" /> Redirecting to checkout...</>
+                                    <><Loader2 size={16} className="animate-spin" /> Redirecting...</>
                                   ) : !ebook.stripe_price_id ? (
-                                    <><Lock size={16} /> Coming Soon — £{price.toFixed(2)}</>
+                                    <><Lock size={16} /> Soon</>
                                   ) : (
-                                    <><ShoppingBag size={16} /> Buy Now — £{price.toFixed(2)}</>
+                                    <><ShoppingBag size={16} /> Buy</>
                                   )}
                                 </button>
                               )}

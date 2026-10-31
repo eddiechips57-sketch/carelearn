@@ -168,36 +168,40 @@ function GuideCard({
   const price = Number(ebook.price_gbp);
   return (
     <article className="group bg-white rounded-xl border border-slate-200 overflow-hidden shadow-[0_4px_20px_0_rgba(15,23,42,0.05)] hover:shadow-[0_10px_30px_0_rgba(15,23,42,0.1)] hover:-translate-y-1 transition-all duration-300 flex flex-col">
-      <div className="relative h-52 overflow-hidden">
-        {ebook.cover_image_url && (
-          <img
-            alt=""
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-        <div className="absolute top-3 left-3">
-          <span className="bg-white/90 backdrop-blur-sm text-on-surface px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight">
-            {categoryLabels[ebook.category] || 'Guide'}
-          </span>
-        </div>
-        <div className="absolute top-3 right-3">
-          {isFree ? (
-            <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[11px] font-bold uppercase">
-              Free
-            </span>
-          ) : (
-            <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[11px] font-bold">
-              £{price.toFixed(2)}
-            </span>
+      <Link to={`/ebooks/${ebook.slug}`} className="block">
+        <div className="relative h-52 overflow-hidden">
+          {ebook.cover_image_url && (
+            <img
+              alt=""
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              src={getEbookCoverUrl(ebook.slug, ebook.cover_image_url) || undefined}
+            />
           )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+          <div className="absolute top-3 left-3">
+            <span className="bg-white/90 backdrop-blur-sm text-on-surface px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-tight">
+              {categoryLabels[ebook.category] || 'Guide'}
+            </span>
+          </div>
+          <div className="absolute top-3 right-3">
+            {isFree ? (
+              <span className="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[11px] font-bold uppercase">
+                Free
+              </span>
+            ) : (
+              <span className="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[11px] font-bold">
+                £{price.toFixed(2)}
+              </span>
+            )}
+          </div>
         </div>
-      </div>
+      </Link>
       <div className="p-5 flex flex-col flex-1">
-        <h3 className="text-base font-headline font-semibold text-on-surface leading-tight mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-          {ebook.title}
-        </h3>
+        <Link to={`/ebooks/${ebook.slug}`}>
+          <h3 className="text-base font-headline font-semibold text-on-surface leading-tight mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+            {ebook.title}
+          </h3>
+        </Link>
         <p className="text-sm text-on-surface-variant mb-3 line-clamp-2 flex-1">
           {ebook.short_description}
         </p>
@@ -211,28 +215,36 @@ function GuideCard({
             </p>
           </div>
         )}
-        {isFree ? (
-          <button
-            onClick={() => onDownload(ebook)}
-            className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary border border-secondary rounded-lg px-4 py-2.5 hover:bg-secondary-container transition-all"
+        <div className="flex gap-2">
+          <Link
+            to={`/ebooks/${ebook.slug}`}
+            className="flex-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-on-surface border border-slate-200 rounded-lg px-4 py-2.5 hover:bg-slate-50 transition-all"
           >
-            <Download size={16} /> Download Free
-          </button>
-        ) : (
-          <button
-            onClick={() => onBuy(ebook)}
-            disabled={buyingSlug === ebook.slug || !ebook.stripe_price_id}
-            className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold text-on-primary bg-primary rounded-lg px-4 py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {buyingSlug === ebook.slug ? (
-              <><Loader2 size={16} className="animate-spin" /> Redirecting...</>
-            ) : !ebook.stripe_price_id ? (
-              <><Lock size={16} /> Coming Soon</>
-            ) : (
-              <><ShoppingBag size={16} /> Buy Now — £{price.toFixed(2)}</>
-            )}
-          </button>
-        )}
+            View details
+          </Link>
+          {isFree ? (
+            <button
+              onClick={() => onDownload(ebook)}
+              className="flex-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary border border-secondary rounded-lg px-4 py-2.5 hover:bg-secondary-container transition-all"
+            >
+              <Download size={16} /> Free
+            </button>
+          ) : (
+            <button
+              onClick={() => onBuy(ebook)}
+              disabled={buyingSlug === ebook.slug || !ebook.stripe_price_id}
+              className="flex-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-on-primary bg-primary rounded-lg px-4 py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {buyingSlug === ebook.slug ? (
+                <><Loader2 size={16} className="animate-spin" />...</>
+              ) : !ebook.stripe_price_id ? (
+                <><Lock size={16} /> Soon</>
+              ) : (
+                <><ShoppingBag size={16} /> Buy</>
+              )}
+            </button>
+          )}
+        </div>
       </div>
     </article>
   );
