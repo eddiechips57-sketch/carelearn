@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
-import { createCheckoutSession } from '../services/stripeCheckout';
 import { getEbookCoverUrl } from '../services/ebookCoverAssets';
 import SEOHead from '../components/SEOHead';
 import { useClickTracking } from '../contexts/ClickTrackingContext';
@@ -16,8 +15,6 @@ import {
   ArrowRight,
   Check,
   Star,
-  Loader2,
-  Lock,
   Sparkles,
   Sun,
   HelpCircle,
@@ -155,14 +152,10 @@ function useReveal<T extends HTMLElement>() {
 
 function GuideCard({
   ebook,
-  onBuy,
   onDownload,
-  buyingSlug,
 }: {
   ebook: Ebook;
-  onBuy: (e: Ebook) => void;
   onDownload: (e: Ebook) => void;
-  buyingSlug: string | null;
 }) {
   const isFree = Number(ebook.price_gbp) === 0;
   const price = Number(ebook.price_gbp);
@@ -230,19 +223,12 @@ function GuideCard({
               <Download size={16} /> Free
             </button>
           ) : (
-            <button
-              onClick={() => onBuy(ebook)}
-              disabled={buyingSlug === ebook.slug || !ebook.stripe_price_id}
-              className="flex-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-on-primary bg-primary rounded-lg px-4 py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+            <Link
+              to={`/ebooks/${ebook.slug}`}
+              className="flex-1 inline-flex items-center justify-center gap-2 text-sm font-semibold text-on-primary bg-primary rounded-lg px-4 py-2.5 hover:bg-primary-container transition-all"
             >
-              {buyingSlug === ebook.slug ? (
-                <><Loader2 size={16} className="animate-spin" />...</>
-              ) : !ebook.stripe_price_id ? (
-                <><Lock size={16} /> Soon</>
-              ) : (
-                <><ShoppingBag size={16} /> Buy</>
-              )}
-            </button>
+              <ShoppingBag size={16} /> View guide
+            </Link>
           )}
         </div>
       </div>
@@ -459,7 +445,6 @@ function HelpfulArticlesSection() {
 export default function HomePage() {
   const [ebooks, setEbooks] = useState<Ebook[]>([]);
   const [loading, setLoading] = useState(true);
-  const [buyingSlug, setBuyingSlug] = useState<string | null>(null);
   const { recordEbookView } = useClickTracking();
 
   useEffect(() => {
@@ -476,18 +461,6 @@ export default function HomePage() {
 
   const freeGuide = ebooks.find((e) => Number(e.price_gbp) === 0);
   const popularGuides = ebooks.filter((e) => Number(e.price_gbp) > 0).slice(0, 4);
-
-  const handleBuy = async (ebook: Ebook) => {
-    recordEbookView(ebook.title, { slug: ebook.slug, category: ebook.category });
-    if (!ebook.stripe_price_id) return;
-    setBuyingSlug(ebook.slug);
-    try {
-      const { url } = await createCheckoutSession(ebook.stripe_price_id, ebook.slug);
-      window.location.href = url;
-    } catch {
-      setBuyingSlug(null);
-    }
-  };
 
   const handleDownload = (ebook: Ebook) => {
     recordEbookView(ebook.title, { slug: ebook.slug, category: ebook.category });
@@ -630,9 +603,7 @@ export default function HomePage() {
                   <GuideCard
                     key={ebook.id}
                     ebook={ebook}
-                    onBuy={handleBuy}
                     onDownload={handleDownload}
-                    buyingSlug={buyingSlug}
                   />
                 ))}
               </div>

@@ -7,7 +7,7 @@ import { createCheckoutSession } from '../services/stripeCheckout';
 import { getEbookCoverUrl } from '../services/ebookCoverAssets';
 import LeadCapture from '../components/LeadCapture';
 import SEOHead from '../components/SEOHead';
-import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check, Loader2, Lock, CheckCircle2, X, ArrowRight } from 'lucide-react';
+import { BookOpen, Download, ShoppingBag, FileText, Search, Sparkles, Check, CheckCircle2, X, ArrowRight } from 'lucide-react';
 
 interface Ebook {
   id: string;
@@ -286,19 +286,13 @@ export default function EbookStore() {
                               <Download size={14} /> Download Free
                             </button>
                           ) : (
-                            <button
-                              onClick={(e) => { e.preventDefault(); handleBuy(ebook); }}
-                              disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
-                              className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-on-primary bg-primary rounded-lg px-3 py-1.5 hover:bg-primary-container transition-all w-fit disabled:opacity-60 disabled:cursor-not-allowed"
+                            <Link
+                              to={`/ebooks/${ebook.slug}`}
+                              onClick={(e) => e.stopPropagation()}
+                              className="inline-flex items-center justify-center gap-1.5 text-label-sm font-semibold text-on-primary bg-primary rounded-lg px-3 py-1.5 hover:bg-primary-container transition-all w-fit"
                             >
-                              {checkoutSlug === ebook.slug ? (
-                                <><Loader2 size={14} className="animate-spin" /> Redirecting...</>
-                              ) : !ebook.stripe_price_id ? (
-                                <><Lock size={14} /> Coming Soon</>
-                              ) : (
-                                <><ShoppingBag size={14} /> Buy Now</>
-                              )}
-                            </button>
+                              <ShoppingBag size={14} /> View guide
+                            </Link>
                           )}
                         </div>
                       </div>
@@ -521,20 +515,13 @@ export default function EbookStore() {
                                   <Download size={16} /> Free
                                 </button>
                               ) : (
-                                <button
-                                  onClick={() => handleBuy(ebook)}
+                                <Link
+                                  to={`/ebooks/${ebook.slug}`}
                                   onMouseEnter={() => handleCardView(ebook)}
-                                  disabled={checkoutSlug === ebook.slug || !ebook.stripe_price_id}
-                                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary text-label-md font-semibold py-2.5 hover:bg-primary-container transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary text-label-md font-semibold py-2.5 hover:bg-primary-container transition-all"
                                 >
-                                  {checkoutSlug === ebook.slug ? (
-                                    <><Loader2 size={16} className="animate-spin" /> Redirecting...</>
-                                  ) : !ebook.stripe_price_id ? (
-                                    <><Lock size={16} /> Soon</>
-                                  ) : (
-                                    <><ShoppingBag size={16} /> Buy</>
-                                  )}
-                                </button>
+                                  <ShoppingBag size={16} /> View guide
+                                </Link>
                               )}
                             </div>
                           </div>
