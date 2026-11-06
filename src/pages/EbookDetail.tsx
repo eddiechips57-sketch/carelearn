@@ -22,6 +22,7 @@ import {
   Star,
   Sparkles,
   X,
+  Target,
 } from 'lucide-react';
 
 interface Ebook {
@@ -44,6 +45,7 @@ interface Ebook {
   is_featured: boolean;
   download_count: number;
   sort_order: number;
+  what_youll_learn: string[];
 }
 
 const categoryLabels: Record<string, string> = {
@@ -334,6 +336,34 @@ export default function EbookDetail() {
             </div>
           </div>
         </section>
+
+        {/* What you'll learn */}
+        {ebook.what_youll_learn && ebook.what_youll_learn.length > 0 && (
+          <section className="bg-white border-y border-slate-200">
+            <div className="max-w-4xl mx-auto px-6 py-16">
+              <div className="flex items-center gap-2 mb-2">
+                <Target size={22} className="text-primary" />
+                <span className="text-sm font-semibold text-primary uppercase tracking-wider">What You'll Learn</span>
+              </div>
+              <h2 className="text-headline-lg font-headline text-on-surface mb-4">
+                Exactly what you will walk away with
+              </h2>
+              <p className="text-body-md text-on-surface-variant mb-8 max-w-2xl">
+                By the time you finish this guide, you will be able to:
+              </p>
+              <div className="space-y-4">
+                {ebook.what_youll_learn.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 group">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-on-primary text-sm font-bold shrink-0 group-hover:scale-110 transition-transform">
+                      {i + 1}
+                    </div>
+                    <p className="text-body-lg text-on-surface leading-relaxed pt-1">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Long description */}
         {ebook.long_description && (
