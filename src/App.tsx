@@ -17,6 +17,7 @@ import BlogPost from './pages/BlogPost';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Support from './pages/Support';
+import ExitIntentPopup from './components/ExitIntentPopup';
 
 export default function App() {
   return (
@@ -52,6 +53,7 @@ export default function App() {
               </Routes>
             </main>
             <Footer />
+            <ExitIntentPopup />
           </div>
         </Router>
       </ClickTrackingProvider>

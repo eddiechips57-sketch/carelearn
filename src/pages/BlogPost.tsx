@@ -26,6 +26,8 @@ interface LinkedEbook {
   short_description: string;
   cover_image_url: string | null;
   price_gbp: number;
+  page_count: number | null;
+  what_youll_learn: string[];
 }
 
 interface RelatedQuestion {
@@ -117,8 +119,10 @@ function renderBody(body: string) {
 
 function EbookUpsellBanner({ ebook }: { ebook: LinkedEbook }) {
   const isFree = Number(ebook.price_gbp) === 0;
-  const to = `/ebooks`;
-  const readTo = `/read/${ebook.slug}`;
+  const productTo = `/ebooks/${ebook.slug}`;
+  const learnTeaser = ebook.what_youll_learn && ebook.what_youll_learn.length > 0
+    ? ebook.what_youll_learn[0]
+    : ebook.short_description;
 
   return (
     <div className="mt-10 rounded-2xl border border-teal-200 bg-gradient-to-br from-teal-50 to-sky-50 overflow-hidden">
@@ -132,21 +136,26 @@ function EbookUpsellBanner({ ebook }: { ebook: LinkedEbook }) {
           <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-teal-600 text-white mb-2">
             {isFree ? <Download size={11} /> : <ShoppingBag size={11} />}
             {isFree ? 'Free Download' : `Complete Guide — £${Number(ebook.price_gbp).toFixed(2)}`}
+            {ebook.page_count ? <span className="opacity-80"> · {ebook.page_count} pages</span> : null}
           </span>
           <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug mb-1.5">{ebook.title}</h3>
-          <p className="text-sm text-slate-600 leading-relaxed mb-4">{ebook.short_description}</p>
+          <p className="text-sm text-slate-600 leading-relaxed mb-2">{ebook.short_description}</p>
+          <div className="flex items-start gap-2 mb-4 text-sm text-teal-800 bg-teal-100/60 rounded-lg px-3 py-2">
+            <BookOpen size={14} className="shrink-0 mt-0.5 text-teal-600" />
+            <span><strong>You'll learn:</strong> {learnTeaser}</span>
+          </div>
           <div className="flex flex-wrap gap-2.5">
             <Link
-              to={to}
+              to={productTo}
               className="inline-flex items-center gap-1.5 px-4 py-2 bg-teal-600 text-white text-sm font-semibold rounded-xl hover:bg-teal-700 transition-colors"
             >
               {isFree ? <><Download size={15} /> Get it Free</> : <><ShoppingBag size={15} /> Get the Guide</>}
             </Link>
             <Link
-              to={readTo}
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-teal-700 text-sm font-semibold rounded-xl border border-teal-200 hover:bg-teal-50 transition-colors"
+              to={productTo}
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-white text-teal-700 text-sm font-semibold border border-teal-200 hover:bg-teal-50 transition-colors"
             >
-              <BookOpen size={15} /> Read a Sample
+              See What's Inside <ChevronRight size={15} />
             </Link>
           </div>
         </div>
@@ -227,7 +236,7 @@ export default function BlogPost() {
         data.linked_ebook_id
           ? supabase
               .from('ebooks')
-              .select('id,title,slug,short_description,cover_image_url,price_gbp')
+              .select('id,title,slug,short_description,cover_image_url,price_gbp,page_count,what_youll_learn')
               .eq('id', data.linked_ebook_id)
               .maybeSingle()
           : Promise.resolve({ data: null }),

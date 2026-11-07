@@ -83,6 +83,7 @@ export default function LeadCapture({ isOpen, onClose, recordedCourses, recorded
         email: email.toLowerCase().trim(),
         interested_courses: recordedCourses,
         career_interests: selectedPaths,
+        funnel_source: 'lead_capture_drawer',
       });
       if (insertError) throw insertError;
       setStep('success');
@@ -181,6 +182,7 @@ export default function LeadCapture({ isOpen, onClose, recordedCourses, recorded
             <StepSuccess
               primaryTrack={inference.primaryTrack}
               onClose={onClose}
+              recordedEbookData={recordedCourseData}
             />
           )}
         </div>

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { supabase } from '../services/supabaseClient';
 import { useAuth } from '../contexts/AuthContext';
 import SEOHead from '../components/SEOHead';
-import { BookOpen, ArrowLeft, Loader2, AlertCircle, ExternalLink, Lock, LogIn, Download, Printer } from 'lucide-react';
+import { BookOpen, ArrowLeft, Loader2, AlertCircle, ExternalLink, Lock, LogIn, Download, Printer, ArrowRight, ShoppingBag } from 'lucide-react';
 
 interface Ebook {
   id: string;
@@ -17,6 +17,16 @@ interface Ebook {
   category: string;
 }
 
+interface RelatedEbook {
+  id: string;
+  title: string;
+  slug: string;
+  short_description: string;
+  cover_image_url: string | null;
+  price_gbp: number;
+  what_youll_learn: string[];
+}
+
 type AccessState = 'loading' | 'open' | 'sign-in' | 'no-access' | 'error' | 'not-found';
 
 export default function EbookReader() {
@@ -26,6 +36,7 @@ export default function EbookReader() {
   const [accessState, setAccessState] = useState<AccessState>('loading');
   const [error, setError] = useState('');
   const [opened, setOpened] = useState(false);
+  const [relatedPaid, setRelatedPaid] = useState<RelatedEbook[]>([]);
 
   useEffect(() => {
     if (!slug) {
@@ -57,6 +68,16 @@ export default function EbookReader() {
       const isFree = Number(fetched.price_gbp) === 0;
       if (isFree) {
         setAccessState('open');
+        const { data: relData } = await supabase
+          .from('ebooks')
+          .select('id,title,slug,short_description,cover_image_url,price_gbp,what_youll_learn')
+          .eq('is_published', true)
+          .eq('category', fetched.category)
+          .gt('price_gbp', 0)
+          .neq('id', fetched.id)
+          .order('sort_order', { ascending: true })
+          .limit(3);
+        setRelatedPaid((relData || []) as unknown as RelatedEbook[]);
         return;
       }
 
@@ -274,6 +295,54 @@ export default function EbookReader() {
             </div>
           </div>
         </div>
+
+        {relatedPaid.length > 0 && (
+          <div className="mt-12 max-w-3xl mx-auto">
+            <div className="text-center mb-6">
+              <span className="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[11px] font-semibold uppercase tracking-wider mb-3">
+                Ready for the Next Step?
+              </span>
+              <h2 className="text-xl font-headline font-bold text-on-surface mb-2">
+                Take it further with a complete guide
+              </h2>
+              <p className="text-sm text-on-surface-variant max-w-lg mx-auto">
+                You have got the free checklist. Now get the full guide with everything you need and a printable toolkit.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {relatedPaid.map((rel) => (
+                <Link
+                  key={rel.id}
+                  to={`/ebooks/${rel.slug}`}
+                  className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-elevation-2 hover:-translate-y-1 transition-all flex flex-col"
+                >
+                  <div className="relative h-32 overflow-hidden">
+                    {rel.cover_image_url && (
+                      <img src={rel.cover_image_url} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                    <span className="absolute top-2 right-2 bg-tertiary text-on-tertiary px-2 py-1 rounded-full text-[10px] font-bold">
+                      £{Number(rel.price_gbp).toFixed(2)}
+                    </span>
+                  </div>
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-sm font-headline font-semibold text-on-surface leading-tight mb-1 line-clamp-2 group-hover:text-primary transition-colors">
+                      {rel.title}
+                    </h3>
+                    {rel.what_youll_learn && rel.what_youll_learn.length > 0 && (
+                      <p className="text-[11px] text-on-surface-variant line-clamp-2 mb-3 flex-1">
+                        {rel.what_youll_learn[0]}
+                      </p>
+                    )}
+                    <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
+                      <ShoppingBag size={13} /> View guide <ArrowRight size={12} />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

@@ -76,12 +76,12 @@ const categoryCards = [
 ];
 
 const situationFinder = [
-  { label: 'Caring for someone with dementia', category: 'home_care_recovery' },
-  { label: 'Managing challenging behaviour', category: 'family_behaviour_support' },
-  { label: 'Recovering after hospital or stroke', category: 'home_care_recovery' },
-  { label: 'Feeling burned out and exhausted', category: 'carer_wellbeing' },
-  { label: 'Navigating care funding and assessments', category: 'navigating_care_system' },
-  { label: 'Looking for activities and engagement ideas', category: 'carer_wellbeing' },
+  { label: 'Caring for someone with dementia', category: 'home_care_recovery', productSlug: 'living-well-with-dementia' },
+  { label: 'Managing challenging behaviour', category: 'family_behaviour_support', productSlug: 'calm-in-the-storm' },
+  { label: 'Recovering after hospital or stroke', category: 'home_care_recovery', productSlug: 'first-30-days-home' },
+  { label: 'Feeling burned out and exhausted', category: 'carer_wellbeing', productSlug: 'running-on-empty' },
+  { label: 'Navigating care funding and assessments', category: 'navigating_care_system', productSlug: 'finding-and-funding-care' },
+  { label: 'Looking for activities and engagement ideas', category: 'carer_wellbeing', productSlug: '101-meaningful-days' },
 ];
 
 const testimonials = [
@@ -627,7 +627,7 @@ export default function HomePage() {
                 return (
                   <Link
                     key={sit.label}
-                    to={`/ebooks?category=${sit.category}`}
+                    to={`/ebooks/${sit.productSlug}`}
                     className="group bg-white rounded-xl border border-slate-200 p-5 text-left hover:border-secondary hover:shadow-elevation-2 transition-all flex items-start gap-3"
                   >
                     <div className="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
@@ -635,7 +635,9 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-label-md font-medium text-on-surface group-hover:text-primary transition-colors">{sit.label}</p>
-                      <p className="text-[11px] text-on-surface-variant mt-0.5">{categoryLabels[sit.category]}</p>
+                      <p className="text-[11px] text-on-surface-variant mt-0.5">
+                        {categoryLabels[sit.category]} · <span className="text-secondary font-medium">Start here</span>
+                      </p>
                     </div>
                   </Link>
                 );
